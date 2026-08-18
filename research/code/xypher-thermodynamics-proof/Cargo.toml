@@ -1,0 +1,14 @@
+[package]
+name = "xypher-thermodynamics-proof"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "xypher-thermodynamics-proof"
+path = "src/main.rs"
+
+[workspace]

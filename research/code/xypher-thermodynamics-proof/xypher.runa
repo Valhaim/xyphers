@@ -1,0 +1,234 @@
+-- Minimal thermodynamic Xypher kernel for the frozen three-state witness.
+--
+-- This file is deliberately prospective. It declares construction data and
+-- exact transformations only. It does not execute the witness or assert a
+-- confirmatory result.
+--
+-- Entropy is represented in binary digits: S_tau = entropy_bits * ln(2).
+-- The reservoir metadata represents alpha * ln(2) = one energy quantum.
+-- Consequently TAU_plus, Xi, activities, and squared rates remain exact Int
+-- quantities (or ratios of Int quantities); no Float acceptance path exists.
+
+-- COMPLETE MACRO INPUTS
+
+# MacroState(level: Int, energy: Int, endpoint_multiplicity: Int, entropy_bits: Int)
+# Candidate(from_state: MacroState, to_state: MacroState)
+# ExactRatio(numerator: Int, denominator: Int)
+
+-- The three constructors are the independently frozen U, g_X, and S_tau
+-- inputs from boundary commit 8c719c7f. They are not inferred from kinetics.
+> macro_zero() -> MacroState { MacroState(0, 0, 1, 0) }
+> macro_one() -> MacroState { MacroState(1, 1, 4, 2) }
+> macro_two() -> MacroState { MacroState(2, 2, 4, 2) }
+
+> reverse(candidate: Candidate) -> Candidate {
+    Candidate(candidate.to_state, candidate.from_state)
+}
+
+-- FIXED RECIPROCAL PATH SUBSTRATE
+
+# ReciprocalEdge(left: MacroState, right: MacroState)
+# ReciprocalPathGraph(zero: MacroState, one: MacroState, two: MacroState, zero_one: ReciprocalEdge, one_two: ReciprocalEdge)
+# MoveDirection = ZeroToOne | OneToZero | OneToTwo | TwoToOne
+
+> frozen_reciprocal_path_graph() -> ReciprocalPathGraph {
+    = zero = macro_zero()
+    = one = macro_one()
+    = two = macro_two()
+    = zero_one = ReciprocalEdge(zero, one)
+    = one_two = ReciprocalEdge(one, two)
+    ReciprocalPathGraph(zero, one, two, zero_one, one_two)
+}
+
+> same_macro_state(left: MacroState, right: MacroState) -> Bool {
+    left.level == right.level && left.energy == right.energy && left.endpoint_multiplicity == right.endpoint_multiplicity && left.entropy_bits == right.entropy_bits
+}
+
+> reciprocal_edge_connects(edge: ReciprocalEdge, from_state: MacroState, to_state: MacroState) -> Bool {
+    = forward = same_macro_state(edge.left, from_state) && same_macro_state(edge.right, to_state)
+    = backward = same_macro_state(edge.right, from_state) && same_macro_state(edge.left, to_state)
+    forward || backward
+}
+
+> reciprocal_path_adjacent(graph: ReciprocalPathGraph, from_state: MacroState, to_state: MacroState) -> Bool {
+    reciprocal_edge_connects(graph.zero_one, from_state, to_state) || reciprocal_edge_connects(graph.one_two, from_state, to_state)
+}
+
+> move_candidate(direction: MoveDirection) -> Candidate {
+    match direction {
+        | ZeroToOne -> Candidate(macro_zero(), macro_one())
+        | OneToZero -> Candidate(macro_one(), macro_zero())
+        | OneToTwo -> Candidate(macro_one(), macro_two())
+        | TwoToOne -> Candidate(macro_two(), macro_one())
+    }
+}
+
+-- CRYSTAL: UNIFORM EXECUTABLE ENDPOINT MULTIPLICITY
+
+# CrystalReadback(endpoint_multiplicity: Int, entropy_bits: Int)
+# CrystalProtocol = UniformRefresh
+# RefreshEndpoint(state: MacroState, endpoint_index: Int)
+# RefreshChannel(source: MacroState, outcome_count: Int, outcome_probability: ExactRatio, marked_tick_rate: ExactRatio, outcome_event_hazard: ExactRatio, generator_diagonal: ExactRatio)
+# RefreshTransition(channel: RefreshChannel, source_endpoint: RefreshEndpoint, outcome: RefreshEndpoint, probability: ExactRatio, event_hazard: ExactRatio)
+
+> crystal_readback(state: MacroState) -> CrystalReadback {
+    CrystalReadback(state.endpoint_multiplicity, state.entropy_bits)
+}
+
+-- A marked REFRESH tick has unit rate. Each executable endpoint has
+-- probability 1/g_X and hazard 1/g_X. Q_REFRESH = R_C - I therefore has
+-- diagonal (1-g_X)/g_X after the no-change outcome cancels.
+> uniform_refresh_channel(state: MacroState) -> RefreshChannel {
+    = outcome_count = state.endpoint_multiplicity
+    = each_probability = ExactRatio(1, outcome_count)
+    = marked_tick_rate = ExactRatio(1, 1)
+    = each_hazard = ExactRatio(1, outcome_count)
+    = generator_diagonal = ExactRatio(1 - outcome_count, outcome_count)
+    RefreshChannel(state, outcome_count, each_probability, marked_tick_rate, each_hazard, generator_diagonal)
+}
+
+-- Materializes one typed i -> i' REFRESH event. The exact verifier owns both
+-- endpoint-label bounds and distinguishes a marked no-change event from an
+-- off-diagonal generator transition.
+> refresh_transition(state: MacroState, source_endpoint_index: Int, outcome_endpoint_index: Int) -> RefreshTransition {
+    = channel = uniform_refresh_channel(state)
+    = source_endpoint = RefreshEndpoint(state, source_endpoint_index)
+    = outcome = RefreshEndpoint(state, outcome_endpoint_index)
+    RefreshTransition(channel, source_endpoint, outcome, channel.outcome_probability, channel.outcome_event_hazard)
+}
+
+> delta_s_bits(candidate: Candidate) -> Int {
+    = from_crystal = crystal_readback(candidate.from_state)
+    = to_crystal = crystal_readback(candidate.to_state)
+    to_crystal.entropy_bits - from_crystal.entropy_bits
+}
+
+-- THERMO: FINITE BINARY RESERVOIR AND THE MINIMAL TAU HARNESS
+
+-- alpha_ln_beta_energy means alpha * ln(beta_base), expressed in the
+-- witness's integer energy quanta. The frozen binary law therefore records
+-- alpha * ln(2) = 1 without approximating either alpha or ln(2).
+# ReservoirLaw(beta_base: Int, total_energy: Int, alpha_ln_beta_energy: Int)
+# ReservoirReadback(energy: Int, multiplicity: Int, entropy_base_digits: Int)
+# TauPair(forward: Int, reverse: Int)
+# ThermoReadback(delta_s_bits: Int, delta_u: Int, tau_pair: TauPair, xi: Int)
+
+> binary_reservoir_law() -> ReservoirLaw { ReservoirLaw(2, 2, 1) }
+
+> pow_nonnegative(base: Int, exponent: Int) -> Int {
+    if exponent <= 0 { 1 }
+    else { base * pow_nonnegative(base, exponent - 1) }
+}
+
+> reservoir_readback(state: MacroState, law: ReservoirLaw) -> ReservoirReadback {
+    = reservoir_energy = law.total_energy - state.energy
+    = multiplicity = pow_nonnegative(law.beta_base, reservoir_energy)
+    ReservoirReadback(reservoir_energy, multiplicity, reservoir_energy)
+}
+
+> fiber_size(state: MacroState, law: ReservoirLaw) -> Int {
+    = reservoir = reservoir_readback(state, law)
+    state.endpoint_multiplicity * reservoir.multiplicity
+}
+
+> positive_part(value: Int) -> Int {
+    if value > 0 { value } else { 0 }
+}
+
+> delta_u(candidate: Candidate) -> Int {
+    candidate.to_state.energy - candidate.from_state.energy
+}
+
+> tau_plus(candidate: Candidate, law: ReservoirLaw) -> Int {
+    positive_part(delta_s_bits(candidate)) * law.alpha_ln_beta_energy
+}
+
+> tau_pair(candidate: Candidate, law: ReservoirLaw) -> TauPair {
+    = forward_tau = tau_plus(candidate, law)
+    = reverse_tau = tau_plus(reverse(candidate), law)
+    TauPair(forward_tau, reverse_tau)
+}
+
+> signed_xi(candidate: Candidate, law: ReservoirLaw) -> Int {
+    = pair = tau_pair(candidate, law)
+    pair.forward - pair.reverse - delta_u(candidate)
+}
+
+> thermo_readback(candidate: Candidate, law: ReservoirLaw) -> ThermoReadback {
+    = entropy_change = delta_s_bits(candidate)
+    = energy_change = delta_u(candidate)
+    = pair = tau_pair(candidate, law)
+    = xi = signed_xi(candidate, law)
+    ThermoReadback(entropy_change, energy_change, pair, xi)
+}
+
+-- PRAXION: SYMMETRIC ACTIVITY AND PROSPECTIVE RECIPROCAL HAZARD
+
+-- ExactRatio keeps negative-Xi factors exact. For this binary witness,
+-- exp(Xi / alpha) is represented algebraically as 2^Xi.
+# PraxionProposal(candidate: Candidate, activity_squared: Int, rate_squared: ExactRatio)
+
+> beta_power_ratio(base: Int, exponent: Int) -> ExactRatio {
+    if exponent >= 0 { ExactRatio(pow_nonnegative(base, exponent), 1) }
+    else { ExactRatio(1, pow_nonnegative(base, 0 - exponent)) }
+}
+
+-- c(a)^2 = n(from) * n(to), so reversal cannot change the activity.
+> symmetric_activity_squared(candidate: Candidate, law: ReservoirLaw) -> Int {
+    fiber_size(candidate.from_state, law) * fiber_size(candidate.to_state, law)
+}
+
+-- k_Pi(a)^2 = c(a)^2 * exp(Xi(a) / alpha), encoded as an exact
+-- numerator/denominator pair. No square root or exponential is evaluated.
+> prospective_praxion_rate_squared(candidate: Candidate, law: ReservoirLaw) -> ExactRatio {
+    = activity_squared = symmetric_activity_squared(candidate, law)
+    = affinity_factor = beta_power_ratio(law.beta_base, signed_xi(candidate, law))
+    ExactRatio(activity_squared * affinity_factor.numerator, affinity_factor.denominator)
+}
+
+> praxion_proposal(candidate: Candidate, law: ReservoirLaw) -> PraxionProposal {
+    = activity_squared = symmetric_activity_squared(candidate, law)
+    = rate_squared = prospective_praxion_rate_squared(candidate, law)
+    PraxionProposal(candidate, activity_squared, rate_squared)
+}
+
+-- NAMED ACTION, RESOLUTION, AND THAW
+
+# ActionKind = Move
+# ResolutionKind = Arrival
+# ThawKind = ReverseMove
+# Action(kind: ActionKind, candidate: Candidate, proposal: PraxionProposal)
+# Resolution(kind: ResolutionKind, action: Action, arrived_state: MacroState)
+# Thaw(kind: ThawKind, forward_action: Action, reverse_action: Action)
+
+-- MoveDirection admits only the four directed channels of the frozen path.
+> move_action(direction: MoveDirection, law: ReservoirLaw) -> Action {
+    = candidate = move_candidate(direction)
+    = proposal = praxion_proposal(candidate, law)
+    Action(Move, candidate, proposal)
+}
+
+-- Resolution is arrival at the MOVE destination, with no extra gate.
+> arrival_resolution(action: Action) -> Resolution {
+    Resolution(Arrival, action, action.candidate.to_state)
+}
+
+-- Thaw is exactly the declared reciprocal MOVE with its reverse quantities.
+> reverse_thaw(action: Action, law: ReservoirLaw) -> Thaw {
+    = reverse_candidate = reverse(action.candidate)
+    = reverse_proposal = praxion_proposal(reverse_candidate, law)
+    = reverse_action = Action(Move, reverse_candidate, reverse_proposal)
+    Thaw(ReverseMove, action, reverse_action)
+}
+
+-- EXPLICITLY EMPTY FIRST-ROUND SLOTS
+
+# Ruby = EmptyRuby
+# Memory = OneStateMemory
+# XypherKernel(substrate: ReciprocalPathGraph, crystal: CrystalProtocol, reservoir_law: ReservoirLaw, action: ActionKind, resolution: ResolutionKind, thaw: ThawKind, ruby: Ruby, memory: Memory)
+
+-- EmptyRuby carries no directed-flow score. OneStateMemory carries no
+-- updateable information and makes no adaptive-learning claim.
+> minimal_thermodynamic_xypher_kernel() -> XypherKernel {
+    XypherKernel(frozen_reciprocal_path_graph(), UniformRefresh, binary_reservoir_law(), Move, Arrival, ReverseMove, EmptyRuby, OneStateMemory)
+}

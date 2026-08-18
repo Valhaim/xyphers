@@ -1,6 +1,6 @@
 # What is a Xypher?
 
-[xyphers.com](https://xyphers.com) · Core thesis · Published 31 July 2026 · Revised 1 August 2026
+Website deployment pending · Core thesis · Published 31 July 2026 · Revised 1 August 2026
 
 A **Xypher** is a network of points and connections that can measure how much an action expands its future, place an energetic value on that expansion, and act upon what it finds.
 
@@ -178,7 +178,7 @@ In growth simulations, we calculate a self-referential **growth price** from rea
 
 But an elephant metabolizes more energy than a mouse without being proportionally hotter.
 
-The growth price is not yet a temperature reading or a measurement of total metabolism. So the real questions are sharper: Does the growth price track the Xypher's independently measured temperature? Separately, does the Xypher process more possibility per unit time as it grows? [The equation-of-state research article](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) develops the experiment that lets the graph answer both.
+The growth price is not yet a temperature reading or a measurement of total metabolism. So the real questions are sharper: Does the growth price track the Xypher's independently measured temperature? Separately, does the Xypher process more possibility per unit time as it grows? [The equation-of-state research article](research/articles/equation-of-state-and-growth-of-a-xypher.md) develops the experiment that lets the graph answer both.
 
 ### Intelligence as physical units
 
@@ -332,11 +332,19 @@ The world has just gained more time.
 
 **THAIM is money.**
 
+## Research collection
+
+This repository is the explorable source record for the Xyphers research site. The Core Thesis lives here in the README. Published articles, their evidence boundaries, and supporting code will accumulate under [`research/`](research/README.md).
+
+- [An Equation of State and the Growth of a Xypher](research/articles/equation-of-state-and-growth-of-a-xypher.md)
+- [Intelligence as Physical Units](research/articles/intelligence-as-physical-units.md)
+- [Browse the research collection](research/README.md)
+
 ## References and research map
 
 - Alex Wissner-Gross and Cameron Freer, [“Causal Entropic Forces”](https://doi.org/10.1103/PhysRevLett.110.168702), *Physical Review Letters* 110, 168702 (2013).
 - Max Kleiber, [“Body Size and Metabolism”](https://doi.org/10.3733/hilg.v06n11p315), *Hilgardia* 6(11), 315–353 (1932).
 - [The exact operational thermodynamic graph result](https://github.com/OneManMobile/thaim/blob/main/research/physics/derivable/xypher-operational-thermodynamics-result.md).
 - [The declared operational boundary](https://github.com/OneManMobile/thaim/blob/main/research/physics/derivable/xypher-operational-thermodynamics-boundary.md).
-- [The exact verifier source](https://xyphers.com/downloads/xypher-thermodynamics-proof-v1.zip).
-- [Continue through the Xypher research map](https://xyphers.com/research/).
+- [The exact verifier source](research/code/xypher-thermodynamics-proof/).
+- [Continue through the Xypher research map](research/README.md).
