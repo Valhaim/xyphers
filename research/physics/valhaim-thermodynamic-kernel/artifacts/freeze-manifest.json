@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "experiment_id": "valhaim-thermodynamic-kernel-v1",
+  "status": "frozen_before_implementation",
+  "frozen_on": "2026-08-03",
+  "protocol_path": "research/physics/valhaim-thermodynamic-kernel/PROTOCOL.md",
+  "protocol_sha256": "a1900b99160810f2bdc517ac1cbd19e8336987c2b8cca3b6c02d89f589aff07b",
+  "runner_seal_required_before_first_execution": true,
+  "exact_value_encoding": {
+    "counts_and_discrete_parameters": "JSON integers",
+    "rational": "reduced signed numerator/positive-denominator string; integers are encoded as n/1",
+    "scaled_quantity": {
+      "coefficient": "normalized rational string",
+      "basis_id": "registered symbolic basis"
+    },
+    "registered_symbolic_bases": [
+      "epsilon",
+      "kappa",
+      "kappa_contact",
+      "kappa_contact*epsilon"
+    ],
+    "alpha": "object with integer reservoir_branching and canonical relation alpha=epsilon/ln(r)"
+  },
+  "td": {
+    "parent": "td-5d4a6f",
+    "freeze": "td-33e84c",
+    "exact": "td-21703b",
+    "ledger": "td-863788",
+    "contact": "td-7dc0b6",
+    "features": "td-9f4fe5"
+  },
+  "primary": {
+    "body_nodes": ["L", "H"],
+    "heights": [0, 1],
+    "unit_labels": ["a", "b"],
+    "inventory": 2,
+    "reservoir_alphabet": [0, 1],
+    "reservoir_depth": 2,
+    "energy_quantum_basis_id": "epsilon",
+    "alpha_source": {
+      "reservoir_branching": 2,
+      "relation": "alpha=epsilon/ln(r)"
+    },
+    "opportunity_slots": ["a:0", "a:1", "b:0", "b:1"],
+    "slot_probability": "1/4",
+    "complete_state_count": 9,
+    "fiber_counts": [4, 4, 1],
+    "body_multiplicities": [1, 2, 1],
+    "reservoir_multiplicities": [4, 2, 1],
+    "equilibrium": ["4/9", "4/9", "1/9"],
+    "discrete_kernel": [
+      ["1/2", "1/2", "0/1"],
+      ["1/2", "1/4", "1/4"],
+      ["0/1", "1/1", "0/1"]
+    ],
+    "generator_over_kappa": [
+      ["-2/1", "2/1", "0/1"],
+      ["2/1", "-3/1", "1/1"],
+      ["0/1", "4/1", "-4/1"]
+    ],
+    "generator_eigenvalues_over_kappa": ["0/1", "-3/1", "-6/1"],
+    "discrete_eigenvalues": ["1/1", "1/4", "-1/2"],
+    "uphill_rate_ratios": ["1/1", "1/4"],
+    "uphill_affinities": [
+      {"coefficient": "0/1", "basis_id": "epsilon"},
+      {"coefficient": "-2/1", "basis_id": "epsilon"}
+    ],
+    "reservoir_replace_channels": false,
+    "crystal_refresh": "non-mutating auxiliary output, uniform over labelled body placements at fixed visible balance and reservoir word",
+    "integration_boundary": {
+      "accounts": 2,
+      "units": 2,
+      "topology": "fixed single reciprocal edge",
+      "only_mutator": "declared thermal lane",
+      "excluded": [
+        "outside deposits and withdrawals",
+        "mint and burn",
+        "fees and decay",
+        "topology changes",
+        "Ruby",
+        "Emerald",
+        "forecasts and annotations",
+        "profiles",
+        "routing",
+        "other actions"
+      ]
+    }
+  },
+  "structural_variants": [
+    {
+      "id": "ternary-reservoir",
+      "reservoir_alphabet_size": 3,
+      "complete_state_count": 16,
+      "fiber_counts": [9, 6, 1],
+      "alpha_source": {
+        "reservoir_branching": 3,
+        "relation": "alpha=epsilon/ln(r)"
+      },
+      "discrete_kernel": [
+        ["2/3", "1/3", "0/1"],
+        ["1/2", "1/3", "1/6"],
+        ["0/1", "1/1", "0/1"]
+      ],
+      "generator_over_kappa": [
+        ["-2/1", "2/1", "0/1"],
+        ["3/1", "-4/1", "1/1"],
+        ["0/1", "6/1", "-6/1"]
+      ],
+      "equilibrium": ["9/16", "3/8", "1/16"]
+    },
+    {
+      "id": "three-node-path",
+      "heights": [0, 1, 2],
+      "inventory": 2,
+      "reservoir_alphabet_size": 2,
+      "reservoir_depth": 4,
+      "slot_count": 8,
+      "complete_state_count": 49,
+      "state_invariant": "q=4-h(sigma(a))-h(sigma(b))",
+      "total_energy": {"coefficient": "4/1", "basis_id": "epsilon"},
+      "macro_projection": "occupation vector (n_0,n_1,n_2)"
+    }
+  ],
+  "contact": {
+    "condition": "x_A+x_B=2 after equal-alpha preparation and bath detachment",
+    "complete_state_count": 6,
+    "fiber_counts": [1, 4, 1],
+    "equilibrium": ["1/6", "2/3", "1/6"],
+    "slot_count": 4,
+    "discrete_kernel": [
+      ["0/1", "1/1", "0/1"],
+      ["1/4", "1/2", "1/4"],
+      ["0/1", "1/1", "0/1"]
+    ],
+    "generator_over_kappa_contact": [
+      ["-4/1", "4/1", "0/1"],
+      ["1/1", "-2/1", "1/1"],
+      ["0/1", "4/1", "-4/1"]
+    ],
+    "equilibrium_current_into_A": {"coefficient": "0/1", "basis_id": "kappa_contact*epsilon"},
+    "preparation_mode": "exact enumeration and conditioning, not rejection sampling",
+    "unequal_preparation": {
+      "r_A": 2,
+      "r_B": 4,
+      "reservoir_depth_A": 2,
+      "reservoir_depth_B": 2,
+      "body_weights_A": [4, 4, 1],
+      "body_weights_B": [16, 8, 1],
+      "conditioned_distribution": ["1/13", "8/13", "4/13"],
+      "initial_current_into_A_over_kappa_epsilon": "-12/13",
+      "swapped_current_into_A_over_kappa_epsilon": "12/13"
+    }
+  },
+  "gate_order": [
+    "K01_FREEZE_IDENTITY",
+    "K02_INDEPENDENT_COORDINATES",
+    "K03_ROW_CLOSURE",
+    "K04_REVERSE_INVOLUTION",
+    "K05_PATH_ACCOUNTING",
+    "K06_STRONG_LUMPABILITY",
+    "K07_THERMODYNAMIC_PREDICTION",
+    "K08_EQUILIBRIUM",
+    "K09_RELAXATION",
+    "K10_INDEPENDENT_GENERATOR",
+    "X01_XYPHER_REPRESENTATION",
+    "C01_PREPARATION",
+    "C02_CLOCK_RETENTION",
+    "C03_CONSERVED_EXCHANGE",
+    "C04_REVERSE_AND_CLOSURE",
+    "C05_EQUAL_TEMPERATURE_LAW",
+    "C06_ZERO_CURRENT",
+    "C07_THIRD_BODY",
+    "C08_TEMPERATURE_SENSITIVITY"
+  ],
+  "mutations": [
+    {"id": "M01_MISSING_REVERSE", "expected_first_failure": "K04_REVERSE_INVOLUTION"},
+    {"id": "M02_DIRECTED_HAZARD", "expected_first_failure": "K07_THERMODYNAMIC_PREDICTION"},
+    {"id": "M03_FALSE_BODY_MULTIPLICITY", "expected_first_failure": "K02_INDEPENDENT_COORDINATES"},
+    {"id": "M04_ENDOGENOUS_ALPHA", "expected_first_failure": "K02_INDEPENDENT_COORDINATES"},
+    {"id": "M05_HIDDEN_ROW_SPLIT", "expected_first_failure": "K06_STRONG_LUMPABILITY"},
+    {"id": "M06_CORRUPT_RESERVOIR_DELTA", "expected_first_failure": "K05_PATH_ACCOUNTING"},
+    {"id": "M07_DISCONNECTED_TOP_STATE", "expected_first_failure": "K09_RELAXATION"},
+    {"id": "M08_POSITIVE_AFFINITY_ONLY", "expected_first_failure": "K04_REVERSE_INVOLUTION"},
+    {"id": "M09_ACTIVE_ONLY_CONTACT", "expected_first_failure": "C02_CLOCK_RETENTION"},
+    {"id": "M10_WRONG_WORD_LENGTH", "expected_first_failure": "K03_ROW_CLOSURE"}
+  ],
+  "integration_decision": {
+    "first_arms": [
+      "legacy NodeAction::Transfer compatibility projection",
+      "CAL-OPPORTUNITY OpportunityDecision::Transfer native path where available"
+    ],
+    "ordinary_arm_projection_rule": "omitted labels or word content permit an exact macro projection only with an explicit lift, strong lumpability, and structural proof that omitted history is irrelevant",
+    "rejection_rule": "Rejected or unauthorized opportunity is a failed trial, never WAIT",
+    "fallback_arm": "separately frozen ThermalStep and ThermalContactStep protocol extensions",
+    "one_validator_scope": "first ThermalStep extension execution fixture only; both dedicated accounts controlled by the sole validator; proves execution feasibility only",
+    "conformance_schedule": "low_two_bits(SHA256(domain||chain_id||kernel_id||genesis_seed||opportunity_ordinal))",
+    "conformance_schedule_claim_limit": "deterministic replay schedule; does not establish the abstract 1/4 measure or an unbiased stochastic clock",
+    "production_slot_source_requirement": "unique voter-verifiable threshold-VRF, unique threshold-signature beacon, or equivalent pre-height source with no actor selection, grinding, or redraw; withholding may halt but cannot change the fixed message or slot, advance the ordinal, or trigger redraw, and is reported as liveness failure",
+    "validator_rule": "derive certified slot and unique transfer-or-WAIT outcome from canonical state; reject mismatched intent",
+    "authorization_rule": "one-validator owner scope first; production requires protocol authorization for opted-in kernel accounts",
+    "transfer_rule": "apply ordinary ledger transfer exactly once and bind its receipt; never also queue NodeAction::Transfer",
+    "contact_rule": "current APIs cannot atomically bind the paired move; contact requires a separately frozen ThermalContactStep extension with one all-or-nothing paired-transfer receipt"
+  },
+  "excluded_until_feature_stage": [
+    "topology growth",
+    "mint and burn",
+    "route search",
+    "Ruby forecasting",
+    "Emerald rebates",
+    "profiles",
+    "zero-knowledge conditions",
+    "adaptive learning",
+    "competing Praxions"
+  ]
+}

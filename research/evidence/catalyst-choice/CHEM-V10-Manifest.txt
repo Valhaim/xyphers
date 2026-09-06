@@ -1,0 +1,72 @@
+CHEM-V10 PRE-STATISTIC FREEZE MANIFEST
+
+freeze_artifact_commit=b051a9a0f6939af469b26026e9d98cad20f95eac
+v10_hypothesis_statistics_computed_at_freeze=0
+v10_evaluation_runs_at_freeze=0
+protocol_tests_passed=27
+independent_target_free_code_audit=no_blocker
+
+DISCLOSURE
+status=post-reveal, pre-statistic, target-independent mechanical repair
+target_file_extracted_before_v10=1
+target_rows_displayed_before_v10_freeze=2
+displayed_rows_sort_order=reaction_id
+displayed_yields=0,0
+target_distribution_inspected=0
+descriptor_target_association_inspected=0
+hypothesis_statistic_inspected=0
+
+LINEAGE
+chem_v9_freeze_commit=bfb3bdbb0c4c63daf7f530df5522bdd46ffd7a10
+chem_v9_manifest_commit=0b1049488f12cfbdc23b0935b185dde29040de85
+chem_v9_integrity_result_commit=967deca87a9bea7879b9bfe1eb10b3dcfe1383fe
+chem_v9_evaluator_sha256=731fc7078ad306d6a363d4cd2b844dc4fb7721009cb72f0e289c784a55133729
+chem_v9_decision=INCONCLUSIVE
+chem_v9_failure=global slot-union guard demanded training coverage for unused anomalous slot 48
+
+PRESERVED TARGET ARTIFACT
+path=research/chemistry/validation/chem_v9/results/chem_v9_targets.tsv
+rows_including_header=49633
+target_rows=49632
+sha256=58dae5feac0aad193b3a8d6590120b5abfea02447aed093e4b146ccaf9a8f407
+
+SOLE ANALYTICAL CHANGE
+For each held-out primary experiment, construct LOEO scores only for coded ligand slots used by its frozen eligible primary panel. Rank all 47 rows in every training block, including anomalous L106. No row, structure, block, experiment, descriptor, baseline, null, statistic, threshold, seed, or decision gate changes.
+
+TARGET-FREE PREFLIGHT
+loaded_memberships=49632
+unique_loaded_reaction_ids=49632
+loaded_blocks=1056
+unique_rows_per_loaded_block=47
+primary_blocks=864
+primary_experiments=14
+required_missing_total=0
+minimum_training_rows_per_required_slot=991
+globally_observed_slots=1-48
+required_slot_union=1-47
+globally_observed_but_not_required=48
+slot_48_rows=1
+slot_48_source_experiment=XZ-01-1
+slot_48_required_by_primary_panel=0
+anomalous_block=00ab912e0eff6a901dbc3314af67dd92b65640918126f7036976b4f64a90b0c8
+anomalous_block_missing_standard_slot=16
+anomalous_block_extra_slot=48
+preflight_pass=1
+
+V10 FILE SHA256
+CHEM-V10-Preregistration.md=67a772fbd601fc303ba6539d9a730599d991d2a8112fbcf8f23153cab748a49d
+README.md=2c986cc90ed14434e6fc45139df78509e1735831c45f71523be349ef12516e86
+chem_v10_evaluate.py=bebe13f046a689f440e483e25956a0489203f66e5c8e076be2cddeef59a42473
+frozen/required_slot_preflight.json=9a88e79f12d9ea1adfe559bd8d80104ae5dcac582337e5bb6059fb48a136ebd3
+requirements.txt=28d471a63d5a1d5ca4d62a5b7d9ad0150335121605eca435fd5d1b6ae8963863
+test_chem_v10_evaluate.py=c5378749514cf08fa3a0e468f8af12256ce0446fe9200baedf2efd7bfc70c2ea
+
+FREEZE COMMANDS
+uv run --with-requirements research/chemistry/validation/chem_v10/requirements.txt python research/chemistry/validation/chem_v10/chem_v10_evaluate.py preflight research/chemistry/validation/chem_v9/frozen research/chemistry/validation/chem_v10/frozen/required_slot_preflight.json
+uv run --with-requirements research/chemistry/validation/chem_v10/requirements.txt python -m unittest -v research/chemistry/validation/chem_v10/test_chem_v10_evaluate.py research/chemistry/validation/chem_v9/test_chem_v9_prepare.py research/chemistry/validation/chem_v9/test_chem_v9_evaluate.py
+
+ONE-SHOT POST-FREEZE COMMAND
+uv run --with-requirements research/chemistry/validation/chem_v10/requirements.txt python research/chemistry/validation/chem_v10/chem_v10_evaluate.py evaluate research/chemistry/validation/chem_v9/frozen research/chemistry/validation/chem_v9/results/chem_v9_targets.tsv research/chemistry/validation/chem_v10/results/CHEM-V10-Result.json
+
+CLAIM BOUNDARY
+A pass is post-reveal repaired corroboration of a scoped observational, context-sensitive association stronger than the frozen molecular and stable-position controls in these ORD panels. It is not pristine confirmation, independent replication, causality, a thermodynamic equation of state, a physical law, or physical circuitry. Plate randomization is undocumented and exact inference moves only 19 of 45 structures.

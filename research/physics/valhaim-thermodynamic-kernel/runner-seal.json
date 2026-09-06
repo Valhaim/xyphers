@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "freeze_commit": "c3d9a5c6404c1c42aa938a400d3554a1ec670051",
+  "protocol_path": "research/physics/valhaim-thermodynamic-kernel/PROTOCOL.md",
+  "protocol_sha256": "a1900b99160810f2bdc517ac1cbd19e8336987c2b8cca3b6c02d89f589aff07b",
+  "freeze_manifest_path": "research/physics/valhaim-thermodynamic-kernel/artifacts/freeze-manifest.json",
+  "freeze_manifest_sha256": "1108cd08078bf969ddf0064cf30ca551190e00886e15972d0f76776d0b16b49b",
+  "schema_path": "research/physics/valhaim-thermodynamic-kernel/SCHEMA.json",
+  "schema_sha256": "c85ea1e1d9a26b5cb6f617a5211683df2ff7a21a47eaae52623bc7cdfc9a8448",
+  "relevant_source_paths": [
+    "research/physics/valhaim-thermodynamic-kernel/SCHEMA.json",
+    "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.lock",
+    "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.toml",
+    "research/physics/valhaim-thermodynamic-kernel/runner/build.rs",
+    "research/physics/valhaim-thermodynamic-kernel/runner/source-set.txt",
+    "research/physics/valhaim-thermodynamic-kernel/runner/src/lib.rs",
+    "research/physics/valhaim-thermodynamic-kernel/runner/src/main.rs",
+    "research/physics/valhaim-thermodynamic-kernel/runner/tests/exact.rs"
+  ],
+  "relevant_source_sha256": "4b104b15db301c4f67bac95d68f053e955ece8f367eb6aff744026d869e3f9ad",
+  "executable_sha256": "325cb696bb886077974fb84555f2580eef87767f1791431911773da92204bf45",
+  "build_toolchain": {
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "target": "aarch64-apple-darwin",
+    "cargo_lock_sha256": "3aa9b8b17d4d3f47baf2d490094246848f5bdb5a1fa85ac9e8eee9795cb598a1"
+  }
+}

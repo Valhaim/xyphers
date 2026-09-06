@@ -1,0 +1,28 @@
+XYPHERS INFORMATION-STATE REPRODUCTION
+
+CAL-XTHERM
+  Download /downloads/xypher-thermodynamics-proof-v1.zip and follow
+  /downloads/README-FIRST-xypher-thermodynamics-proof-v1.txt. That small
+  standalone package contains the exact 16-state verifier and no external
+  Rust dependencies.
+
+CAL-ADAPT
+  Download /downloads/xypher-information-state-evidence-v1.zip, extract it,
+  and run from the extracted directory:
+
+    cargo test --manifest-path cal-adapt/Cargo.toml \
+      --test adaptive_contact_boundary
+
+  The focused test checks hidden behavior-changing memory, inert memory,
+  explicit reversible memory channels, the seven-state primary reservoir,
+  the generated thirteen-state secondary reservoir, detailed balance,
+  lumpability, contact compatibility, and the declared broken controls.
+
+  To inspect all tests without rerunning unrelated THAIM code:
+
+    cargo test --manifest-path cal-adapt/Cargo.toml
+
+Reproduction boundary
+  These are exact replays of frozen finite constructions, not new empirical
+  experiments. A passing replay does not turn the engineered stack into a
+  native adaptive-Xypher learning law.

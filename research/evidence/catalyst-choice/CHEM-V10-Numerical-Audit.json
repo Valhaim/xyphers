@@ -1,0 +1,37 @@
+{
+  "experiment": "CHEM-V10",
+  "audit_type": "post-result numerical integrity audit without model change or full evaluation rerun",
+  "runtime_warnings": [
+    "line 661: divide by zero encountered in matmul",
+    "line 661: overflow encountered in matmul",
+    "line 661: invalid value encountered in matmul",
+    "line 698: divide by zero encountered in matmul",
+    "line 698: overflow encountered in matmul",
+    "line 698: invalid value encountered in matmul"
+  ],
+  "operand_audit": {
+    "mapping_experiment_pairs": 96768,
+    "nonfinite_operand_entries": 0,
+    "nonfinite_denominator_entries": 0,
+    "dtype": "float64",
+    "left_centered_rank_range": [-17.0, 17.5],
+    "right_centered_rank_range": [-17.5, 17.5],
+    "conservative_maximum_numerator_bound": 11025.0,
+    "positive_denominator_range": [27.495, 3883.9999],
+    "all_tied_outcome_blocks": 288,
+    "constant_predictors_with_zero_norm": ["shell_r1", "ball_r1"]
+  },
+  "independent_arithmetic_check": {
+    "warned_matmul_all_values_finite": true,
+    "maximum_difference_from_explicit_elementwise_sum": 0.0
+  },
+  "result_json_audit": {
+    "numeric_values": 2552,
+    "nonfinite_values": 0
+  },
+  "ruling": {
+    "warnings_are_stale_blas_floating_point_flags": true,
+    "result_is_numerically_trustworthy": true,
+    "integrity_inconclusive": false
+  }
+}

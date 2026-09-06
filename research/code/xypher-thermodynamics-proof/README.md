@@ -1,75 +1,45 @@
-# Minimal Thermodynamic Xypher Proof
+# Exact Thermodynamic Xypher
 
-Standalone exact verifier for the boundary frozen at
-`8c719c7f33da5fe9695358cf6b84fb57e1f71809` in the
-[operational thermodynamics boundary](https://github.com/OneManMobile/thaim/blob/c0e32bc1fc787c5322df07422a183a4977b20857/research/physics/derivable/xypher-operational-thermodynamics-boundary.md).
+A complete sixteen-state digital thermodynamic system, with two independent thermometers and an exact energy account.
 
-The apparatus answers only two questions:
+## Run
 
-1. Does the frozen 16-state Crystal + Thermo + Praxion kernel instantiate an
-   equilibrium thermodynamic digital graph system?
-2. Do the prospective Xypher construction and independent microscopic
-   enumeration produce exactly the same dynamics?
+With Rust installed, from this directory:
 
-Ruby is empty. Memory is one-state and non-adaptive. Growing graphs, richer
-Praxions, blockchain mechanics, and consciousness are outside this crate.
-
-The frozen apparatus passed all eleven gates and all four falsifying controls.
-See the
-[operational thermodynamics result](https://github.com/OneManMobile/thaim/blob/c0e32bc1fc787c5322df07422a183a4977b20857/research/physics/derivable/xypher-operational-thermodynamics-result.md)
-for the exact output, provenance, and bounded scientific verdict.
-
-## Structure
-
-- `xypher.runa` is the prospective Futuruna dataflow. It constructs Crystal
-  entropy, the forward/reverse TAU pair, signed Xi, symmetric activity, and
-  squared Praxion hazards without consuming rates or stationary weights.
-- `src/lib.rs` independently enumerates the complete state, exact generators,
-  macro quotient, contact shell, and frozen controls.
-- `src/main.rs` prints the compact deterministic evaluation report.
-- `tests/source_contract.rs` applies the same evaluator as a test gate.
-
-The Rust crate has no dependencies and is not a member of the repository
-workspace.
-
-## Review embargo
-
-Before independent source review, only nonexecuting checks are permitted:
-
-```text
-runa check xypher.runa
-runa fmt --check xypher.runa
-cargo check --manifest-path Cargo.toml
-cargo test --manifest-path Cargo.toml --no-run
+```sh
+cargo test --locked
+cargo run --locked --quiet
 ```
 
-When `runa` is not installed on `PATH`, skip the two Futuruna checks. The Rust
-verifier remains independently runnable, and `xypher.runa` remains available
-for inspection. The compiler source lives in the
-[THAIM repository](https://github.com/OneManMobile/thaim/tree/c0e32bc1fc787c5322df07422a183a4977b20857/futuruna).
+No external crate, dataset, random seed, burn-in, numerical tolerance, or network service is required by the verifier. The report ends with `OVERALL PASS`, following eleven passing gates and four controls that detect deliberately broken constructions.
 
-After the exact source hash is approved, execute the frozen evaluation once:
+These commands reproduce an already reviewed and executed result. The original pre-execution review restrictions belong to the historical experiment; independent reproduction is welcome.
 
-```text
-cargo test --manifest-path Cargo.toml
-cargo run --quiet --manifest-path Cargo.toml
-```
+## Read the experiment
 
-No random seed, simulation length, burn-in, tolerance, network service, or
-large artifact is involved. The report is a few lines of text.
+- [A Purely Digital Thermodynamic System](../../articles/proving-true-thermodynamic-graph-systems.md) explains the body, reservoir, two thermometers, signed accounting, and contact.
+- [The frozen boundary and representation argument](evidence/BOUNDARY.md) defines the operational T1–T6 requirements independently of Xypher terminology.
+- [The exact result](evidence/RESULT.md) records the eleven gates, four mutations, output, and execution provenance.
 
-## Exactness boundary
+The construction establishes one minimal thermodynamic Xypher. A separate analytic theorem characterizes the declared fixed-finite, one-temperature, reciprocal equilibrium class. Enumerating this example does not establish that theorem by testing it once.
 
-Entropy is represented in binary units. The reservoir law
-`S_R(E)=E ln 2` gives `alpha ln 2 = 1` energy unit, so TAU and Xi are exact
-integers. Exponentials and square roots are never floating-point acceptance
-gates: the verifier checks rational affinity ratios and squared-rate
-identities by integer cross-multiplication.
+## How the two implementations meet
 
-A complete pass establishes constructive existence for the frozen witness.
-Generality comes separately from the reviewed representation proof in the
-boundary document; the executable witness does not prove that theorem by
-enumeration. Together they cover the minimal kernel within the declared finite
-reciprocal equilibrium class. They do not establish that every legacy Xypher
-or any deployed payment network is thermodynamic, nor do they constitute a new
-fundamental law of matter.
+| File | Role |
+|---|---|
+| [`xypher.runa`](xypher.runa) | Prospective Futuruna construction: endpoint entropy, signed accounting, and reciprocal Praxion hazards. |
+| [`src/lib.rs`](src/lib.rs) | Independent Rust enumeration of complete states, microscopic movement, projected rates, equilibrium, contact, and mutations. |
+| [`src/main.rs`](src/main.rs) | Compact deterministic report. |
+| [`tests/source_contract.rs`](tests/source_contract.rs) | Acceptance test for the exact evaluator. |
+
+The Rust check runs independently of a Futuruna compiler. The `.runa` source remains inspectable; compiler work belongs to [Futuruna](https://github.com/Futuruna/futuruna).
+
+The reservoir fixes **α · ln 2 = one energy unit**. Integer and rational identities therefore check the result exactly. THAIM is a positive expansion receipt; its forward-minus-reverse pair restores the signed entropy contribution in Ξ. Both directions remain possible at finite temperature.
+
+Ruby is empty, Opal is absent, and memory has one non-adaptive condition. Growth, learning, multiple Praxions, and consciousness are later architectural questions.
+
+## Provenance
+
+The executable source, manifests, and test are preserved from the apparatus frozen at `17b57589a0bd84dfd13d94f09d7340f5d4e85392`. The scientific records are copied from THAIM revision `c46f4a808` and retain the original boundary and execution identities. [`SOURCE-SHA256SUMS`](SOURCE-SHA256SUMS) covers these files. The public README is an onboarding wrapper.
+
+Historical `TAU` identifiers remain in frozen source and output. New prose uses **THAIM**. Changing the spelling in a frozen artifact would change its identity without changing the physics.

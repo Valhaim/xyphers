@@ -1,0 +1,45 @@
+XYPHERS LOCAL-FUTURE-TEST EXPECTED RESULTS
+
+Small exhaustive classifier
+  Domain: connected labelled simple unit-weight graphs, N=3..6;
+          every missing edge; tau=1..5.
+  Connected graphs: 27,474
+  Graph-candidate-edge-horizon cases: 947,935
+
+  local > 0, global > 0: 919,585
+  local > 0, global < 0: 0
+  local <= 0, global > 0: 1,440
+  local <= 0, global < 0: 26,910
+
+Node-level comparison record
+  Node-graph-candidate-edge-horizon comparisons: 5,671,025
+  Individual negative endpoint-entropy changes: 772,758
+
+N=7 exhaustive boundary
+  Connected labelled graphs: 1,866,256
+  Graph-candidate-edge-horizon cases across tau=3,4,5: 56,779,632
+  Locally positive and globally negative: 117,180
+  At tau=3: 5,040
+  The stored notebook conflicts on the tau=4/tau=5 split. It is omitted.
+
+Minimum-degree-two boundaries
+  N=7: 34,020 failures at tau=4; none at tau=3 or tau=5.
+  N=8, tau=3: 169,488,200 connected graphs with minimum degree >=2;
+  1,952,212,864 locally positive graph-candidate-edge checks;
+  384,720 globally negative approvals.
+
+Restricted distance-three tree at tau=3
+  D=1,762; d_v=7; N=1,770
+  Phi0=-1.427676 (rounded)
+  Phi1=+1.441751 (rounded)
+  Affected-set sum=+0.01407462
+  Outside sum=-0.01419718
+  Global sum=-0.00012256
+
+Numerical boundaries
+  Small classifier sign tolerance: 1e-10.
+  N=7 verifier sign tolerance: 1e-12, applied to the affected-set and
+  graph-wide averages.
+  N=8 verifier sign tolerance: 1e-12, applied to the affected-set and
+  full-graph sums. The sign agrees with the corresponding averages because
+  each denominator is positive; the units nevertheless differ.

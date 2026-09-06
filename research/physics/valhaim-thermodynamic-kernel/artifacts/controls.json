@@ -1,0 +1,350 @@
+{
+  "artifact_kind": "controls",
+  "experiment_id": "valhaim-thermodynamic-kernel-v1",
+  "first_failed_gate": null,
+  "gates": [
+    {
+      "evidence": [
+        {
+          "pointer": "#/provenance"
+        }
+      ],
+      "failure_code": null,
+      "id": "K01_FREEZE_IDENTITY",
+      "status": "pass"
+    }
+  ],
+  "mutations": [
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/0/witness"
+        }
+      ],
+      "expected_first_failure": "K04_REVERSE_INVOLUTION",
+      "id": "M01_MISSING_REVERSE",
+      "note": "removed LL|00 a:0 active edge while retaining its target-side slot",
+      "observed_first_failure": "K04_REVERSE_INVOLUTION",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "hazard": "0/1",
+          "outcome": "WAIT",
+          "post": "LL|00"
+        },
+        "before": {
+          "hazard": "1/1",
+          "outcome": "MOVE",
+          "post": "HL|0"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "replace_move_with_wait",
+        "scope": "microscopic_transition",
+        "selector": {
+          "pre": "LL|00",
+          "slot": "a:0"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/1/witness"
+        }
+      ],
+      "expected_first_failure": "K07_THERMODYNAMIC_PREDICTION",
+      "id": "M02_DIRECTED_HAZARD",
+      "note": "changed one directed microscopic hazard from 1 to 2",
+      "observed_first_failure": "K07_THERMODYNAMIC_PREDICTION",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "hazard": "2/1"
+        },
+        "before": {
+          "hazard": "1/1"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "scale_one_direction",
+        "scope": "microscopic_hazard",
+        "selector": {
+          "pre": "LL|00",
+          "slot": "a:0"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/2/witness"
+        }
+      ],
+      "expected_first_failure": "K02_INDEPENDENT_COORDINATES",
+      "id": "M03_FALSE_BODY_MULTIPLICITY",
+      "note": "declared x=1 body multiplicity 3 while enumeration returned 2",
+      "observed_first_failure": "K02_INDEPENDENT_COORDINATES",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "declared_g_X": "3"
+        },
+        "before": {
+          "enumerated_g_X": "2"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "replace_multiplicity",
+        "scope": "coordinate_declaration",
+        "selector": {
+          "macro": "x=1"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/3/witness"
+        }
+      ],
+      "expected_first_failure": "K02_INDEPENDENT_COORDINATES",
+      "id": "M04_ENDOGENOUS_ALPHA",
+      "note": "replaced independent reservoir alpha origin with ProductionCurrentAlpha",
+      "observed_first_failure": "K02_INDEPENDENT_COORDINATES",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "origin": "ProductionCurrentAlpha",
+          "value": "epsilon/ln(2)"
+        },
+        "before": {
+          "origin": "IndependentReservoir",
+          "value": "epsilon/ln(2)"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "replace_source_adapter",
+        "scope": "alpha_source",
+        "selector": {
+          "coordinate": "alpha"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/4/witness"
+        }
+      ],
+      "expected_first_failure": "K06_STRONG_LUMPABILITY",
+      "id": "M05_HIDDEN_ROW_SPLIT",
+      "note": "materialized two LH|0 hidden-history rows with different projected a:0 outcomes",
+      "observed_first_failure": "K06_STRONG_LUMPABILITY",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "history_1": "WAIT:LH|0"
+        },
+        "before": {
+          "history_0": "MOVE:HH|empty"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "split_projected_row",
+        "scope": "hidden_history",
+        "selector": {
+          "slot": "a:0",
+          "visible_state": "LH|0"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/5/witness"
+        }
+      ],
+      "expected_first_failure": "K05_PATH_ACCOUNTING",
+      "id": "M06_CORRUPT_RESERVOIR_DELTA",
+      "note": "recorded zero reservoir delta on a body-energy-raising move",
+      "observed_first_failure": "K05_PATH_ACCOUNTING",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "delta_reservoir": "0/1"
+        },
+        "before": {
+          "delta_reservoir": "-1/1"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "replace_recorded_delta",
+        "scope": "path_accounting",
+        "selector": {
+          "pre": "LL|00",
+          "slot": "a:0"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/6/witness"
+        }
+      ],
+      "expected_first_failure": "K09_RELAXATION",
+      "id": "M07_DISCONNECTED_TOP_STATE",
+      "note": "converted every x=1 to x=2 move and reverse to WAIT",
+      "observed_first_failure": "K09_RELAXATION",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 8,
+        "after": {
+          "channel": "WAIT"
+        },
+        "before": {
+          "channel": "reciprocal_move"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "replace_energy_boundary_moves_with_wait",
+        "scope": "microscopic_transition_set",
+        "selector": {
+          "boundary": "x=1<->x=2"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/7/witness"
+        }
+      ],
+      "expected_first_failure": "K04_REVERSE_INVOLUTION",
+      "id": "M08_POSITIVE_AFFINITY_ONLY",
+      "note": "removed every nonpositive-affinity move while retaining positive reverse moves",
+      "observed_first_failure": "K04_REVERSE_INVOLUTION",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 20,
+        "after": {
+          "channel": "WAIT"
+        },
+        "before": {
+          "channel": "reciprocal_move"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "filter_nonpositive_affinity",
+        "scope": "microscopic_transition_set",
+        "selector": {
+          "predicate": "Xi<=0"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/8/witness"
+        }
+      ],
+      "expected_first_failure": "C02_CLOCK_RETENTION",
+      "id": "M09_ACTIVE_ONLY_CONTACT",
+      "note": "removed dormant contact slots and renormalized each row over active slots",
+      "observed_first_failure": "C02_CLOCK_RETENTION",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 8,
+        "after": {
+          "probability": "renormalized",
+          "slot_set": "active_only"
+        },
+        "before": {
+          "probability": "1/4",
+          "slot_set": "fixed_four"
+        },
+        "fixture_id": "equal-alpha-A-B",
+        "operator": "drop_dormant_slots_and_renormalize",
+        "scope": "contact_clock",
+        "selector": {
+          "clock": "four_pair_slots"
+        }
+      }
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/mutations/9/witness"
+        }
+      ],
+      "expected_first_failure": "K03_ROW_CLOSURE",
+      "id": "M10_WRONG_WORD_LENGTH",
+      "note": "raised unit a without popping the depth-two reservoir word",
+      "observed_first_failure": "K03_ROW_CLOSURE",
+      "verdict": "matched",
+      "witness": {
+        "affected_count": 1,
+        "after": {
+          "post": "HL|00"
+        },
+        "before": {
+          "post": "HL|0"
+        },
+        "fixture_id": "primary-r2",
+        "operator": "suppress_reservoir_pop",
+        "scope": "complete_state_transition",
+        "selector": {
+          "pre": "LL|00",
+          "slot": "a:0"
+        }
+      }
+    }
+  ],
+  "provenance": {
+    "command_argv": [
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/runner/target/debug/valhaim-thermodynamic-kernel-runner",
+      "--repo-root",
+      "/Users/andreasrudolph/thaim",
+      "--output-dir",
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/artifacts",
+      "--runner-seal",
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/runner-seal.json"
+    ],
+    "executable_sha256": "325cb696bb886077974fb84555f2580eef87767f1791431911773da92204bf45",
+    "freeze_commit": "c3d9a5c6404c1c42aa938a400d3554a1ec670051",
+    "freeze_manifest_sha256": "1108cd08078bf969ddf0064cf30ca551190e00886e15972d0f76776d0b16b49b",
+    "protocol_sha256": "a1900b99160810f2bdc517ac1cbd19e8336987c2b8cca3b6c02d89f589aff07b",
+    "relevant_source_clean": true,
+    "relevant_source_paths": [
+      "research/physics/valhaim-thermodynamic-kernel/SCHEMA.json",
+      "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.lock",
+      "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.toml",
+      "research/physics/valhaim-thermodynamic-kernel/runner/build.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/source-set.txt",
+      "research/physics/valhaim-thermodynamic-kernel/runner/src/lib.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/src/main.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/tests/exact.rs"
+    ],
+    "relevant_source_sha256": "4b104b15db301c4f67bac95d68f053e955ece8f367eb6aff744026d869e3f9ad",
+    "runner_seal_commit": "d551f7003fe52bd5949f76ac4dd58c8aa7157821",
+    "schema_sha256": "c85ea1e1d9a26b5cb6f617a5211683df2ff7a21a47eaae52623bc7cdfc9a8448",
+    "toolchain": {
+      "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+      "cargo_lock_sha256": "3aa9b8b17d4d3f47baf2d490094246848f5bdb5a1fa85ac9e8eee9795cb598a1",
+      "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+      "target": "aarch64-apple-darwin"
+    }
+  },
+  "run_id": "VK1-EXACT-001",
+  "schema_version": 1,
+  "status": "pass",
+  "summary": {
+    "earned_claim_codes": [
+      "MUTATION_FIRST_FAILURES_MATCH"
+    ],
+    "excluded_claim_codes": [],
+    "source_gates": [
+      "K01_FREEZE_IDENTITY"
+    ],
+    "verdict_code": "FROZEN_CONTROLS_DISCRIMINATED"
+  }
+}

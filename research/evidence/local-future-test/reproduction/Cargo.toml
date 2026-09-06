@@ -1,0 +1,40 @@
+[package]
+name = "thaim-core"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[features]
+default = []
+parallel = ["dep:rayon"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+libm = "0.2"
+rand = "0.8"
+rand_distr = "0.4"
+rayon = { version = "1.10", optional = true }
+
+[[bin]]
+name = "converse-verify"
+path = "src/bin/converse_verify.rs"
+
+[[bin]]
+name = "tau-bounded-verify"
+path = "src/bin/tau_bounded_verify.rs"
+
+[[bin]]
+name = "dmin2-detail"
+path = "src/bin/dmin2_detail.rs"
+
+[[bin]]
+name = "m3-verify-n8"
+path = "src/bin/m3_verify_n8.rs"
+
+[[bin]]
+name = "weighted-filter-verify"
+path = "src/bin/weighted_filter_verify.rs"
+
+[[bin]]
+name = "dist3-limit"
+path = "src/bin/dist3_limit.rs"

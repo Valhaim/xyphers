@@ -1,0 +1,751 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xyphers.com/schema/val-kernel-v1.json",
+  "title": "VAL-KERNEL exact evidence v1",
+  "description": "Compact contract for the first exact runner. The frozen manifest owns constants, gate order, mutation mappings, and deferred integration scope. No floating-point scientific value is admitted.",
+  "oneOf": [
+    { "$ref": "#/$defs/kernel_exact" },
+    { "$ref": "#/$defs/controls" },
+    { "$ref": "#/$defs/contact" },
+    { "$ref": "#/$defs/deferred" }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "git_oid": {
+      "type": "string",
+      "pattern": "^(?:[0-9a-f]{40}|[0-9a-f]{64})$"
+    },
+    "rational": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)/[1-9][0-9]*$",
+      "description": "Reduced n/d with positive d; integers use n/1. Semantic validation rejects -0/d and gcd greater than one."
+    },
+    "basis": {
+      "enum": ["epsilon", "kappa", "kappa_contact", "kappa_contact*epsilon"]
+    },
+    "scaled": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coefficient", "basis_id"],
+      "properties": {
+        "coefficient": { "$ref": "#/$defs/rational" },
+        "basis_id": { "$ref": "#/$defs/basis" }
+      }
+    },
+    "vector": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/rational" }
+    },
+    "matrix": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/vector" }
+    },
+    "gate_id": {
+      "enum": [
+        "K01_FREEZE_IDENTITY",
+        "K02_INDEPENDENT_COORDINATES",
+        "K03_ROW_CLOSURE",
+        "K04_REVERSE_INVOLUTION",
+        "K05_PATH_ACCOUNTING",
+        "K06_STRONG_LUMPABILITY",
+        "K07_THERMODYNAMIC_PREDICTION",
+        "K08_EQUILIBRIUM",
+        "K09_RELAXATION",
+        "K10_INDEPENDENT_GENERATOR",
+        "X01_XYPHER_REPRESENTATION",
+        "C01_PREPARATION",
+        "C02_CLOCK_RETENTION",
+        "C03_CONSERVED_EXCHANGE",
+        "C04_REVERSE_AND_CLOSURE",
+        "C05_EQUAL_TEMPERATURE_LAW",
+        "C06_ZERO_CURRENT",
+        "C07_THIRD_BODY",
+        "C08_TEMPERATURE_SENSITIVITY"
+      ]
+    },
+    "status": {
+      "enum": ["pass", "fail", "not_run", "not_applicable", "invalidated"]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pointer"],
+      "properties": {
+        "pointer": { "type": "string", "pattern": "^#(?:/.*)?$" },
+        "sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "evidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/gate_id" },
+        "status": { "$ref": "#/$defs/status" },
+        "evidence": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidence" }
+        },
+        "failure_code": {
+          "type": ["string", "null"],
+          "pattern": "^[A-Z][A-Z0-9_]*$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freeze_commit",
+        "runner_seal_commit",
+        "protocol_sha256",
+        "freeze_manifest_sha256",
+        "schema_sha256",
+        "relevant_source_clean",
+        "relevant_source_paths",
+        "relevant_source_sha256",
+        "executable_sha256",
+        "command_argv",
+        "toolchain"
+      ],
+      "properties": {
+        "freeze_commit": { "const": "c3d9a5c6404c1c42aa938a400d3554a1ec670051" },
+        "runner_seal_commit": { "$ref": "#/$defs/git_oid" },
+        "protocol_sha256": { "const": "a1900b99160810f2bdc517ac1cbd19e8336987c2b8cca3b6c02d89f589aff07b" },
+        "freeze_manifest_sha256": { "const": "1108cd08078bf969ddf0064cf30ca551190e00886e15972d0f76776d0b16b49b" },
+        "schema_sha256": { "$ref": "#/$defs/sha256" },
+        "relevant_source_clean": { "const": true },
+        "relevant_source_paths": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "relevant_source_sha256": {
+          "$ref": "#/$defs/sha256",
+          "description": "SHA-256 of lexicographically sorted UTF-8 records path, NUL, lowercase file SHA-256, LF. Paths are repository-relative."
+        },
+        "executable_sha256": { "$ref": "#/$defs/sha256" },
+        "command_argv": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" }
+        },
+        "toolchain": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["rustc", "cargo", "target", "cargo_lock_sha256"],
+          "properties": {
+            "rustc": { "type": "string", "minLength": 1 },
+            "cargo": { "type": "string", "minLength": 1 },
+            "target": { "type": "string", "minLength": 1 },
+            "cargo_lock_sha256": { "$ref": "#/$defs/sha256" }
+          }
+        }
+      },
+      "description": "relevant_source_clean means every listed path matches the runner-seal commit. It applies only to the runner, schema, lockfile, and imported scientific modules. Unrelated repository dirt does not invalidate a run."
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict_code", "earned_claim_codes", "excluded_claim_codes", "source_gates"],
+      "properties": {
+        "verdict_code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+        "earned_claim_codes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+          "uniqueItems": true
+        },
+        "excluded_claim_codes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]*$" },
+          "uniqueItems": true
+        },
+        "source_gates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gate_id" },
+          "uniqueItems": true
+        }
+      },
+      "description": "Derived only from gates and payload. This is the compact article-generation surface, not an independent claim source."
+    },
+    "base": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "experiment_id",
+        "artifact_kind",
+        "run_id",
+        "provenance",
+        "status",
+        "first_failed_gate",
+        "gates",
+        "summary"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "experiment_id": { "const": "valhaim-thermodynamic-kernel-v1" },
+        "artifact_kind": { "type": "string" },
+        "run_id": { "type": "string", "pattern": "^VK1-[A-Z0-9_-]+$" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "status": { "$ref": "#/$defs/status" },
+        "first_failed_gate": {
+          "oneOf": [{ "$ref": "#/$defs/gate_id" }, { "type": "null" }]
+        },
+        "gates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gate" }
+        },
+        "summary": { "$ref": "#/$defs/summary" }
+      }
+    },
+    "transition_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre",
+        "slot",
+        "outcome",
+        "post",
+        "macro_from",
+        "macro_to",
+        "probability",
+        "hazard_over_activity",
+        "delta_body_energy",
+        "delta_reservoir_energy",
+        "external_work"
+      ],
+      "properties": {
+        "pre": { "type": "string" },
+        "slot": { "type": "string" },
+        "outcome": { "enum": ["MOVE", "WAIT"] },
+        "post": { "type": "string" },
+        "reverse_slot": { "type": ["string", "null"] },
+        "macro_from": { "type": "string" },
+        "macro_to": { "type": "string" },
+        "probability": { "$ref": "#/$defs/rational" },
+        "hazard_over_activity": { "$ref": "#/$defs/rational" },
+        "delta_body_energy": { "$ref": "#/$defs/scaled" },
+        "delta_reservoir_energy": { "$ref": "#/$defs/scaled" },
+        "external_work": { "$ref": "#/$defs/scaled" }
+      }
+    },
+    "complete_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "macro", "coordinates", "body_energy", "reservoir_energy"],
+      "properties": {
+        "id": { "type": "string" },
+        "macro": { "type": "string" },
+        "coordinates": { "type": "string", "description": "Canonical human-readable placement and reservoir word." },
+        "body_energy": { "$ref": "#/$defs/scaled" },
+        "reservoir_energy": { "$ref": "#/$defs/scaled" }
+      }
+    },
+    "crystal_readout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "channel",
+        "included_in_move_kernel",
+        "uniform",
+        "persistent_state_unchanged",
+        "row_count",
+        "outcome_count",
+        "rows",
+        "rows_sha256"
+      ],
+      "properties": {
+        "mode": { "enum": ["auxiliary_non_mutating", "protocol_native"] },
+        "channel": { "const": "REFRESH" },
+        "included_in_move_kernel": { "const": false },
+        "uniform": { "type": "boolean" },
+        "persistent_state_unchanged": { "type": "boolean" },
+        "row_count": { "type": "integer", "minimum": 1 },
+        "outcome_count": { "type": "integer", "minimum": 1 },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "pre",
+              "fixed_macro",
+              "fixed_reservoir_word",
+              "reported_placement",
+              "probability",
+              "persistent_post",
+              "persistent_state_changed"
+            ],
+            "properties": {
+              "pre": { "type": "string" },
+              "fixed_macro": { "type": "string" },
+              "fixed_reservoir_word": { "type": "string" },
+              "reported_placement": { "type": "string" },
+              "probability": { "$ref": "#/$defs/rational" },
+              "persistent_post": { "type": "string" },
+              "persistent_state_changed": { "type": "boolean" }
+            }
+          }
+        },
+        "rows_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "metamorphic_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "baseline_scale",
+        "transformed_scale",
+        "invariant_fields",
+        "covariant_fields"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "unit-label-exchange",
+            "reservoir-symbol-exchange",
+            "node-height-covariance",
+            "epsilon-alpha-common-scale",
+            "kappa-time-scale",
+            "kappa-contact-time-scale"
+          ]
+        },
+        "status": { "enum": ["pass", "fail"] },
+        "baseline_scale": { "$ref": "#/$defs/rational" },
+        "transformed_scale": { "$ref": "#/$defs/rational" },
+        "invariant_fields": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "covariant_fields": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "negative_control_rejected": { "type": "boolean" }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "state_count",
+        "states",
+        "macro_labels",
+        "fiber_counts",
+        "body_multiplicities",
+        "reservoir_multiplicities",
+        "alpha_source",
+        "slot_count",
+        "rows",
+        "crystal_readout",
+        "P",
+        "Q_over_activity",
+        "equilibrium",
+        "active_outcome_count",
+        "wait_outcome_count",
+        "reciprocal_micro_edge_count",
+        "connected",
+        "aperiodic",
+        "unique_stationary_law",
+        "strongly_lumpable",
+        "metamorphic_checks",
+        "metamorphic_checks_sha256"
+      ],
+      "properties": {
+        "id": { "enum": ["primary-r2", "ternary-reservoir-r3", "three-node-path-r2"] },
+        "state_count": { "type": "integer", "minimum": 1 },
+        "states": { "type": "array", "items": { "$ref": "#/$defs/complete_state" } },
+        "macro_labels": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "fiber_counts": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "body_multiplicities": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "reservoir_multiplicities": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "alpha_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reservoir_branching", "origin", "symbolic_value", "relation"],
+          "properties": {
+            "reservoir_branching": { "type": "integer", "minimum": 2 },
+            "origin": { "const": "IndependentReservoir" },
+            "symbolic_value": { "const": "epsilon/ln(r)" },
+            "relation": { "const": "alpha=epsilon/ln(r)" }
+          }
+        },
+        "slot_count": { "type": "integer", "minimum": 1 },
+        "rows": { "type": "array", "items": { "$ref": "#/$defs/transition_row" } },
+        "crystal_readout": { "$ref": "#/$defs/crystal_readout" },
+        "P": { "$ref": "#/$defs/matrix" },
+        "Q_over_activity": { "$ref": "#/$defs/matrix" },
+        "equilibrium": { "$ref": "#/$defs/vector" },
+        "active_outcome_count": { "type": "integer", "minimum": 1 },
+        "wait_outcome_count": { "type": "integer", "minimum": 0 },
+        "reciprocal_micro_edge_count": { "type": "integer", "minimum": 1 },
+        "generator_eigenvalues_over_activity": { "$ref": "#/$defs/vector" },
+        "discrete_eigenvalues": { "$ref": "#/$defs/vector" },
+        "ldb_cross_products_equal": { "type": "boolean" },
+        "connected": { "type": "boolean" },
+        "aperiodic": { "type": "boolean" },
+        "unique_stationary_law": { "type": "boolean" },
+        "strongly_lumpable": { "type": "boolean" },
+        "metamorphic_checks": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/metamorphic_check" }
+        },
+        "metamorphic_checks_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "id": { "const": "primary-r2" } },
+            "required": ["id"]
+          },
+          "then": {
+            "required": ["generator_eigenvalues_over_activity", "discrete_eigenvalues"]
+          }
+        }
+      ],
+      "description": "states contains state_count unique IDs. rows contains state_count times slot_count entries. The three fixture IDs occur once each in a complete kernel artifact."
+    },
+    "xypher_representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "substrate",
+        "crystal",
+        "thermodynamic_harness",
+        "base_praxion",
+        "action",
+        "ruby",
+        "auxiliary_components"
+      ],
+      "properties": {
+        "substrate": { "type": "string", "minLength": 1 },
+        "crystal": { "type": "string", "minLength": 1 },
+        "thermodynamic_harness": { "type": "string", "minLength": 1 },
+        "base_praxion": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "ruby": { "const": "empty" },
+        "auxiliary_components": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      }
+    },
+    "controls_dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "status", "compact_payload_sha256", "required_mutations_matched"],
+      "properties": {
+        "run_id": { "const": "VK1-EXACT-001" },
+        "status": { "enum": ["pass", "fail"] },
+        "compact_payload_sha256": { "$ref": "#/$defs/sha256" },
+        "required_mutations_matched": { "type": "boolean" }
+      }
+    },
+    "kernel_exact": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/base" },
+        {
+          "type": "object",
+          "required": ["controls_dependency", "xypher_representation", "fixtures"],
+          "properties": {
+            "artifact_kind": { "const": "kernel_exact" },
+            "controls_dependency": { "$ref": "#/$defs/controls_dependency" },
+            "xypher_representation": { "$ref": "#/$defs/xypher_representation" },
+            "fixtures": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": { "$ref": "#/$defs/fixture" }
+            }
+          }
+        }
+      ]
+    },
+    "mutation_id": {
+      "enum": [
+        "M01_MISSING_REVERSE",
+        "M02_DIRECTED_HAZARD",
+        "M03_FALSE_BODY_MULTIPLICITY",
+        "M04_ENDOGENOUS_ALPHA",
+        "M05_HIDDEN_ROW_SPLIT",
+        "M06_CORRUPT_RESERVOIR_DELTA",
+        "M07_DISCONNECTED_TOP_STATE",
+        "M08_POSITIVE_AFFINITY_ONLY",
+        "M09_ACTIVE_ONLY_CONTACT",
+        "M10_WRONG_WORD_LENGTH"
+      ]
+    },
+    "mutation_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "scope", "operator", "selector", "before", "after", "affected_count"],
+      "properties": {
+        "fixture_id": { "enum": ["primary-r2", "equal-alpha-A-B"] },
+        "scope": {
+          "enum": [
+            "microscopic_transition",
+            "microscopic_hazard",
+            "coordinate_declaration",
+            "alpha_source",
+            "hidden_history",
+            "path_accounting",
+            "microscopic_transition_set",
+            "contact_clock",
+            "complete_state_transition"
+          ]
+        },
+        "operator": {
+          "enum": [
+            "replace_move_with_wait",
+            "scale_one_direction",
+            "replace_multiplicity",
+            "replace_source_adapter",
+            "split_projected_row",
+            "replace_recorded_delta",
+            "replace_energy_boundary_moves_with_wait",
+            "filter_nonpositive_affinity",
+            "drop_dormant_slots_and_renormalize",
+            "suppress_reservoir_pop"
+          ]
+        },
+        "selector": { "type": "object", "additionalProperties": { "type": "string" } },
+        "before": { "type": "object", "additionalProperties": { "type": "string" } },
+        "after": { "type": "object", "additionalProperties": { "type": "string" } },
+        "affected_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "expected_first_failure", "observed_first_failure", "verdict", "witness", "note", "evidence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/mutation_id" },
+        "expected_first_failure": { "$ref": "#/$defs/gate_id" },
+        "observed_first_failure": {
+          "oneOf": [{ "$ref": "#/$defs/gate_id" }, { "type": "null" }]
+        },
+        "verdict": { "enum": ["matched", "unexpected_failure", "survived", "not_run", "invalidated"] },
+        "witness": { "$ref": "#/$defs/mutation_witness" },
+        "note": { "type": "string", "minLength": 1 },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } }
+      },
+      "description": "The sealed semantic validator compares id and expected_first_failure against the runner mapping derived from the frozen manifest."
+    },
+    "controls": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/base" },
+        {
+          "type": "object",
+          "required": ["mutations"],
+          "properties": {
+            "artifact_kind": { "const": "controls" },
+            "mutations": {
+              "type": "array",
+              "minItems": 10,
+              "maxItems": 10,
+              "items": { "$ref": "#/$defs/mutation" }
+            }
+          }
+        }
+      ]
+    },
+    "contact_case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "left_body",
+        "right_body",
+        "isolated_preparation_left",
+        "isolated_preparation_right",
+        "preparation",
+        "P",
+        "Q_over_kappa_contact",
+        "current_into_left",
+        "rows",
+        "clock_unchanged"
+      ],
+      "properties": {
+        "id": { "enum": ["equal-alpha-A-B", "fresh-third-A-C", "unequal-r2-r4", "unequal-r4-r2"] },
+        "left_body": { "enum": ["A", "B", "C"] },
+        "right_body": { "enum": ["A", "B", "C"] },
+        "isolated_preparation_left": { "$ref": "#/$defs/vector" },
+        "isolated_preparation_right": { "$ref": "#/$defs/vector" },
+        "preparation": { "$ref": "#/$defs/vector" },
+        "P": { "$ref": "#/$defs/matrix" },
+        "Q_over_kappa_contact": { "$ref": "#/$defs/matrix" },
+        "current_into_left": { "$ref": "#/$defs/scaled" },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["pre", "slot", "outcome", "post", "probability", "delta_energy_left", "delta_energy_right"],
+            "properties": {
+              "pre": { "type": "string" },
+              "slot": { "type": "string" },
+              "outcome": { "enum": ["MOVE", "WAIT"] },
+              "post": { "type": "string" },
+              "probability": { "$ref": "#/$defs/rational" },
+              "delta_energy_left": { "$ref": "#/$defs/scaled" },
+              "delta_energy_right": { "$ref": "#/$defs/scaled" }
+            }
+          }
+        },
+        "clock_unchanged": { "type": "boolean" },
+        "rows_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "contact_clock_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre",
+        "slot",
+        "probability",
+        "slot_rate_over_kappa_contact",
+        "outcome",
+        "post",
+        "delta_energy_left",
+        "delta_energy_right"
+      ],
+      "properties": {
+        "pre": { "type": "string" },
+        "slot": { "type": "string" },
+        "probability": { "$ref": "#/$defs/rational" },
+        "slot_rate_over_kappa_contact": { "$ref": "#/$defs/rational" },
+        "outcome": { "enum": ["MOVE", "WAIT"] },
+        "post": { "type": "string" },
+        "delta_energy_left": { "$ref": "#/$defs/scaled" },
+        "delta_energy_right": { "$ref": "#/$defs/scaled" }
+      }
+    },
+    "contact_clock_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_count",
+        "slot_count",
+        "dormant_rows",
+        "open_rows",
+        "dormant_rows_sha256",
+        "open_rows_sha256",
+        "crystal_before_sha256",
+        "crystal_after_sha256",
+        "retained_channel_count",
+        "retained_before_sha256",
+        "retained_after_sha256",
+        "clock_unchanged"
+      ],
+      "properties": {
+        "state_count": { "const": 6 },
+        "slot_count": { "const": 4 },
+        "dormant_rows": {
+          "type": "array",
+          "minItems": 24,
+          "maxItems": 24,
+          "items": { "$ref": "#/$defs/contact_clock_row" }
+        },
+        "open_rows": {
+          "type": "array",
+          "minItems": 24,
+          "maxItems": 24,
+          "items": { "$ref": "#/$defs/contact_clock_row" }
+        },
+        "dormant_rows_sha256": { "$ref": "#/$defs/sha256" },
+        "open_rows_sha256": { "$ref": "#/$defs/sha256" },
+        "crystal_before_sha256": { "$ref": "#/$defs/sha256" },
+        "crystal_after_sha256": { "$ref": "#/$defs/sha256" },
+        "retained_channel_count": { "const": 0 },
+        "retained_before_sha256": { "$ref": "#/$defs/sha256" },
+        "retained_after_sha256": { "$ref": "#/$defs/sha256" },
+        "clock_unchanged": { "type": "boolean" }
+      }
+    },
+    "kernel_dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "status", "compact_payload_sha256", "required_gates_passed", "claim_ladder_passed"],
+      "properties": {
+        "run_id": { "const": "VK1-EXACT-001" },
+        "status": { "enum": ["pass", "fail", "invalidated"] },
+        "compact_payload_sha256": { "$ref": "#/$defs/sha256" },
+        "required_gates_passed": { "type": "boolean" },
+        "claim_ladder_passed": { "type": "boolean" }
+      }
+    },
+    "contact": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/base" },
+        {
+          "type": "object",
+          "required": ["kernel_dependency", "clock_evidence", "cases", "swapped_current_sign_reversed", "metamorphic_checks", "metamorphic_checks_sha256"],
+          "properties": {
+            "artifact_kind": { "const": "contact" },
+            "kernel_dependency": { "$ref": "#/$defs/kernel_dependency" },
+            "clock_evidence": { "$ref": "#/$defs/contact_clock_evidence" },
+            "cases": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": { "$ref": "#/$defs/contact_case" }
+            },
+            "swapped_current_sign_reversed": { "type": "boolean" },
+            "metamorphic_checks": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": { "$ref": "#/$defs/metamorphic_check" }
+            },
+            "metamorphic_checks_sha256": { "$ref": "#/$defs/sha256" }
+          }
+        }
+      ]
+    },
+    "deferred": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/base" },
+        {
+          "type": "object",
+          "required": ["reason"],
+          "properties": {
+            "artifact_kind": { "enum": ["ledger_integration_deferred", "feature_evidence_deferred"] },
+            "status": { "const": "not_run" },
+            "reason": { "type": "string", "minLength": 1 }
+          }
+        }
+      ],
+      "description": "A placeholder only. Ledger and advanced-feature evidence require a separately sealed schema extension before execution."
+    }
+  },
+  "x-semantic-rules": [
+    "Rationals are reduced and never negative zero.",
+    "Gate, fixture, mutation, and contact IDs are unique; complete artifacts contain every frozen ID exactly once.",
+    "The first failed gate follows the frozen manifest order.",
+    "Matrix rows are rectangular and have dimensions implied by their fixture.",
+    "Exact transition row counts equal state_count times slot_count.",
+    "Summary claims are derived from the same artifact and add no independent conclusion.",
+    "No sampled frequency substitutes for an exact equality gate."
+  ]
+}

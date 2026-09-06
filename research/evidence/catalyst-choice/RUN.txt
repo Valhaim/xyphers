@@ -1,0 +1,80 @@
+XYPHERS CATALYST-CHOICE INSPECTION AND REPRODUCTION PATHS
+
+The download packet has two different reproduction surfaces.
+
+1. CHEM-V8 blinded shape test: inspect and reconstruct
+
+The packet includes the frozen Rust evaluator, its molecular implementation,
+the exposed-development source files needed by its cohort guard, the exact
+target-column extractor, protocol, manifest, and result. It does not include
+the Kraken workbook, the source-structure table derived from it, or the
+SMILES-bearing 934-row prediction table.
+
+Obtain `ja1c09718_si_002.zip` from
+https://doi.org/10.1021/jacs.1c09718.s002. Verify the archive MD5 and the
+`descriptors.xlsx` SHA-256 in CHEM-V8-Manifest.txt.
+
+Reconstruct `STRUCTURES.tsv` from the `DFT_data` sheet in workbook order. It
+must contain the lowercase tab-separated header `id<TAB>smiles`, followed by
+the 1,558 `ID` and `smiles` records with LF line endings. Its exact SHA-256 must
+be:
+
+  4e0b7514858715bb3d2ac681007e32d06aab1d787b78ffbf473622b360f203b9
+
+The packet does not contain the original workbook-to-structures preparation
+script, so this is a hash-checked reconstruction path rather than a turnkey
+replay. Do not claim an exact V8 reproduction unless that hash matches.
+
+After the target reveal, extract only the declared target columns:
+
+  python chem_v8/extract_kraken_targets.py descriptors.xlsx TARGETS.tsv
+
+Then reconstruct the frozen predictions and verify their retained manifest
+hash before evaluating:
+
+  cargo run --manifest-path chem_v8/Cargo.toml --bin chem-v8-blind -- \
+    predict STRUCTURES.tsv chem_v8/exposed PREDICTIONS.tsv
+
+  sha256sum PREDICTIONS.tsv
+
+Expected prediction SHA-256:
+
+  7b381df39bf26a33a70a4348f063a1af4741aecffbbf952a0e70e093b604e629
+
+  cargo run --manifest-path chem_v8/Cargo.toml --bin chem-v8-blind -- \
+    evaluate PREDICTIONS.tsv TARGETS.tsv REPORT.md
+
+The required structure and target columns, cohort rules, and hashes are fixed
+in CHEM-V8-Preregistration.md and CHEM-V8-Manifest.txt. The public result can
+also be inspected without reconstructing the licensed source tables.
+
+2. CHEM-V10 repaired yield analysis
+
+The packet includes the complete target-free CHEM-V9 freeze, both evaluators,
+the V10 preflight, and requirements. These retained ORD-derived artifacts are
+distributed under CC BY-SA 4.0 with attribution and modification details in
+ORD-DATA-NOTICE.txt. The raw ORD parquet is not included. Download the
+immutable source object linked in README.txt, then run from the packet root:
+
+  uv run --with-requirements chem_v10/requirements.txt \
+    python chem_v10/chem_v10_evaluate.py preflight \
+    chem_v9/frozen chem_v10/frozen/required_slot_preflight.replay.json
+
+  uv run --with-requirements chem_v9/requirements.txt \
+    python chem_v9/chem_v9_evaluate.py extract-targets \
+    /path/to/ord_dataset-805ad863feef48579d95d86a728035f4.parquet \
+    chem_v9/frozen/loaded_memberships.tsv \
+    chem_v9/results/chem_v9_targets.replay.tsv
+
+  uv run --with-requirements chem_v10/requirements.txt \
+    python chem_v10/chem_v10_evaluate.py evaluate \
+    chem_v9/frozen chem_v9/results/chem_v9_targets.replay.tsv \
+    chem_v10/results/CHEM-V10-Result.replay.json
+
+The evaluator verifies the frozen feature manifest and the extracted target
+table's SHA-256 before computing the result. Compare the replay JSON with the
+supplied CHEM-V10-Result.json and numerical audit.
+
+Scope
+  Replaying an evaluator checks the published computation. It does not turn
+  the observational yield comparison into a randomized catalyst experiment.

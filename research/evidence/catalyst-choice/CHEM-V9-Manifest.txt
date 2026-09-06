@@ -1,0 +1,54 @@
+CHEM-V9 BLINDED FREEZE MANIFEST
+
+freeze_artifact_commit=bfb3bdbb0c4c63daf7f530df5522bdd46ffd7a10
+target_status_at_freeze=unopened
+decoded_outcomes_at_freeze=0
+outcome_envelopes_stripped_without_payload_decode=50688
+protocol_tests_passed=20
+
+SOURCE
+dataset_id=ord_dataset-805ad863feef48579d95d86a728035f4
+parquet_sha256=31b7c4762145e5dad973050373cd967bdd85caf3a9858767c83a17fed6c4af36
+parquet_bytes=5088296
+source_rows=50688
+row_groups=51
+
+COHORT
+eligible_structures=45
+eligible_rows=17632
+loaded_rows=49632
+primary_experiments=14
+primary_blocks=864
+exact_permutations=6912
+permutable_structures=19
+
+FREEZE INPUT SHA256
+CHEM-V9-Preregistration.md=36f16f8d6f758999d8a26235f56a5188560f5f659afa61d2f5f5e5b7ef476df1
+README.md=4e3646150a56e8b295b46da64bd24572ab47672e704382233c722fd8c368551e
+chem_v9_evaluate.py=731fc7078ad306d6a363d4cd2b844dc4fb7721009cb72f0e289c784a55133729
+chem_v9_prepare.py=fb8bd4e49885829de9961075caec1586bd0f718eed3220634f029130f411cb22
+requirements.txt=28d471a63d5a1d5ca4d62a5b7d9ad0150335121605eca435fd5d1b6ae8963863
+test_chem_v9_evaluate.py=f80fffd5814834c120245b5879bc53b08afa15c3437a52a3e01ebf98b3d3f1b7
+test_chem_v9_prepare.py=3bb8ff9580e2798261ba0c1ef39de3dec0041321d912667e659331553aead98f
+
+FROZEN ARTIFACT SHA256
+alias_audit.tsv=ebb5fc10f4fcf5d617fe227c6d99f542aa3e953115b0e8b3842834043981b149
+blocks.tsv=63aee8a6fadc26f48df335f8158f9329cd7b6424384ef94f4ea167e4ea10df4c
+cohort_audit.tsv=4e9582590e06b5c532e188bd330fb6ac58aea510f299d4acd591c41be58ccbdf
+eligible_memberships.tsv=00d2fde2f5d0219efc70a698775243948e7aeed89565680e46f58d0b6e69d813
+experiment_panels.tsv=31e25969f5824dbf795065d82647ffcdb79faabd658f6e304511b2f94b898008
+ligand_descriptors.tsv=a587bae8626f4ed1ea0b9adff2fb678ecfc933837e9a9bf2a30bd6104e475cc4
+loaded_memberships.tsv=64f559cd08fcfcef28261317565d250f023d6231e195e20461a57d60ca23531c
+permutation_strata.tsv=fb4af5e228ba3b755f62f6b4015dc4d87c210d402689b71e21c5fca702160889
+plate_layout_audit.tsv=1dfff09104444eff4400071baf1c34f6027abc9163c62ac624fae0bc0f89669a
+
+FREEZE COMMANDS
+uv run --with-requirements research/chemistry/validation/chem_v9/requirements.txt python research/chemistry/validation/chem_v9/chem_v9_prepare.py /tmp/ord_dataset-805ad863feef48579d95d86a728035f4.parquet research/chemistry/validation/chem_v9/frozen
+uv run --with-requirements research/chemistry/validation/chem_v9/requirements.txt python -m unittest -v research/chemistry/validation/chem_v9/test_chem_v9_prepare.py research/chemistry/validation/chem_v9/test_chem_v9_evaluate.py
+
+POST-FREEZE REVEAL COMMANDS
+uv run --with-requirements research/chemistry/validation/chem_v9/requirements.txt python research/chemistry/validation/chem_v9/chem_v9_evaluate.py extract-targets /tmp/ord_dataset-805ad863feef48579d95d86a728035f4.parquet research/chemistry/validation/chem_v9/frozen/loaded_memberships.tsv research/chemistry/validation/chem_v9/results/chem_v9_targets.tsv
+uv run --with-requirements research/chemistry/validation/chem_v9/requirements.txt python research/chemistry/validation/chem_v9/chem_v9_evaluate.py evaluate research/chemistry/validation/chem_v9/frozen research/chemistry/validation/chem_v9/results/chem_v9_targets.tsv research/chemistry/validation/chem_v9/results/CHEM-V9-Result.json
+
+CLAIM BOUNDARY
+A preregistered pass would establish a scoped observational, context-sensitive association between the frozen S_5(P) catalyst descriptor and yield that exceeds the frozen graph and plate-position controls under the exact conditional randomization design. It would not establish causality, a thermodynamic equation of state, a physical law, or physical circuitry. The source plate assignment was not documented as randomized.

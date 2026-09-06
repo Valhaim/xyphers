@@ -1,0 +1,13 @@
+[package]
+name = "thaim-core"
+version = "1.0.0"
+edition = "2021"
+autobins = false
+
+[lib]
+name = "thaim_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "chem-v8-blind"
+path = "src/bin/chem_v8_blind.rs"

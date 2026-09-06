@@ -1,0 +1,3581 @@
+{
+  "analysis": {
+    "baselines": [
+      "all_atom_count",
+      "heavy_atom_count",
+      "all_atom_edge_count",
+      "molecular_weight",
+      "wiener_index",
+      "randic_index",
+      "zagreb_m1",
+      "balaban_j",
+      "shell_r1",
+      "shell_r2",
+      "shell_r3",
+      "shell_r4",
+      "shell_r5",
+      "ball_r1",
+      "ball_r2",
+      "ball_r3",
+      "ball_r4",
+      "ball_r5",
+      "endpoint_support_rh_tau5",
+      "endpoint_support_free_tau5",
+      "branch_excess_r5",
+      "mean_p_distance",
+      "coded_ligand_slot",
+      "crossfit_slot_rank_percentile"
+    ],
+    "candidate": "s_tau_p_rh_tau5",
+    "claim_boundary": "Repaired corroboration, not a pristine confirmation; all V9 associational and causal limits remain.",
+    "null_assumption": "Exact only under exchangeability of structure/outcome profiles within identical experiment-incidence strata; molecular descriptors were not randomized treatments.",
+    "position_controls": {
+      "crossfit_method": "For each held-out experiment, rank all 47 rows in every loaded block from the other 16 source experiments, then construct scores only for coded slots required by the held-out eligible primary panel.",
+      "names": [
+        "coded_ligand_slot",
+        "crossfit_slot_rank_percentile"
+      ],
+      "permutation_treatment": "fixed to observed structure/placement; not moved with descriptor rows",
+      "scope": "stable slot patterns only; experiment-specific well bias remains unidentified"
+    },
+    "protocol": "CHEM-V10 post-reveal/pre-statistic target-independent mechanical repair",
+    "secondary_non_rescue": "s_tau_p_free_tau5"
+  },
+  "baseline_competition": {
+    "champion_reselected_per_bootstrap_replicate": true,
+    "champion_reselected_per_permutation": true,
+    "cluster_bootstrap_95_percent_delta": {
+      "lower": -0.06351140123326915,
+      "upper": -0.01617940997653433
+    },
+    "delta": -0.04025277105695338,
+    "exact_permutation_p": {
+      "denominator": 6912,
+      "numerator": 270,
+      "value": 0.0390625
+    },
+    "observed_champion": "coded_ligand_slot",
+    "observed_champion_T": 0.19640084311013561
+  },
+  "bootstrap": {
+    "clusters": 14,
+    "percentile_zero_based_indices": [
+      249,
+      9749
+    ],
+    "replicates": 10000,
+    "seed_hex": "0x4348454d5639b007"
+  },
+  "decision": {
+    "gates": {
+      "baseline_competition_exact_p_le_0_001": false,
+      "baseline_margin_ge_0_05": false,
+      "candidate_exact_p_le_0_001": false,
+      "candidate_null_centered_excess_ge_0_05": false,
+      "cluster_bootstrap_delta_lower_gt_zero": false,
+      "complete_target_and_shape_qa": true
+    },
+    "pass": false
+  },
+  "position_diagnostics": {
+    "causal_interpretation_permitted": false,
+    "movers_only_non_rescue_sensitivity": {
+      "T": 0.15563395253399875,
+      "causal_interpretation_permitted": false,
+      "confirmatory_rescue_permitted": false,
+      "global_mover_structures": 39,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.15116061279268528,
+          "blocks": 64,
+          "signed_mean_rho": -0.014060875021506327,
+          "structures": 26
+        },
+        "JD-03-07": {
+          "T": 0.06662364229793988,
+          "blocks": 64,
+          "signed_mean_rho": 0.042579654824721966,
+          "structures": 25
+        },
+        "JD-03-08": {
+          "T": 0.07008113460197285,
+          "blocks": 64,
+          "signed_mean_rho": 0.019145033397187206,
+          "structures": 33
+        },
+        "JD-03-09": {
+          "T": 0.06467551378285781,
+          "blocks": 64,
+          "signed_mean_rho": -0.011113270987341727,
+          "structures": 34
+        },
+        "JD-03-10": {
+          "T": 0.19891343781168863,
+          "blocks": 64,
+          "signed_mean_rho": 0.030107150409038448,
+          "structures": 11
+        },
+        "JD-03-11": {
+          "T": 0.2532460317535658,
+          "blocks": 64,
+          "signed_mean_rho": 0.03978524125570845,
+          "structures": 13
+        },
+        "JD-03-12": {
+          "T": 0.165951117813037,
+          "blocks": 64,
+          "signed_mean_rho": 0.052712540521582946,
+          "structures": 25
+        },
+        "XZ-01-1": {
+          "T": 0.24026811345723936,
+          "blocks": 32,
+          "signed_mean_rho": 0.15552575019458056,
+          "structures": 11
+        },
+        "XZ-01-10": {
+          "T": 0.13196050762163636,
+          "blocks": 64,
+          "signed_mean_rho": -0.007713883046236136,
+          "structures": 22
+        },
+        "XZ-01-107": {
+          "T": 0.11549017841113764,
+          "blocks": 64,
+          "signed_mean_rho": 0.026354856260625857,
+          "structures": 22
+        },
+        "XZ-01-11": {
+          "T": 0.20749165743233497,
+          "blocks": 64,
+          "signed_mean_rho": -0.11611520990106852,
+          "structures": 11
+        },
+        "XZ-01-21": {
+          "T": 0.20680402907742593,
+          "blocks": 64,
+          "signed_mean_rho": -0.034831405166618964,
+          "structures": 10
+        },
+        "XZ-01-27": {
+          "T": 0.21832794498079233,
+          "blocks": 64,
+          "signed_mean_rho": -0.01721863143037991,
+          "structures": 10
+        },
+        "XZ-01-88": {
+          "T": 0.08788141364166896,
+          "blocks": 64,
+          "signed_mean_rho": -0.048396752827386216,
+          "structures": 9
+        }
+      },
+      "retained_blocks": 864,
+      "retained_experiments": 14,
+      "signed_experiment_balanced_mean_rho": 0.008340014177350542
+    },
+    "s_tau_p_rh_tau5_vs_position_controls_spearman_by_experiment": {
+      "JD-03-01": {
+        "coded_ligand_slot": -0.002977377852939031,
+        "crossfit_slot_rank_percentile": 0.20618341631602788
+      },
+      "JD-03-07": {
+        "coded_ligand_slot": 0.0793515805738835,
+        "crossfit_slot_rank_percentile": 0.20692026739925873
+      },
+      "JD-03-08": {
+        "coded_ligand_slot": -0.06085771931946231,
+        "crossfit_slot_rank_percentile": 0.131272771003182
+      },
+      "JD-03-09": {
+        "coded_ligand_slot": -0.019238318430144348,
+        "crossfit_slot_rank_percentile": 0.19328699791896706
+      },
+      "JD-03-10": {
+        "coded_ligand_slot": 0.26606624323887046,
+        "crossfit_slot_rank_percentile": 0.2844156393243098
+      },
+      "JD-03-11": {
+        "coded_ligand_slot": 0.09682112581958069,
+        "crossfit_slot_rank_percentile": 0.10788639734181849
+      },
+      "JD-03-12": {
+        "coded_ligand_slot": 0.04947664905316408,
+        "crossfit_slot_rank_percentile": 0.2841471442150465
+      },
+      "XZ-01-1": {
+        "coded_ligand_slot": -0.45702672047429593,
+        "crossfit_slot_rank_percentile": -0.41039134083406165
+      },
+      "XZ-01-10": {
+        "coded_ligand_slot": -0.01851860672273103,
+        "crossfit_slot_rank_percentile": 0.12002800653621964
+      },
+      "XZ-01-107": {
+        "coded_ligand_slot": 0.2746759029260205,
+        "crossfit_slot_rank_percentile": 0.0833221881260941
+      },
+      "XZ-01-11": {
+        "coded_ligand_slot": -0.45702672047429593,
+        "crossfit_slot_rank_percentile": -0.3870736510139445
+      },
+      "XZ-01-21": {
+        "coded_ligand_slot": -0.406201920231798,
+        "crossfit_slot_rank_percentile": -0.38158362203593144
+      },
+      "XZ-01-27": {
+        "coded_ligand_slot": -0.406201920231798,
+        "crossfit_slot_rank_percentile": -0.4554385166235311
+      },
+      "XZ-01-88": {
+        "coded_ligand_slot": 0.13561270072416207,
+        "crossfit_slot_rank_percentile": 0.06780635036208103
+      }
+    },
+    "unidentified_layout_risk": "experiment-specific and other unstable well bias"
+  },
+  "predictors": {
+    "all_atom_count": {
+      "T": 0.1651568415780548,
+      "exact_null_mean_T": 0.15717828889490074,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 30,
+        "value": 0.004340277777777778
+      },
+      "negative_blocks": 276,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11197025216098758,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 12,
+          "signed_mean_rho": -0.05990462402578077,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07106209431159444,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.06504493914864143,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08118104608855178,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.04183495490767327,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.05783525711179921,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.0058629415383196475,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22778730756205343,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.010450491484205078,
+          "zero_blocks": 10
+        },
+        "JD-03-11": {
+          "T": 0.26755201934587075,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.055319038013824,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16489508709863243,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 38,
+          "signed_mean_rho": 0.05135501677161304,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27676440040001393,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12455458824680346,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.12318168631075058,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.02188568571961335,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10708563651476524,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.020278193150592403,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3136679406211925,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.17835829479717272,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.17832134181747505,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 24,
+          "signed_mean_rho": 0.0383161194415792,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.23585753069687393,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.06642798019570971,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09503418205220632,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03481681652082036,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 298,
+      "positive_fraction_nonzero": 0.519163763066202,
+      "signed_experiment_balanced_mean_rho": -0.004215371041678105,
+      "zero_blocks": 290
+    },
+    "all_atom_edge_count": {
+      "T": 0.16500169051066085,
+      "exact_null_mean_T": 0.1565578739057435,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 47,
+        "value": 0.006799768518518518
+      },
+      "negative_blocks": 273,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11203414893040359,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 12,
+          "signed_mean_rho": -0.0622243713867183,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07246656324976303,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.06661522884450442,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08318855829668062,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.044819589622676174,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.058951522355248906,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.007349435643154568,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22660931151151348,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.010818243366073028,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.2696178873985405,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.05732732492718854,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16370907294505638,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 40,
+          "signed_mean_rho": 0.054699847408822,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27954214521835097,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12953269987772936,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.12166454455044294,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.024844568692709193,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10735942097489755,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.01100880893898383,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3104983370643091,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.16729601864896826,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.1776733135080451,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.03929180937257871,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2316746590937933,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06700331438916873,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09503418205220632,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03481681652082036,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 300,
+      "positive_fraction_nonzero": 0.5235602094240838,
+      "signed_experiment_balanced_mean_rho": -0.003526910820789372,
+      "zero_blocks": 291
+    },
+    "balaban_j": {
+      "T": 0.15829313370492443,
+      "exact_null_mean_T": 0.15675988113232278,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 2179,
+        "value": 0.3152488425925926
+      },
+      "negative_blocks": 293,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.08183034930606087,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.04549367965393998,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.09154451111044973,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.06912278902347437,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.10044901850707902,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 16,
+          "signed_mean_rho": -0.038978892370897265,
+          "zero_blocks": 26
+        },
+        "JD-03-09": {
+          "T": 0.08933685514949186,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 10,
+          "signed_mean_rho": -0.028842209040864313,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.24471625246263745,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 33,
+          "signed_mean_rho": 0.04115935043327525,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.26260410559293135,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.050676823854994994,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.16131268501374815,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.0535766823338368,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.24663456638912842,
+          "blocks": 32,
+          "negative_blocks": 5,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.16564328073407697,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1095941406893369,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 21,
+          "signed_mean_rho": -0.012057259519867974,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.1121535398313428,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.03786094644873111,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.19637427800030444,
+          "blocks": 64,
+          "negative_blocks": 38,
+          "positive_blocks": 11,
+          "signed_mean_rho": -0.11779537097244669,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.21407439066009476,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 17,
+          "signed_mean_rho": -0.05423274772373812,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2206777237357046,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.022684739129445807,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.0848014554206309,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 8,
+          "signed_mean_rho": 0.012384454257938849,
+          "zero_blocks": 48
+        }
+      },
+      "positive_blocks": 278,
+      "positive_fraction_nonzero": 0.4868651488616462,
+      "signed_experiment_balanced_mean_rho": -0.003148011052258151,
+      "zero_blocks": 293
+    },
+    "ball_r1": {
+      "T": 0.0,
+      "exact_null_mean_T": 0.0,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 6912,
+        "value": 1.0
+      },
+      "negative_blocks": 0,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-07": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-08": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-09": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-10": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-11": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-12": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-1": {
+          "T": 0.0,
+          "blocks": 32,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 32
+        },
+        "XZ-01-10": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-107": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-11": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-21": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-27": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-88": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        }
+      },
+      "positive_blocks": 0,
+      "positive_fraction_nonzero": null,
+      "signed_experiment_balanced_mean_rho": 0.0,
+      "zero_blocks": 864
+    },
+    "ball_r2": {
+      "T": 0.15080924448931657,
+      "exact_null_mean_T": 0.14875565580902783,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 1024,
+        "value": 0.14814814814814814
+      },
+      "negative_blocks": 204,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11368721590123965,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.019409200569657607,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07503066628110573,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.0367383573032285,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.10154521376376174,
+          "blocks": 64,
+          "negative_blocks": 4,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.0858656806001325,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.10345695142430825,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.037028726471201714,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.2712777606171403,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.04699982649969389,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.19376498504322115,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 37,
+          "signed_mean_rho": 0.09663225614720902,
+          "zero_blocks": 10
+        },
+        "JD-03-12": {
+          "T": 0.14323077407465357,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.033883899485626354,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.18471879195658636,
+          "blocks": 32,
+          "negative_blocks": 6,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.054321024365857354,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1267489019519418,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 28,
+          "signed_mean_rho": 0.04294761049494077,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.18373733116194446,
+          "blocks": 64,
+          "negative_blocks": 2,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.16762301182935413,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.17715619301676672,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.047561185946201685,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.1560588901412917,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.07287523482101335,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.21568016884780877,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 27,
+          "signed_mean_rho": -0.014729869466927361,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.06523557866866125,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 7,
+          "signed_mean_rho": 0.000806421411054096,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 369,
+      "positive_fraction_nonzero": 0.643979057591623,
+      "signed_experiment_balanced_mean_rho": 0.04520287104184574,
+      "zero_blocks": 291
+    },
+    "ball_r3": {
+      "T": 0.1513846218589678,
+      "exact_null_mean_T": 0.14950185284496215,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 2040,
+        "value": 0.2951388888888889
+      },
+      "negative_blocks": 257,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.15179475097584055,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.012264735757274303,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.06580785203946747,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.025563811204402435,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08167097293136602,
+          "blocks": 64,
+          "negative_blocks": 14,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.034927048729778705,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.08192677668573643,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 16,
+          "signed_mean_rho": -0.011015016039954476,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.24815946051185603,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.0634867884975571,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2168881375563166,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.08164928648259423,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.15254865394379014,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.03787568095752962,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.23449065290804288,
+          "blocks": 32,
+          "negative_blocks": 7,
+          "positive_blocks": 17,
+          "signed_mean_rho": 0.14313409742378128,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1247910703175561,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.010819541380633292,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.1333457812927443,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.09255378146841911,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.1625640909940288,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 16,
+          "signed_mean_rho": -0.07002371220957451,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.18402062068675773,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.007107816259361875,
+          "zero_blocks": 21
+        },
+        "XZ-01-27": {
+          "T": 0.21204052708809024,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.0004008353005102421,
+          "zero_blocks": 19
+        },
+        "XZ-01-88": {
+          "T": 0.06933535809395586,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 9,
+          "signed_mean_rho": -0.018595001678573395,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 317,
+      "positive_fraction_nonzero": 0.5522648083623694,
+      "signed_experiment_balanced_mean_rho": 0.026471637064246212,
+      "zero_blocks": 290
+    },
+    "ball_r4": {
+      "T": 0.15081675470890796,
+      "exact_null_mean_T": 0.14183165582789473,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 52,
+        "value": 0.007523148148148148
+      },
+      "negative_blocks": 248,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.12479551481014375,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 17,
+          "signed_mean_rho": -0.037702933203919715,
+          "zero_blocks": 23
+        },
+        "JD-03-07": {
+          "T": 0.09813349080838407,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.07607477829644083,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.11721855813430135,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 33,
+          "signed_mean_rho": 0.09437800612198471,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07978050637614902,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.015200188278988752,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.18094996569078775,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.04509355935382986,
+          "zero_blocks": 10
+        },
+        "JD-03-11": {
+          "T": 0.24561885808980008,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.02617125510222955,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.15829745576548715,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 33,
+          "signed_mean_rho": 0.05788339508138013,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.1943737296636423,
+          "blocks": 32,
+          "negative_blocks": 13,
+          "positive_blocks": 11,
+          "signed_mean_rho": -0.03991488430473192,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.13902938920113148,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.023575637621876974,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.08835897294361088,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.024614033382300872,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.235013922084658,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.04108879317312096,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.19043523404660392,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.06773675090691843,
+          "zero_blocks": 23
+        },
+        "XZ-01-27": {
+          "T": 0.20333470407254695,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.0355733856851421,
+          "zero_blocks": 22
+        },
+        "XZ-01-88": {
+          "T": 0.056094264237464525,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.0025110485073619147,
+          "zero_blocks": 50
+        }
+      },
+      "positive_blocks": 315,
+      "positive_fraction_nonzero": 0.5595026642984015,
+      "signed_experiment_balanced_mean_rho": 0.01956689709083382,
+      "zero_blocks": 301
+    },
+    "ball_r5": {
+      "T": 0.1496860154870838,
+      "exact_null_mean_T": 0.1402598972676678,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 138,
+        "value": 0.019965277777777776
+      },
+      "negative_blocks": 267,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.12369441603183592,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 12,
+          "signed_mean_rho": -0.05766705041359744,
+          "zero_blocks": 23
+        },
+        "JD-03-07": {
+          "T": 0.09343847789340261,
+          "blocks": 64,
+          "negative_blocks": 5,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.0816571286152811,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.10597811475095466,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 33,
+          "signed_mean_rho": 0.07573793130147893,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07087140101806363,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 15,
+          "signed_mean_rho": 0.009307026266910361,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.178263009049473,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.03269601953535019,
+          "zero_blocks": 10
+        },
+        "JD-03-11": {
+          "T": 0.25677751771442336,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.01217135055410519,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.15690047420728298,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.05614868098587474,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.19017238178610732,
+          "blocks": 32,
+          "negative_blocks": 13,
+          "positive_blocks": 11,
+          "signed_mean_rho": -0.03537924617887909,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1280921286700795,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.004812439057692807,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10119796233731378,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.006679523008842005,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.23244023743157885,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.03272762680725301,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.19375200190047875,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.06623558405721865,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.20609322305689165,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.0327111180379083,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.05793287097128731,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 5,
+          "signed_mean_rho": -0.0061252151025798195,
+          "zero_blocks": 50
+        }
+      },
+      "positive_blocks": 302,
+      "positive_fraction_nonzero": 0.5307557117750439,
+      "signed_experiment_balanced_mean_rho": 0.011962598630346587,
+      "zero_blocks": 295
+    },
+    "branch_excess_r5": {
+      "T": 0.15055767889438304,
+      "exact_null_mean_T": 0.142826346323845,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 546,
+        "value": 0.07899305555555555
+      },
+      "negative_blocks": 260,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.1153242137849202,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 10,
+          "signed_mean_rho": -0.059500407852009635,
+          "zero_blocks": 23
+        },
+        "JD-03-07": {
+          "T": 0.08557437917728873,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.07269320291233833,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.09072733245997014,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.05885910660244152,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.06837186103362933,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.019874133813883525,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.16394089654689328,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.02397469812342336,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.270784258010594,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.031690712314543054,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.1590022337187238,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.0642360767092997,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.20034331586508092,
+          "blocks": 32,
+          "negative_blocks": 9,
+          "positive_blocks": 14,
+          "signed_mean_rho": 0.019503453050802,
+          "zero_blocks": 9
+        },
+        "XZ-01-10": {
+          "T": 0.13024884747349919,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.0030434234961056895,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.0950445149849839,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.007164556729027332,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.2716977781229029,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.08068844856976634,
+          "zero_blocks": 18
+        },
+        "XZ-01-21": {
+          "T": 0.17358407855075922,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.05215836014519791,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2050663532074021,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.04218334553803081,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.0780974415847146,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 5,
+          "signed_mean_rho": -0.03180120018618415,
+          "zero_blocks": 48
+        }
+      },
+      "positive_blocks": 305,
+      "positive_fraction_nonzero": 0.5398230088495575,
+      "signed_experiment_balanced_mean_rho": 0.003944781190837094,
+      "zero_blocks": 299
+    },
+    "coded_ligand_slot": {
+      "T": 0.19640084311013561,
+      "negative_blocks": 239,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.08654910575942368,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.034582093309197565,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.14470475632883492,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.10763405226194939,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.1635779749173057,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.09346738549450058,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.1398759345711854,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.09036419576385067,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.25948156961325236,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.04725898163055692,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.229013891695302,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.03712744358370736,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.21505047421623405,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.06289354230409935,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.305139814957612,
+          "blocks": 32,
+          "negative_blocks": 16,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.15314741170443455,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.18157111672525186,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.10732870915306389,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.13045446045688608,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 16,
+          "signed_mean_rho": -0.05081372611347596,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3213602300178894,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 36,
+          "signed_mean_rho": 0.20624155053462678,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.22426620151158255,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.059664080776955966,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.25746558565082267,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.07055953240845793,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09110068712031566,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 11,
+          "signed_mean_rho": 0.022402560731170758,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 333,
+      "positive_fraction_nonzero": 0.5821678321678322,
+      "signed_experiment_balanced_mean_rho": 0.039076474425851396,
+      "zero_blocks": 292
+    },
+    "crossfit_slot_rank_percentile": {
+      "T": 0.18242872178613903,
+      "negative_blocks": 225,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.09342175436579048,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.02184048063982116,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.14334723548080305,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.11956116860023708,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.15936561173037184,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.10543827321297683,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.12269181571033802,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.07451375225834661,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.23109122183945752,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.0066706463599428625,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2625072384788927,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 40,
+          "signed_mean_rho": 0.16851002097059983,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.15931619547851905,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 36,
+          "signed_mean_rho": 0.07129369728260172,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.26810417169285744,
+          "blocks": 32,
+          "negative_blocks": 16,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.13871479076727783,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.14018111864099728,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.03318060086130446,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.09494896758624938,
+          "blocks": 64,
+          "negative_blocks": 16,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.024810360437343353,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.2854228244186128,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.20438553112706562,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.25113559359143023,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 24,
+          "signed_mean_rho": -0.01719437659997921,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2609711968169728,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.04637035952012322,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.08149715917465375,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 9,
+          "signed_mean_rho": 0.017207541216938106,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 349,
+      "positive_fraction_nonzero": 0.60801393728223,
+      "signed_experiment_balanced_mean_rho": 0.05270523322286027,
+      "zero_blocks": 290
+    },
+    "endpoint_support_free_tau5": {
+      "T": 0.15794913415784945,
+      "exact_null_mean_T": 0.15172527096804364,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 18,
+        "value": 0.0026041666666666665
+      },
+      "negative_blocks": 286,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.1317131550320857,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.03259874772567743,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07663968777801412,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.053876041282869686,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.06074430952308994,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.033478336000112685,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07410004954575161,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 15,
+          "signed_mean_rho": 0.003789972365199369,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.21392468894267613,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.05823221362207373,
+          "zero_blocks": 10
+        },
+        "JD-03-11": {
+          "T": 0.22709609281495222,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.05757917838792398,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16535439109779698,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.06077620420638694,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.25795869006198624,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.13702161835276475,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.13707554620868817,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.024209639213623284,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10997436273017178,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.0220015282475096,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.24285774754950334,
+          "blocks": 64,
+          "negative_blocks": 42,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.16382844155587445,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.1811278527434354,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.027602955693890048,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2319714023727837,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.030796184873317627,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.10074990180895677,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 5,
+          "signed_mean_rho": -0.06088963697635137,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 289,
+      "positive_fraction_nonzero": 0.5026086956521739,
+      "signed_experiment_balanced_mean_rho": 0.010145385558134759,
+      "zero_blocks": 289
+    },
+    "endpoint_support_rh_tau5": {
+      "T": 0.15794913415784945,
+      "exact_null_mean_T": 0.15172527096804364,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 18,
+        "value": 0.0026041666666666665
+      },
+      "negative_blocks": 286,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.1317131550320857,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.03259874772567743,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07663968777801412,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.053876041282869686,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.06074430952308994,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 27,
+          "signed_mean_rho": 0.033478336000112685,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07410004954575161,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 15,
+          "signed_mean_rho": 0.003789972365199369,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.21392468894267613,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.05823221362207373,
+          "zero_blocks": 10
+        },
+        "JD-03-11": {
+          "T": 0.22709609281495222,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.05757917838792398,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16535439109779698,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.06077620420638694,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.25795869006198624,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.13702161835276475,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.13707554620868817,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.024209639213623284,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10997436273017178,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.0220015282475096,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.24285774754950334,
+          "blocks": 64,
+          "negative_blocks": 42,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.16382844155587445,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.1811278527434354,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.027602955693890048,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2319714023727837,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.030796184873317627,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.10074990180895677,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 5,
+          "signed_mean_rho": -0.06088963697635137,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 289,
+      "positive_fraction_nonzero": 0.5026086956521739,
+      "signed_experiment_balanced_mean_rho": 0.010145385558134759,
+      "zero_blocks": 289
+    },
+    "heavy_atom_count": {
+      "T": 0.1633074668400928,
+      "exact_null_mean_T": 0.1602365779180792,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 1158,
+        "value": 0.1675347222222222
+      },
+      "negative_blocks": 298,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.10759775933879584,
+          "blocks": 64,
+          "negative_blocks": 33,
+          "positive_blocks": 9,
+          "signed_mean_rho": -0.07633772356116572,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.060902314280750304,
+          "blocks": 64,
+          "negative_blocks": 5,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.051667094059150945,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.07583843795157039,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 24,
+          "signed_mean_rho": 0.011551105722755452,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.051209291007939764,
+          "blocks": 64,
+          "negative_blocks": 14,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.0005075392577847965,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.25322466688574463,
+          "blocks": 64,
+          "negative_blocks": 32,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.023403806035003815,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.26671358132010226,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.03124609724130107,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.1467475084321479,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.04761804244329597,
+          "zero_blocks": 11
+        },
+        "XZ-01-1": {
+          "T": 0.2840211163233042,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12185499149553025,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.09672163959110547,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.031278007490783,
+          "zero_blocks": 22
+        },
+        "XZ-01-107": {
+          "T": 0.11297605189559998,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.0056038048826312,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3224352641942896,
+          "blocks": 64,
+          "negative_blocks": 35,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.1898306367777654,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.17505307197684072,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.059581457319583295,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.23885840598758756,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06505804086497623,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09400542657552044,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03535039446049314,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 271,
+      "positive_fraction_nonzero": 0.47627416520210897,
+      "signed_experiment_balanced_mean_rho": -0.011881668537970602,
+      "zero_blocks": 295
+    },
+    "mean_p_distance": {
+      "T": 0.1672940112967522,
+      "exact_null_mean_T": 0.16282437800931734,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 695,
+        "value": 0.10054976851851852
+      },
+      "negative_blocks": 285,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.10231174846703087,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.052184994784568714,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.05679976571033471,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.051379834684170865,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08805237320272871,
+          "blocks": 64,
+          "negative_blocks": 14,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.028987094000694432,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.04792564718782254,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.0018382350407627722,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.26195374925691756,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 24,
+          "signed_mean_rho": -0.02911641957100439,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.28374514320686883,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.08085744911521152,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.1664824411906662,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.032590920983657144,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.2840211163233042,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12185499149553025,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.10241270852500906,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.04023368090788398,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10605033870010946,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.01576781867891427,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3224352641942896,
+          "blocks": 64,
+          "negative_blocks": 35,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.1898306367777654,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.17505307197684072,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.059581457319583295,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.23885840598758756,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06505804086497623,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.10601438422502074,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.027954288052583764,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 288,
+      "positive_fraction_nonzero": 0.5026178010471204,
+      "signed_experiment_balanced_mean_rho": -0.012636544853729037,
+      "zero_blocks": 291
+    },
+    "molecular_weight": {
+      "T": 0.16130723446054224,
+      "exact_null_mean_T": 0.16051571279807475,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 2895,
+        "value": 0.4188368055555556
+      },
+      "negative_blocks": 300,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11213813766800895,
+          "blocks": 64,
+          "negative_blocks": 33,
+          "positive_blocks": 9,
+          "signed_mean_rho": -0.08103478936949732,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.05981232816383199,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.04641278092332489,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.07535466908929192,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.005605965089683109,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.04892355708578715,
+          "blocks": 64,
+          "negative_blocks": 14,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.002406614907429428,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22795889798131647,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.02015145788182838,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2577329323055982,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.00937968352950459,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.14414769402971767,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.0411239646707523,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27996740735626335,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.11631622025362598,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.10046633545288094,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.028149173665315885,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.11405460470338993,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.0013261538307432173,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.32543594116736163,
+          "blocks": 64,
+          "negative_blocks": 35,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.20005516683119867,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.1768752399852193,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.05830865721398804,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.241428110883404,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 18,
+          "signed_mean_rho": -0.06408365864635983,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09400542657552044,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03535039446049314,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 274,
+      "positive_fraction_nonzero": 0.47735191637630664,
+      "signed_experiment_balanced_mean_rho": -0.010911273589321462,
+      "zero_blocks": 290
+    },
+    "randic_index": {
+      "T": 0.1649986393691595,
+      "exact_null_mean_T": 0.15667771431804287,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 40,
+        "value": 0.005787037037037037
+      },
+      "negative_blocks": 274,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11232351060731793,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 12,
+          "signed_mean_rho": -0.06123033261751639,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07215845004578315,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.06627764107261164,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.0830663314422252,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.04444963459258847,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.05768689397150514,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.00660107174034827,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22660931151151348,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.010818243366073028,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.2696178873985405,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.05732732492718854,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16512909137647075,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.051337029129507966,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27954214521835097,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12953269987772936,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.12272731645538726,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 21,
+          "signed_mean_rho": -0.025919514627187605,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.10726827689947109,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.017897730216319234,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3104983370643091,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.16729601864896826,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.1776733135080451,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.03929180937257871,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2316746590937933,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06700331438916873,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09400542657552044,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03535039446049314,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 299,
+      "positive_fraction_nonzero": 0.5218150087260035,
+      "signed_experiment_balanced_mean_rho": -0.0034229314501975647,
+      "zero_blocks": 291
+    },
+    "s_tau_p_free_tau5": {
+      "T": 0.15604547248379624,
+      "exact_null_mean_T": 0.1505023087157094,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 266,
+        "value": 0.038483796296296294
+      },
+      "negative_blocks": 284,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.1475048240014742,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.014941466268193046,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.06947682272827864,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.04454117162295081,
+          "zero_blocks": 39
+        },
+        "JD-03-08": {
+          "T": 0.06901675926649678,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.02931171895696763,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07013024996963017,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.016471239847746337,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.19891343781168863,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.030107150409038448,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2532460317535658,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.03978524125570845,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.1618634648377793,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.05893468614632368,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.24026811345723936,
+          "blocks": 32,
+          "negative_blocks": 6,
+          "positive_blocks": 17,
+          "signed_mean_rho": 0.15552575019458056,
+          "zero_blocks": 9
+        },
+        "XZ-01-10": {
+          "T": 0.138221687403634,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.015048700120877941,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.11549017841113764,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.026354856260625857,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.20749165743233497,
+          "blocks": 64,
+          "negative_blocks": 37,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.11611520990106852,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.20680402907742593,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.034831405166618964,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.21832794498079233,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 21,
+          "signed_mean_rho": -0.01721863143037991,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.08788141364166896,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.048396752827386216,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 287,
+      "positive_fraction_nonzero": 0.5026269702276708,
+      "signed_experiment_balanced_mean_rho": 0.008681226377423178,
+      "zero_blocks": 293
+    },
+    "s_tau_p_rh_tau5": {
+      "T": 0.15614807205318224,
+      "exact_null_mean_T": 0.15060448967024626,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 270,
+        "value": 0.0390625
+      },
+      "negative_blocks": 284,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.1485370139829889,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.013909276286678337,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.0688588532213757,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.04392320211604787,
+          "zero_blocks": 39
+        },
+        "JD-03-08": {
+          "T": 0.07004483570683467,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.03053775529685141,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07012434702608514,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.01589796744456469,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.19891343781168863,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.030107150409038448,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2532460317535658,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.03978524125570845,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.1618634648377793,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.05893468614632368,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.24026811345723936,
+          "blocks": 32,
+          "negative_blocks": 6,
+          "positive_blocks": 17,
+          "signed_mean_rho": 0.15552575019458056,
+          "zero_blocks": 9
+        },
+        "XZ-01-10": {
+          "T": 0.138221687403634,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.015048700120877941,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.11549017841113764,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.026354856260625857,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.20749165743233497,
+          "blocks": 64,
+          "negative_blocks": 37,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.11611520990106852,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.20680402907742593,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.034831405166618964,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.21832794498079233,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 21,
+          "signed_mean_rho": -0.01721863143037991,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.08788141364166896,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.048396752827386216,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 287,
+      "positive_fraction_nonzero": 0.5026269702276708,
+      "signed_experiment_balanced_mean_rho": 0.00883933560725726,
+      "zero_blocks": 293
+    },
+    "shell_r1": {
+      "T": 0.0,
+      "exact_null_mean_T": 0.0,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 6912,
+        "value": 1.0
+      },
+      "negative_blocks": 0,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-07": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-08": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-09": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-10": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-11": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "JD-03-12": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-1": {
+          "T": 0.0,
+          "blocks": 32,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 32
+        },
+        "XZ-01-10": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-107": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-11": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-21": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-27": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        },
+        "XZ-01-88": {
+          "T": 0.0,
+          "blocks": 64,
+          "negative_blocks": 0,
+          "positive_blocks": 0,
+          "signed_mean_rho": 0.0,
+          "zero_blocks": 64
+        }
+      },
+      "positive_blocks": 0,
+      "positive_fraction_nonzero": null,
+      "signed_experiment_balanced_mean_rho": 0.0,
+      "zero_blocks": 864
+    },
+    "shell_r2": {
+      "T": 0.15080924448931657,
+      "exact_null_mean_T": 0.14875565580902783,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 1024,
+        "value": 0.14814814814814814
+      },
+      "negative_blocks": 204,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11368721590123965,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.019409200569657607,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07503066628110573,
+          "blocks": 64,
+          "negative_blocks": 8,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.0367383573032285,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.10154521376376174,
+          "blocks": 64,
+          "negative_blocks": 4,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.0858656806001325,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.10345695142430825,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.037028726471201714,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.2712777606171403,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.04699982649969389,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.19376498504322115,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 37,
+          "signed_mean_rho": 0.09663225614720902,
+          "zero_blocks": 10
+        },
+        "JD-03-12": {
+          "T": 0.14323077407465357,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.033883899485626354,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.18471879195658636,
+          "blocks": 32,
+          "negative_blocks": 6,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.054321024365857354,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1267489019519418,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 28,
+          "signed_mean_rho": 0.04294761049494077,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.18373733116194446,
+          "blocks": 64,
+          "negative_blocks": 2,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.16762301182935413,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.17715619301676672,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.047561185946201685,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.1560588901412917,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.07287523482101335,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.21568016884780877,
+          "blocks": 64,
+          "negative_blocks": 19,
+          "positive_blocks": 27,
+          "signed_mean_rho": -0.014729869466927361,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.06523557866866125,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 7,
+          "signed_mean_rho": 0.000806421411054096,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 369,
+      "positive_fraction_nonzero": 0.643979057591623,
+      "signed_experiment_balanced_mean_rho": 0.04520287104184574,
+      "zero_blocks": 291
+    },
+    "shell_r3": {
+      "T": 0.15124270231625833,
+      "exact_null_mean_T": 0.14823656156631218,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 1248,
+        "value": 0.18055555555555555
+      },
+      "negative_blocks": 255,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.15179475097584055,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.012264735757274303,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.06580785203946747,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.025563811204402435,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.07954717116391881,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 24,
+          "signed_mean_rho": 0.027770640723436744,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.08162232565205219,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.013697411513076262,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.24590890552833788,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.06182414082798965,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.22239509366352447,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 35,
+          "signed_mean_rho": 0.08698527347849375,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.15254865394379014,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.03787568095752962,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.22488695528113253,
+          "blocks": 32,
+          "negative_blocks": 6,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.14093458110623736,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1254558485248582,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.011618941067170332,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.12853115925063327,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.08110025102139934,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.16745036591158874,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.04645051827777316,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.19394511130953473,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 17,
+          "signed_mean_rho": -0.048391964598419435,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.20816828108898153,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.0017830747678195431,
+          "zero_blocks": 21
+        },
+        "XZ-01-88": {
+          "T": 0.06933535809395586,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 9,
+          "signed_mean_rho": -0.018595001678573395,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 318,
+      "positive_fraction_nonzero": 0.5549738219895288,
+      "signed_experiment_balanced_mean_rho": 0.024004054523525865,
+      "zero_blocks": 291
+    },
+    "shell_r4": {
+      "T": 0.1472837632362376,
+      "exact_null_mean_T": 0.1417453093350706,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 188,
+        "value": 0.027199074074074073
+      },
+      "negative_blocks": 290,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.09779053365459878,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 12,
+          "signed_mean_rho": -0.06167539448694603,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07978086852428123,
+          "blocks": 64,
+          "negative_blocks": 6,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.06170353281240043,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.10274992412484744,
+          "blocks": 64,
+          "negative_blocks": 15,
+          "positive_blocks": 24,
+          "signed_mean_rho": 0.03935348892183625,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.07700943601508276,
+          "blocks": 64,
+          "negative_blocks": 14,
+          "positive_blocks": 18,
+          "signed_mean_rho": 0.0057046971792313154,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.1957875550529452,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 23,
+          "signed_mean_rho": -0.007349706542008425,
+          "zero_blocks": 14
+        },
+        "JD-03-11": {
+          "T": 0.22275448338990034,
+          "blocks": 64,
+          "negative_blocks": 33,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.09083066390248823,
+          "zero_blocks": 9
+        },
+        "JD-03-12": {
+          "T": 0.14835598403108752,
+          "blocks": 64,
+          "negative_blocks": 26,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.028084381162046156,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.19506591290927716,
+          "blocks": 32,
+          "negative_blocks": 16,
+          "positive_blocks": 8,
+          "signed_mean_rho": -0.1084205829868217,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.13345573125704524,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 22,
+          "signed_mean_rho": 0.021002480752932144,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.1380645509632685,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 13,
+          "signed_mean_rho": -0.07594872684333179,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.2144755941316019,
+          "blocks": 64,
+          "negative_blocks": 25,
+          "positive_blocks": 25,
+          "signed_mean_rho": -0.015343250210669866,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.2040730459071815,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 26,
+          "signed_mean_rho": 0.055212918383975414,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.20124771863620317,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 22,
+          "signed_mean_rho": -0.03111385651093738,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.05136134671000546,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 10,
+          "signed_mean_rho": 0.015269932392447711,
+          "zero_blocks": 47
+        }
+      },
+      "positive_blocks": 278,
+      "positive_fraction_nonzero": 0.4894366197183099,
+      "signed_experiment_balanced_mean_rho": -0.011739339277023855,
+      "zero_blocks": 296
+    },
+    "shell_r5": {
+      "T": 0.15371100485167538,
+      "exact_null_mean_T": 0.15063229774254483,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 754,
+        "value": 0.10908564814814815
+      },
+      "negative_blocks": 274,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.10897068525423415,
+          "blocks": 64,
+          "negative_blocks": 35,
+          "positive_blocks": 7,
+          "signed_mean_rho": -0.07469513498829336,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.08024294310378964,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.0730132552862271,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08801607602255962,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 29,
+          "signed_mean_rho": 0.04563646965817946,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.05924833663289366,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.0013791968084686246,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22681553457770118,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 31,
+          "signed_mean_rho": 0.00083317198972261,
+          "zero_blocks": 9
+        },
+        "JD-03-11": {
+          "T": 0.2511375758703714,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 28,
+          "signed_mean_rho": -0.03423059779505362,
+          "zero_blocks": 8
+        },
+        "JD-03-12": {
+          "T": 0.15571102804546744,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 36,
+          "signed_mean_rho": 0.05047301695584586,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.21990586495002956,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 15,
+          "signed_mean_rho": 0.03212986348847302,
+          "zero_blocks": 9
+        },
+        "XZ-01-10": {
+          "T": 0.11170358969700403,
+          "blocks": 64,
+          "negative_blocks": 24,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.017165319098192924,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.1351949615591258,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 14,
+          "signed_mean_rho": -0.06179991415353184,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.22349094593560606,
+          "blocks": 64,
+          "negative_blocks": 29,
+          "positive_blocks": 21,
+          "signed_mean_rho": -0.1205043807312269,
+          "zero_blocks": 14
+        },
+        "XZ-01-21": {
+          "T": 0.15613712715505598,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 34,
+          "signed_mean_rho": 0.07616633520861525,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.21784833881801263,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.03970029769380798,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.11753106030160401,
+          "blocks": 64,
+          "negative_blocks": 10,
+          "positive_blocks": 7,
+          "signed_mean_rho": -0.04389769006597473,
+          "zero_blocks": 47
+        }
+      },
+      "positive_blocks": 299,
+      "positive_fraction_nonzero": 0.5218150087260035,
+      "signed_experiment_balanced_mean_rho": -0.008222887053391905,
+      "zero_blocks": 291
+    },
+    "wiener_index": {
+      "T": 0.16490671086654432,
+      "exact_null_mean_T": 0.15683904439464988,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 55,
+        "value": 0.007957175925925927
+      },
+      "negative_blocks": 275,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11245915679130572,
+          "blocks": 64,
+          "negative_blocks": 30,
+          "positive_blocks": 11,
+          "signed_mean_rho": -0.059782545212998174,
+          "zero_blocks": 23
+        },
+        "JD-03-07": {
+          "T": 0.07031653756617663,
+          "blocks": 64,
+          "negative_blocks": 4,
+          "positive_blocks": 24,
+          "signed_mean_rho": 0.06443267624944575,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08311480749515984,
+          "blocks": 64,
+          "negative_blocks": 9,
+          "positive_blocks": 30,
+          "signed_mean_rho": 0.04282777009717753,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.05739501772531995,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 20,
+          "signed_mean_rho": 0.006892025269132188,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22887577273131976,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.008179737233654828,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.2713467239797861,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.06581939020709106,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.16644390124415637,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 39,
+          "signed_mean_rho": 0.04974709922843304,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27954214521835097,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12953269987772936,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.11924942640879443,
+          "blocks": 64,
+          "negative_blocks": 23,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.024474966653274005,
+          "zero_blocks": 21
+        },
+        "XZ-01-107": {
+          "T": 0.1060987267295829,
+          "blocks": 64,
+          "negative_blocks": 18,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.024622792784952066,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3104983370643091,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.16729601864896826,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.1776733135080451,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.03929180937257871,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2316746590937933,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06700331438916873,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09400542657552044,
+          "blocks": 64,
+          "negative_blocks": 12,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.03535039446049314,
+          "zero_blocks": 46
+        }
+      },
+      "positive_blocks": 297,
+      "positive_fraction_nonzero": 0.5192307692307693,
+      "signed_experiment_balanced_mean_rho": -0.0038714299613492745,
+      "zero_blocks": 292
+    },
+    "zagreb_m1": {
+      "T": 0.16497351176287728,
+      "exact_null_mean_T": 0.15626361090188537,
+      "exact_permutation_p": {
+        "denominator": 6912,
+        "numerator": 31,
+        "value": 0.004484953703703704
+      },
+      "negative_blocks": 273,
+      "per_experiment": {
+        "JD-03-01": {
+          "T": 0.11257497774118402,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 11,
+          "signed_mean_rho": -0.0630671150612711,
+          "zero_blocks": 22
+        },
+        "JD-03-07": {
+          "T": 0.07086503547499476,
+          "blocks": 64,
+          "negative_blocks": 3,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.06362597592933153,
+          "zero_blocks": 36
+        },
+        "JD-03-08": {
+          "T": 0.08160651548443583,
+          "blocks": 64,
+          "negative_blocks": 7,
+          "positive_blocks": 32,
+          "signed_mean_rho": 0.04419819031146639,
+          "zero_blocks": 25
+        },
+        "JD-03-09": {
+          "T": 0.060184340908363734,
+          "blocks": 64,
+          "negative_blocks": 13,
+          "positive_blocks": 19,
+          "signed_mean_rho": 0.007585763488648153,
+          "zero_blocks": 32
+        },
+        "JD-03-10": {
+          "T": 0.22660931151151348,
+          "blocks": 64,
+          "negative_blocks": 28,
+          "positive_blocks": 25,
+          "signed_mean_rho": 0.010818243366073028,
+          "zero_blocks": 11
+        },
+        "JD-03-11": {
+          "T": 0.2696178873985405,
+          "blocks": 64,
+          "negative_blocks": 31,
+          "positive_blocks": 26,
+          "signed_mean_rho": -0.05732732492718854,
+          "zero_blocks": 7
+        },
+        "JD-03-12": {
+          "T": 0.15937395952497446,
+          "blocks": 64,
+          "negative_blocks": 17,
+          "positive_blocks": 40,
+          "signed_mean_rho": 0.05704254905534095,
+          "zero_blocks": 7
+        },
+        "XZ-01-1": {
+          "T": 0.27954214521835097,
+          "blocks": 32,
+          "negative_blocks": 8,
+          "positive_blocks": 16,
+          "signed_mean_rho": 0.12953269987772936,
+          "zero_blocks": 8
+        },
+        "XZ-01-10": {
+          "T": 0.1247134639682676,
+          "blocks": 64,
+          "negative_blocks": 22,
+          "positive_blocks": 20,
+          "signed_mean_rho": -0.016880811228709144,
+          "zero_blocks": 22
+        },
+        "XZ-01-107": {
+          "T": 0.10942588858130735,
+          "blocks": 64,
+          "negative_blocks": 20,
+          "positive_blocks": 21,
+          "signed_mean_rho": 0.006143070474688023,
+          "zero_blocks": 23
+        },
+        "XZ-01-11": {
+          "T": 0.3104983370643091,
+          "blocks": 64,
+          "negative_blocks": 34,
+          "positive_blocks": 15,
+          "signed_mean_rho": -0.16729601864896826,
+          "zero_blocks": 15
+        },
+        "XZ-01-21": {
+          "T": 0.1776733135080451,
+          "blocks": 64,
+          "negative_blocks": 21,
+          "positive_blocks": 23,
+          "signed_mean_rho": 0.03929180937257871,
+          "zero_blocks": 20
+        },
+        "XZ-01-27": {
+          "T": 0.2316746590937933,
+          "blocks": 64,
+          "negative_blocks": 27,
+          "positive_blocks": 19,
+          "signed_mean_rho": -0.06700331438916873,
+          "zero_blocks": 18
+        },
+        "XZ-01-88": {
+          "T": 0.09526932920220212,
+          "blocks": 64,
+          "negative_blocks": 11,
+          "positive_blocks": 6,
+          "signed_mean_rho": -0.033992491453081745,
+          "zero_blocks": 47
+        }
+      },
+      "positive_blocks": 298,
+      "positive_fraction_nonzero": 0.521891418563923,
+      "signed_experiment_balanced_mean_rho": -0.0033806267023236687,
+      "zero_blocks": 293
+    }
+  },
+  "primary": {
+    "T": 0.15614807205318224,
+    "cluster_bootstrap_95_percent_T": {
+      "lower": 0.122249462969553,
+      "upper": 0.1890318849454104
+    },
+    "exact_null_mean_T": 0.15060448967024626,
+    "exact_permutation_p": {
+      "denominator": 6912,
+      "numerator": 270,
+      "value": 0.0390625
+    },
+    "null_centered_excess_E": 0.00554358238293598
+  },
+  "qa": {
+    "canonical_duplicate_block_structure_groups_averaged": 0,
+    "eligible_memberships_with_exact_finite_target": 17632,
+    "exact_joint_descriptor_row_permutations": 6912,
+    "loaded_blocks_used_to_train_position_control": 1056,
+    "loaded_memberships_with_exact_finite_target": 49632,
+    "movable_structures": 19,
+    "primary_blocks": 864,
+    "primary_experiments": 14,
+    "slot_row_mover_structures": 39,
+    "structures": 45
+  }
+}

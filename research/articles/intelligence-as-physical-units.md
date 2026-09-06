@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "open-frontier"
 published: "2026-08-02"
-revised: "2026-08-02"
+revised: "2026-08-18"
 website_path: "/research/intelligence-as-physical-units/"
 web_status: "deployment-pending"
 ---
@@ -36,7 +36,7 @@ Now give that world an energy account. Every complete arrangement has an energy,
 
 Finally, place something inside the world that can perceive an available move and act on it. This is a **Praxion**. A base Praxion may do only one simple thing. Richer Praxions may remember, learn, plan, or share the same substrate with other Praxions.
 
-Together, the Graph Substrate, Thermodynamic Harness, and Praxion Layer form a [**Xypher**](../../README.md): a thermodynamic graph system with something inside it that can act.
+Together, the Graph Substrate, Thermodynamic Harness, and Praxion Layer define a [**Xypher**](core-thesis.md): a graph framework with an actor and a physical-accounting layer. The architecture does not by itself make every Xypher thermodynamic.
 
 The substrate supplies possible futures. The harness gives those possibilities a physical account. The Praxion gives them consequence.
 
@@ -155,9 +155,9 @@ A base Praxion can act without memory. A learning Praxion adds another step: inf
 
 Imagine two otherwise identical Praxions receiving a signal that says **left** or **right**. One discards it and behaves the same either way. The other stores it, and its next move changes with the stored value.
 
-For the second Praxion, the information has become part of the system's state. We can test this directly: change only the stored value and watch whether the later action changes. If it does, the memory has causal consequence.
+For the second Praxion, the stored value belongs in the complete state of the declared dynamics: changing only that value changes the later action. That test establishes causal relevance, not thermodynamic status.
 
-Once memory sits inside a Xypher, writing it, changing it, and clearing it are changes to the physical system. The Thermodynamic Harness must account for those changes alongside movement in the graph. This is where learning begins to meet thermodynamics—but the basic measure of control does not need to wait for a learning Praxion.
+If thermodynamic status is claimed, writing, changing, or clearing that register must appear in the enlarged physical state and account, with any reset or external drive named. This is where learning begins to meet thermodynamics—but the basic measure of control does not need to wait for a learning Praxion.
 
 ## When the rooms and doors are the same futures
 
@@ -207,7 +207,7 @@ In the exact thermometer above, every doubling of reservoir possibilities is mat
 
 ## Where THAIM fits
 
-The [Core Thesis](../../README.md) asks what happens when a Praxion changes the graph itself and opens more future possibility. The Thermodynamic Harness records positive expansion with a receipt called **THAIM**.
+The [Core Thesis](core-thesis.md) asks what happens when a Praxion changes the graph itself and opens more future possibility. The Thermodynamic Harness records positive expansion with a receipt called **THAIM**.
 
 THAIM and empowerment answer different questions.
 

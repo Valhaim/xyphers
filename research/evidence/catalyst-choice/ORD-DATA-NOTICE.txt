@@ -1,0 +1,40 @@
+OPEN REACTION DATABASE DATA NOTICE
+
+Source
+  Title: Open Reaction Database
+  Creator: Open Reaction Database Project
+  Dataset object: ord_dataset-805ad863feef48579d95d86a728035f4
+  Immutable source:
+  https://github.com/open-reaction-database/ord-data/blob/ddb0d25770c80a0a6fcf9948c26e1c8f828cb8ad/data/80/ord_dataset-805ad863feef48579d95d86a728035f4.parquet
+  Dataset citation: Kearnes et al., The Open Reaction Database,
+  J. Am. Chem. Soc. 2021, DOI https://doi.org/10.1021/jacs.1c09820
+  Source-study citation: Das et al., A 50,688-Reaction Data Set Reveals
+  General Ligands and Mechanistic Diversity in C-N Couplings,
+  J. Am. Chem. Soc. 2026, DOI https://doi.org/10.1021/jacs.6c05959
+
+License
+  The ORD data are licensed under the Creative Commons
+  Attribution-ShareAlike 4.0 International license (CC BY-SA 4.0):
+  https://creativecommons.org/licenses/by-sa/4.0/
+
+  The license file at the immutable source revision is:
+  https://github.com/open-reaction-database/ord-data/blob/ddb0d25770c80a0a6fcf9948c26e1c8f828cb8ad/LICENSE
+
+Adaptation and modifications
+  The Xyphers CHEM-V9/CHEM-V10 artifacts in this packet are modified extracts
+  and analyses of that ORD object. The preparation stripped outcome payloads
+  before decoding the target-blind freeze; selected ligand-loaded rows;
+  canonicalized ligand identities; constructed recipe blocks, cohorts,
+  molecular descriptors, plate-layout audits, and permutation strata; then,
+  after the freeze, extracted desired-product percentage yields and calculated
+  the published statistics and numerical audits. CHEM-V10 changed only the
+  required-slot coverage rule described in its preregistration and manifest.
+
+  These modifications were made by the Xyphers research project. They are not
+  endorsed by the Open Reaction Database Project or the source-study authors.
+
+Share alike
+  The ORD-derived tables and numerical data in `chem_v9/frozen`,
+  `chem_v9/results`, `chem_v10/frozen`, `chem_v10/results`, and their copies
+  under `evidence` are distributed under CC BY-SA 4.0. Other code and prose in
+  this packet are not relicensed by this notice.

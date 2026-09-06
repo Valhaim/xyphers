@@ -1,0 +1,45 @@
+XYPHERS LOCAL-FUTURE-TEST REPRODUCTION
+
+Requirements
+  Rust stable with Cargo. The first build downloads crates declared in
+  reproduction/Cargo.toml.
+
+Small exhaustive classification
+  cd reproduction
+  cargo run --release --bin converse-verify -- --max-n 6 --max-tau 5
+
+  Compare the four-way table with results/EXPECTED-RESULTS.txt. This is the
+  practical reproduction path for the 947,935-case public result.
+
+Restricted tree counterexample
+  cd reproduction
+  cargo run --release --bin dist3-limit
+
+  Find the section "SMALLEST FILTER FAILURE at tau=3 on trees". It should
+  report N=1770, D=1762, d_v=7 and a negative global entropy change.
+  Use release mode: the exact copied source has a debug-only unsigned-
+  underflow panic in an unrelated diagnostic sweep. After the valid N=1770
+  section, ignore its invalid d_v=0 row and stale "4998 pendants" summary.
+  Those diagnostics are preserved for source provenance and do not support
+  any claim in the article.
+
+Large exhaustive sources
+  tau-bounded-verify, dmin2-detail, and m3-verify-n8 are included so the
+  search definitions and counted units can be inspected. Their full runs
+  traverse much larger spaces; m3-verify-n8 enumerates all 2^28 possible
+  eight-node edge sets before filtering. Do not treat a partial run as a
+  reproduction of the published totals.
+
+Weighted boundary
+  cd reproduction
+  cargo run --release --bin weighted-filter-verify -- \
+    --max-n 5 --weight-samples 50 --max-tau 5 --seed 42
+
+  This is a deterministic finite sampling design. It establishes sampled
+  counterexamples, not a universal weight threshold.
+
+Integrity
+  From the evidence directory:
+  shasum -a 256 -c SHA256SUMS
+
+  The downloadable zip has its own basename-only .sha256 sidecar.

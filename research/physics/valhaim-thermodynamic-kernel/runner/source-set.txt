@@ -1,0 +1,8 @@
+research/physics/valhaim-thermodynamic-kernel/SCHEMA.json
+research/physics/valhaim-thermodynamic-kernel/runner/Cargo.lock
+research/physics/valhaim-thermodynamic-kernel/runner/Cargo.toml
+research/physics/valhaim-thermodynamic-kernel/runner/build.rs
+research/physics/valhaim-thermodynamic-kernel/runner/source-set.txt
+research/physics/valhaim-thermodynamic-kernel/runner/src/lib.rs
+research/physics/valhaim-thermodynamic-kernel/runner/src/main.rs
+research/physics/valhaim-thermodynamic-kernel/runner/tests/exact.rs

@@ -1,0 +1,48 @@
+CHEM-V8 BLINDED FREEZE MANIFEST
+freeze_date=2026-07-14
+freeze_artifact_commit=2c5a025943fb7da4da9a7894918f650298476282
+target_status_at_freeze=unopened
+
+SOURCE
+dataset=Kraken organophosphorus ligand descriptor collection
+dataset_doi=https://doi.org/10.1021/jacs.1c09718
+supplement_archive_md5=e8edb32328458b214cd645d2186249c1
+descriptors_xlsx_sha256=6959fbbe838303408e8c19d2b2149b8c61455669f952b38120b514a74ec5dbaf
+target_columns_sealed=vbur_vbur_boltz,sterimol_burB5_boltz,volume_boltz
+
+FROZEN ARTIFACTS
+thaim-core/src/bin/chem_v8_blind.rs_sha256=139b1d2e9ef5ee2519c1689f50a270f984150d21e2b7306f043d3d1813c87052
+thaim-core/src/molecular.rs_sha256=103745e7021a81f1a7c994c379a0ae4245c8f0a26a370528983e813fb3874389
+thaim-core/Cargo.toml_sha256=175156d219d0f2210f91fc2afc7dea9fefc2b2ed6ba77c14515e20cedfa092bc
+research/chemistry/validation/CHEM-V8-Preregistration.md_sha256=4ebb4932342c8facd1b2292bdc4b93390b3f90cb7df9ab4f6d9d296add5e2d29
+research/chemistry/validation/data/kraken_dft_structures.tsv_sha256=4e0b7514858715bb3d2ac681007e32d06aab1d787b78ffbf473622b360f203b9
+research/chemistry/validation/results/chem_v8_predictions.tsv_sha256=7b381df39bf26a33a70a4348f063a1af4741aecffbbf952a0e70e093b604e629
+
+FROZEN COHORT
+source_rows=1558
+predicted_rows=934
+rejected_disconnected=0
+rejected_charged=18
+rejected_unsupported_syntax=5
+rejected_parse=41
+rejected_phosphorus_count=0
+rejected_p_c3_contract=503
+rejected_default_bde=9
+rejected_exposed=41
+rejected_duplicate_signature=7
+family_p_direct_aromatic3=329
+family_p_direct_saturated3=141
+family_p_mixed_or_unsaturated3=464
+
+TOOLCHAIN AND QUALITY GATES
+rustc=rustc 1.94.0 (4a4ef493e 2026-03-02)
+cargo=cargo 1.94.0 (85eff7c80 2026-01-15)
+cargo_test_bin=5 passed; 0 failed
+cargo_test_lib=654 passed; 0 failed
+
+FROZEN COMMANDS
+predict=target/debug/chem-v8-blind predict ../research/chemistry/validation/data/kraken_dft_structures.tsv src/bin ../research/chemistry/validation/results/chem_v8_predictions.tsv
+evaluate=target/debug/chem-v8-blind evaluate ../research/chemistry/validation/results/chem_v8_predictions.tsv ../research/chemistry/validation/data/kraken_dft_targets.tsv ../research/chemistry/validation/results/CHEM-V8-Result.md
+
+REVEAL RULE
+Only after this manifest commit and the freeze artifact commit are pushed may columns A, CJ, GA, and AX be extracted from descriptors.xlsx. No confirmatory code, cohort, threshold, or predictor changes are permitted after reveal.

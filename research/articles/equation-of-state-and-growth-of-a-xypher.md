@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "open-frontier"
 published: "2026-08-01"
-revised: "2026-08-01"
+revised: "2026-08-18"
 website_path: "/research/equation-of-state-and-growth-of-a-xypher/"
 web_status: "deployment-pending"
 ---
@@ -18,7 +18,7 @@ A database can double in size. A network can acquire a million new connections. 
 
 Temperature needs something deeper underneath the motion. It needs a relationship between **energy** and the number of different **states** the system can actually occupy.
 
-A [**Xypher**](../../README.md) is a thermodynamic graph system organized through three parts. Its **Graph Substrate** holds the states, connections, and possible futures. Its **Thermodynamic Harness** accounts for energy, entropy, temperature, and consequence. Its **Praxion** perceives available actions and makes a move. Before a proposed construction passes its thermodynamic tests, it is a Xypher candidate.
+A [**Xypher**](core-thesis.md) is organized through three parts. Its **Graph Substrate** holds the states, connections, and possible futures. Its **Thermodynamic Harness** supplies the declared physical account. Its **Praxion** perceives available actions and makes a move. That architecture defines the candidate. A particular Xypher earns “thermodynamic graph system” only by passing the operational tests described below.
 
 We can now build finite digital graphs whose own executable states give them a precise temperature. We can also build graph systems that grow toward greater future possibility.
 

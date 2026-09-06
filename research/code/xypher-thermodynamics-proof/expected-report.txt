@@ -1,0 +1,18 @@
+XYPHER_THERMODYNAMICS_PROOF v1
+G01 PASS complete state and Crystal grounding
+G02 PASS executable Crystal REFRESH
+G03 PASS reciprocal MOVE generators
+G04 PASS pathwise energy accounting
+G05 PASS strong lumpability
+G06 PASS exact macro generator
+G07 PASS Crystal-Thermo-Praxion construction
+G08 PASS equilibrium and detailed balance
+G09 PASS local detailed balance
+G10 PASS minimal-kernel slots
+G11 PASS same-temperature contact
+C01 PASS hard-gate -> G07_RECIPROCAL_SUPPORT (expected G07_RECIPROCAL_SUPPORT)
+C02 PASS directed-kinetic-mutation -> G03_EQUAL_REVERSE_MICROHAZARDS (expected G03_EQUAL_REVERSE_MICROHAZARDS)
+C03 PASS crystal-fiber-mismatch -> G01_CRYSTAL_FIBER_GROUNDING (expected G01_CRYSTAL_FIBER_GROUNDING)
+C04 PASS unpaired-TAU -> G07_XI_ANTISYMMETRY (expected G07_XI_ANTISYMMETRY)
+WITNESS states=16 fibers=4,8,4 macro=8,4,4,8 equilibrium=1/4,1/2,1/4 contact=1,4,1 current=0
+OVERALL PASS

@@ -1,0 +1,2767 @@
+{
+  "artifact_kind": "contact",
+  "cases": [
+    {
+      "P": [
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ]
+      ],
+      "Q_over_kappa_contact": [
+        [
+          "-4/1",
+          "4/1",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "-2/1",
+          "1/1"
+        ],
+        [
+          "0/1",
+          "4/1",
+          "-4/1"
+        ]
+      ],
+      "clock_unchanged": true,
+      "current_into_left": {
+        "basis_id": "kappa_contact*epsilon",
+        "coefficient": "0/1"
+      },
+      "id": "equal-alpha-A-B",
+      "isolated_preparation_left": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "isolated_preparation_right": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "left_body": "A",
+      "preparation": [
+        "1/6",
+        "2/3",
+        "1/6"
+      ],
+      "right_body": "B",
+      "rows": [
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        }
+      ]
+    },
+    {
+      "P": [
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ]
+      ],
+      "Q_over_kappa_contact": [
+        [
+          "-4/1",
+          "4/1",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "-2/1",
+          "1/1"
+        ],
+        [
+          "0/1",
+          "4/1",
+          "-4/1"
+        ]
+      ],
+      "clock_unchanged": true,
+      "current_into_left": {
+        "basis_id": "kappa_contact*epsilon",
+        "coefficient": "0/1"
+      },
+      "id": "fresh-third-A-C",
+      "isolated_preparation_left": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "isolated_preparation_right": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "left_body": "A",
+      "preparation": [
+        "1/6",
+        "2/3",
+        "1/6"
+      ],
+      "right_body": "C",
+      "rows": [
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|C=HL",
+          "pre": "A=LL|C=HH",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|C=LH",
+          "pre": "A=LL|C=HH",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|C=HL",
+          "pre": "A=LL|C=HH",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|C=LH",
+          "pre": "A=LL|C=HH",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|C=LH",
+          "pre": "A=LH|C=LH",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|C=HH",
+          "pre": "A=LH|C=LH",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|C=LL",
+          "pre": "A=LH|C=LH",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|C=LH",
+          "pre": "A=LH|C=LH",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|C=HH",
+          "pre": "A=LH|C=HL",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|C=HL",
+          "pre": "A=LH|C=HL",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|C=HL",
+          "pre": "A=LH|C=HL",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|C=LL",
+          "pre": "A=LH|C=HL",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|C=LL",
+          "pre": "A=HL|C=LH",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|C=LH",
+          "pre": "A=HL|C=LH",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|C=LH",
+          "pre": "A=HL|C=LH",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|C=HH",
+          "pre": "A=HL|C=LH",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|C=HL",
+          "pre": "A=HL|C=HL",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|C=LL",
+          "pre": "A=HL|C=HL",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|C=HH",
+          "pre": "A=HL|C=HL",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|C=HL",
+          "pre": "A=HL|C=HL",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|C=LH",
+          "pre": "A=HH|C=LL",
+          "probability": "1/4",
+          "slot": "A:b|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|C=HL",
+          "pre": "A=HH|C=LL",
+          "probability": "1/4",
+          "slot": "A:b|C:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|C=LH",
+          "pre": "A=HH|C=LL",
+          "probability": "1/4",
+          "slot": "A:a|C:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|C=HL",
+          "pre": "A=HH|C=LL",
+          "probability": "1/4",
+          "slot": "A:a|C:a"
+        }
+      ]
+    },
+    {
+      "P": [
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ]
+      ],
+      "Q_over_kappa_contact": [
+        [
+          "-4/1",
+          "4/1",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "-2/1",
+          "1/1"
+        ],
+        [
+          "0/1",
+          "4/1",
+          "-4/1"
+        ]
+      ],
+      "clock_unchanged": true,
+      "current_into_left": {
+        "basis_id": "kappa_contact*epsilon",
+        "coefficient": "-12/13"
+      },
+      "id": "unequal-r2-r4",
+      "isolated_preparation_left": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "isolated_preparation_right": [
+        "16/25",
+        "8/25",
+        "1/25"
+      ],
+      "left_body": "A",
+      "preparation": [
+        "1/13",
+        "8/13",
+        "4/13"
+      ],
+      "right_body": "B",
+      "rows": [
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        }
+      ]
+    },
+    {
+      "P": [
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ],
+        [
+          "1/4",
+          "1/2",
+          "1/4"
+        ],
+        [
+          "0/1",
+          "1/1",
+          "0/1"
+        ]
+      ],
+      "Q_over_kappa_contact": [
+        [
+          "-4/1",
+          "4/1",
+          "0/1"
+        ],
+        [
+          "1/1",
+          "-2/1",
+          "1/1"
+        ],
+        [
+          "0/1",
+          "4/1",
+          "-4/1"
+        ]
+      ],
+      "clock_unchanged": true,
+      "current_into_left": {
+        "basis_id": "kappa_contact*epsilon",
+        "coefficient": "12/13"
+      },
+      "id": "unequal-r4-r2",
+      "isolated_preparation_left": [
+        "16/25",
+        "8/25",
+        "1/25"
+      ],
+      "isolated_preparation_right": [
+        "4/9",
+        "4/9",
+        "1/9"
+      ],
+      "left_body": "A",
+      "preparation": [
+        "4/13",
+        "8/13",
+        "1/13"
+      ],
+      "right_body": "B",
+      "rows": [
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=LL|B=HH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=LH",
+          "pre": "A=LH|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=LH|B=HL",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=LH|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=LH",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=LH",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LL|B=HH",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HH|B=LL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "0/1"
+          },
+          "outcome": "WAIT",
+          "post": "A=HL|B=HL",
+          "pre": "A=HL|B=HL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=LH|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:a|B:b"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=HL",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:a"
+        },
+        {
+          "delta_energy_left": {
+            "basis_id": "epsilon",
+            "coefficient": "-1/1"
+          },
+          "delta_energy_right": {
+            "basis_id": "epsilon",
+            "coefficient": "1/1"
+          },
+          "outcome": "MOVE",
+          "post": "A=HL|B=LH",
+          "pre": "A=HH|B=LL",
+          "probability": "1/4",
+          "slot": "A:b|B:b"
+        }
+      ]
+    }
+  ],
+  "clock_evidence": {
+    "clock_unchanged": true,
+    "crystal_after_sha256": "fcb873a3e15bbdb3a74f2703b2d3be819dabdc3b7d6f3a188f8ac6b9e318baf6",
+    "crystal_before_sha256": "fcb873a3e15bbdb3a74f2703b2d3be819dabdc3b7d6f3a188f8ac6b9e318baf6",
+    "dormant_rows": [
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LL|B=HH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LL|B=HH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LL|B=HH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LL|B=HH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HH|B=LL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HH|B=LL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HH|B=LL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HH|B=LL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      }
+    ],
+    "dormant_rows_sha256": "965d3cedf6fb32fa5a4144aab52176c1a1d87f87ecbae54a41ad7228666c3058",
+    "open_rows": [
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HL|B=LH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HL|B=HL",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LH|B=LH",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LH|B=HL",
+        "pre": "A=LL|B=HH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HH|B=LL",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LL|B=HH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=LH",
+        "pre": "A=LH|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HH|B=LL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=LH|B=HL",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LL|B=HH",
+        "pre": "A=LH|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LL|B=HH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=LH",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HH|B=LL",
+        "pre": "A=HL|B=LH",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LL|B=HH",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HH|B=LL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "0/1"
+        },
+        "outcome": "WAIT",
+        "post": "A=HL|B=HL",
+        "pre": "A=HL|B=HL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LH|B=HL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:a|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=LH|B=LH",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:a|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HL|B=HL",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:b|B:a",
+        "slot_rate_over_kappa_contact": "1/1"
+      },
+      {
+        "delta_energy_left": {
+          "basis_id": "epsilon",
+          "coefficient": "-1/1"
+        },
+        "delta_energy_right": {
+          "basis_id": "epsilon",
+          "coefficient": "1/1"
+        },
+        "outcome": "MOVE",
+        "post": "A=HL|B=LH",
+        "pre": "A=HH|B=LL",
+        "probability": "1/4",
+        "slot": "A:b|B:b",
+        "slot_rate_over_kappa_contact": "1/1"
+      }
+    ],
+    "open_rows_sha256": "576a94fd8b0ea96d231d858ef656b0b2e8415b935c4d819a82aab169a8725c80",
+    "retained_after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retained_before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retained_channel_count": 0,
+    "slot_count": 4,
+    "state_count": 6
+  },
+  "experiment_id": "valhaim-thermodynamic-kernel-v1",
+  "first_failed_gate": null,
+  "gates": [
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K01_FREEZE_IDENTITY",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K02_INDEPENDENT_COORDINATES",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K03_ROW_CLOSURE",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K04_REVERSE_INVOLUTION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K05_PATH_ACCOUNTING",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K06_STRONG_LUMPABILITY",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K07_THERMODYNAMIC_PREDICTION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K08_EQUILIBRIUM",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K09_RELAXATION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "K10_INDEPENDENT_GENERATOR",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/kernel_dependency"
+        }
+      ],
+      "failure_code": null,
+      "id": "X01_XYPHER_REPRESENTATION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C01_PREPARATION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/clock_evidence"
+        },
+        {
+          "pointer": "#/metamorphic_checks/0"
+        }
+      ],
+      "failure_code": null,
+      "id": "C02_CLOCK_RETENTION",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C03_CONSERVED_EXCHANGE",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C04_REVERSE_AND_CLOSURE",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C05_EQUAL_TEMPERATURE_LAW",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C06_ZERO_CURRENT",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C07_THIRD_BODY",
+      "status": "pass"
+    },
+    {
+      "evidence": [
+        {
+          "pointer": "#/cases"
+        }
+      ],
+      "failure_code": null,
+      "id": "C08_TEMPERATURE_SENSITIVITY",
+      "status": "pass"
+    }
+  ],
+  "kernel_dependency": {
+    "claim_ladder_passed": true,
+    "compact_payload_sha256": "d25d641bb9969a0b9053209b5633d36bb9bef9ce9b279e9178dd472e8011ecc2",
+    "required_gates_passed": true,
+    "run_id": "VK1-EXACT-001",
+    "status": "pass"
+  },
+  "metamorphic_checks": [
+    {
+      "baseline_scale": "1/1",
+      "covariant_fields": [
+        "Q_C",
+        "energy-current"
+      ],
+      "id": "kappa-contact-time-scale",
+      "invariant_fields": [
+        "P_C",
+        "equilibrium",
+        "local-detailed-balance"
+      ],
+      "negative_control_rejected": true,
+      "status": "pass",
+      "transformed_scale": "13/7"
+    }
+  ],
+  "metamorphic_checks_sha256": "c88876d8646669182956c7c6fa35b3e4e6f84eda440c76a227aca6bbb23c1e6b",
+  "provenance": {
+    "command_argv": [
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/runner/target/debug/valhaim-thermodynamic-kernel-runner",
+      "--repo-root",
+      "/Users/andreasrudolph/thaim",
+      "--output-dir",
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/artifacts",
+      "--runner-seal",
+      "/Users/andreasrudolph/thaim/research/physics/valhaim-thermodynamic-kernel/runner-seal.json"
+    ],
+    "executable_sha256": "325cb696bb886077974fb84555f2580eef87767f1791431911773da92204bf45",
+    "freeze_commit": "c3d9a5c6404c1c42aa938a400d3554a1ec670051",
+    "freeze_manifest_sha256": "1108cd08078bf969ddf0064cf30ca551190e00886e15972d0f76776d0b16b49b",
+    "protocol_sha256": "a1900b99160810f2bdc517ac1cbd19e8336987c2b8cca3b6c02d89f589aff07b",
+    "relevant_source_clean": true,
+    "relevant_source_paths": [
+      "research/physics/valhaim-thermodynamic-kernel/SCHEMA.json",
+      "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.lock",
+      "research/physics/valhaim-thermodynamic-kernel/runner/Cargo.toml",
+      "research/physics/valhaim-thermodynamic-kernel/runner/build.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/source-set.txt",
+      "research/physics/valhaim-thermodynamic-kernel/runner/src/lib.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/src/main.rs",
+      "research/physics/valhaim-thermodynamic-kernel/runner/tests/exact.rs"
+    ],
+    "relevant_source_sha256": "4b104b15db301c4f67bac95d68f053e955ece8f367eb6aff744026d869e3f9ad",
+    "runner_seal_commit": "d551f7003fe52bd5949f76ac4dd58c8aa7157821",
+    "schema_sha256": "c85ea1e1d9a26b5cb6f617a5211683df2ff7a21a47eaae52623bc7cdfc9a8448",
+    "toolchain": {
+      "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+      "cargo_lock_sha256": "3aa9b8b17d4d3f47baf2d490094246848f5bdb5a1fa85ac9e8eee9795cb598a1",
+      "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+      "target": "aarch64-apple-darwin"
+    }
+  },
+  "run_id": "VK1-EXACT-001",
+  "schema_version": 1,
+  "status": "pass",
+  "summary": {
+    "earned_claim_codes": [
+      "T6_EXACT_CONTACT",
+      "ALPHA_OPERATIONAL_FOR_DECLARED_MODEL"
+    ],
+    "excluded_claim_codes": [
+      "PROTOCOL_OWNED_CONTACT",
+      "DEPLOYED_CONTACT_CLOCK"
+    ],
+    "source_gates": [
+      "K01_FREEZE_IDENTITY",
+      "K02_INDEPENDENT_COORDINATES",
+      "K03_ROW_CLOSURE",
+      "K04_REVERSE_INVOLUTION",
+      "K05_PATH_ACCOUNTING",
+      "K06_STRONG_LUMPABILITY",
+      "K07_THERMODYNAMIC_PREDICTION",
+      "K08_EQUILIBRIUM",
+      "K09_RELAXATION",
+      "K10_INDEPENDENT_GENERATOR",
+      "X01_XYPHER_REPRESENTATION",
+      "C01_PREPARATION",
+      "C02_CLOCK_RETENTION",
+      "C03_CONSERVED_EXCHANGE",
+      "C04_REVERSE_AND_CLOSURE",
+      "C05_EQUAL_TEMPERATURE_LAW",
+      "C06_ZERO_CURRENT",
+      "C07_THIRD_BODY",
+      "C08_TEMPERATURE_SENSITIVITY"
+    ],
+    "verdict_code": "EXACT_OPERATIONAL_TEMPERATURE_PASS"
+  },
+  "swapped_current_sign_reversed": true
+}
