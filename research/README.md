@@ -18,13 +18,13 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 
 | Article | Scientific boundary | Website route |
 | --- | --- | --- |
-| [A Purely Digital Thermodynamic System](articles/proving-true-thermodynamic-graph-systems.md) | Exact sixteen-state minimal thermodynamic construction; separate scoped representation theorem. | `/research/proving-true-thermodynamic-graph-systems/` · deployment pending |
-| [Project Valhaim](articles/project-valhaim.md) | Economic architecture, bounded kernel evidence, and an early-alpha application. | `/research/project-valhaim/` · deployment pending |
-| [Can a Xypher Help Choose a Catalyst?](articles/can-a-xypher-help-choose-a-catalyst.md) | Negative validation: the molecular readout lost to a simpler ligand-graph count and showed no distinctive yield-ordering advantage. | `/research/can-a-xypher-help-choose-a-catalyst/` · deployment pending |
-| [When Does Information Become State in a Xypher?](articles/when-does-information-become-state-in-a-xypher.md) | Formal-framework draft: complete-state and exact-projection tests are established; shared adaptive-Xypher state remains open. | `/research/when-does-information-become-state-in-a-xypher/` · deployment pending |
-| [Can a Local Future Test Protect a Xypher Network?](articles/can-a-local-future-test-protect-a-xypher-network.md) | Published bounded graph result: exact at two steps under the declared rule; the universal threshold and alignment readings fail. | `/research/can-a-local-future-test-protect-a-xypher-network/` · deployment pending |
-| [An Equation of State and the Growth of a Xypher](articles/equation-of-state-and-growth-of-a-xypher.md) | Open frontier: separates executable-state temperature from growth price and receipt throughput. | `/research/equation-of-state-and-growth-of-a-xypher/` · deployment pending |
-| [Intelligence as Physical Units](articles/intelligence-as-physical-units.md) | Open frontier: derives the control-to-information ladder and states what remains to connect it physically. | `/research/intelligence-as-physical-units/` · deployment pending |
+| [A Purely Digital Thermodynamic System](articles/proving-true-thermodynamic-graph-systems.md) | Exact sixteen-state minimal thermodynamic construction; separate scoped representation theorem. | [Read on xyphers.com](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) |
+| [Project Valhaim](articles/project-valhaim.md) | Economic architecture, bounded kernel evidence, and an early-alpha application. | [Read on xyphers.com](https://xyphers.com/research/project-valhaim/) |
+| [Can a Xypher Help Choose a Catalyst?](articles/can-a-xypher-help-choose-a-catalyst.md) | Negative validation: the molecular readout lost to a simpler ligand-graph count and showed no distinctive yield-ordering advantage. | [Read on xyphers.com](https://xyphers.com/research/can-a-xypher-help-choose-a-catalyst/) |
+| [When Does Information Become State in a Xypher?](articles/when-does-information-become-state-in-a-xypher.md) | Formal-framework draft: complete-state and exact-projection tests are established; shared adaptive-Xypher state remains open. | [Read on xyphers.com](https://xyphers.com/research/when-does-information-become-state-in-a-xypher/) |
+| [Can a Local Future Test Protect a Xypher Network?](articles/can-a-local-future-test-protect-a-xypher-network.md) | Published bounded graph result: exact at two steps under the declared rule; the universal threshold and alignment readings fail. | [Read on xyphers.com](https://xyphers.com/research/can-a-local-future-test-protect-a-xypher-network/) |
+| [An Equation of State and the Growth of a Xypher](articles/equation-of-state-and-growth-of-a-xypher.md) | Open frontier: separates executable-state temperature from growth price and receipt throughput. | [Read on xyphers.com](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) |
+| [Intelligence as Physical Units](articles/intelligence-as-physical-units.md) | Open frontier: derives the control-to-information ladder and states what remains to connect it physically. | [Read on xyphers.com](https://xyphers.com/research/intelligence-as-physical-units/) |
 
 ## Runnable code
 
@@ -45,7 +45,7 @@ Each article is ordinary Markdown with portable metadata:
 
 - `status` records whether the article is published.
 - `maturity` records the scientific boundary.
-- `website_path` records the intended route.
+- `website_path` records the website route.
 - `web_status` says whether that route has been deployed.
 
 Supporting source, data, and runnable code should sit beside the article it supports or in a clearly linked subdirectory. A reader should be able to move from claim to evidence without guessing which artifact controls the result.

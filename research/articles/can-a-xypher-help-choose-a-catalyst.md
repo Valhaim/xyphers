@@ -7,7 +7,7 @@ maturity: "negative-validation"
 published: "2026-08-18"
 revised: "2026-08-18"
 website_path: "/research/can-a-xypher-help-choose-a-catalyst/"
-web_status: "deployment-pending"
+web_status: "live"
 ---
 
 # Can a Xypher Help Choose a Catalyst?

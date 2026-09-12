@@ -7,7 +7,7 @@ maturity: "open-frontier"
 published: "2026-08-02"
 revised: "2026-08-18"
 website_path: "/research/intelligence-as-physical-units/"
-web_status: "deployment-pending"
+web_status: "live"
 ---
 
 # Intelligence as Physical Units

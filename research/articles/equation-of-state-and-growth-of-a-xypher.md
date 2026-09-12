@@ -7,7 +7,7 @@ maturity: "open-frontier"
 published: "2026-08-01"
 revised: "2026-08-18"
 website_path: "/research/equation-of-state-and-growth-of-a-xypher/"
-web_status: "deployment-pending"
+web_status: "live"
 ---
 
 # An Equation of State and the Growth of a Xypher

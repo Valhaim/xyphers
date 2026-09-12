@@ -7,7 +7,7 @@ maturity: "bounded-graph-result"
 published: "2026-08-18"
 revised: "2026-08-18"
 website_path: "/research/can-a-local-future-test-protect-a-xypher-network/"
-web_status: "deployment-pending"
+web_status: "live"
 ---
 
 # Can a Local Future Test Protect a Xypher Network?

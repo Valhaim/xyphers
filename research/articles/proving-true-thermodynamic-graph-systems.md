@@ -5,7 +5,7 @@ status: "published"
 published: "2026-09-06"
 revised: "2026-09-06"
 website_path: "/research/proving-true-thermodynamic-graph-systems/"
-web_status: "deployment-pending"
+web_status: "live"
 source_revision: "c46f4a808"
 ---
 

@@ -1,6 +1,8 @@
 # Exact Thermodynamic Xypher
 
-A complete sixteen-state digital thermodynamic system, with two independent thermometers and an exact energy account.
+A small thermodynamic graph you can run and inspect in full. It includes the graph, its energy reservoir, and the mechanism that moves between states. Together they have sixteen possible arrangements.
+
+Run the code to check every energy exchange, compare two independent thermometers, and test what happens when two copies are placed in thermal contact. The construction supplies an experimental foundation for [a physics for digital agency](https://xyphers.com/#framework).
 
 ## Run
 
@@ -17,7 +19,7 @@ These commands reproduce an already reviewed and executed result. The original p
 
 ## Read the experiment
 
-- [A Purely Digital Thermodynamic System](../../articles/proving-true-thermodynamic-graph-systems.md) explains the body, reservoir, two thermometers, signed accounting, and contact.
+- [A Purely Digital Thermodynamic System](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) explains the body, reservoir, two thermometers, signed accounting, and contact. A [portable article](../../articles/proving-true-thermodynamic-graph-systems.md) is also included in this checkout.
 - [The frozen boundary and representation argument](evidence/BOUNDARY.md) defines the operational T1–T6 requirements independently of Xypher terminology.
 - [The exact result](evidence/RESULT.md) records the eleven gates, four mutations, output, and execution provenance.
 

@@ -1,12 +1,12 @@
 # Xyphers
 
-**Thermodynamic graphs. A computational programme for agency.**
+**A physics for digital agency.**
 
 A Xypher brings together a graph of possibilities, a thermodynamic account of change, and a **Praxion** that perceives and acts. The ambition is digital systems that develop, preserve, and expand their capacity to act.
 
-This repository makes the research inspectable. Start with a complete thermodynamic system small enough to enumerate, or calculate how a molecular graph spreads its possible futures.
+Start with a small thermodynamic graph you can run. It is a complete system with its own energy reservoir, and every arrangement and exchange can be inspected. The code connects the research at [xyphers.com](https://xyphers.com) to experiments you can reproduce on your own computer.
 
-[Read the Core Thesis](research/articles/core-thesis.md) · [Research collection](research/README.md) · [Valhaim node](https://github.com/Valhaim/valhaim-node)
+[Read the Core Thesis](https://xyphers.com/core-thesis/) · [Start with the experiment](research/code/xypher-thermodynamics-proof/) · [Research collection](research/README.md)
 
 ## Run the exact thermodynamic system
 
@@ -57,6 +57,6 @@ The scientific foundation and the richer organism are distinct achievements. The
 
 This runs the two Rust studies, checks frozen source and packet hashes, and checks local documentation links. It needs Rust and Python 3.9 or newer. It does not fetch the external chemistry datasets or run the large exhaustive graph enumerations.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the source and claim boundaries. The payment runtime lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node); the early Valhaim alpha is at [valhaim.com](https://valhaim.com). The Xyphers website is prepared for [xyphers.com](https://xyphers.com); the articles in this checkout remain readable independently of website deployment.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the source and claim boundaries. The payment runtime lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node); the early Valhaim alpha is at [valhaim.com](https://valhaim.com). Read the live research at [xyphers.com/research](https://xyphers.com/research/), or use the portable articles in this checkout.
 
 Code and data licensing are described in [LICENSING.md](LICENSING.md).

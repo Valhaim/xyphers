@@ -7,7 +7,7 @@ maturity: "formal-framework-draft"
 published: "2026-08-18"
 revised: "2026-08-18"
 website_path: "/research/when-does-information-become-state-in-a-xypher/"
-web_status: "deployment-pending"
+web_status: "live"
 ---
 
 # When Does Information Become State in a Xypher?
