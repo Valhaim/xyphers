@@ -148,7 +148,9 @@ The [growth article](equation-of-state-and-growth-of-a-xypher.md) asks how an ad
 
 ## Inspect and reproduce
 
-The [standalone verifier](../downloads/xypher-thermodynamics-proof-v1.zip) contains the prospective Futuruna construction, independent Rust enumeration, and source-contract test. With Rust installed, unpack it, enter the directory containing `Cargo.toml`, then run:
+Start with the [experiment](../code/xypher-thermodynamics-proof/). Its run guide connects the [prospective Futuruna construction](../code/xypher-thermodynamics-proof/xypher.runa), [independent Rust verifier](../code/xypher-thermodynamics-proof/src/lib.rs), and [expected report](../code/xypher-thermodynamics-proof/expected-report.txt). The [published article](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) links to a fixed source revision.
+
+You can also download the [standalone verifier](../downloads/xypher-thermodynamics-proof-v1.zip), which includes the source-contract test. With Rust installed, unpack it, enter the directory containing `Cargo.toml`, then run:
 
 ```sh
 cargo test

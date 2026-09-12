@@ -1,6 +1,6 @@
 # Xyphers research
 
-This directory collects the public Xyphers research record: readable articles, explicit evidence boundaries, and—where available—the code or data needed to inspect a result.
+This directory connects the articles at [xyphers.com](https://xyphers.com/research/) to their code and evidence. Start with the [thermodynamic graph you can run](code/xypher-thermodynamics-proof/). The later articles develop the larger programme: a physics for digital agency.
 
 The labels describe the maturity of the scientific claim, not the polish of the prose:
 
@@ -12,19 +12,26 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 
 ## Foundations
 
-- [What is a Xypher?](articles/core-thesis.md) — the Core Thesis and the map of the research program.
+- [What is a Xypher?](https://xyphers.com/core-thesis/) — the Core Thesis and the map of the research program. A [portable edition](articles/core-thesis.md) is included here.
 
 ## Research articles
 
-| Article | Scientific boundary | Website route |
-| --- | --- | --- |
-| [A Purely Digital Thermodynamic System](articles/proving-true-thermodynamic-graph-systems.md) | Exact sixteen-state minimal thermodynamic construction; separate scoped representation theorem. | [Read on xyphers.com](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) |
-| [Project Valhaim](articles/project-valhaim.md) | Economic architecture, bounded kernel evidence, and an early-alpha application. | [Read on xyphers.com](https://xyphers.com/research/project-valhaim/) |
-| [Can a Xypher Help Choose a Catalyst?](articles/can-a-xypher-help-choose-a-catalyst.md) | Negative validation: the molecular readout lost to a simpler ligand-graph count and showed no distinctive yield-ordering advantage. | [Read on xyphers.com](https://xyphers.com/research/can-a-xypher-help-choose-a-catalyst/) |
-| [When Does Information Become State in a Xypher?](articles/when-does-information-become-state-in-a-xypher.md) | Formal-framework draft: complete-state and exact-projection tests are established; shared adaptive-Xypher state remains open. | [Read on xyphers.com](https://xyphers.com/research/when-does-information-become-state-in-a-xypher/) |
-| [Can a Local Future Test Protect a Xypher Network?](articles/can-a-local-future-test-protect-a-xypher-network.md) | Published bounded graph result: exact at two steps under the declared rule; the universal threshold and alignment readings fail. | [Read on xyphers.com](https://xyphers.com/research/can-a-local-future-test-protect-a-xypher-network/) |
-| [An Equation of State and the Growth of a Xypher](articles/equation-of-state-and-growth-of-a-xypher.md) | Open frontier: separates executable-state temperature from growth price and receipt throughput. | [Read on xyphers.com](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) |
-| [Intelligence as Physical Units](articles/intelligence-as-physical-units.md) | Open frontier: derives the control-to-information ladder and states what remains to connect it physically. | [Read on xyphers.com](https://xyphers.com/research/intelligence-as-physical-units/) |
+| Read the article | Inspect or run its evidence |
+| --- | --- |
+| [A Purely Digital Thermodynamic System](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) · [portable text](articles/proving-true-thermodynamic-graph-systems.md) | [Run the exact sixteen-state study](code/xypher-thermodynamics-proof/). Its source, expected report, boundary, and separate representation argument are included. |
+| [Can a Xypher Help Choose a Catalyst?](https://xyphers.com/research/can-a-xypher-help-choose-a-catalyst/) · [portable text](articles/can-a-xypher-help-choose-a-catalyst.md) | [Run the molecular graph example](code/molecular-properties/). The [blinded comparisons](evidence/catalyst-choice/README.txt) did not establish a ligand-selection advantage; replaying them requires the named external datasets. |
+| [When Does Information Become State in a Xypher?](https://xyphers.com/research/when-does-information-become-state-in-a-xypher/) · [portable text](articles/when-does-information-become-state-in-a-xypher.md) | [Read the complete-state and projection records](evidence/information-state/README.txt), or use the [source packet](downloads/xypher-information-state-evidence-v1.zip). The adaptive-Xypher synthesis remains a working framework. |
+| [Can a Local Future Test Protect a Xypher Network?](https://xyphers.com/research/can-a-local-future-test-protect-a-xypher-network/) · [portable text](articles/can-a-local-future-test-protect-a-xypher-network.md) | [Inspect the proof and reproduction sources](evidence/local-future-test/README.txt). The two-step guarantee and later counterexamples have separate records; large enumerations are outside the default checks. |
+| [Project Valhaim](https://xyphers.com/research/project-valhaim/) · [portable text](articles/project-valhaim.md) | [Inspect the archived kernel and contact experiment](physics/README.md). These are sealed execution records, not a standalone payment node. The node lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node). |
+| [An Equation of State and the Growth of a Xypher](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) · [portable text](articles/equation-of-state-and-growth-of-a-xypher.md) | [Run the finite thermodynamic foundation](code/xypher-thermodynamics-proof/). The proposed connection between operational temperature and graph growth remains an open experiment. |
+| [Intelligence as Physical Units](https://xyphers.com/research/intelligence-as-physical-units/) · [portable text](articles/intelligence-as-physical-units.md) | [Run the exact digital thermometer](code/xypher-thermodynamics-proof/). This does not execute the article's proposed action-to-future control experiment. |
+
+## Early speculation on the website
+
+- [Kleiber's Law and the Growth of a Xypher](https://xyphers.com/research/kleibers-law-derived-from-physics/) explores the relationship between measured graph-growth scaling and biological metabolism.
+- [One State, Two Questions](https://xyphers.com/research/one-state-two-questions/) develops a Xypher hypothesis for wave–particle complementarity.
+
+These essays are linked for the complete research picture. Their own reproduction code is not packaged in this repository.
 
 ## Runnable code
 

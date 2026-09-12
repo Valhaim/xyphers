@@ -44,6 +44,7 @@ The [molecular-properties study](research/code/molecular-properties/) includes t
 | [`research/code/molecular-properties/`](research/code/molecular-properties/) | Frozen molecular graph implementation, a small example, and the shape evaluator. |
 | [`research/evidence/`](research/evidence/) | Protocols, results, provenance, and additional reproduction sources. |
 | [`research/downloads/`](research/downloads/) | Portable evidence packets with checksum sidecars. |
+| [`research/physics/`](research/physics/) | Historical Valhaim kernel records and their original execution seal. |
 
 The scientific foundation and the richer organism are distinct achievements. The exact kernel is non-adaptive. Learning, growth, chemical experiment selection, and an economy that sustains shared possibility each require their own complete construction and evidence.
 

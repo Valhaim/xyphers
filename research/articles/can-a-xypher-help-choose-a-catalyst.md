@@ -192,6 +192,8 @@ The external chemical records are the [Tolman steric review](https://doi.org/10.
 
 **Inspect:** [the evidence map and provenance record](../evidence/catalyst-choice/README.txt), including the early Tolman implementation, the separate bidentate comparison, the frozen descriptor source, and each manifest.
 
+**Code:** [the molecular graph study](../code/molecular-properties/) contains the frozen Rust implementation, blinded shape evaluator, and a small runnable phosphine example. The example explores molecular endpoint entropy; it does not reproduce the blinded comparison or rank catalytic efficiency.
+
 **Download:** [the checksummed Xyphers validation packet](../downloads/xypher-catalyst-validation-v1.zip) ([SHA-256](../downloads/xypher-catalyst-validation-v1.zip.sha256)). The archive does not redistribute the Kraken supplement, its derived 934-row SMILES table, or the raw ORD parquet. Its retained ORD-derived artifacts carry attribution and a CC BY-SA 4.0 notice.
 
 **Inspect and reproduce:** [follow the evidence paths](../evidence/catalyst-choice/RUN.txt). CHEM-V8 requires rebuilding licensed source tables and matching the frozen hashes; CHEM-V10 has a numerical replay from the attributed ORD-derived freeze.

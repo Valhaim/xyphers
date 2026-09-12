@@ -18,4 +18,6 @@ Prefer Futuruna for new Xypher domain logic and Rust for core infrastructure and
 
 Keep claim, code, input provenance, and reproduction instructions together. Introduce a concept before its symbol. Link to the website explanation and to a particular evidence revision when publishing an article.
 
+The website is the primary reading edition. The portable articles here use GitHub-compatible equations, local evidence links, and viewing links in place of embedded video. Keep their prose and scientific claims aligned when revising an article, and update the article-to-evidence map in [research/README.md](research/README.md). Mark a website route live only after checking that it is published. Reference executable evidence by an immutable commit so a later code change does not silently change an article's experiment.
+
 Code and data retain the licensing described in [LICENSING.md](LICENSING.md).
