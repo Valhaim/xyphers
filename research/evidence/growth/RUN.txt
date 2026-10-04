@@ -1,0 +1,47 @@
+XYPHERS GROWTH REPRODUCTION
+
+Both crates need only a Rust toolchain. They have no external dependencies.
+
+CAL-ALPHA-0 (seconds)
+  From source/xypher-alpha-tau-proof/:
+
+    cargo test --locked
+    cargo run --locked --quiet
+
+  The report lists G01-G13, the controls C01-C19, the constitutive verdicts,
+  and ends:
+
+    OVERALL PASS
+
+CAL-ENDO-1
+  From source/xypher-endogenous-thermodynamics-proof/, first confirm that
+  the source is the frozen apparatus:
+
+    tail -n +2 FROZEN-SOURCE.sha256 | sed 's/^sha256://' | shasum -a 256 -c -
+
+  Every line should end in OK. Then run the test suite:
+
+    cargo test --release --locked
+
+  The complete confirmatory report is very large: 14,940,547,191 bytes in
+  10,880 lines. Do not write it to a terminal. To authenticate it without
+  storing it, stream it into a hash:
+
+    cargo run --release --locked --quiet | shasum -a 256
+
+  The expected digest is
+
+    caf1bd441175444d1f0fdab2221af755048135fb47b8024c53c0bcf7bd8c7c56
+
+  and the report's final lines are
+
+    CLASSIFICATION ENDOGENOUSLY THERMODYNAMIC ADAPTIVE XYPHER
+    OVERALL PASS
+
+  CAL-ENDO-1-Result.md section 8 records the original run, its compressed
+  artifact, and the line categories of the complete report.
+
+Reproduction boundary
+  These are exact replays of frozen finite constructions, not new
+  experiments. A passing replay does not widen the scope stated in
+  README.txt.

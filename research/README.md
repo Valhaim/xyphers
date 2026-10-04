@@ -23,7 +23,7 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 | [When Does Information Become State in a Xypher?](https://xyphers.com/research/when-does-information-become-state-in-a-xypher/) · [portable text](articles/when-does-information-become-state-in-a-xypher.md) | [Read the complete-state and projection records](evidence/information-state/README.txt), or use the [source packet](downloads/xypher-information-state-evidence-v1.zip). The adaptive-Xypher synthesis remains a working framework. |
 | [Can a Local Future Test Protect a Xypher Network?](https://xyphers.com/research/can-a-local-future-test-protect-a-xypher-network/) · [portable text](articles/can-a-local-future-test-protect-a-xypher-network.md) | [Inspect the proof and reproduction sources](evidence/local-future-test/README.txt). The two-step guarantee and later counterexamples have separate records; large enumerations are outside the default checks. |
 | [Project Valhaim](https://xyphers.com/research/project-valhaim/) · [portable text](articles/project-valhaim.md) | [Inspect the archived kernel and contact experiment](physics/README.md). These are sealed execution records, not a standalone payment node. The node lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node). |
-| [An Equation of State and the Growth of a Xypher](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) · [portable text](articles/equation-of-state-and-growth-of-a-xypher.md) | [Run the finite thermodynamic foundation](code/xypher-thermodynamics-proof/). The proposed connection between operational temperature and graph growth remains an open experiment. |
+| [An Equation of State and the Growth of a Xypher](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) · [portable text](articles/equation-of-state-and-growth-of-a-xypher.md) | [Run the finite thermodynamic foundation](code/xypher-thermodynamics-proof/), then the [growth evidence](evidence/growth/README.txt): eight exact temperature-identifiability cases and three adaptive graphs that build and repair their own temperature. Joining that construction to growth toward future possibility remains an open experiment. |
 | [Intelligence as Physical Units](https://xyphers.com/research/intelligence-as-physical-units/) · [portable text](articles/intelligence-as-physical-units.md) | [Run the exact digital thermometer](code/xypher-thermodynamics-proof/). This does not execute the article's proposed action-to-future control experiment. |
 
 ## Early speculation on the website
@@ -43,6 +43,7 @@ These essays are linked for the complete research picture. Their own reproductio
 
 - [Catalyst choice](evidence/catalyst-choice/) — frozen CHEM-V8/V9/V10 records, source inspection, licensing boundaries, and reproduction paths.
 - [Information to state](evidence/information-state/) — CAL-XTHERM and CAL-ADAPT boundaries, exact results, and run guide.
+- [Growth](evidence/growth/) — frozen CAL-ALPHA-0 and CAL-ENDO-1 records, their dependency-free Rust verifiers, and run guide.
 - [Local future test](evidence/local-future-test/) — proof records, standalone Rust verifiers, expected-result dictionary, and source-status warnings.
 - [Checksummed archives](downloads/) — portable copies of the downloadable packets linked from the articles.
 

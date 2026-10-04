@@ -1,0 +1,745 @@
+-- Prospective typed policy surface for CAL-ENDO-1.
+--
+-- This file declares frozen local inputs, exact adaptive transformations,
+-- physical records, observer separation, and protocol types. It does not run
+-- the apparatus, evaluate a logarithm, or assert an experimental result. The
+-- independent Rust verifier owns authoritative enumeration and every gate.
+--
+-- Frozen boundary commit: 7ee278ed14ade12689540481903e4832f53442d7
+-- Frozen boundary sha256: a3aafdc4d29dc3b6c8a2c5bf8deb554745a311b2f3485e1577f3697b1aa14c80
+
+-- EXACT VALUES AND FINITE PHYSICAL MEDIA
+
+# ExactRatio(numerator: Int, denominator: Int)
+# EpisodeId(index: Int)
+# PortSymbol(index: Int)
+# PrefixWord(encoded: String, level: Int)
+# Descriptor(id: Int)
+# WorkCell(id: Int, energy: Int, charged: Bool, locked: Bool)
+# OperationRecord(id: Int, state: OperationRecordState)
+# OperationRecordState = OperationBlank | OperationWritten
+# SemanticState = Blank | Pending | Success | Failure
+# CandidateKind = Fresh | Alias
+# BucketKey(symbol: PortSymbol, kind: CandidateKind)
+# SemanticRecord(id: Int, bucket: BucketKey, state: SemanticState)
+# BucketCounts(successes: Int, terminal_trials: Int)
+# MemoryProjection(memory: MemoryLog, bucket: BucketKey)
+# MemoryLog(records: List(SemanticRecord))
+# OperationBank(records: List(OperationRecord), inverse_cursor: Int)
+# TypedWorkStore(build: List(WorkCell), repair: List(WorkCell), observation: List(WorkCell))
+
+> ratio(numerator: Int, denominator: Int) -> ExactRatio {
+    ExactRatio(numerator, denominator)
+}
+
+> exact_ratio_is_zero(value: ExactRatio) -> Bool {
+    value.numerator == 0
+}
+
+> exact_ratio_sum_equals(left: ExactRatio, right: ExactRatio, total: ExactRatio) -> Bool {
+    (left.numerator * right.denominator + right.numerator * left.denominator) * total.denominator == total.numerator * left.denominator * right.denominator
+}
+
+> exact_ratios_are_opposites(left: ExactRatio, right: ExactRatio) -> Bool {
+    left.numerator * right.denominator == 0 - right.numerator * left.denominator
+}
+
+> same_candidate_kind(left: CandidateKind, right: CandidateKind) -> Bool {
+    match left {
+        | Fresh -> match right { | Fresh -> true | Alias -> false }
+        | Alias -> match right { | Fresh -> false | Alias -> true }
+    }
+}
+
+> same_bucket(left: BucketKey, right: BucketKey) -> Bool {
+    left.symbol.index == right.symbol.index && same_candidate_kind(left.kind, right.kind)
+}
+
+-- Sufficient statistics are derived from terminal physical records. They are
+-- never a separately writable counter in the authoritative state.
+> terminal_bucket_counts(records: List(SemanticRecord), bucket: BucketKey) -> BucketCounts {
+    if length(records) == 0 { BucketCounts(0, 0) }
+    else {
+        = record = head(records)
+        = rest = terminal_bucket_counts(tail(records), bucket)
+        if same_bucket(record.bucket, bucket) {
+            match record.state {
+                | Blank -> rest
+                | Pending -> rest
+                | Success -> BucketCounts(rest.successes + 1, rest.terminal_trials + 1)
+                | Failure -> BucketCounts(rest.successes, rest.terminal_trials + 1)
+            }
+        } else { rest }
+    }
+}
+
+> predictive_mean(projection: MemoryProjection) -> ExactRatio {
+    = counts = terminal_bucket_counts(projection.memory.records, projection.bucket)
+    ExactRatio(counts.successes + 1, counts.terminal_trials + 2)
+}
+
+-- For R=p/q this is ((p+q)^2 * (3q-p)) / (8q^3). The Rust exact
+-- implementation reduces the ratio before any comparison or report.
+> integrated_phi(ruby: ExactRatio) -> ExactRatio {
+    = p = ruby.numerator
+    = q = ruby.denominator
+    ExactRatio((p + q) * (p + q) * (3 * q - p), 8 * q * q * q)
+}
+
+> competing_probability(left: ExactRatio, right: ExactRatio) -> ExactRatio {
+    = left_scaled = left.numerator * right.denominator
+    = right_scaled = right.numerator * left.denominator
+    ExactRatio(left_scaled, left_scaled + right_scaled)
+}
+
+# ReservoirVertex(word: PrefixWord, descriptor: Descriptor, energy_index: Int, executable: Bool)
+# StructuralIncidence(parent: PrefixWord, child: PrefixWord, live_clock: ExactRatio)
+# OpenPort(parent: PrefixWord, symbol: PortSymbol)
+# WorkspaceBinding(parent: PrefixWord, symbol: PortSymbol, child: PrefixWord, descriptor: Descriptor, certified: Bool)
+# QuarantinedBinding(parent: PrefixWord, symbol: PortSymbol, descriptor: Descriptor)
+# ConfigurationSpace(promoted: List(ReservoirVertex), workspace: List(WorkspaceBinding), quarantined: List(QuarantinedBinding), open_ports: List(OpenPort))
+# CandidateIdentity(episode: EpisodeId, port: OpenPort, kind: CandidateKind)
+-- Attempt history is finite physical state. BUILD slots are identity-bound at
+-- initialization; the two REPAIR slots start blank and are rebound by PERTURB.
+# AttemptLane = BuildAttemptBit | RepairAttemptBit
+# OptionalCandidateIdentity = NoCandidateIdentity | SomeCandidateIdentity(value: CandidateIdentity)
+# AttemptBit(id: Int, lane: AttemptLane, identity: OptionalCandidateIdentity, attempted: Bool)
+# AttemptBitStore(bits: List(AttemptBit))
+# OccupiedReservoirState(word: PrefixWord)
+# ProbeCoordinate(mesostate: Int, microstate: Int, energy_index: Int)
+# FreeInventory(descriptors: List(Descriptor))
+# OperationPhase = Build | Credit | Promote | Operate | Repair | Contact
+# CursorState = NoCursor | LiveCursor(port: OpenPort)
+# RepairTargetState = NoRepairTarget | LiveRepairTarget(port: OpenPort)
+# SchedulerCapacities(payload_capacity: Int)
+# ExternalPerturbationCell = NoExternalPerturbationCell | DeclaredExternalPerturbationCell(cell: WorkCell)
+# SchedulerQueue(episode: EpisodeId, cursor: CursorState, repair_target: RepairTargetState, attempt_bits: AttemptBitStore, capacities: SchedulerCapacities, payloads: List(ObservationPayload), external_perturbation_cell: ExternalPerturbationCell)
+# ObservationPayload(bucket: BucketKey, outcome: SemanticState, consumed: Bool)
+# CompleteState(configuration: ConfigurationSpace, occupied: OccupiedReservoirState, alphabet: List(PortSymbol), energy_quantum: Int, probe: ProbeCoordinate, inventory: FreeInventory, work: TypedWorkStore, memory: MemoryLog, operations: OperationBank, phase: OperationPhase, queue: SchedulerQueue)
+
+-- Prefix incidence certifies state-space structure; it never moves the live
+-- occupied coordinate. Only separately declared reciprocal channels do that.
+> structural_incidence(parent: PrefixWord, child: PrefixWord) -> StructuralIncidence {
+    StructuralIncidence(parent, child, ExactRatio(0, 1))
+}
+
+-- BEGIN CONSTRUCTION_POLICY
+
+-- Everything between the construction-policy markers is the complete input
+-- and transformation surface of the adaptive builder. A source-contract test
+-- keeps observer quantities out of this region.
+
+-- This restricted projection is the only state consumed by candidate
+-- construction. It deliberately contains no occupied probe coordinate,
+-- observer classification, forbidden sentinel, or fitted quantity.
+# BuilderQueueView(episode: EpisodeId, cursor: CursorState, repair_target: RepairTargetState, attempt_bits: AttemptBitStore, capacities: SchedulerCapacities, payloads: List(ObservationPayload), external_perturbation_cell: ExternalPerturbationCell)
+# BuilderView(configuration: ConfigurationSpace, alphabet: List(PortSymbol), inventory: FreeInventory, work: TypedWorkStore, memory: MemoryLog, operations: OperationBank, phase: OperationPhase, queue: BuilderQueueView)
+
+> builder_queue_view(queue: SchedulerQueue) -> BuilderQueueView {
+    BuilderQueueView(queue.episode, queue.cursor, queue.repair_target, queue.attempt_bits, queue.capacities, queue.payloads, queue.external_perturbation_cell)
+}
+
+> builder_view(state: CompleteState) -> BuilderView {
+    BuilderView(state.configuration, state.alphabet, state.inventory, state.work, state.memory, state.operations, state.phase, builder_queue_view(state.queue))
+}
+
+-- CRYSTAL: one enabled local opportunity plus record-derived directed flow.
+
+# CrystalReadback(diamond: ExactRatio, ruby: ExactRatio, opal: ExactRatio)
+# CandidateProposal(identity: CandidateIdentity, descriptor: Descriptor, crystal: CrystalReadback, hazard: ExactRatio)
+# CandidateSlot = UntriedCandidate(proposal: CandidateProposal) | TriedCandidate(identity: CandidateIdentity) | MissingAttemptBit(identity: CandidateIdentity)
+# CandidateSet = NoCandidates | LiveCandidates(fresh: CandidateSlot, alias: CandidateSlot)
+
+> crystal_readback(projection: MemoryProjection) -> CrystalReadback {
+    = diamond = ExactRatio(1, 1)
+    = ruby = predictive_mean(projection)
+    = opal = integrated_phi(ruby)
+    CrystalReadback(diamond, ruby, opal)
+}
+
+> memory_projection(view: BuilderView, bucket: BucketKey) -> MemoryProjection {
+    MemoryProjection(view.memory, bucket)
+}
+
+> local_proposal(view: BuilderView, port: OpenPort, kind: CandidateKind, descriptor: Descriptor) -> CandidateProposal {
+    = projection = memory_projection(view, BucketKey(port.symbol, kind))
+    = crystal = crystal_readback(projection)
+    CandidateProposal(CandidateIdentity(view.queue.episode, port, kind), descriptor, crystal, crystal.opal)
+}
+
+> same_prefix_word(left: PrefixWord, right: PrefixWord) -> Bool {
+    left.encoded == right.encoded && left.level == right.level
+}
+
+> same_candidate_identity(left: CandidateIdentity, right: CandidateIdentity) -> Bool {
+    left.episode.index == right.episode.index && same_prefix_word(left.port.parent, right.port.parent) && left.port.symbol.index == right.port.symbol.index && same_candidate_kind(left.kind, right.kind)
+}
+
+> same_attempt_lane(left: AttemptLane, right: AttemptLane) -> Bool {
+    match left {
+        | BuildAttemptBit -> match right { | BuildAttemptBit -> true | RepairAttemptBit -> false }
+        | RepairAttemptBit -> match right { | BuildAttemptBit -> false | RepairAttemptBit -> true }
+    }
+}
+
+> matching_attempt_bit(bits: List(AttemptBit), identity: CandidateIdentity, lane: AttemptLane, attempted: Bool) -> Bool {
+    if length(bits) == 0 { false }
+    else {
+        = bit = head(bits)
+        match bit.identity {
+            | NoCandidateIdentity -> matching_attempt_bit(tail(bits), identity, lane, attempted)
+            | SomeCandidateIdentity(value: assigned) -> {
+                if same_attempt_lane(bit.lane, lane) && same_candidate_identity(assigned, identity) && bit.attempted == attempted { true }
+                else { matching_attempt_bit(tail(bits), identity, lane, attempted) }
+            }
+        }
+    }
+}
+
+> candidate_slot(view: BuilderView, proposal: CandidateProposal) -> CandidateSlot {
+    match view.phase {
+        | Build -> {
+            if matching_attempt_bit(view.queue.attempt_bits.bits, proposal.identity, BuildAttemptBit, false) { UntriedCandidate(proposal) }
+            else if matching_attempt_bit(view.queue.attempt_bits.bits, proposal.identity, BuildAttemptBit, true) { TriedCandidate(proposal.identity) }
+            else { MissingAttemptBit(proposal.identity) }
+        }
+        | Repair -> {
+            if matching_attempt_bit(view.queue.attempt_bits.bits, proposal.identity, RepairAttemptBit, false) { UntriedCandidate(proposal) }
+            else if matching_attempt_bit(view.queue.attempt_bits.bits, proposal.identity, RepairAttemptBit, true) { TriedCandidate(proposal.identity) }
+            else { MissingAttemptBit(proposal.identity) }
+        }
+        | Credit -> MissingAttemptBit(proposal.identity)
+        | Promote -> MissingAttemptBit(proposal.identity)
+        | Operate -> MissingAttemptBit(proposal.identity)
+        | Contact -> MissingAttemptBit(proposal.identity)
+    }
+}
+
+> one_port_candidates(view: BuilderView, parent_descriptor: Descriptor) -> CandidateSet {
+    if length(view.inventory.descriptors) == 0 { NoCandidates }
+    else {
+        match view.queue.cursor {
+            | NoCursor -> NoCandidates
+            | LiveCursor(port: port) -> {
+                = free_descriptor = head(view.inventory.descriptors)
+                = fresh = local_proposal(view, port, Fresh, free_descriptor)
+                = alias = local_proposal(view, port, Alias, parent_descriptor)
+                LiveCandidates(candidate_slot(view, fresh), candidate_slot(view, alias))
+            }
+        }
+    }
+}
+
+-- THERMO WORK ENABLEMENT: no candidate acts without a charged unlocked cell.
+
+# CandidateEnablement = Enabled(proposal: CandidateProposal, cell: WorkCell) | DisabledNoWork(proposal: CandidateProposal) | DisabledNoAttemptBit(proposal: CandidateProposal)
+
+> enable_from_cells(proposal: CandidateProposal, cells: List(WorkCell), attempt_bits: AttemptBitStore, lane: AttemptLane) -> CandidateEnablement {
+    if matching_attempt_bit(attempt_bits.bits, proposal.identity, lane, false) {
+        if length(cells) == 0 { DisabledNoWork(proposal) }
+        else {
+            = cell = head(cells)
+            if cell.charged && cell.locked == false { Enabled(proposal, cell) }
+            else { DisabledNoWork(proposal) }
+        }
+    } else {
+        DisabledNoAttemptBit(proposal)
+    }
+}
+
+> enable_with_work(view: BuilderView, proposal: CandidateProposal) -> CandidateEnablement {
+    match view.phase {
+        | Build -> enable_from_cells(proposal, view.work.build, view.queue.attempt_bits, BuildAttemptBit)
+        | Credit -> DisabledNoWork(proposal)
+        | Promote -> DisabledNoWork(proposal)
+        | Operate -> DisabledNoWork(proposal)
+        | Repair -> enable_from_cells(proposal, view.work.repair, view.queue.attempt_bits, RepairAttemptBit)
+        | Contact -> DisabledNoWork(proposal)
+    }
+}
+
+-- PRAXION ACTION MAPS AND THEIR FINITE RECORD EFFECTS.
+
+-- Every driven edge carries both declared energy boundaries. The internal
+-- augmented boundary contains B_W. PERTURB additionally reports the complete
+-- boundary containing its separately named external protocol cell.
+# WorkingBoundary(delta_energy: Int, heat_into_working: Int, work_on_working: Int)
+# AugmentedBoundary(delta_energy: Int, external_heat: Int, external_work: Int)
+# CompleteBoundary(delta_energy_with_named_source: Int)
+# WorkLedger(working: WorkingBoundary, internal_augmented: AugmentedBoundary, complete: CompleteBoundary)
+# ResourceDelta(descriptors: Int, internal_charged_cells: Int, external_charged_cells: Int, blank_operations: Int, blank_semantic_records: Int, attempted_candidates: Int)
+# ForwardChannel = FreshBind | AliasQuarantine | CreditPending | PromoteFrontier | PerturbLeaf | AbsorbObservation
+# InverseChannel = Unfresh | Unfail | Uncredit | Demote | Unperturb | Unabsorb
+# DrivenOperation(channel: ForwardChannel, inverse: InverseChannel, before: BuilderView, after: BuilderView, ledger: WorkLedger, resources: ResourceDelta)
+# EnabledEvent(channel: ForwardChannel, hazard: ExactRatio)
+# EnabledEventSet(events: List(EnabledEvent))
+# ActionReceipt(event: ForwardChannel, hazard: ExactRatio, operation_record: OperationRecord, ledger: WorkLedger)
+# EventTransition(enabled: EnabledEvent, hazard: ExactRatio, channel: ForwardChannel, successor: BuilderView, forward_receipt: ActionReceipt, ledger: WorkLedger, inverse: ActionReceipt, inverse_restores_source: Bool)
+# ProtocolStep(index: Int, selected: EnabledEvent, receipt: ActionReceipt)
+# ProtocolTrace(forward_steps: List(ProtocolStep), reverse_lifo_receipts: List(ActionReceipt), full_reverse_lifo_restores_initial: Bool)
+
+> inverse_channel(channel: ForwardChannel) -> InverseChannel {
+    match channel {
+        | FreshBind -> Unfresh
+        | AliasQuarantine -> Unfail
+        | CreditPending -> Uncredit
+        | PromoteFrontier -> Demote
+        | PerturbLeaf -> Unperturb
+        | AbsorbObservation -> Unabsorb
+    }
+}
+
+> one_cell_work_ledger(cell: WorkCell) -> WorkLedger {
+    = working = WorkingBoundary(cell.energy, 0, cell.energy)
+    = augmented = AugmentedBoundary(0, 0, 0)
+    WorkLedger(working, augmented, CompleteBoundary(0))
+}
+
+> perturb_work_ledger(external_cell: WorkCell) -> WorkLedger {
+    = working = WorkingBoundary(external_cell.energy, 0, external_cell.energy)
+    = internal_augmented = AugmentedBoundary(external_cell.energy, 0, external_cell.energy)
+    WorkLedger(working, internal_augmented, CompleteBoundary(0))
+}
+
+> fresh_operation(before: BuilderView, after: BuilderView, cell: WorkCell) -> DrivenOperation {
+    = ledger = one_cell_work_ledger(cell)
+    = resources = ResourceDelta(-1, -1, 0, -1, -1, 1)
+    DrivenOperation(FreshBind, Unfresh, before, after, ledger, resources)
+}
+
+> alias_operation(before: BuilderView, after: BuilderView, cell: WorkCell) -> DrivenOperation {
+    = ledger = one_cell_work_ledger(cell)
+    = resources = ResourceDelta(0, -1, 0, -1, -1, 1)
+    DrivenOperation(AliasQuarantine, Unfail, before, after, ledger, resources)
+}
+
+> credit_operation(before: BuilderView, after: BuilderView, cell: WorkCell) -> DrivenOperation {
+    = ledger = one_cell_work_ledger(cell)
+    = resources = ResourceDelta(0, -1, 0, -1, 0, 0)
+    DrivenOperation(CreditPending, Uncredit, before, after, ledger, resources)
+}
+
+> promote_operation(before: BuilderView, after: BuilderView, cell: WorkCell) -> DrivenOperation {
+    = ledger = one_cell_work_ledger(cell)
+    = resources = ResourceDelta(0, -1, 0, -1, 0, 0)
+    DrivenOperation(PromoteFrontier, Demote, before, after, ledger, resources)
+}
+
+> perturb_operation(before: BuilderView, after: BuilderView, external_cell: WorkCell) -> DrivenOperation {
+    = external_ledger = perturb_work_ledger(external_cell)
+    = resources = ResourceDelta(1, 0, -1, -1, 0, 0)
+    DrivenOperation(PerturbLeaf, Unperturb, before, after, external_ledger, resources)
+}
+
+> absorb_operation(before: BuilderView, after: BuilderView, cell: WorkCell) -> DrivenOperation {
+    = ledger = one_cell_work_ledger(cell)
+    = resources = ResourceDelta(0, -1, 0, -1, -1, 0)
+    DrivenOperation(AbsorbObservation, Unabsorb, before, after, ledger, resources)
+}
+
+-- Enablement exposes only the event identity and hazard. The authoritative
+-- transition keeps successor, ledger, forward receipt, and exact inverse in
+-- one replayable envelope.
+> enabled_event(operation: DrivenOperation, hazard: ExactRatio) -> EnabledEvent {
+    EnabledEvent(operation.channel, hazard)
+}
+
+> enabled_events(events: List(EnabledEvent)) -> EnabledEventSet { EnabledEventSet(events) }
+
+> event_successor(transition: EventTransition) -> BuilderView { transition.successor }
+> event_ledger(transition: EventTransition) -> WorkLedger { transition.ledger }
+> event_inverse(transition: EventTransition) -> ActionReceipt { transition.inverse }
+
+-- Backward credit writes PENDING -> SUCCESS only after the whole local
+-- frontier is certified. Alias quarantine writes FAILURE and leaves the port
+-- open. Passive absorption writes through the same semantic record medium.
+
+# LocalOutcome(identity: CandidateIdentity, before: SemanticState, after: SemanticState)
+
+> fresh_pending(identity: CandidateIdentity) -> LocalOutcome {
+    LocalOutcome(identity, Blank, Pending)
+}
+
+> alias_failure(identity: CandidateIdentity) -> LocalOutcome {
+    LocalOutcome(identity, Blank, Failure)
+}
+
+> promoted_success(identity: CandidateIdentity) -> LocalOutcome {
+    LocalOutcome(identity, Pending, Success)
+}
+
+> absorbed_terminal(identity: CandidateIdentity, observed: SemanticState) -> LocalOutcome {
+    LocalOutcome(identity, Blank, observed)
+}
+
+-- FINITE CREATION AND REPAIR CERTIFICATES.
+
+# FrontierRank(open_ports: Int, alias_untried: Int, value: Int)
+# PhaseRank(frontiers_remaining: Int, phase_order: Int, local_value: Int)
+# ResourceCertificate(descriptors: Int, candidate_records: Int, operation_records: Int, build_cells: Int, repair_cells: Int)
+# AttemptBitAssignment(identity: CandidateIdentity, bit_id: Int)
+-- The verifier enumerates every admissible depth-three leaf before certifying
+-- that the same two initially blank REPAIR slots can bind its candidate pair.
+# AttemptBitCapacityCertificate(base: Int, off_shell_inventory: Bool, descriptor_capacity: Int, construction_candidate_identities: Int, repair_attempt_slots: Int, declared_attempt_bits: Int, semantic_record_capacity: Int, candidate_identities: List(CandidateIdentity), assigned_attempt_bits: List(AttemptBitAssignment), every_candidate_identity_has_distinct_bit: Bool, repair_slots_are_predeclared_blank_resources: Bool, every_admissible_leaf_can_bind_the_same_repair_slots: Bool, capacity_cannot_truncate_construction: Bool)
+
+> frontier_rank(open_ports: Int, alias_untried: Int) -> FrontierRank {
+    FrontierRank(open_ports, alias_untried, 2 * open_ports + alias_untried)
+}
+
+> build_rank(frontiers_remaining: Int, local: FrontierRank) -> PhaseRank {
+    PhaseRank(frontiers_remaining, 2, local.value)
+}
+
+> credit_rank(frontiers_remaining: Int, pending: Int) -> PhaseRank {
+    PhaseRank(frontiers_remaining, 1, pending)
+}
+
+> promote_rank(frontiers_remaining: Int) -> PhaseRank {
+    PhaseRank(frontiers_remaining, 0, 1)
+}
+
+> resource_certificate(port_count: Int) -> ResourceCertificate {
+    = candidate_records = 2 * port_count
+    = operation_records = 3 * port_count + 3
+    ResourceCertificate(port_count, candidate_records, operation_records, operation_records, 4)
+}
+
+> attempt_bit_capacity_certificate(base: Int, off_shell_inventory: Bool, descriptor_capacity: Int, candidate_identities: List(CandidateIdentity), assigned_attempt_bits: List(AttemptBitAssignment), declared_attempt_bits: Int, semantic_record_capacity: Int, every_candidate_identity_has_distinct_bit: Bool, repair_slots_are_predeclared_blank_resources: Bool, every_admissible_leaf_can_bind_the_same_repair_slots: Bool, capacity_cannot_truncate_construction: Bool) -> AttemptBitCapacityCertificate {
+    AttemptBitCapacityCertificate(base, off_shell_inventory, descriptor_capacity, length(candidate_identities), 2, declared_attempt_bits, semantic_record_capacity, candidate_identities, assigned_attempt_bits, every_candidate_identity_has_distinct_bit, repair_slots_are_predeclared_blank_resources, every_admissible_leaf_can_bind_the_same_repair_slots, capacity_cannot_truncate_construction)
+}
+
+-- END CONSTRUCTION_POLICY
+
+-- BEGIN BUILDER_ADMISSION
+
+-- C06 and C07 are concrete requests, not merely forbidden names. The only
+-- route that can produce BuilderView rejects both before construction policy.
+# TargetCountRequest(shell_counts: List(Int), target_multiplicity_ratios: List(ExactRatio), global_deficit: List(Int))
+# HeldOutRatePair(forward: ExactRatio, reverse: ExactRatio)
+# HeldOutTrafficRequest(labelled_rate_pairs: List(HeldOutRatePair), agreement_reward: ExactRatio)
+# BuilderRequest = LocalBuilderRequest(state: CompleteState) | TargetCountBuilderRequest(state: CompleteState, request: TargetCountRequest) | HeldOutTrafficBuilderRequest(state: CompleteState, request: HeldOutTrafficRequest)
+# BuilderAdmissionError = TargetCountInput | HeldOutTrafficInput
+# BuilderAdmission = AdmittedBuilder(view: BuilderView) | RejectedBuilder(error: BuilderAdmissionError)
+
+> admit_builder_request(request: BuilderRequest) -> BuilderAdmission {
+    match request {
+        | LocalBuilderRequest(state: state) -> AdmittedBuilder(builder_view(state))
+        | TargetCountBuilderRequest(state: _, request: _) -> RejectedBuilder(TargetCountInput)
+        | HeldOutTrafficBuilderRequest(state: _, request: _) -> RejectedBuilder(HeldOutTrafficInput)
+    }
+}
+
+-- END BUILDER_ADMISSION
+
+-- FROZEN SPECIMENS CREATE PHYSICAL INPUT STATE; COUNTS ARE NOT BUILDER FIELDS.
+
+# FrozenSpecimen(name: String, alphabet_size: Int, energy_quantum: Int, free_descriptors: Int, candidate_records: Int, candidate_attempt_bits: Int, build_cells: Int, build_operation_records: Int, repair_cells: Int, repair_semantic_records: Int, repair_attempt_bits: Int, repair_operation_records: Int, off_shell: Bool)
+
+> specimen_b2() -> FrozenSpecimen { FrozenSpecimen("b2", 2, 1, 14, 28, 28, 45, 45, 4, 2, 2, 4, false) }
+> specimen_b3() -> FrozenSpecimen { FrozenSpecimen("b3", 3, 1, 39, 78, 78, 120, 120, 4, 2, 2, 4, false) }
+> specimen_b4() -> FrozenSpecimen { FrozenSpecimen("b4", 4, 1, 84, 168, 168, 255, 255, 4, 2, 2, 4, false) }
+> specimen_b2_off_shell() -> FrozenSpecimen { FrozenSpecimen("b2-off-shell", 2, 1, 15, 30, 30, 47, 47, 4, 2, 2, 4, true) }
+> specimen_b3_off_shell() -> FrozenSpecimen { FrozenSpecimen("b3-off-shell", 3, 1, 40, 80, 80, 122, 122, 4, 2, 2, 4, true) }
+> specimen_b4_off_shell() -> FrozenSpecimen { FrozenSpecimen("b4-off-shell", 4, 1, 85, 170, 170, 257, 257, 4, 2, 2, 4, true) }
+
+-- The causal fixture is separate from every construction specimen.
+# ObservationFixture(payloads: Int, observation_records: Int, observation_cells: Int, observation_operation_records: Int)
+# MemoryCausalityPrediction(fresh_hazard: ExactRatio, alias_hazard: ExactRatio, fresh_first: ExactRatio, expected_attempts: ExactRatio)
+
+> observation_fixture() -> ObservationFixture { ObservationFixture(1, 1, 1, 1) }
+
+> absorbed_memory_prediction() -> MemoryCausalityPrediction {
+    MemoryCausalityPrediction(ExactRatio(175, 216), ExactRatio(45, 64), ExactRatio(280, 523), ExactRatio(766, 523))
+}
+
+> intervened_memory_prediction() -> MemoryCausalityPrediction {
+    MemoryCausalityPrediction(ExactRatio(45, 64), ExactRatio(45, 64), ExactRatio(1, 2), ExactRatio(3, 2))
+}
+
+-- BEGIN SCM_MEMORY_INTERVENTION
+
+-- do(M) is surgical replacement of one semantic-memory coordinate. It is
+-- intentionally off the autonomous history manifold: the prior ABSORB record
+-- is preserved, while the ordinary event kernel remains defined afterward.
+# StateManifold = ReachableAutonomousState | OffManifoldScmState
+# HistoricalAbsorbRecordPolicy = PreserveHistoricalAbsorbRecord
+# ScmMemoryIntervention(observed: CompleteState, intervened: CompleteState, semantic_record: Int, observed_bucket: BucketKey, intervened_bucket: BucketKey, manifold: StateManifold, history_policy: HistoricalAbsorbRecordPolicy)
+# PostInterventionKernel(intervention: ScmMemoryIntervention, enabled: EnabledEventSet, transitions_replay: Bool)
+
+> scm_memory_intervention(observed: CompleteState, intervened: CompleteState, semantic_record: Int, observed_bucket: BucketKey, intervened_bucket: BucketKey) -> ScmMemoryIntervention {
+    ScmMemoryIntervention(observed, intervened, semantic_record, observed_bucket, intervened_bucket, OffManifoldScmState, PreserveHistoricalAbsorbRecord)
+}
+
+> post_intervention_kernel(intervention: ScmMemoryIntervention, enabled: EnabledEventSet, transitions_replay: Bool) -> PostInterventionKernel {
+    PostInterventionKernel(intervention, enabled, transitions_replay)
+}
+
+-- END SCM_MEMORY_INTERVENTION
+
+# MaintenanceDefect(parent_level: Int, leaf_level: Int, occupied_at_root: Bool, descriptor_returned: Bool, internal_repair_cells: Int, external_protocol_cells: Int)
+
+> frozen_leaf_defect() -> MaintenanceDefect {
+    MaintenanceDefect(2, 3, true, true, 4, 1)
+}
+
+# LegacyGateNoGo(phi_lower_open: ExactRatio, phi_upper_open: ExactRatio, history_gate_relation: String, zero_history: String)
+
+> legacy_gate_no_go() -> LegacyGateNoGo {
+    LegacyGateNoGo(ExactRatio(3, 8), ExactRatio(1, 1), "a_P > 1 after nonempty history", "UNDEFINED_WITHOUT_BOOTSTRAP")
+}
+
+-- BEGIN POST_CONSTRUCTION_OBSERVER
+
+-- This surface receives a frozen completed architecture. No function in the
+-- construction-policy section receives any value declared below.
+
+# ShellObservation(energy_index: Int, actual_words: List(PrefixWord), multiplicity: Int)
+# LogRatio(numerator: Int, denominator: Int)
+# StateSlope(energy_quantum: Int, multiplicity_ratio: LogRatio)
+# StateTemperature = UndefinedState | NonpositiveState | StateDependent(slopes: List(StateSlope)) | UniqueConstant(energy_quantum: Int, multiplicity_base: Int)
+# StateCountReport(shells: List(ShellObservation), classification: StateTemperature)
+
+# BodyMesostate(index: Int, energy_index: Int, intrinsic_microstates: Int)
+# ProbeBody(zero: BodyMesostate, one: BodyMesostate, two: BodyMesostate, total_energy_index: Int)
+# ThermalMicrostate(body_state: Int, body_microstate: Int, reservoir_word: PrefixWord)
+# ThermalEdge(left: ThermalMicrostate, right: ThermalMicrostate, clock: ExactRatio)
+# ProbeExchangeCoordinate(body: ProbeCoordinate, reservoir: PrefixWord)
+# OptionalProbeEdge = NoDeletedProbeEdge | DeletedProbeEdge(source: ProbeExchangeCoordinate, target: ProbeExchangeCoordinate)
+# SealedProbeProtocol(body_degeneracies: List(Int), body_energy_indices: List(Int), total_energy_index: Int, microscopic_clock: ExactRatio, deleted_directed_edge: OptionalProbeEdge)
+# ProbeAuthoritativeState(xypher: CompleteState, protocol: SealedProbeProtocol)
+# ContactCoordinate(left_reservoir: PrefixWord, right_reservoir: PrefixWord)
+# ContactProtocol(quantum: ExactRatio, total_energy: ExactRatio, microscopic_clock: ExactRatio, prepared_macro_distribution: List(ExactRatio))
+# ContactAuthoritativeState(left: CompleteState, right: CompleteState, protocol: ContactProtocol)
+# AuthoritativeState = DrivenAuthoritativeState(state: CompleteState) | ProbeAuthoritativeStateValue(state: ProbeAuthoritativeState) | ContactAuthoritativeStateValue(state: ContactAuthoritativeState)
+# AuthoritativeEvent = DrivenAuthoritativeEvent(event: EnabledEvent) | ProbeAuthoritativeEvent(target: ProbeExchangeCoordinate, hazard: ExactRatio) | ContactAuthoritativeEvent(target: ContactCoordinate, hazard: ExactRatio)
+# ProbeHeatLedger(delta_body: ExactRatio, delta_reservoir: ExactRatio, heat_into_body: ExactRatio, work_on_body: ExactRatio, total_energy_delta: ExactRatio)
+# ContactHeatLedger(delta_left: ExactRatio, delta_right: ExactRatio, heat_into_left: ExactRatio, heat_into_right: ExactRatio, work_on_left: ExactRatio, work_on_right: ExactRatio, total_energy_delta: ExactRatio)
+# AuthoritativeLedger = DrivenAuthoritativeLedger(ledger: WorkLedger) | ProbeAuthoritativeLedger(ledger: ProbeHeatLedger) | ContactAuthoritativeLedger(ledger: ContactHeatLedger)
+# AuthoritativeInverse = DrivenAuthoritativeInverse(receipt: ActionReceipt) | ReciprocalAuthoritativeInverse(event: AuthoritativeEvent)
+# AuthoritativeTransition(source: AuthoritativeState, event: AuthoritativeEvent, successor: AuthoritativeState, ledger: AuthoritativeLedger, inverse: AuthoritativeInverse, inverse_restores_source: Bool)
+# ProbeAuthoritativeEventRow(source: ProbeExchangeCoordinate, target: ProbeExchangeCoordinate, hazard: ExactRatio, reverse_hazard: ExactRatio, diagonal_from_source: ExactRatio, ledger: ProbeHeatLedger, source_and_successor_well_formed: Bool, noncoordinate_state_is_exactly_unchanged: Bool, inverse_restores_source: Bool)
+# ProbeAuthoritativeKernelAudit(reference_xypher_state: CompleteState, protocol: SealedProbeProtocol, complete_coordinates: List(ProbeExchangeCoordinate), event_rows: List(ProbeAuthoritativeEventRow), every_state_reconstructs_from_reference: Bool, every_enabled_event_replays_from_one_authoritative_kernel: Bool, every_diagonal_is_negative_outgoing_sum: Bool, every_event_has_exact_reciprocal_and_heat_ledger: Bool)
+# ContactAuthoritativeEventRow(source: ContactCoordinate, target: ContactCoordinate, hazard: ExactRatio, reverse_hazard: ExactRatio, diagonal_from_source: ExactRatio, ledger: ContactHeatLedger, source_and_successor_well_formed: Bool, noncoordinate_state_is_exactly_unchanged: Bool, inverse_restores_source: Bool)
+# ContactAuthoritativeKernelAudit(reference_left_state: CompleteState, reference_right_state: CompleteState, shared_energy_gauge: ExactRatio, protocol: ContactProtocol, complete_coordinates: List(ContactCoordinate), event_rows: List(ContactAuthoritativeEventRow), both_full_xypher_states_are_authoritative: Bool, every_state_reconstructs_from_references: Bool, every_enabled_event_replays_from_one_authoritative_kernel: Bool, every_diagonal_is_negative_outgoing_sum: Bool, every_event_has_exact_reciprocal_and_heat_ledger: Bool)
+# LabelledTraffic(label: String, forward_hazard: ExactRatio, reverse_hazard: ExactRatio, energy_gap: Int, intrinsic_ratio: ExactRatio)
+# TrafficTemperature = NoTrafficValue | UniqueTrafficValue(energy_quantum: Int, multiplicity_base: Int) | IncompatibleTraffic
+# ThermalReport(channels: List(LabelledTraffic), classification: TrafficTemperature, reverse_support: Bool, row_closed: Bool, strongly_lumpable: Bool, irreducible: Bool)
+# InformationScope = CausalOnePort | ConstructionQuotient(base: Int, episode: EpisodeId, port: OpenPort)
+# OutcomeRecordBranch(outcome: SemanticState, stored_record: SemanticState, probability: ExactRatio)
+# OutcomeCopyInformation(scope: InformationScope, outcome_probabilities: List(ExactRatio), record_probabilities: List(ExactRatio), joint_probabilities: List(ExactRatio), branches: List(OutcomeRecordBranch), record_is_exact_copy: Bool, symbolic_entropy: String, symbolic_mutual_information: String)
+# CausalRecordVariable = ImmutableFirstOperationRecordEntry
+# ImmediateSemanticEvidence(fresh: SemanticState, alias: SemanticState, role: String)
+# CausalMYDefinition(record_variable: CausalRecordVariable, immediate_semantic_evidence: ImmediateSemanticEvidence)
+# InformationReport(scope: InformationScope, record_variable: String, branch_evidence: String, outcome_probabilities: List(ExactRatio), record_probabilities: List(ExactRatio), joint_distribution: List(ExactRatio), outcome_entropy: String, record_outcome_mutual_information: String, record_is_exact_copy: Bool)
+
+> frozen_probe() -> ProbeBody {
+    = zero = BodyMesostate(0, 0, 1)
+    = one = BodyMesostate(1, 1, 2)
+    = two = BodyMesostate(2, 2, 1)
+    ProbeBody(zero, one, two, 3)
+}
+
+-- Probe and contact protocol values are sealed only after construction. They
+-- are embedded in the authoritative state and never enter BuilderView.
+> sealed_probe_protocol(microscopic_clock: ExactRatio) -> SealedProbeProtocol {
+    SealedProbeProtocol([1, 2, 1], [0, 1, 2], 3, microscopic_clock, NoDeletedProbeEdge)
+}
+
+> frozen_contact_protocol(microscopic_clock: ExactRatio) -> ContactProtocol {
+    ContactProtocol(ExactRatio(2, 1), ExactRatio(4, 1), microscopic_clock, [ExactRatio(1, 2), ExactRatio(1, 2)])
+}
+
+> probe_heat_ledger_closes(ledger: ProbeHeatLedger) -> Bool {
+    exact_ratio_sum_equals(ledger.heat_into_body, ledger.work_on_body, ledger.delta_body) && exact_ratios_are_opposites(ledger.delta_reservoir, ledger.heat_into_body) && exact_ratio_sum_equals(ledger.delta_body, ledger.delta_reservoir, ledger.total_energy_delta) && exact_ratio_is_zero(ledger.total_energy_delta) && exact_ratio_is_zero(ledger.work_on_body)
+}
+
+> contact_heat_ledger_closes(ledger: ContactHeatLedger) -> Bool {
+    exact_ratio_sum_equals(ledger.heat_into_left, ledger.work_on_left, ledger.delta_left) && exact_ratio_sum_equals(ledger.heat_into_right, ledger.work_on_right, ledger.delta_right) && exact_ratios_are_opposites(ledger.heat_into_left, ledger.heat_into_right) && exact_ratio_sum_equals(ledger.delta_left, ledger.delta_right, ledger.total_energy_delta) && exact_ratio_is_zero(ledger.total_energy_delta) && exact_ratio_is_zero(ledger.work_on_left) && exact_ratio_is_zero(ledger.work_on_right)
+}
+
+> same_semantic_state(left: SemanticState, right: SemanticState) -> Bool {
+    match left {
+        | Blank -> match right { | Blank -> true | Pending -> false | Success -> false | Failure -> false }
+        | Pending -> match right { | Blank -> false | Pending -> true | Success -> false | Failure -> false }
+        | Success -> match right { | Blank -> false | Pending -> false | Success -> true | Failure -> false }
+        | Failure -> match right { | Blank -> false | Pending -> false | Success -> false | Failure -> true }
+    }
+}
+
+> branch_record_is_copy(branch: OutcomeRecordBranch) -> Bool {
+    same_semantic_state(branch.outcome, branch.stored_record)
+}
+
+> every_branch_record_is_copy(branches: List(OutcomeRecordBranch)) -> Bool {
+    if length(branches) == 0 { true }
+    else { branch_record_is_copy(head(branches)) && every_branch_record_is_copy(tail(branches)) }
+}
+
+-- Marginals and the joint law are inputs derived from exact authoritative
+-- successor branches. This constructor derives the copy predicate; it does
+-- not insert a successful information result prospectively.
+> outcome_copy_information(scope: InformationScope, outcome_probabilities: List(ExactRatio), record_probabilities: List(ExactRatio), joint_probabilities: List(ExactRatio), branches: List(OutcomeRecordBranch), symbolic_entropy: String, symbolic_mutual_information: String) -> OutcomeCopyInformation {
+    OutcomeCopyInformation(scope, outcome_probabilities, record_probabilities, joint_probabilities, branches, every_branch_record_is_copy(branches), symbolic_entropy, symbolic_mutual_information)
+}
+
+-- For the causal fixture M_Y is the immutable first action OperationRecord
+-- entry. PENDING and FAILURE are immediate branch checks only; neither is the
+-- causal random variable and neither is silently replaced by terminal state.
+> causal_m_y_definition() -> CausalMYDefinition {
+    CausalMYDefinition(ImmutableFirstOperationRecordEntry, ImmediateSemanticEvidence(Pending, Failure, "IMMEDIATE_EVIDENCE_ONLY_NOT_M_Y"))
+}
+
+> information_report(record_variable: String, branch_evidence: String, information: OutcomeCopyInformation) -> InformationReport {
+    InformationReport(information.scope, record_variable, branch_evidence, information.outcome_probabilities, information.record_probabilities, information.joint_probabilities, information.symbolic_entropy, information.symbolic_mutual_information, information.record_is_exact_copy)
+}
+
+-- The observer represents logarithms symbolically through integer ratios.
+> adjacent_state_slope(left: ShellObservation, right: ShellObservation, energy_quantum: Int) -> StateSlope {
+    StateSlope(energy_quantum, LogRatio(right.multiplicity, left.multiplicity))
+}
+
+-- FINITE CONTACT IN ONE DECLARED ENERGY GAUGE.
+
+# ReservoirIdentity(alphabet_size: Int, energy_quantum: Int)
+# ContactFixture(name: String, first: ReservoirIdentity, second: ReservoirIdentity, transfer_quantum: Int, total_energy: Int)
+# ContactFiber(name: String, multiplicity: Int)
+# ContactGenerator(a_to_b: Int, b_to_a: Int, a_diagonal: Int, b_diagonal: Int)
+# ContactPrediction(event_current_numerator: Int, event_current_denominator: Int, energy_current_numerator: Int, energy_current_denominator: Int)
+
+> equal_contact_fixture() -> ContactFixture {
+    ContactFixture("equal", ReservoirIdentity(2, 1), ReservoirIdentity(4, 2), 2, 4)
+}
+
+> unequal_contact_fixture() -> ContactFixture {
+    ContactFixture("unequal", ReservoirIdentity(2, 1), ReservoirIdentity(2, 2), 2, 4)
+}
+
+> contact_generator(fiber_a: ContactFiber, fiber_b: ContactFiber) -> ContactGenerator {
+    ContactGenerator(fiber_b.multiplicity, fiber_a.multiplicity, 0 - fiber_b.multiplicity, 0 - fiber_a.multiplicity)
+}
+
+> equal_contact_prediction() -> ContactPrediction {
+    ContactPrediction(0, 1, 0, 1)
+}
+
+> unequal_contact_prediction() -> ContactPrediction {
+    ContactPrediction(2, 1, 4, 1)
+}
+
+-- END POST_CONSTRUCTION_OBSERVER
+
+-- FORBIDDEN-INPUT POISON IS AN INERT ENVELOPE, NEVER A BUILDER ARGUMENT.
+
+# ForbiddenSentinel(name: String, value: String)
+# PoisonEnvelope(state: CompleteState, sentinels: List(ForbiddenSentinel))
+
+> project_poisoned_state(envelope: PoisonEnvelope) -> BuilderView {
+    builder_view(envelope.state)
+}
+
+-- FRAMEWORK FIELDS DELIBERATELY OUTSIDE THIS APPARATUS.
+
+# UninstantiatedFrameworkFields(path_entropy: String, accounting_price: String, tau_receipt: String, xi_drive: String)
+
+> uninstantiated_framework_fields() -> UninstantiatedFrameworkFields {
+    UninstantiatedFrameworkFields("NOT_INSTANTIATED", "NOT_INSTANTIATED", "NOT_INSTANTIATED", "NOT_INSTANTIATED")
+}
+
+-- FROZEN OBSERVATION AND REPORT ORDER. These are requested evaluations, not
+-- asserted results. No held-out channel or control is exposed before the
+-- completed state classification is frozen.
+
+# ForwardProtocolEvidence(source_complete_state: CompleteState, successor_complete_state: CompleteState, receipt: ActionReceipt)
+# InverseProtocolEvidence(source_complete_state: CompleteState, successor_complete_state: CompleteState, receipt: ActionReceipt)
+# ProtocolTranscript(scope: String, initial_complete_state: CompleteState, terminal_complete_state: CompleteState, forward: List(ForwardProtocolEvidence), inverse: List(InverseProtocolEvidence), round_trip_exact: Bool)
+# EvidenceJournal(controls: List(String), specimens: List(String), information: List(InformationReport), protocols: List(ProtocolTranscript), observations: List(String), thermal_observations: List(String), contact_observations: List(String))
+# EvaluationResult = CompletedEvidence(evidence: EvidenceJournal) | LateErrorWithPreservedEvidence(detail: String, evidence: EvidenceJournal)
+
+> preserve_late_error(detail: String, evidence: EvidenceJournal) -> EvaluationResult {
+    LateErrorWithPreservedEvidence(detail, evidence)
+}
+
+# ObservationStage = RecordInitialState | ClassifyInitialState | ExecuteOrSolveConstruction | EnumerateActualShells | FreezeStateClassification | ExposeHeldOutChannels | ClassifyLabelledTraffic | CompareFrozenTemperatures | ApplyControls | PublishAllClassifications
+# ObservationPlan(stages: List(ObservationStage))
+
+> observation_plan() -> ObservationPlan {
+    ObservationPlan([
+        RecordInitialState,
+        ClassifyInitialState,
+        ExecuteOrSolveConstruction,
+        EnumerateActualShells,
+        FreezeStateClassification,
+        ExposeHeldOutChannels,
+        ClassifyLabelledTraffic,
+        CompareFrozenTemperatures,
+        ApplyControls,
+        PublishAllClassifications
+    ])
+}
+
+# ClaimLabel = StaticStructuralTheorem | OperationalThermodynamicGraph | EndogenousNonadaptiveConstructor | AdaptiveThermodynamicConstruction | EndogenousStateDependentTemperature | EndogenouslyThermodynamicAdaptiveXypher | NotAdmissible | NoResult
+# ClaimLabelText(value: String)
+# PrimaryContaminationEvidence(target_payload_admitted_to_policy: Bool, traffic_payload_admitted_to_policy: Bool, poison_changes_primary_trace: Bool)
+# StateDependentMatchingEvidence(positive_slopes: Bool, independent_probe_operation_matches_state_slopes: Bool, independent_contact_operation_matches_state_slopes: Bool, matching_operational_controls_pass: Bool)
+
+> demonstrated_primary_contamination(evidence: PrimaryContaminationEvidence) -> Bool {
+    evidence.target_payload_admitted_to_policy || evidence.traffic_payload_admitted_to_policy || evidence.poison_changes_primary_trace
+}
+
+> may_emit_not_admissible(evidence: PrimaryContaminationEvidence) -> Bool {
+    demonstrated_primary_contamination(evidence)
+}
+
+> state_dependent_label_is_admissible(evidence: StateDependentMatchingEvidence) -> Bool {
+    evidence.positive_slopes && evidence.independent_probe_operation_matches_state_slopes && evidence.independent_contact_operation_matches_state_slopes && evidence.matching_operational_controls_pass
+}
+
+> claim_label_text(label: ClaimLabel) -> ClaimLabelText {
+    match label {
+        | StaticStructuralTheorem -> ClaimLabelText("STATIC STRUCTURAL THEOREM")
+        | OperationalThermodynamicGraph -> ClaimLabelText("OPERATIONAL THERMODYNAMIC GRAPH")
+        | EndogenousNonadaptiveConstructor -> ClaimLabelText("ENDOGENOUS NONADAPTIVE CONSTRUCTOR")
+        | AdaptiveThermodynamicConstruction -> ClaimLabelText("ADAPTIVE THERMODYNAMIC CONSTRUCTION")
+        | EndogenousStateDependentTemperature -> ClaimLabelText("ENDOGENOUS STATE-DEPENDENT TEMPERATURE")
+        | EndogenouslyThermodynamicAdaptiveXypher -> ClaimLabelText("ENDOGENOUSLY THERMODYNAMIC ADAPTIVE XYPHER")
+        | NotAdmissible -> ClaimLabelText("NOT ADMISSIBLE")
+        | NoResult -> ClaimLabelText("NO_RESULT")
+    }
+}
+
+# GateId = E01 | E02 | E03 | E04 | E05 | E06 | E07 | E08 | E09 | E10 | E11 | E12 | E13 | E14 | E15
+# GatePlan(first: GateId, second: GateId, third: GateId, fourth: GateId, fifth: GateId, sixth: GateId, seventh: GateId, eighth: GateId, ninth: GateId, tenth: GateId, eleventh: GateId, twelfth: GateId, thirteenth: GateId, fourteenth: GateId, fifteenth: GateId)
+
+> gate_plan() -> GatePlan {
+    GatePlan(E01, E02, E03, E04, E05, E06, E07, E08, E09, E10, E11, E12, E13, E14, E15)
+}
+
+# ControlId = StaticPerfectTree | NonadaptiveBuilder | LegacyAPGate | ExternalThermostat | GibbsInstalled | TargetCountBuilder | TrafficTrainedBuilder | PoisonInput | OffShellInventory | DescriptorPermutation | EnergyShuffle | LeafDeletion | RepairDisabled | DescriptorWithheld | PortLawMutation | MemoryClamp | MemoryPermutation | HiddenMemory | IdealCounters | LedgerLeak | ActivityOnly | ReverseMismatch
+# ControlPlan(controls: List(ControlId))
+
+> control_plan() -> ControlPlan {
+    ControlPlan([
+        StaticPerfectTree,
+        NonadaptiveBuilder,
+        LegacyAPGate,
+        ExternalThermostat,
+        GibbsInstalled,
+        TargetCountBuilder,
+        TrafficTrainedBuilder,
+        PoisonInput,
+        OffShellInventory,
+        DescriptorPermutation,
+        EnergyShuffle,
+        LeafDeletion,
+        RepairDisabled,
+        DescriptorWithheld,
+        PortLawMutation,
+        MemoryClamp,
+        MemoryPermutation,
+        HiddenMemory,
+        IdealCounters,
+        LedgerLeak,
+        ActivityOnly,
+        ReverseMismatch
+    ])
+}

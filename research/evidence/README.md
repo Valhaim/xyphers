@@ -3,6 +3,7 @@
 Each directory is the inspectable source packet for one public article. Read its `README.txt` first, then use `RUN.txt` for the supported reproduction path. `SHA256SUMS` records the packet contents.
 
 - [Catalyst choice](catalyst-choice/)
+- [Growth](growth/)
 - [Information to state](information-state/)
 - [Local future test](local-future-test/)
 

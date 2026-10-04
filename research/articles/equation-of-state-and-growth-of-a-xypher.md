@@ -355,9 +355,9 @@ We have finally made it measurable.
 - A. D. Wissner-Gross and C. E. Freer, [“Causal Entropic Forces”](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.168702), *Physical Review Letters* 110, 168702 (2013).
 - Max Kleiber, [“Body Size and Metabolism”](https://my.ucanr.edu/repository/view.cfm?article=152052&groupid=47), *Hilgardia* 6(11), 315–353 (1932).
 - Geoffrey B. West, James H. Brown, and Brian J. Enquist, [“A General Model for the Origin of Allometric Scaling Laws in Biology”](https://doi.org/10.1126/science.276.5309.122), *Science* 276, 122–126 (1997).
-- Xyphers research, [exact operational thermodynamics result](https://github.com/OneManMobile/thaim/blob/main/research/physics/derivable/xypher-operational-thermodynamics-result.md).
-- Xyphers research, [temperature-identifiability result](https://github.com/OneManMobile/thaim/blob/93f14e7d/research/physics/derivable/xypher-alpha-tau-constitutive-result.md).
-- Xyphers research, [endogenous thermodynamics result](https://github.com/OneManMobile/thaim/blob/93f14e7d/research/physics/derivable/xypher-endogenous-thermodynamics-result.md).
+- Xyphers research, [exact operational thermodynamics result](../evidence/information-state/CAL-XTHERM-Result.md).
+- Xyphers research, [temperature-identifiability result](../evidence/growth/CAL-ALPHA-0-Result.md), with its [boundary, source, and run guide](../evidence/growth/README.txt).
+- Xyphers research, [endogenous thermodynamics result](../evidence/growth/CAL-ENDO-1-Result.md), with its [boundary, source, and run guide](../evidence/growth/README.txt).
 - Xyphers research, [scaling derivation and simulation record](https://github.com/OneManMobile/thaim/blob/main/research/scaling/derivation-equation-of-state.md).
 
 [Return to the research index](../README.md).

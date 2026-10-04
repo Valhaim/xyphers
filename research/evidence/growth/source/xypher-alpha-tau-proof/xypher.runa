@@ -1,0 +1,175 @@
+-- Prospective typed dataflow for CAL-ALPHA-0.
+--
+-- This file declares frozen inputs and exact symbolic transformations only.
+-- It does not execute the apparatus, evaluate ln, or assert an admission
+-- result. The Rust evaluator independently owns microedge enumeration and all
+-- gates.
+-- Frozen boundary commit: 262cb0c076c78c7cc381fd9db00db563bf341b3b
+-- Frozen boundary sha256: 780e60cb3f08318edcb269718aea2e1ae7f98252bc143290b60264201cbe8859
+
+# ExactRatio(numerator: Int, denominator: Int)
+# LogMonomial(argument: ExactRatio)
+# Temperature(energy_quantum: ExactRatio, reservoir_base: Int)
+# ScaledLog(temperature: Temperature, argument: ExactRatio)
+# EntropyDirection = Increase | Flat | Decrease
+# GrossTau(receipt: ScaledLog, direction: EntropyDirection)
+# TauPair(forward: GrossTau, reverse: GrossTau)
+# SignedXi(pair: TauPair, energy_quantum: ExactRatio, delta_n: Int)
+# LdbCompatibility(delta_n: Int, delta_s: LogMonomial, forward_count: Int, reverse_count: Int)
+# GateStatistic(acted: Int, integrated_phi_units: Int)
+# AccountingPrice(price: ExactRatio, observable: String)
+# AggregateScaling(value: ExactRatio, network_size: Int)
+# PerUnitScaling(value: ExactRatio, network_size: Int)
+
+# BodyState(index: Int, energy_index: Int, degeneracy: Int)
+# BodyVector(a: BodyState, b: BodyState, c: BodyState, d: BodyState)
+# ReservoirLaw(base: Int, lambda: ExactRatio, total_energy_index: Int)
+# ReservoirTemperature(value: Temperature, source: ReservoirLaw)
+# ConfirmatoryCase(name: String, reservoir: ReservoirLaw, body: BodyVector)
+# ConfirmatoryMatrix(c1: ConfirmatoryCase, c2: ConfirmatoryCase, c3: ConfirmatoryCase, c4: ConfirmatoryCase, c5: ConfirmatoryCase, c6: ConfirmatoryCase, c7: ConfirmatoryCase, c8: ConfirmatoryCase)
+# CalibrationRole = InheritedNonEvaluation
+# CalibrationRow(role: CalibrationRole, reservoir: ReservoirLaw)
+
+# DirectedChannel(label: String, from_state: BodyState, to_state: BodyState)
+# ChannelReadback(label: String, delta_n: Int, delta_s: LogMonomial, forward_fiber: Int, reverse_fiber: Int)
+# ThermoReadback(temperature: Temperature, signed_entropy_energy: ScaledLog)
+# Action(channel: DirectedChannel, readback: ChannelReadback)
+# Thaw(forward: Action, reverse: Action)
+# Ruby = EmptyRuby
+# Opal = NoOpal
+# Memory = OneStateMemory
+# KernelSlots(ruby: Ruby, opal: Opal, memory: Memory)
+
+> ratio(numerator: Int, denominator: Int) -> ExactRatio {
+    ExactRatio(numerator, denominator)
+}
+
+> body_g1() -> BodyVector {
+    = a = BodyState(0, 0, 1)
+    = b = BodyState(1, 0, 2)
+    = c = BodyState(2, 1, 4)
+    = d = BodyState(3, 3, 8)
+    BodyVector(a, b, c, d)
+}
+
+> body_g2() -> BodyVector {
+    = a = BodyState(0, 0, 1)
+    = b = BodyState(1, 0, 3)
+    = c = BodyState(2, 1, 5)
+    = d = BodyState(3, 3, 11)
+    BodyVector(a, b, c, d)
+}
+
+> reservoir(base: Int, lambda: Int) -> ReservoirLaw {
+    = quantum = ratio(lambda, 1)
+    ReservoirLaw(base, quantum, 3)
+}
+
+> case(name: String, base: Int, lambda: Int, body: BodyVector) -> ConfirmatoryCase {
+    = law = reservoir(base, lambda)
+    ConfirmatoryCase(name, law, body)
+}
+
+> confirmatory_matrix() -> ConfirmatoryMatrix {
+    = c1 = case("b3-lambda1-g1", 3, 1, body_g1())
+    = c2 = case("b3-lambda1-g2", 3, 1, body_g2())
+    = c3 = case("b3-lambda3-g1", 3, 3, body_g1())
+    = c4 = case("b3-lambda3-g2", 3, 3, body_g2())
+    = c5 = case("b5-lambda1-g1", 5, 1, body_g1())
+    = c6 = case("b5-lambda1-g2", 5, 1, body_g2())
+    = c7 = case("b5-lambda3-g1", 5, 3, body_g1())
+    = c8 = case("b5-lambda3-g2", 5, 3, body_g2())
+    ConfirmatoryMatrix(c1, c2, c3, c4, c5, c6, c7, c8)
+}
+
+> calibration_only() -> CalibrationRow {
+    = quantum = ratio(1, 1)
+    = law = ReservoirLaw(2, quantum, 2)
+    CalibrationRow(InheritedNonEvaluation, law)
+}
+
+> reservoir_temperature(law: ReservoirLaw) -> Temperature {
+    Temperature(law.lambda, law.base)
+}
+
+> declared_reservoir_temperature(law: ReservoirLaw) -> ReservoirTemperature {
+    = value = reservoir_temperature(law)
+    ReservoirTemperature(value, law)
+}
+
+> pow_nonnegative(base: Int, exponent: Int) -> Int {
+    if exponent <= 0 { 1 }
+    else { base * pow_nonnegative(base, exponent - 1) }
+}
+
+> fiber_size(state: BodyState, law: ReservoirLaw) -> Int {
+    state.degeneracy * pow_nonnegative(law.base, law.total_energy_index - state.energy_index)
+}
+
+> log_ratio(to_state: BodyState, from_state: BodyState) -> LogMonomial {
+    LogMonomial(ratio(to_state.degeneracy, from_state.degeneracy))
+}
+
+> channel_readback(channel: DirectedChannel, law: ReservoirLaw) -> ChannelReadback {
+    = delta_n = channel.to_state.energy_index - channel.from_state.energy_index
+    = delta_s = log_ratio(channel.to_state, channel.from_state)
+    = forward_fiber = fiber_size(channel.to_state, law)
+    = reverse_fiber = fiber_size(channel.from_state, law)
+    ChannelReadback(channel.label, delta_n, delta_s, forward_fiber, reverse_fiber)
+}
+
+> ldb_compatibility(channel: DirectedChannel, law: ReservoirLaw) -> LdbCompatibility {
+    = readback = channel_readback(channel, law)
+    LdbCompatibility(readback.delta_n, readback.delta_s, readback.forward_fiber, readback.reverse_fiber)
+}
+
+> thermo_readback(channel: DirectedChannel, law: ReservoirLaw) -> ThermoReadback {
+    = temperature = reservoir_temperature(law)
+    = entropy_argument = ratio(channel.to_state.degeneracy, channel.from_state.degeneracy)
+    = signed_entropy_energy = ScaledLog(temperature, entropy_argument)
+    ThermoReadback(temperature, signed_entropy_energy)
+}
+
+> entropy_direction(channel: DirectedChannel) -> EntropyDirection {
+    if channel.to_state.degeneracy > channel.from_state.degeneracy { Increase }
+    else { if channel.to_state.degeneracy < channel.from_state.degeneracy { Decrease } else { Flat } }
+}
+
+> gross_tau(channel: DirectedChannel, temperature: Temperature) -> GrossTau {
+    = entropy_argument = ratio(channel.to_state.degeneracy, channel.from_state.degeneracy)
+    = direction = entropy_direction(channel)
+    = zero_argument = ratio(1, 1)
+    = receipt = match direction { | Increase -> ScaledLog(temperature, entropy_argument) | Flat -> ScaledLog(temperature, zero_argument) | Decrease -> ScaledLog(temperature, zero_argument) }
+    GrossTau(receipt, direction)
+}
+
+> tau_pair(channel: DirectedChannel, law: ReservoirLaw) -> TauPair {
+    = temperature = reservoir_temperature(law)
+    = reverse_channel_value = reverse_channel(channel)
+    = forward = gross_tau(channel, temperature)
+    = reverse = gross_tau(reverse_channel_value, temperature)
+    TauPair(forward, reverse)
+}
+
+> signed_xi(channel: DirectedChannel, law: ReservoirLaw) -> SignedXi {
+    = pair = tau_pair(channel, law)
+    = delta_n = channel.to_state.energy_index - channel.from_state.energy_index
+    SignedXi(pair, law.lambda, delta_n)
+}
+
+> reverse_channel(channel: DirectedChannel) -> DirectedChannel {
+    DirectedChannel(channel.label, channel.to_state, channel.from_state)
+}
+
+> reciprocal_action(channel: DirectedChannel, law: ReservoirLaw) -> Action {
+    = readback = channel_readback(channel, law)
+    Action(channel, readback)
+}
+
+> reciprocal_thaw(action: Action, law: ReservoirLaw) -> Thaw {
+    = reverse = reverse_channel(action.channel)
+    = reverse_action = reciprocal_action(reverse, law)
+    Thaw(action, reverse_action)
+}
+
+> minimal_slots() -> KernelSlots { KernelSlots(EmptyRuby, NoOpal, OneStateMemory) }
