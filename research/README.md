@@ -31,7 +31,7 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 - [Kleiber's Law and the Growth of a Xypher](https://xyphers.com/research/kleibers-law-derived-from-physics/) explores the relationship between measured graph-growth scaling and biological metabolism.
 - [One State, Two Questions](https://xyphers.com/research/one-state-two-questions/) develops a Xypher hypothesis for wave–particle complementarity.
 
-These essays are linked for the complete research picture. Their own reproduction code is not packaged in this repository.
+These essays are linked for the complete research picture. Their cited working records are packaged as evidence below; their reproduction code is not.
 
 ## Runnable code
 
@@ -45,6 +45,8 @@ These essays are linked for the complete research picture. Their own reproductio
 - [Information to state](evidence/information-state/) — CAL-XTHERM and CAL-ADAPT boundaries, exact results, and run guide.
 - [Growth](evidence/growth/) — frozen CAL-ALPHA-0 and CAL-ENDO-1 records, their dependency-free Rust verifiers, and run guide.
 - [Local future test](evidence/local-future-test/) — proof records, standalone Rust verifiers, expected-result dictionary, and source-status warnings.
+- [Scaling](evidence/scaling/) — frozen scaling derivation record cited by the growth and Kleiber articles; predates the current growth-price position.
+- [Quantum complementarity](evidence/quantum-complementarity/) — frozen quantum working records cited by One State, Two Questions, including a failed Born route and a no-laboratory sweep.
 - [Checksummed archives](downloads/) — portable copies of the downloadable packets linked from the articles.
 
 ## Repository convention

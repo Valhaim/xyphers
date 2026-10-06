@@ -6,5 +6,7 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Growth](growth/)
 - [Information to state](information-state/)
 - [Local future test](local-future-test/)
+- [Quantum complementarity](quantum-complementarity/)
+- [Scaling](scaling/)
 
 Historical comments retained inside copied sources do not override the narrower status stated by the article and the packet README.

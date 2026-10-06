@@ -358,6 +358,6 @@ We have finally made it measurable.
 - Xyphers research, [exact operational thermodynamics result](../evidence/information-state/CAL-XTHERM-Result.md).
 - Xyphers research, [temperature-identifiability result](../evidence/growth/CAL-ALPHA-0-Result.md), with its [boundary, source, and run guide](../evidence/growth/README.txt).
 - Xyphers research, [endogenous thermodynamics result](../evidence/growth/CAL-ENDO-1-Result.md), with its [boundary, source, and run guide](../evidence/growth/README.txt).
-- Xyphers research, [scaling derivation and simulation record](https://github.com/OneManMobile/thaim/blob/main/research/scaling/derivation-equation-of-state.md).
+- Xyphers research, [scaling derivation and simulation record](../evidence/scaling/derivation-equation-of-state.md).
 
 [Return to the research index](../README.md).
