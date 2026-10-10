@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "formal-framework-draft"
 published: "2026-08-18"
-revised: "2026-08-18"
+revised: "2026-10-10"
 website_path: "/research/when-does-information-become-state-in-a-xypher/"
 web_status: "live"
 ---
@@ -103,7 +103,7 @@ Both distributions have the same spread, yet they put probability on different o
 
 The word “state” already names three relationships. They cross rather than line up. The table separates the tests established so far.
 
-| Kind | Test | What the test does not establish |
+| Kind | Test | What it leaves to other tests |
 |---|---|---|
 | External annotation or drive | It lies outside the declared autonomous transition law | That the information lacks physical existence |
 | Complete-state coordinate | The dynamics read it, change it, or require it to determine the next event | An exact projection, shared authority, or thermodynamic status |
@@ -117,7 +117,7 @@ In the [Core Thesis](core-thesis.md#the-xypher), the Graph Substrate carries pos
 
 The complete-state test follows the executable rule. If a Praxion reads a memory bit before choosing an action, the bit belongs in the complete state of that action process. If a clock changes which candidates are available, its relevant phase belongs there too. If a random seed determines a future transition and the model claims autonomous replay, the randomness state or its external source must be named.
 
-The projection test asks a different question. Perhaps the full process contains thousands of coordinates while a three-state summary is enough for one exact future law. Strong lumpability can earn that summary. For a claim about where the process ends after one fixed number of steps, preserving that full endpoint distribution may be enough. It is enough only for that bounded prediction. For repeated Markov dynamics, every one-step destination block must pass the stronger test.
+The projection test asks a different question. Suppose the full process contains thousands of coordinates while a three-state summary is enough for one exact future law. Strong lumpability can earn that summary. For a claim about where the process ends after one fixed number of steps, preserving that full endpoint distribution is enough for that bounded prediction, and only for it. For repeated Markov dynamics, every one-step destination block must pass the stronger test.
 
 Architecture still does not confer thermodynamics. A Xypher earns that status only when its complete boundary closes the independent requirements for state, energy and entropy, reciprocal transitions, pathwise heat and work accounting, equilibrium, and lawful contact. Complete state is the first obligation, not the last.
 
@@ -145,7 +145,7 @@ Every complete state hidden under one visible position also sends the same total
 
 The construction's readout label participates in its executable dynamics: an internal refresh operation can change that label while preserving energy. The same proof also covers a different system that exposes a temporary report while changing no persistent coordinate and no later transition rate. Such a report can represent a counted internal distinction without becoming persistent state merely because it was observed. The CAL-XTHERM boundary record names this reverse construction the **representation theorem**, or Theorem 2.
 
-The sixteen-state construction has an empty **Ruby**—no directed-flow scoring layer—and its non-adaptive memory has only one condition, so that memory never changes. It proves one exact minimal thermodynamic Xypher and an exact three-position projection. It does not prove an adaptive learning law.
+The sixteen-state construction has an empty **Ruby**—no directed-flow scoring layer—and its non-adaptive memory has only one condition, so that memory never changes. It proves one exact minimal thermodynamic Xypher and an exact three-position projection. An adaptive learning law is the next step.
 
 The [exact result](../evidence/information-state/CAL-XTHERM-Result.md) records every state, rate, equilibrium weight, and control. The [standalone verifier](../downloads/xypher-thermodynamics-proof-v1.zip) can be inspected and run without external Rust dependencies; its [two-minute guide](../downloads/README-FIRST-xypher-thermodynamics-proof-v1.txt) gives the commands.
 
@@ -155,13 +155,13 @@ Replace the inert colour in the toy with a notebook. Two actors have the same pu
 
 A later exact-control study, **CAL-ADAPT**, tested that boundary. Behavior-changing hidden memory produced two complete states with the same visible balance and different next-balance laws; the visible projection failed. An inert hidden label passed.
 
-The study then paired every memory-writing move with a memory-erasing reverse. Its primary two-gap information reservoir contained seven complete states across three energy levels. A separately generated thirteen-state version passed the same exact reversibility, equilibrium, and contact checks. The second construction matters because the result is not confined to one hand-written seven-state table.
+The study then paired every memory-writing move with a memory-erasing reverse. Its primary two-gap information reservoir contained seven complete states across three energy levels. A separately generated thirteen-state version passed the same exact reversibility, equilibrium, and contact checks. The second construction carries the result beyond one hand-written seven-state table.
 
 An append-only history is different. When a counter or receipt can only increase, the transition that advances it has no microscopic reverse inside the declared state space. Reversing a visible balance does not erase the retained receipt.
 
-These controls establish that hidden behavior-changing memory breaks the chosen visible Markov state, while a finite reversible information reservoir can be engineered. They do not derive the live Xypher's own learning mechanism. The symbols its memory may hold, the reversible operations that erase them, and the timing of those operations have not yet been obtained from the Xypher's own Crystal and Praxion. Adaptive-Xypher thermodynamics remains open.
+These controls establish that hidden behavior-changing memory breaks the chosen visible Markov state, while a finite reversible information reservoir can be engineered. The next step is the live Xypher's own learning mechanism: the symbols its memory holds, the reversible operations that erase them, and their timing, all derived from the Xypher's own Crystal and Praxion. That derivation is the open frontier of adaptive-Xypher thermodynamics.
 
-Private and shared memory add an authority question that lumpability does not answer. Before two participants act on the same learned memory, both must be able to reconstruct it from the same shared record, know who may change it, and know what happens when later evidence contradicts it. The Xypher architecture treats those as candidate design requirements. They are not consequences of the Markov theorem or laws of nature.
+Private and shared memory add an authority question that lumpability does not answer. Before two participants act on the same learned memory, both must be able to reconstruct it from the same shared record, know who may change it, and know what happens when later evidence contradicts it. The Xypher architecture proposes those as design requirements. They are design choices, not consequences of the Markov theorem.
 
 The [CAL-ADAPT result](../evidence/information-state/CAL-ADAPT-Result.md) and [reproduction guide](../evidence/information-state/RUN.txt) expose the exact controls and their open boundary. The [checksummed evidence packet](../downloads/xypher-information-state-evidence-v1.zip) includes the source and tests ([SHA-256](../downloads/xypher-information-state-evidence-v1.zip.sha256)).
 

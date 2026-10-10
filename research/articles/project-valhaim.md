@@ -3,7 +3,7 @@ title: "Project Valhaim"
 type: "research-article"
 status: "published"
 published: "2026-09-06"
-revised: "2026-09-06"
+revised: "2026-10-10"
 website_path: "/research/project-valhaim/"
 web_status: "live"
 source_revision: "c46f4a808"
@@ -28,7 +28,7 @@ The [Core Thesis](core-thesis.md) introduces future entropy, **S<sub>τ</sub>**,
 
 Connecting the workshop to the supplier may also open access to the supplier's existing network. One relationship changes what further relationships become possible.
 
-That graph measurement supplies a question about access. Its economic meaning depends on what a connection actually permits: who can use it, what it costs, and whether someone can act on the opportunity. Those relationships have to be represented in the system being measured.
+That graph measurement asks a question about access. Its economic meaning comes from what a connection actually permits: who can use it, what it costs, and whether someone can act on the opportunity. The measured system must represent those relationships.
 
 ## Discover, commit, learn
 
@@ -40,9 +40,9 @@ For the workshop, a Praxion might discover a supplier connection and predict tha
 
 One mechanism being explored lets a participant commit currency to a prediction of future trade. Transfers provide evidence about that prediction. The complete economic question includes who funds the commitment, what counts as its resolution, and how all resulting balances change.
 
-A recorded transfer establishes that a transfer happened. Its interpretation as economically useful activity must survive the possibility that one actor controls both ends. The architecture has to connect rewards to consequences that remain meaningful under such participation.
+A recorded transfer proves that a transfer happened. The architecture must tie rewards to consequences that stay meaningful even when one actor controls both ends.
 
-These are design questions for the growing economy. The alpha is an early public step; its release status does not establish that the complete cycle described here has been demonstrated.
+These are the design questions the growing economy answers next. The alpha is the first public step toward the complete cycle.
 
 ## Why the signed account matters
 
@@ -62,9 +62,9 @@ Read it as: *Keep what the action opens, what it closes, and what resources it b
 
 At the same α, subtracting the reverse action's positive receipt from the forward action's receipt recovers **α · ΔS<sub>τ</sub>**, including any negative contribution. Ξ therefore sees the loss that a positive receipt alone would omit.
 
-For the bridge cycle at fixed α, the signed entropy and stored-energy changes sum to zero. That accounting identity identifies the cycle. Establishing what a participant can earn from it additionally requires the ledger, funding, ownership, and action costs to be included.
+For the bridge cycle at fixed α, the signed entropy and stored-energy changes sum to zero. That accounting identity exposes the cycle. What a participant can earn from it is decided by the ledger, funding, ownership, and action costs.
 
-A receipt becomes spendable money through those economic arrangements. The thermodynamic formula supplies a quantity to account for; the payment architecture must establish how issuance and exchange remain solvent and resistant to invented activity.
+A receipt becomes spendable money through those economic arrangements. The thermodynamic formula supplies the quantity to account for; the payment architecture is built to keep issuance and exchange solvent and resistant to invented activity.
 
 ## The thermodynamic kernel already built
 
@@ -74,9 +74,9 @@ The study tested three finite constructions, including a two-node primary system
 
 The kernel and contact gates passed. Ten deliberate mutations each failed first at the predicted check. At equal temperature, the contact calculation gave zero expected equilibrium energy current. In the tested unequal-temperature preparations, the currents reversed direction when the temperature ordering was reversed.
 
-This evidence establishes the declared finite kernel and its operational contact temperature. The study did not test ledger ownership, a deployed stochastic clock, monetary calibration, or the complete growing payment network. Joining those elements to the kernel is the next integration claim to establish.
+This evidence establishes the declared finite kernel and its operational contact temperature. The next integration joins that kernel to ledger ownership, a deployed stochastic clock, monetary calibration, and the growing payment network.
 
-The distinction gives development a concrete target: every new economically consequential action must belong to the state, dynamics, and account being tested.
+That gives development a concrete target: every new economically consequential action must belong to the state, dynamics, and account being tested.
 
 For the foundational sixteen-state Xypher construction and its independent thermometers, read [A Purely Digital Thermodynamic System](proving-true-thermodynamic-graph-systems.md). The Valhaim kernel is a separate study with its own evidence record.
 
@@ -84,9 +84,9 @@ For the foundational sixteen-state Xypher construction and its independent therm
 
 As participants become more capable, their incentives become more consequential. The Valhaim ambition is that discovering opportunities for others remains a productive route to one's own future participation.
 
-There is a bounded mathematical result behind one part of this question. In a connected, simple, undirected graph with uniformly chosen crossings, look one or two steps ahead. If adding an edge increases average endpoint entropy across its ends and their original neighbours, it also increases the graph-wide average, for every graph size.
+A proved result answers one part of this question. In a connected, simple, undirected graph with uniformly chosen crossings, look one or two steps ahead. If adding an edge increases average endpoint entropy across its ends and their original neighbours, it also increases the graph-wide average, for every graph size.
 
-The guarantee can fail at longer horizons. It concerns a local group average and a shared graph average. Individual ownership, reward, and welfare require their own connection to those measurements.
+At longer horizons the guarantee can fail. It links a local group average to the graph-wide average; connecting those averages to individual ownership, reward, and welfare is the next step.
 
 Valhaim's architectural requirement is stronger: **greed and generosity should become the same move.** It asks for mechanisms under which opening useful possibilities for others sustains one's own participation, even when a participant becomes extraordinarily capable.
 

@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "bounded-graph-result"
 published: "2026-08-18"
-revised: "2026-08-18"
+revised: "2026-10-10"
 website_path: "/research/can-a-local-future-test-protect-a-xypher-network/"
 web_status: "live"
 ---
@@ -53,7 +53,7 @@ The capital sigma means “add one term for every endpoint.” The base-two loga
 
 For node 1, the value falls from **1.888 bits** to **1.753 bits**. The added connection did not remove a destination. It concentrated the odds of where the walker would finish.
 
-This quantity is **endpoint entropy**. It measures the distribution after exactly τ moves, not the entropy of every complete route taken along the way. That distinction stays in force throughout this article.
+This quantity is **endpoint entropy**. It measures the distribution after exactly τ moves, not the entropy of every complete route taken along the way.
 
 ## The network average can fall
 
@@ -80,7 +80,7 @@ The gains at nodes 0 and 1 do not cover the four losses. The graph-wide average 
 
 In the exhaustive small-graph record, **26,910** graph–candidate-edge–horizon cases have a lower global average after the edge. Adding connections without a screen is therefore unsafe even for this one declared measure.
 
-The word “global” needs care. It means an average over all starting nodes. It does not mean welfare, and it does not mean that each node improved.
+“Global” means the average over all starting nodes.
 
 ## Test the doorstep
 
@@ -102,8 +102,6 @@ $$
 
 The threshold rule accepts when **L<sub>τ</sub> > 0**. The protection question is now exact: does **L<sub>τ</sub> > 0** force **W<sub>τ</sub> > 0**?
 
-That is a question about two averages. An actor has not yet entered the definition.
-
 ## Four possible verdicts
 
 The finite classifier enumerated every connected labelled graph with **N = 3, 4, 5, or 6** nodes. “Labelled” means that the node identities count, so two drawings with the same shape but different assignments of node numbers remain separate cases. There are **27,474** such connected graphs.
@@ -115,15 +113,15 @@ For every graph, the program considered every missing edge and every horizon fro
 | **L<sub>τ</sub> > 0** | **919,585** | **0** |
 | **L<sub>τ</sub> ≤ 0** | **1,440** | **26,910** |
 
-The zero is in the safety-critical box: no edge that passed the local threshold lowered the global average in this finite domain. The **1,440** in the opposite corner matter too. Some edges failed the local threshold even though the global average rose. The screen had false negatives, not a perfect match between local and global signs.
+The zero is in the safety-critical box: no edge that passed the local threshold lowered the global average in this finite domain. The **1,440** in the opposite corner are false negatives: edges that failed the local threshold although the global average rose.
 
 The classifier represents entropy with standard computer floating-point numbers and treats changes within **10<sup>−10</sup>** of zero as neutral. It found no locally positive, globally flat cases either, so the positive implication was strict at that tolerance.
 
-These numbers are sometimes compressed into “5.67 million checks.” That larger number counts something else: **5,671,025 individual node–graph–candidate-edge–horizon comparisons**. Among them, **772,758** individual nodes lost endpoint entropy. They are evidence against every-node benefit, not millions of independently safe edge additions.
+A larger figure, “5.67 million checks,” counts something else: **5,671,025 individual node–graph–candidate-edge–horizon comparisons**. Among them, **772,758** individual nodes lost endpoint entropy. Those losses rule out every-node benefit. The figure counts node comparisons, not safe edge additions.
 
 ## Why two steps are exact
 
-The finite table covers graphs only through six nodes. The two-step result needs no size limit.
+The finite table stops at six nodes. The two-step result holds at every size.
 
 Write **P** for the table of one-step probabilities before the edge and **P′** for the table after it. Adding **u—v** changes only two rows: the choices available when the walker is standing at **u** or at **v**.
 
@@ -144,19 +142,15 @@ $$
 
 If **L<sub>2</sub>** is positive, **W<sub>2</sub>** must be positive. The one-step case is even more direct. This proves the implication at **τ ≤ 2** for connected simple unit-weight graphs of any size, using the endpoint observable and affected-set definition above. Here **simple** means undirected, with no self-connections or repeated edges; **unit-weight** means that every connection has equal strength.
 
-The proof does not say that every proposed edge passes. It says that every edge which passes this particular threshold has the same sign globally at one or two steps.
-
 ## The third step crosses the doorstep
 
 At three steps, a walker starting two connections away can reach **u** or **v** and then use a changed row. Its endpoint distribution can move even though its starting node lies outside **A**. The identity **N W = |A|L** is gone.
 
-Within the exhaustive scans through seven nodes and five steps, the first unit-weight threshold failure appears at seven nodes and τ = 3. The search covered all **1,866,256 connected labelled graphs** on seven nodes, every missing edge, and horizons **τ = 3, 4, and 5**. Across **56,779,632 graph–candidate-edge–horizon cases**, **117,180** had a positive affected-set average and a negative graph-wide average. Of those, **5,040** occurred at τ = 3. The stored research record gives conflicting splits for the remaining τ = 4 and τ = 5 cases, so only their combined contribution is used here.
+Within the exhaustive scans through seven nodes and five steps, the first unit-weight threshold failure appears at seven nodes and τ = 3. The search covered all **1,866,256 connected labelled graphs** on seven nodes, every missing edge, and horizons **τ = 3, 4, and 5**. Across **56,779,632 graph–candidate-edge–horizon cases**, **117,180** had a positive affected-set average and a negative graph-wide average. Of those, **5,040** occurred at τ = 3. The stored record splits the remaining τ = 4 and τ = 5 cases inconsistently, so they are reported here as one combined total.
 
-The result establishes that failures occur already at **τ = 3**. It does not establish that every graph, every candidate, or every horizon at or above three fails.
+A tempting repair is to ban leaves by requiring every node to have at least two neighbours. On seven-node graphs this removes the τ = 3 failures, but **34,020** failures remain at τ = 4. Minimum degree two is not a universal repair.
 
-A tempting repair is to ban leaves by requiring every node to have at least two neighbours. On seven-node graphs this removes the τ = 3 failures, but **34,020** failures remain at τ = 4. The repair is already non-universal.
-
-The short-horizon problem then returns. At **N = 8**, an exhaustive τ = 3 search considered all **169,488,200** connected labelled graphs with minimum degree at least two. Among **1,952,212,864 locally positive graph–candidate-edge checks** at that fixed horizon, **384,720** lowered the global average. The vulnerable node in the recorded examples has degree two and sits outside the affected set while connecting into a high-degree core. It is peripheral, but it is not a leaf. The N = 7 and N = 8 verifiers use **10<sup>−12</sup>** as their numerical sign tolerance.
+At **N = 8**, the three-step failure returns. An exhaustive τ = 3 search considered all **169,488,200** connected labelled graphs with minimum degree at least two. Among **1,952,212,864 locally positive graph–candidate-edge checks** at that fixed horizon, **384,720** lowered the global average. The vulnerable node in the recorded examples has degree two and sits outside the affected set while connecting into a high-degree core. It is peripheral, but it is not a leaf. The N = 7 and N = 8 verifiers use **10<sup>−12</sup>** as their numerical sign tolerance.
 
 The evidence forms a scope staircase:
 
@@ -168,35 +162,35 @@ The evidence forms a scope staircase:
 | N = 7, minimum degree ≥ 2 | 34,020 failures at τ = 4 |
 | N = 8, τ = 3, minimum degree ≥ 2 | 384,720 failures among 1,952,212,864 approvals |
 
-Other restrictions need their own accounting. A deterministic finite search in which connections could have unequal strengths found counterexamples at horizons of three or more. That establishes existence inside its sampled weighting design, not a sharp critical weight ratio.
+Weighted graphs fail too. A deterministic finite search in which connections could have unequal strengths found counterexamples at horizons of three or more, inside its sampled weighting design. The critical weight ratio is an open question.
 
-Trees are not covered by a universal rescue either. Exhaustive enumeration produced **419,040,783 clean graph–candidate-edge–horizon checks** across all labelled trees on seven through nine nodes at τ = 3 through 5. A deterministic floating-point evaluation of a separate distance-three tree family reports a τ = 3 counterexample at **N = 1,770**: one endpoint is a leaf, the next node has degree two, a hub has degree 1,762, and the other endpoint has degree seven. The affected-set sum is **+0.01407462**, while the nodes outside it contribute **−0.01419718**, leaving a graph-wide sum of **−0.00012256**. This is one restricted-family counterexample; it does not identify the smallest failing tree.
+Trees up to nine nodes are clean; a large tree fails. Exhaustive enumeration produced **419,040,783 clean graph–candidate-edge–horizon checks** across all labelled trees on seven through nine nodes at τ = 3 through 5. A deterministic floating-point evaluation of a separate distance-three tree family reports a τ = 3 counterexample at **N = 1,770**: one endpoint is a leaf, the next node has degree two, a hub has degree 1,762, and the other endpoint has degree seven. The affected-set sum is **+0.01407462**, while the nodes outside it contribute **−0.01419718**, leaving a graph-wide sum of **−0.00012256**. The smallest failing tree is an open question.
 
-A different finite program chose the missing edge with the largest **unnormalised sum** over the affected set and reported no failures in its declared N = 7 and N = 8 scans at τ = 3 and 5 with minimum-degree restrictions. That is evidence about a centralized, all-graph choice rule. It is not yet a theorem about the canonical score: the canonical score is an **average**, so two candidates with different affected-set sizes can reverse order when a sum replaces that average. An embodied actor may also own only some candidate edges, rather than every missing edge in the graph. The maximum-policy claim remains withheld until the score, ownership boundary, available actions, and proof all match.
+A different finite program chose the missing edge with the largest **unnormalised sum** over the affected set and reported no failures in its declared N = 7 and N = 8 scans at τ = 3 and 5 with minimum-degree restrictions. That probe uses a centralized rule that sees every missing edge in the graph. Turning it into a theorem about the canonical score is the next step, with two gaps to close. The canonical score is an **average**, so two candidates with different affected-set sizes can reverse order when a sum replaces that average. And an embodied actor owns only some candidate edges. A maximum-choice theorem needs the score, ownership boundary, available actions, and proof to match.
 
 ## What the two averages do not mean
 
-Return to the **772,758 individual losses** in the small-domain comparison. A positive graph-wide average plainly allows some nodes to lose. It is not a Pareto improvement, which would require that no individual becomes worse off.
+Return to the **772,758 individual losses** in the small-domain comparison. A positive graph-wide average allows some nodes to lose. It is not a Pareto improvement, which would require that no individual becomes worse off.
 
 Nor is **L<sub>τ</sub>** automatically the proposing actor's self-interest. It averages the changes at both endpoints and all their original neighbours. Calling that score an actor's payoff requires a model in which the actor owns that whole boundary. The model must also specify which candidate edges the actor can choose and whether it accepts any positive edge or maximizes among its own alternatives.
 
-The graph-wide average is equally specific. It is the mean of endpoint entropies. It does not measure material welfare, moral value, generosity, power, consent, or benefit to every node. Those interpretations need separate bridges and can fail even while **W<sub>τ</sub> > 0**.
+The graph-wide average is equally specific: the mean of endpoint entropies. Reading it as material welfare, moral value, power, or consent needs its own bridge.
 
-The proved object is therefore smaller than a complete Xypher:
+The proved object is the graph layer of a Xypher:
 
 - a connected, add-only, simple unit-weight **Graph Substrate**;
 - the Shannon entropy of exactly τ-step endpoint distributions;
 - an affected-set threshold screen for one proposed edge.
 
-No independently grounded **Thermodynamic Harness** appears in the proof. There is no reservoir-derived **α**, contact test, or THAIM accounting. No **Praxion** is placed inside the graph with an owned action set, perception boundary, memory, and outcome loop. The graph calculation does not become thermodynamics or alignment merely because a Xypher could use it as one readout.
+The next layers sit outside the proof. It has no independently grounded **Thermodynamic Harness**: no reservoir-derived **α**, contact test, or THAIM accounting. It places no **Praxion** inside the graph with an owned action set, perception boundary, memory, and outcome loop.
 
-Existing language models are not shown to instantiate this graph, this payoff, or this action rule. Translating the result to AI alignment would require, at minimum, a declared actor boundary, the actions it can actually take, a reason its payoff equals the affected-set average, a bridge from endpoint distributions to the future quantity it controls, and a defensible collective measure.
+Carrying the result to AI alignment needs a declared actor boundary, the actions it can actually take, a reason its payoff equals the affected-set average, a bridge from endpoint distributions to the future quantity it controls, and a defensible collective measure.
 
 ## The answer inside the boundary
 
-A local future test can protect one declared network average when the horizon is no more than two steps. In that setting, the edge's influence cannot reach beyond the measured doorstep, so the local and global signs are algebraically locked together. The N = 3…6 classification extends the observed zero-failure domain through five steps, but only for those finite graph sizes.
+A local future test can protect one declared network average when the horizon is no more than two steps. In that setting, the edge's influence cannot reach beyond the measured doorstep, so the local and global signs are algebraically locked together. The N = 3…6 classification extends the zero-failure domain through five steps for those graph sizes.
 
-The same threshold is not a universal protection rule. Seven-node counterexamples end that claim, and the eight-node result shows that removing leaves does not restore it at τ = 3. Weighted graphs, trees, maximum-choice policies, actor payoffs, path observables, thermodynamics, and AI alignment each require their own result.
+The same threshold is not a universal protection rule. Seven-node counterexamples end that claim, and the eight-node result shows that removing leaves does not restore it at τ = 3. Weighted graphs and large trees fail too. Maximum-choice policies, actor payoffs, path observables, thermodynamics, and AI alignment are the next results to earn.
 
 Inside the exact graph class, horizon, observable, and affected-set rule, the test does what it says. Outside them, the word “protect” has not yet been earned.
 

@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "open-frontier"
 published: "2026-08-02"
-revised: "2026-10-06"
+revised: "2026-10-10"
 website_path: "/research/intelligence-as-physical-units/"
 web_status: "live"
 ---
@@ -44,7 +44,7 @@ Information theory calls that shared knowledge **mutual information**. Try the c
 
 Let **A** stand for the command, or sequence of commands, given to the Praxion. Let **Y<sub>τ</sub>** stand for the future outcome after a chosen number of steps **τ**, and let **z** stand for the same starting state in every trial. The symbol **q** describes how often each command is tried.
 
-One rule keeps the measure honest: if the world keeps a copy of the command, **Y<sub>τ</sub>** leaves that copy out. A system that merely remembers which command it received has not controlled anything.
+One rule keeps the measure clean: if the world keeps a copy of the command, **Y<sub>τ</sub>** leaves that copy out. A system that merely remembers which command it received has not controlled anything.
 
 **CAUSAL-CONTROL CAPACITY**
 
@@ -123,7 +123,7 @@ Control is the same kind of correlation, pointed forward: a correlation between 
 
 That “when” is the whole experiment. The thermometer prices the arrangements of one world. For it to price control, the doors must open inside the same world whose reservoir sets the temperature. The command cannot remain a label outside it. It must be kept in a physical command register until the future is read, and that register, the Praxion, the graph, the reservoir, and any outside source of work must share one energy account.
 
-Two views of the same event keep this honest. **Y<sub>τ</sub>** is the outcome whose control we measure; it leaves out the command register. **Z<sub>τ</sub>** is the complete physical state used for the energy account; it includes the register, the outcome, the graph, the reservoir, and the Praxion. The first stops stored labels from passing as control. The second makes the register, and whatever it cost to write, part of the account the thermometers check.
+Two views of the same event keep the account exact. **Y<sub>τ</sub>** is the outcome whose control we measure; it leaves out the command register. **Z<sub>τ</sub>** is the complete physical state used for the energy account; it includes the register, the outcome, the graph, the reservoir, and the Praxion. The first stops stored labels from passing as control. The second makes the register, and whatever it cost to write, part of the account the thermometers check.
 
 Now picture a deck of cards, one card for each trial: the command on the front, the future that followed on the back. In the real deck, fronts and backs belong together. Shuffle only the backs, and you have a second deck with the same commands and the same futures, each appearing just as often as before, but with no relationship between them.
 

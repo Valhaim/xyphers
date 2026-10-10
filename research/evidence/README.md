@@ -11,4 +11,4 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Quantum complementarity](quantum-complementarity/)
 - [Scaling](scaling/)
 
-Historical comments retained inside copied sources do not override the narrower status stated by the article and the packet README.
+Each article and its packet README state the result's status. That status governs over historical comments retained in copied sources.

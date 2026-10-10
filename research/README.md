@@ -4,11 +4,11 @@ This directory connects the articles at [xyphers.com](https://xyphers.com/resear
 
 The labels describe the maturity of the scientific claim, not the polish of the prose:
 
-- **Published · bounded result** — the article is public and its strongest claims are limited to named evidence.
-- **Negative validation** — the tested claim did not pass its controlling comparison; the failure and surviving scope are both public.
+- **Published · bounded result** — the article is public and its claims rest on named evidence.
+- **Negative validation** — the tested claim did not pass its controlling comparison. The article reports that result and the scope that still holds.
 - **Formal-framework draft** — the standard mathematical core is exact, while the Xypher-specific synthesis remains a working framework.
-- **Open frontier** — the article is public, but it contains a question or proposed bridge that remains unresolved.
-- **Early speculation** — a conjecture released before the argument is complete.
+- **Open frontier** — the article is public and centers on an open question or a proposed bridge.
+- **Early speculation** — a conjecture whose argument is still being built.
 
 ## Foundations
 
@@ -21,19 +21,19 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 | [A Purely Digital Thermodynamic System](https://xyphers.com/research/proving-true-thermodynamic-graph-systems/) · [portable text](articles/proving-true-thermodynamic-graph-systems.md) | [Run the exact sixteen-state study](code/xypher-thermodynamics-proof/). Its source, expected report, boundary, and separate representation argument are included. |
 | [When Futures Become Entropy](https://xyphers.com/research/causal-entropic-force-made-thermodynamic/) · [portable text](articles/causal-entropic-force-made-thermodynamic.md) | [Run the exact committed-futures study](evidence/causal-entropic/RUN.txt). The [packet](evidence/causal-entropic/README.txt) holds the preregistered boundary, the result record, the verifier source, and the expected report. It is an exact equilibrium result for a fixed archipelago. |
 | [Committed Futures as Microstates](https://xyphers.com/research/committed-futures-as-microstates/) · [portable text](articles/committed-futures-as-microstates.md) | [Run the exact checks](evidence/committed-futures/RUN.txt) and [read the manuscript](evidence/committed-futures/manuscript.pdf). The [packet](evidence/committed-futures/README.txt) holds the manuscript, its source, and a dependency-free script for every check outside the CAL-CEF-1 preregistration. The proofs cover every archipelago and every horizon. |
-| [Can a Xypher Help Choose a Catalyst?](https://xyphers.com/research/can-a-xypher-help-choose-a-catalyst/) · [portable text](articles/can-a-xypher-help-choose-a-catalyst.md) | [Run the molecular graph example](code/molecular-properties/). The [blinded comparisons](evidence/catalyst-choice/README.txt) did not establish a ligand-selection advantage; replaying them requires the named external datasets. |
+| [Can a Xypher Help Choose a Catalyst?](https://xyphers.com/research/can-a-xypher-help-choose-a-catalyst/) · [portable text](articles/can-a-xypher-help-choose-a-catalyst.md) | [Run the molecular graph example](code/molecular-properties/). The [blinded comparisons](evidence/catalyst-choice/README.txt) did not show a ligand-selection advantage; replaying them requires the named external datasets. |
 | [When Does Information Become State in a Xypher?](https://xyphers.com/research/when-does-information-become-state-in-a-xypher/) · [portable text](articles/when-does-information-become-state-in-a-xypher.md) | [Read the complete-state and projection records](evidence/information-state/README.txt), or use the [source packet](downloads/xypher-information-state-evidence-v1.zip). The adaptive-Xypher synthesis remains a working framework. |
 | [Can a Local Future Test Protect a Xypher Network?](https://xyphers.com/research/can-a-local-future-test-protect-a-xypher-network/) · [portable text](articles/can-a-local-future-test-protect-a-xypher-network.md) | [Inspect the proof and reproduction sources](evidence/local-future-test/README.txt). The two-step guarantee and later counterexamples have separate records; large enumerations are outside the default checks. |
-| [Project Valhaim](https://xyphers.com/research/project-valhaim/) · [portable text](articles/project-valhaim.md) | [Inspect the archived kernel and contact experiment](physics/README.md). These are sealed execution records, not a standalone payment node. The node lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node). |
-| [An Equation of State and the Growth of a Xypher](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) · [portable text](articles/equation-of-state-and-growth-of-a-xypher.md) | [Run the finite thermodynamic foundation](code/xypher-thermodynamics-proof/), then the [growth evidence](evidence/growth/README.txt): eight exact temperature-identifiability cases and three adaptive graphs that build and repair their own temperature. Joining that construction to growth toward future possibility remains an open experiment. |
-| [Intelligence as Physical Units](https://xyphers.com/research/intelligence-as-physical-units/) · [portable text](articles/intelligence-as-physical-units.md) | [Run the exact digital thermometer](code/xypher-thermodynamics-proof/). This does not execute the article's proposed action-to-future control experiment. |
+| [Project Valhaim](https://xyphers.com/research/project-valhaim/) · [portable text](articles/project-valhaim.md) | [Inspect the archived kernel and contact experiment](physics/README.md). These are sealed execution records; the payment node lives in [Valhaim/valhaim-node](https://github.com/Valhaim/valhaim-node). |
+| [An Equation of State and the Growth of a Xypher](https://xyphers.com/research/equation-of-state-and-growth-of-a-xypher/) · [portable text](articles/equation-of-state-and-growth-of-a-xypher.md) | [Run the finite thermodynamic foundation](code/xypher-thermodynamics-proof/), then the [growth evidence](evidence/growth/README.txt): eight exact temperature-identifiability cases and three adaptive graphs that build and repair their own temperature. The next experiment joins that construction to growth toward future possibility. |
+| [Intelligence as Physical Units](https://xyphers.com/research/intelligence-as-physical-units/) · [portable text](articles/intelligence-as-physical-units.md) | [Run the exact digital thermometer](code/xypher-thermodynamics-proof/). The article's action-to-future control experiment is the proposed next experiment. |
 
 ## Early speculation on the website
 
 - [Kleiber's Law and the Growth of a Xypher](https://xyphers.com/research/kleibers-law-derived-from-physics/) explores the relationship between measured graph-growth scaling and biological metabolism.
 - [One State, Two Questions](https://xyphers.com/research/one-state-two-questions/) develops a Xypher hypothesis for wave–particle complementarity.
 
-These essays are linked for the complete research picture. Their cited working records are packaged as evidence below; their reproduction code is not.
+The essays' cited working records are packaged as evidence below, without reproduction code.
 
 ## Runnable code
 

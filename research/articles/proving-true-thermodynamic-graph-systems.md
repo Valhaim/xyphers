@@ -3,7 +3,7 @@ title: "A Purely Digital Thermodynamic System"
 type: "research-article"
 status: "published"
 published: "2026-09-06"
-revised: "2026-10-06"
+revised: "2026-10-10"
 website_path: "/research/proving-true-thermodynamic-graph-systems/"
 web_status: "live"
 source_revision: "f859b38e0"
@@ -157,7 +157,7 @@ All eleven checks the verifier runs passed on the intended construction: the six
 
 ## What this proves
 
-The construction proves existence: at least one entirely digital graph is thermodynamic by these six tests, and is a minimal Xypher: the three parts and nothing more, with no memory that changes, no learning, and no growth.
+The construction proves existence: at least one entirely digital graph is thermodynamic by these six tests, and the same graph is a minimal Xypher, built from exactly the three parts.
 
 It does not stand alone. A separate mathematical proof, a **representation theorem**, works in both directions for finite systems at a single temperature, in equilibrium, in which every move can be undone.
 
@@ -166,7 +166,7 @@ It does not stand alone. A separate mathematical proof, a **representation theor
 
 The sixteen-arrangement world meets every condition. It is the example; the generality comes from the proof, not from testing one instance.
 
-This first Praxion is the simplest possible. Its memory holds a single fixed state. It acts, but it does not learn, grow its graph, or change how it decides. Each of those capabilities is a new construction, with its own state and exchanges to account for.
+This first Praxion is the simplest possible: its memory holds a single fixed state, and it acts without learning, growing its graph, or changing how it decides. Learning, growth, and self-revision are the next constructions, each with its own state and exchanges to account for.
 
 The physics used here is established stochastic thermodynamics. The contribution is the exact Xypher construction: future possibility, thermodynamic consequence, and executable action organized in one digital object that anyone can inspect and run.
 

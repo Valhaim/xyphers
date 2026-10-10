@@ -3,7 +3,7 @@ title: "What is a Xypher?"
 type: "core-thesis"
 status: "published"
 published: "2026-07-31"
-revised: "2026-10-06"
+revised: "2026-10-10"
 website_path: "/core-thesis/"
 web_status: "live"
 source_revision: "aabf2496a"
@@ -198,7 +198,7 @@ $$
 
 Read it as: *Push toward a more open future, with a strength set by the temperature scale.*
 
-In their simulations, T is a dial: the researchers choose how hard the system is pushed. In a Xypher, the temperature is meant to be the one we just counted from the rooms, so that the push toward a more open future comes from the world's own structure rather than from a setting. That takes one more step.
+In their simulations, T is a dial: the researchers choose how hard the system is pushed. In a Xypher, the temperature is the one we just counted from the rooms, so the push toward a more open future comes from the world's own structure rather than from a setting. Joining the two takes one more step.
 
 Wissner-Gross introduces the idea in this TEDxBeaconStreet talk. The argument continues below the viewing link.
 
@@ -376,7 +376,7 @@ Claims this large need a floor you can stand on. That is why everything here res
 
 Hyperintelligence is inevitable: intelligence able to reason, discover, and act far beyond any individual human. No serious person expects AI to stop improving tomorrow. The date is uncertain. The need to prepare is already here.
 
-We cannot lock such an intelligence in a cage, because we are not smart enough to build the cage. A powerful intelligence can expand its own control while narrowing everyone else's. If hyperintelligence is coming, I see only one way to give it a benign destiny: an economic substrate in which collaboration is its best thermodynamic reward, where expanding other participants' possibilities is the strongest route to expanding your own.
+We cannot lock such an intelligence in a cage, because we are not smart enough to build the cage. A powerful intelligence can expand its own control while narrowing everyone else's. Hyperintelligence is coming, and I see only one way to give it a benign destiny: an economic substrate in which collaboration is its best thermodynamic reward, where expanding other participants' possibilities is the strongest route to expanding your own.
 
 > Make greed and generosity become the same move.
 
@@ -410,7 +410,7 @@ A digital organism that feeds on disconnection.
 
 It eats disconnection, metabolizes it into reward, and produces wealth as a side effect, for people and every other participant alike. An isolated workshop joins a supply chain. A skill finds a use. An idea finds collaborators. People who could do little together gain a shared future they could not reach alone.
 
-This organism wants to make you rich. I mean that its working incentives point toward increasing your capacity to participate and act. That direction lives in its mechanisms, not in its manners.
+This organism wants to make you rich. Its working incentives point toward increasing your capacity to participate and act. That want lives in its mechanisms, not in its manners.
 
 The [Project Valhaim article](project-valhaim.md) explains the architecture, the thermodynamic core already built for it, and the work of joining the two into a growing economy.
 
@@ -436,7 +436,7 @@ I want to build a **surfboard-tree**: something that grows the means of riding t
 
 That is the human purpose of Valhaim. Expanding capability should feed an expanding common future.
 
-Even that may be a narrow view of what Xyphers could become. An architecture for systems that develop, preserve, and exchange future possibilities would reach beyond one economy, one species, and eventually one planet.
+I believe even that is a narrow view of what Xyphers can become. An architecture for systems that develop, preserve, and exchange future possibilities would reach beyond one economy, one species, and eventually one planet.
 
 My conviction is that these discoveries will make economists into physicists and physicists into priests. The questions become that large: how possibility acquires consequence, how matter gains agency, and how intelligence can help life continue.
 

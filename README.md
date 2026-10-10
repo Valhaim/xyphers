@@ -33,7 +33,7 @@ cargo run --locked --quiet --manifest-path research/code/molecular-properties/Ca
 
 A molecule becomes a graph of atoms and bonds. This example starts at phosphorus and measures the spread of destinations after five bond choices, in both bits and nats. Change `5` to explore a different horizon.
 
-The [molecular-properties study](research/code/molecular-properties/) includes the frozen Rust calculation and blinded shape-test evaluator. A graph readout associated with a measured molecular-shape target; reliable catalytic-performance prediction remains an open objective. [The catalyst article](research/articles/can-a-xypher-help-choose-a-catalyst.md) explains the empirical comparisons and their limits.
+The [molecular-properties study](research/code/molecular-properties/) includes the frozen Rust calculation and blinded shape-test evaluator. The graph readout is associated with a measured molecular-shape target. Reliable catalytic-performance prediction is the open objective. [The catalyst article](research/articles/can-a-xypher-help-choose-a-catalyst.md) explains the empirical comparisons and what they showed.
 
 ## What is here
 
@@ -46,7 +46,7 @@ The [molecular-properties study](research/code/molecular-properties/) includes t
 | [`research/downloads/`](research/downloads/) | Portable evidence packets with checksum sidecars. |
 | [`research/physics/`](research/physics/) | Historical Valhaim kernel records and their original execution seal. |
 
-The scientific foundation and the richer organism are distinct achievements. The exact kernel is non-adaptive. Learning, growth, chemical experiment selection, and an economy that sustains shared possibility each require their own complete construction and evidence.
+The exact kernel is non-adaptive. Learning, growth, chemical experiment selection, and an economy that sustains shared possibility are the next constructions, each with its own evidence.
 
 **Possibility. Consequence. Agency.**
 

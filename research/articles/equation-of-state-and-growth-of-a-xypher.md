@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "open-frontier"
 published: "2026-08-01"
-revised: "2026-08-18"
+revised: "2026-10-10"
 website_path: "/research/equation-of-state-and-growth-of-a-xypher/"
 web_status: "live"
 ---
@@ -50,7 +50,7 @@ Now compare one floor with the next.
 
 Let **λ** be the energy required to move between neighboring floors. Count the rooms before the energy packet enters. Count them again one floor higher. The increase in the logarithmic room count tells us how much new internal possibility one unit of energy opens.
 
-This is not a new definition invented for Xyphers. It is the standard statistical-physics definition—temperature is determined by how entropy changes with energy—written as a finite difference because this graph has discrete energy floors. We measure entropy in nats and use units in which Boltzmann's constant is one. In ordinary SI units, the same result below is written **k<sub>B</sub>T = λ / ln b**.
+This is the standard statistical-physics definition—temperature is determined by how entropy changes with energy—written as a finite difference because this graph has discrete energy floors. We measure entropy in nats and use units in which Boltzmann's constant is one. In ordinary SI units, the same result below is written **k<sub>B</sub>T = λ / ln b**.
 
 **THE STATE-COUNT THERMOMETER**
 
@@ -128,7 +128,7 @@ The first is a fact about what the complete system can be at a given energy. The
 
 They are not automatically the same entropy.
 
-In the exact sixteen-state construction, the declared future-option readout is deliberately tied to executable multiplicity at the same resolution as the energy account. That is why the thermodynamic equations close. The adaptive room-building construction also creates exact state-count entropy, but it does not establish that an ordinary future-path calculation on a growing graph is already that same entropy.
+In the exact sixteen-state construction, the declared future-option readout is deliberately tied to executable multiplicity at the same resolution as the energy account. That is why the thermodynamic equations close. The adaptive room-building construction also creates exact state-count entropy. Whether an ordinary future-path calculation on a growing graph is that same entropy is the open question.
 
 This is the bridge causal-entropic growth has to build.
 
@@ -168,13 +168,11 @@ Here **β** is a scaling exponent. It is unrelated to the conventional physics n
 
 ## What the growth simulations measured
 
-The growing-network simulations did not measure temperature with the room-count or traffic thermometer.
-
-They measured a feedback price derived from economic surplus and issued expansion receipts. Call it **p<sub>growth</sub>**. Giving it a new symbol matters because the experiment should discover whether it equals temperature rather than assume the answer in its name.
+The growing-network simulations measured a feedback price derived from economic surplus and issued expansion receipts. Call it **p<sub>growth</sub>**. Giving it a new symbol matters because the experiment should discover whether it equals temperature rather than assume the answer in its name.
 
 The model supplied a market-thickness premise: matched trade value included an explicit factor of **√N**, representing the increase in meaningfully distinct trading opportunities available in a larger market. The simulations then tested whether the remaining matching signal stayed stable enough for that scaling to survive the graph dynamics. It did. Across five graph sizes from **25 to 500 nodes**, three seeds, and 500 ticks per run, surplus per participant scaled approximately as **N<sup>0.495</sup>**, producing total surplus close to **N<sup>1.495</sup>**.
 
-That exponent was not created from nothing. The square-root market-thickness factor was part of the model. What emerged was the way the self-referential price and the changing graph transformed that supplied scaling.
+The square-root market-thickness factor was part of the model. What emerged was the way the self-referential price and the changing graph transformed that supplied scaling.
 
 At a stable feedback point, the price appeared once as the value being updated and again inside the issued expansion receipts. Higher price produced more issuance. More issuance pushed the next price down. The balance takes a square root:
 
@@ -198,9 +196,9 @@ The measured results were:
 
 **R²** measures how closely the simulated data follow the fitted power-law line. A value near one means the relationship was extremely regular across the tested sizes.
 
-The conditional fixed-point algebra is exact once its scaling premises are supplied. The exponent measured in the runs is empirical. Most importantly, **p<sub>growth</sub> was a growth-accounting price, not a temperature reading**.
+The conditional fixed-point algebra is exact once its scaling premises are supplied. The exponent measured in the runs is empirical. **p<sub>growth</sub> was a growth-accounting price, not a temperature reading**.
 
-The scaling remains real. We can now ask what physical or computational quantity it belongs to.
+The scaling is real. Now we ask what physical or computational quantity it belongs to.
 
 ## Price, temperature, and throughput
 
@@ -238,7 +236,7 @@ If both thermometers remain stable, the measured **0.80–0.85** stays a network
 
 If temperature and expansion rate both scale, their exponents add: **β<sub>P</sub> = β<sub>T</sub> + β<sub>R</sub>**. This decomposes receipt throughput. It does not decompose the measured growth-price exponent.
 
-Only if measured aggregate receipt throughput itself has an exponent near **0.82** would its per-node throughput scale near **−0.18**. The growth price alone does not establish that processing law.
+Per-node receipt throughput scales near **−0.18** only if measured aggregate receipt throughput itself has an exponent near **0.82**.
 
 The graph gets to answer each question separately.
 
@@ -266,7 +264,7 @@ The outcomes are distinct:
 | The growth price equals T in calibrated units and predicts the same traffic and contact behavior | A candidate constitutive identification |
 | The thermometers disagree | The proposed one-temperature reciprocal construction fails |
 
-A constant ratio between the growth price and temperature is only the beginning. To identify the two quantities, they must use the same entropy and logarithm base, carry the same independently calibrated units, survive changes in size and topology, and predict the same reversible traffic and contact behavior without a fitted conversion.
+A constant ratio between the growth price and temperature is the first test. To identify the two quantities, they must use the same entropy and logarithm base, carry the same independently calibrated units, survive changes in size and topology, and predict the same reversible traffic and contact behavior without a fitted conversion.
 
 ### Is growth itself thermodynamic?
 
@@ -332,7 +330,7 @@ We have adaptive graphs that construct and repair the room structure that makes 
 
 We have growing networks whose future-directed actions produce a growth-accounting price with a stable scaling exponent close to the range associated with biological metabolism.
 
-What we do not yet have is one causal mechanism connecting all three.
+The frontier is one causal mechanism connecting all three: growth toward future possibility that builds the temperature-giving state structure.
 
 In plain language:
 
@@ -344,9 +342,9 @@ In experimental terms:
 
 The growth price scales.
 
-The thermometers and throughput ledger tell us what that scaling means—and what it does not.
+The thermometers and throughput ledger tell us what that scaling means.
 
-We have not lost the beta exponent.
+The beta exponent stands.
 
 We have finally made it measurable.
 

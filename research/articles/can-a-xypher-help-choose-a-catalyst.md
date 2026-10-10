@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "negative-validation"
 published: "2026-08-18"
-revised: "2026-08-18"
+revised: "2026-10-10"
 website_path: "/research/can-a-xypher-help-choose-a-catalyst/"
 web_status: "live"
 ---
@@ -16,7 +16,7 @@ A catalyst screen is a rationing problem. Hundreds of plausible molecules may be
 
 The molecular readout tested here did not earn the right to choose those experiments. In a blinded test it tracked one measure of ligand bulk, but a count of nearby atoms tracked that measure better. In reaction-yield data, it failed every predefined decision gate.
 
-That answer is narrower than saying a Xypher cannot help with catalysis. The test did not contain a complete Xypher. It tested one graph readout proposed as part of one.
+That verdict concerns one part, not Xyphers in catalysis. The test contained one graph readout proposed as part of a Xypher, not a complete Xypher.
 
 The distinction matters at the bench. A failed part should not be promoted into an instrument. It should tell us which part of the problem we have actually represented.
 
@@ -32,7 +32,7 @@ A chemist therefore faces a practical question:
 
 The [Core Thesis](core-thesis.md#xyphers-in-nature) proposes that a Xypher could search chemical possibility space. To make that proposal testable, we reduced it to a cheaper question. Can the structure of a ligand produce a score that orders useful chemical properties, and eventually reaction outcomes, better than simple alternatives?
 
-No experiment in this sequence selected a prospective top-ten list, discovered a new molecule, or compared a complete system with density-functional theory. The tested decisions were narrower: association with a three-dimensional steric target, then association with observed yield while the non-ligand recipe was held fixed.
+Two decisions were tested: association with a three-dimensional steric target, then association with observed yield while the non-ligand recipe was held fixed.
 
 ## Looking out from phosphorus
 
@@ -72,7 +72,7 @@ A different result looked better. The bond-energy-weighted score rooted specific
 
 The ten ligands were outside development, but the favorable number was exploratory. It was also a different score from the unweighted readout later tested against buried volume and yield.
 
-That was enough reason to ask a harder question. It was not enough to call the descriptor validated.
+That was reason to ask a harder question, not a validation.
 
 ## A simpler ruler
 
@@ -88,7 +88,7 @@ Before looking at the comparison, the protocol set several gates. The graph scor
 
 A permutation test rearranges the target labels in the ways allowed by the protocol and asks how often a rearrangement matches or exceeds the observed result; **p** is that fraction. A paired bootstrap repeatedly resamples the same ligands and recalculates the difference between two scores. Its interval shows the range compatible with those resampled comparisons.
 
-The central results are below. The reader should compare the graph score with the deliberately plain ruler in the next row.
+Compare the graph score with the deliberately plain ruler in the next row.
 
 | Readout | Rank association with buried volume |
 |---|---:|
@@ -102,7 +102,7 @@ The same relationship also had to appear inside two structural groups defined at
 
 The full descriptor claim therefore failed.
 
-This is a useful kind of failure. Buried volume is a local measure of spatial extent. Counting atoms within four bonds is almost embarrassingly direct, but direct is exactly what a good baseline should be. A more elaborate score earns its complexity only if it adds information the simple ruler misses.
+The failure is informative. Buried volume is a local measure of spatial extent. Counting atoms within four bonds is direct, and direct is exactly what a good baseline should be. A more elaborate score earns its complexity only if it adds information the simple ruler misses.
 
 Here it did not.
 
@@ -120,7 +120,7 @@ The program stopped before calculating any hypothesis statistic. This stopped ru
 
 The repair restricted the coverage check to positions that could actually enter the result. By then V9 had extracted and processed the outcome table, and two reaction-ID-sorted rows—both with zero yield—had been displayed. The mechanical repair was frozen and pushed before any hypothesis statistic was calculated. It came from target-free membership and plate-layout records; no yield value selected a model, threshold, or descriptor. The repaired analysis, **CHEM-V10**, then ran once.
 
-That history makes CHEM-V10 useful, but not pristine confirmation. Its proper description is a repaired one-shot negative validation.
+CHEM-V10 is therefore a repaired one-shot negative validation.
 
 ## Yield changes the question
 
@@ -146,27 +146,27 @@ Five gates had been fixed in advance. The table shows the observed value beside 
 
 Every gate failed. The score did not separate itself from the exact null by the required amount, and it ranked below the coded-position baseline rather than above it.
 
-The signs tell the same story more gently but less decisively. Across 864 blocks, 287 associations were positive, 284 were negative, and 293 were zero. Of the zeros, 288 came from blocks where every recorded yield was tied. Among nonzero blocks, the positive fraction was **0.502627**. This descriptive split does not replace the formal gates, but it gives no directional rescue.
+The signs agree. Across 864 blocks, 287 associations were positive, 284 were negative, and 293 were zero. Of the zeros, 288 came from blocks where every recorded yield was tied. Among nonzero blocks, the positive fraction was **0.502627**. The formal gates decide the result; this descriptive split offers no directional rescue.
 
-Because ligand and plate position co-varied, the result cannot identify a causal ligand effect or a causal plate effect. It says something more limited and sufficient for the question at hand: this score showed no distinctive yield-ordering advantage in the declared observational comparison.
+Ligand and plate position co-varied, so the comparison assigns no causal effect to either. It answers the question at hand: this score showed no distinctive yield-ordering advantage in the declared observational comparison.
 
 ## The reaction the graph never saw
 
-The two failures do not identify a cause. They are consistent with a representational limit worth making explicit.
+Neither failure isolates a cause. Both are consistent with a representational limit, and that limit is worth making explicit.
 
 The score saw an unweighted molecular graph on a standardized rhodium complex. The buried-volume target saw a three-dimensional cloud of conformations. The reaction screen saw actual palladium, nickel, copper, or metal-free precursors; different substrates and bases; solvent and temperature; and reactions capable of following different mechanisms.
 
 Those are not small corrections around one complete state. Most of the reaction was absent.
 
-A separate, post hoc comparison suggests one possible applicability warning. In eight bidentate hydroformylation ligands, the average phosphorus-rooted score associated with the logarithm of linear-to-branched selectivity at **ρ = 0.452**, while the chemically direct bite angle gave **ρ = 1.000**. PBn₃, P(neoPent)₃, and BISBI also placed bulky groups behind a methylene bridge. A five-step walker may spend part of its reach crossing that bridge and underrepresent the remote group. That is a rational reconstruction from a small separate set, not an identified cause of the V8 or V10 failures. Those three examples were outside V10's eligible cohort.
+A separate post hoc comparison raises one applicability warning. In eight bidentate hydroformylation ligands, the average phosphorus-rooted score associated with the logarithm of linear-to-branched selectivity at **ρ = 0.452**, while the chemically direct bite angle gave **ρ = 1.000**. PBn₃, P(neoPent)₃, and BISBI also placed bulky groups behind a methylene bridge. The hypothesis: a five-step walker spends part of its reach crossing that bridge and underrepresents the remote group. It comes from a small separate set and is not an identified cause of the V8 or V10 failures; those three examples were outside V10's eligible cohort.
 
 Bond-energy weighting did not solve the blinded steric test. That makes sense once the target is clear: changing the strength assigned to a connection need not improve a measure of three-dimensional extent. Electronics, orbital orientation, metal identity, and competing mechanisms demand representations that actually contain them.
 
-This explanation does not authorize a new score fitted after the failure. It marks the boundary of the score that was frozen and tested.
+This explanation marks the boundary of the score that was frozen and tested. It is no licence to fit a new score after the failure.
 
 ## A descriptor is not a catalyst Xypher
 
-The title asks whether a Xypher can help choose a catalyst. The experiments reached only one proposed readout.
+A catalyst Xypher needs more than a readout.
 
 The ligand graph supplied part of a **Graph Substrate** and one endpoint-entropy measurement. It had no independently grounded **Thermodynamic Harness** and no **Praxion** choosing experiments inside a reaction state. No action loop observed an outcome, updated state, and selected the next ligand.
 
@@ -180,9 +180,9 @@ If the bench question is whether unweighted **S<sub>5</sub>(P)** should choose t
 
 It tracked a blinded measure of ligand bulk, but the direct atom count tracked that target better. It failed the required family comparisons. Bond-energy weighting did not help. In the repaired reaction-yield analysis, it failed all five gates and ranked below a coded-position baseline.
 
-Molecular graphs may still be useful, and other Xypher designs remain open. The measured conclusion is that this topology readout has not demonstrated an advantage for ligand selection.
+The measured conclusion: this topology readout showed no advantage for ligand selection. Other molecular-graph scores and other Xypher designs remain open.
 
-A complete catalyst Xypher remains an untested proposal.
+A complete catalyst Xypher remains a proposal. Building and testing it is the next experiment.
 
 ## Evidence
 
