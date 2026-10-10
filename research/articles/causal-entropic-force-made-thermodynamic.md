@@ -14,7 +14,7 @@ web_status: "live"
 
 The causal entropic force is a push toward whatever keeps the most futures open. Its equation needs a temperature. In the simulations where the idea was born, that temperature was a dial the researchers set.
 
-The [Core Thesis](core-thesis.md) asks for more: a world in which the drive toward an open future comes from the world's own thermodynamics, at a temperature nobody chose.
+The [Core Thesis](core-thesis.md) asks for more: a world in which the drive toward an open future comes from the world's own thermodynamics, with no separate dial for its strength.
 
 This article presents such a world, and the proof.
 
@@ -24,7 +24,7 @@ Yet when the world settles, each arrangement of bridges is weighted by exactly t
 
 **In this world, the drive toward an open future is not a law laid on top of the physics. It is the physics.**
 
-The result is exact. There is no random seed, no sample, and no fitted curve. The experiment was preregistered, independently reviewed before it ran, executed once, and passed every test. You can rerun it in about a second.
+The result is exact. There is no random seed, no sample, and no fitted curve. The experiment was preregistered, reviewed by three separate AI reviewers before it ran, executed once, and passed every test. You can rerun it in about a second.
 
 ## Counting futures, not guessing them
 
@@ -57,7 +57,7 @@ The traveller is the simplest kind of Praxion, the part of a Xypher that acts. I
 
 Every bridge stores one packet of timber, drawn from a reservoir. Write **λ** for the energy of one packet. The reservoir's possible arrangements multiply by a fixed factor **b** with every packet it holds, which fixes its temperature, **α = λ / ln b**, before anything moves: one packet of energy buys one multiplication by **b**.
 
-At the finest level, every move is exactly as likely as its reverse. Nothing in the rules reads **N<sub>τ</sub>**. Nothing favours building over dismantling.
+At the finest level, every move is exactly as likely as its reverse. No move's likelihood depends on **N<sub>τ</sub>**. Nothing favours building over dismantling.
 
 The plan matters. It decides where the traveller stands, and the plan's route decides which bridges are protected. Two travellers standing at home on the same archipelago, one planning to stay and one planning to cross to island 1, can do different things: only the first may dismantle the bridge to island 1. The plan is not a label beside the dynamics; it is part of what moves.
 
@@ -89,7 +89,7 @@ The effect is large. With three islands and a reservoir that doubles per packet,
 
 A colder reservoir makes timber dearer. With **b = 3** and two steps ahead, the mean falls to **5/4**, still above the **3/4** a futureless world would hold at that temperature.
 
-## The force appears
+## The push appears
 
 Now ask the Core Thesis's question about a single bridge: how strongly does the world favour having it?
 
@@ -103,9 +103,9 @@ $$
 
 Read it as: *A bridge is favoured by the futures it opens, valued at the world's temperature, against the timber it binds.*
 
-This **Ξ** is the Core Thesis's thermodynamic drive, with the future measured as committable plans. Its first term is the causal entropic force made into a discrete step on a graph. Nothing in the rules computed it.
+This **Ξ** is the Core Thesis's thermodynamic drive, with the future measured as committable plans. Its first term is the causal entropic term made into a discrete step on a graph, at the temperature of the timber store itself. No move's likelihood depends on it.
 
-Two honest notes belong here. First, once the configuration law holds, these odds follow from it automatically; they are not a separate discovery. The discovery is that local rules which never look at the future count produce them. Second, the force exists only as an average. At any moment, what the traveller can build depends on where it stands, so there is no rule at the level of configurations alone. The force emerges from the traveller's committed futures, the way pressure emerges from molecules.
+Two honest notes belong here. First, once the configuration law holds, these odds follow from it automatically; they are not a separate discovery. The discovery is that local rules which never look at the future count produce them. Second, the bias exists only as an average. At any moment, what the traveller can build depends on where it stands, so there is no rule at the level of configurations alone. The push lives in the traveller's committed futures, the way pressure lives in molecules.
 
 In the main example, one pair of neighbouring arrangements never exchanges at all. While home has no bridge, the traveller is confined to home and can never reach the bridge between the two far islands, so it can neither build nor remove that bridge there. The verifier reports that pair and leaves it out of the odds. With four islands there are more such pairs, for the same reason.
 
@@ -125,7 +125,7 @@ The new futures all use the new bridge: stay and then cross, cross and come back
 
 So the same bridge is favoured more when the island across is already connected. With a reservoir that doubles per packet, each bridge halves the weight. From an empty archipelago, the bridge from home to island 1 turns one plan into four, so it is favoured 4/2, two to one. If island 1 is already bridged to island 2, the same home bridge turns one plan into five, favoured five to two.
 
-This is the intuition of the Core Thesis's opening island example, now exact. There, a bridge to an island with three bridges reached four destinations; here it opens six new two-step plans, twice the three an isolated island offers. A preference for joining the network where it is already rich appears without any attachment rule. It is the entropy of committed futures.
+This is the intuition of the Core Thesis's opening island example, now exact. There, a bridge to an island with three bridges reached four destinations; here it opens six new two-step plans, twice the three an isolated island offers. No rule mentions how connected an island is. The preference comes from protection: more of the traveller's plans cross a bridge to a well-connected island, and the traveller never dismantles a bridge its plan crosses. [Committed Futures as Microstates](committed-futures-as-microstates.md) shows why protection produces exactly these odds.
 
 ## Same temperature, no flow
 
@@ -139,7 +139,7 @@ A verifier that says "pass" to everything proves nothing. Before it ran, the exp
 
 | Broken version | What failed first |
 |---|---|
-| A builder that can build but never dismantle | Reversibility, at the first bridge. A take-only-gains builder cannot hold a temperature. |
+| A builder that can build but never dismantle | Reversibility, at the first bridge. A builder that never dismantles cannot hold a temperature. |
 | Replanning by the random traveller's destinations instead of by plans | The futures are no longer equally weighted: the first uneven law is 4/9, 5/18, 5/18. |
 | One microscopic move made twice as likely as its reverse | Equal reverse rates. |
 | Ξ without the reverse receipt | Reversing an action no longer reverses its value. |
@@ -167,13 +167,15 @@ It does not establish:
 - learning, control, or intelligence;
 - new fundamental physics. This is equilibrium statistical mechanics of a declared model. Its counting is the same mechanism that makes rubber elastic, where a polymer's shapes are walks. Here the walks are committed futures.
 
-A literature search found no prior construction in which an actor's count of committable futures is the entropy of an exact equilibrium ensemble at an independently grounded temperature, with the causal entropic odds emerging from local rules. That is a statement about the search, not a proof of novelty.
+A literature search found no earlier construction of a local, reversible actor whose world settles into this law, although the counting itself is standard. That is a statement about the search, not a proof of novelty. [Committed Futures as Microstates](committed-futures-as-microstates.md) sets out the prior work it builds on.
 
 ## Why it matters
 
 The causal entropic force has always sounded like an extra principle: a push toward the future, added to physics. This world shows another way to see it. Give an actor a future to hold, let it act where it stands, and let every move be reversible. Here, the push toward more futures is simply what entropy does.
 
 That changes what a Xypher is. Its drive toward an open future does not need to be programmed in or paid for by an outside rule. It can be the thermodynamics of the futures it carries.
+
+[Committed Futures as Microstates](committed-futures-as-microstates.md) proves the result for every archipelago and every horizon, and shows that the strength of the push is the temperature of the timber store, whatever the rate at which the traveller replans.
 
 The next experiment uses the same world. The held plan is a command, and where the walk ends is an outcome. Measure how many bits of control the plan gives over the destination, inside this same energy account, and test whether each bit is worth exactly one packet of energy, as [Intelligence as Physical Units](intelligence-as-physical-units.md) predicts for a reservoir that doubles per packet.
 

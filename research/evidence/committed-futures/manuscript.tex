@@ -1,0 +1,416 @@
+\documentclass[aps,pre,preprint,superscriptaddress,nofootinbib]{revtex4-2}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\N}{N_\tau}
+\newcommand{\Pl}{\Pi_\tau}
+\newcommand{\e}{\mathrm{e}}
+
+\begin{document}
+
+\title{\texorpdfstring{Committed futures as microstates:\\ causal entropic bias as configurational entropy at the bath temperature}{Committed futures as microstates: causal entropic bias as configurational entropy at the bath temperature}}
+
+\author{Andreas Rudolph}
+\affiliation{Xyphers Research, \href{https://xyphers.com}{xyphers.com}}
+\email{research@xyphers.com}
+
+\date{Draft for expert review, 10 October 2026}
+
+\begin{abstract}
+The causal entropic force of Wissner-Gross and Freer biases a system toward macrostates with more accessible future paths, with a strength $T_c$ set separately from the temperature $T_r$ of the reservoir that drives its noise. We give an exactly solvable reversible model in which such a bias is ordinary configurational entropy and its strength is fixed by the reservoir. A traveller on an archipelago holds one $\tau$-step walk from home as state, walks it, replans at home, and builds or dismantles only bridges at its current island, never one its held walk uses. Every microscopic transition has its reverse at equal rate; no individual rate depends on any count of futures, and with local plan edits nothing in the dynamics enumerates them. For every number of islands and every $\tau\ge1$ we prove that the stationary law of bridge configurations is $\pi(G)\propto\N(G)\,b^{-|G|}$, the Bernoulli bond measure size-biased by the number $\N$ of committable walks, and that the model meets an operational definition of finite equilibrium thermodynamics at the reservoir temperature $\alpha=\lambda/\ln b$. The single ingredient that produces the entropy is that the world must keep the held walk valid. Between configurations the traveller can toggle, the equilibrium odds are $\e^{\Xi/\alpha}$ with $\Xi=\alpha\,\Delta\ln\N-\Delta U$: the stationary odds of a uniform-path causal entropic bias with $T_c=T_r$, whatever the rate at which the traveller replans. Several travellers multiply their counts. Mechanistically the bias is protection, because held walks shield the bridges they use; it is not a configuration-level force, because the coarse-grained process is not Markov. At $\tau=2$ a bridge from home to an island with $d$ bridges adds exactly $d+3$ futures, and $\tau^{-1}\ln\N$ tends to the entropy rate of the maximal-entropy random walk on the home component. A verifier frozen before execution checked the configuration law, the odds, the degree law, and same-temperature contact exactly on eight cases, and eight deliberately broken variants failed at their predicted checks. We pose open problems toward a thermodynamics of committed futures.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Wissner-Gross and Freer proposed that adaptive behaviour can arise from a causal entropic force~\cite{WissnerGross2013},
+\begin{equation}
+  \mathbf F(X_0,\tau)=T_c\,\nabla_X S_c(X,\tau)\big|_{X_0},
+\end{equation}
+where $S_c$ is the Shannon entropy of the paths a system can follow over a horizon $\tau$ from macrostate $X$. Their formulation carries two temperatures: the temperature $T_r$ of the reservoir that sets the noise, and $T_c$, a separate parameter that sets the strength of the bias. They suggested that $T_c$ parametrizes the rate at which paths in a hypothetical dynamical ensemble of fixed-duration paths transition into one another, by analogy with the configurational microstates of an ideal chain whose transitions produce its entropic elasticity. Kappen noted that $S_c$ is independent of the state, and the force vanishes, when the noise is state-independent~\cite{Kappen2013}; Canessa pointed to an earlier force--entropy relation~\cite{Canessa2013}.
+
+This paper makes such a path ensemble explicit. The paths become the states of an actor that holds one of them, and the world they run through must keep the held path valid. We ask what the world's equilibrium is when every transition is reversible and no rate depends on the number of paths. The answer is exact: the stationary law of the world is $\pi(G)\propto\N(G)\,b^{-|G|}$, where $\N(G)$ counts the paths the actor could hold in configuration $G$. The log-count of held paths enters as configurational entropy at the reservoir's temperature. The causal entropic temperature is therefore not a separate parameter, and it is not set by the rate at which paths transition into one another: the Replan rate drops out of the stationary law, and $T_c=T_r$. Because missing bridges remove paths, $\N$ depends on the configuration of the world rather than on the actor's own position; the gradient acts on the environment, as the walls do in the examples of Ref.~\cite{WissnerGross2013}, and Kappen's state-independence objection~\cite{Kappen2013} does not apply.
+
+The mechanism is standard. Counting the auxiliary configurations compatible with each bond configuration is how the Fortuin--Kasteleyn and Edwards--Sokal representations obtain their bond marginals~\cite{FortuinKasteleyn1972,EdwardsSokal1988}; here the auxiliary variable is a rooted walk. The same law is the bond marginal of an annealed tethered-walk measure, in the sense of annealed polymer measures~\cite{Comets2017}, and an exponential random graph model with a rooted walk-count statistic~\cite{ParkNewman2004,FrankStrauss1986}. Digital systems with temperatures of their own are not new either: Creutz's demon reads a temperature from a microcanonical simulation~\cite{Creutz1983}, and reversible cellular automata such as Q2R carry a temperature without a temperature parameter~\cite{Pomeau1984,Vichniac1984}. Stochastic thermodynamics on graphs is well developed~\cite{Schnakenberg1976,Seifert2012,Maes2021}, and earlier work in this program gave an exact operational definition of finite equilibrium thermodynamics for graph systems (tests T1--T6 below)~\cite{CALXTHERM}.
+
+What we add is the following. First, an explicit actor dynamics, local, reversible, and blind to any count of futures, whose stationary world law is the walk-count size-biased bond measure. Second, the identification of the stationary causal entropic odds with the configurational entropy of a held-path degree of freedom, at $T_c=T_r$ and independent of the path-transition rate. Third, the mechanism: the bias is protection, and it is not a force on configurations. Fourth, closed forms at $\tau=2$ and as $\tau\to\infty$. Specifically:
+\begin{enumerate}
+\item A model in which an actor holds a multi-step future as state and acts only where it stands (Sec.~\ref{sec:model}).
+\item A proof, for every number of islands and every horizon $\tau\ge1$, that the model satisfies T1--T5 with configuration law $\pi(G)\propto\N(G)\,\e^{-U(G)/\alpha}$ (Theorem~\ref{thm:equilibrium}) and T6 (Theorem~\ref{thm:contact}). The law is unchanged when replanning edits one position of the plan at a time (Proposition~\ref{prop:local}).
+\item The emergent odds, an exact criterion for which configurations exchange, and their mechanism (Corollary~\ref{cor:odds}, Lemma~\ref{lem:flux}, Remark~\ref{rem:protection}); a proof that the stationary configuration process is not Markov (Proposition~\ref{prop:nonmarkov}).
+\item The product law for many actors whose plans interact through protection (Proposition~\ref{prop:many}).
+\item An exact degree law at $\tau=2$ (Proposition~\ref{prop:homebridge}), the long-horizon limit (Proposition~\ref{prop:merw}), and the absence of any finite temperature for a build-only dynamics (Proposition~\ref{prop:oneway}).
+\item An exact computational verification with mutation controls (Sec.~\ref{sec:verification}), and open problems toward a thermodynamics of committed futures (Sec.~\ref{sec:frontier}).
+\end{enumerate}
+
+\section{Model}
+\label{sec:model}
+
+\subsection{Archipelago, configurations, and plans}
+
+Fix integers $N\ge2$ (islands), $\tau\ge1$ (horizon), and $b\ge2$ (reservoir base). The islands are $V=\{0,\dots,N-1\}$, and island $h=0$ is home. The candidate bridges are all $K=N(N-1)/2$ unordered pairs. A configuration $G$ is any set of candidate bridges; write $A_G$ for its adjacency matrix and $L_G=I+A_G$.
+
+\begin{definition}[Plans]
+A plan in $G$ is a sequence $p=(v_0,\dots,v_\tau)$ with $v_0=h$ and, for each $t$, either $v_{t+1}=v_t$ or $\{v_t,v_{t+1}\}\in G$. Let $\Pl(G)$ be the set of plans and
+\begin{equation}
+  \N(G)=|\Pl(G)|=\mathbf e_h^{\top}L_G^{\tau}\mathbf 1\ \ge 1 .
+  \label{eq:count}
+\end{equation}
+A plan uses bridge $\{u,w\}$ if some step moves between $u$ and $w$.
+\end{definition}
+
+A plan is a future the traveller can commit to: a route, counted separately for every distinct sequence of moves, with a stay allowed at every step. Counting routes rather than weighting destinations is the uniform-path form of a path entropy~\cite{WissnerGross2013,Presse2013}.
+
+\subsection{States and reservoir}
+
+A system state is $z=(G,p,t)$ with $p\in\Pl(G)$ and cursor $t\in\{0,\dots,\tau\}$; the traveller stands on island $x(z)=v_t$. Each configuration contains exactly $(\tau+1)\N(G)$ system states.
+
+Each bridge stores one packet of energy $\lambda$, so $U(z)=\lambda|G|$. A reservoir holds the remaining packets of a fixed total $K$. At reservoir energy $E_R=\lambda(K-|G|)$ it has $b^{K-|G|}$ distinguishable arrangements. This declared equation of state fixes
+\begin{equation}
+  \frac1\alpha=\frac{\Delta S_R}{\Delta E_R}=\frac{\ln b}{\lambda},\qquad \alpha=\frac{\lambda}{\ln b},
+\end{equation}
+before any rate is constructed. The parameters $N$, $\tau$, $b$, and $\lambda$ are declared; what is not declared is any coupling between the count of futures and the temperature. A complete state is $(z,r)$ with $r$ one of the $b^{K-|G|}$ reservoir arrangements.
+
+\subsection{Dynamics}
+
+All microscopic channels have unit rate, which fixes the clock.
+\begin{itemize}
+\item \textbf{Step.} $(G,p,t,r)\leftrightarrow(G,p,t+1,r)$ for $0\le t<\tau$: the traveller walks its plan forward or back.
+\item \textbf{Replan.} $(G,p,0,r)\leftrightarrow(G,p',0,r)$ for every $p'\ne p$ in $\Pl(G)$: replanning happens only at home, uniformly among valid plans.
+\item \textbf{Build.} If $e\notin G$ is incident to $x(z)$: $(G,p,t,r)\to(G\cup\{e\},p,t,r')$ for every reservoir arrangement $r'$ at the lower reservoir energy.
+\item \textbf{Dismantle.} If $e\in G$ is incident to $x(z)$ and $p$ does not use $e$: $(G,p,t,r)\to(G\setminus\{e\},p,t,r')$ for every $r'$ at the higher reservoir energy.
+\end{itemize}
+No individual rate depends on $\N$. Under Replan as defined, the total replanning rate of a home state is $\N(G)-1$; Proposition~\ref{prop:local} shows that every result below holds unchanged when replanning edits one position of the plan at a time, in which case no total rate depends on $\N$ either and nothing in the dynamics enumerates $\Pl(G)$. The held plan is read by the dynamics in two ways: it determines where the traveller stands, and it protects the bridges it uses.
+
+For a configuration change $a:G\to G'$ define the affinity
+\begin{equation}
+  \Xi(a)=\alpha\,\Delta\ln\N(a)-\Delta U(a).
+  \label{eq:xi}
+\end{equation}
+No transition rate reads $\Xi$; Eq.~\eqref{eq:xi} is a prediction about equilibrium odds.\footnote{In the author's broader framework~\cite{CALXTHERM}, the traveller is a base actor, the positive part $\alpha\max(0,\Delta\ln\N)$ is booked as a one-sided expansion receipt called THAIM, and $\Xi$ is that receipt net of its reverse and of $\Delta U$. No result here depends on this terminology.}
+
+\begin{figure}[t]
+\centering
+\newcommand{\cfg}[5]{%
+\begin{tikzpicture}[scale=0.95,baseline]
+  \coordinate (h) at (0,0); \coordinate (a) at (0.6,0.95); \coordinate (c) at (1.2,0);
+  \ifnum#1=1 \draw[very thick] (h)--(a); \else \draw[dashed,gray!70] (h)--(a); \fi
+  \ifnum#2=1 \draw[very thick] (h)--(c); \else \draw[dashed,gray!70] (h)--(c); \fi
+  \ifnum#3=1 \draw[very thick] (a)--(c); \else \draw[dashed,gray!70] (a)--(c); \fi
+  \fill (h) circle (3.2pt); \draw[fill=white] (a) circle (3.2pt); \draw[fill=white] (c) circle (3.2pt);
+  \node[below,font=\scriptsize] at (0.6,-0.12) {$N_2=#4$};
+  \node[below,font=\scriptsize] at (0.6,-0.48) {$\pi=#5$};
+\end{tikzpicture}}
+\begin{tabular}{cccc}
+\cfg{0}{0}{0}{1}{8/87} & \cfg{1}{0}{0}{4}{16/87} & \cfg{0}{1}{0}{4}{16/87} & \cfg{1}{1}{0}{7}{14/87}\\[2pt]
+\cfg{0}{0}{1}{1}{4/87} & \cfg{1}{0}{1}{5}{10/87} & \cfg{0}{1}{1}{5}{10/87} & \cfg{1}{1}{1}{9}{9/87}
+\end{tabular}
+\caption{The eight configurations of the primary example ($N=3$, $\tau=2$, $b=2$). Home (island 0, filled) is at the lower left, island 1 at the top, island 2 at the lower right; built bridges are solid, unbuilt candidates dashed. $N_2$ is the number of committable two-step plans and $\pi$ the exact equilibrium probability, $\pi(G)=N_2(G)\,2^{-|G|}/(87/8)$. The bridge between the two far islands adds no plans unless home reaches one of them.}
+\label{fig:primary}
+\end{figure}
+
+\section{Results}
+\label{sec:results}
+
+We use the operational definition of finite equilibrium thermodynamics for graph systems from Ref.~\cite{CALXTHERM}: (T1) the state contains everything the dynamics reads, and every claimed projection is strongly lumpable; (T2) energy, entropy, and temperature are declared independently of the rates, with the temperature from a named reservoir; (T3) every channel has a reverse and obeys local detailed balance~\cite{Maes2021}; (T4) every transition closes its energy account, and an information register that affects future behaviour is part of the state, with any reset charged to a named counter-reservoir; (T5) the stationary law is the Gibbs law; (T6) systems at the same temperature in contact carry zero equilibrium current, and their exchange channels obey local detailed balance.
+
+\begin{lemma}[Closure and reciprocity]
+\label{lem:closure}
+Every channel maps states to states, and every channel's reverse is a channel with the same rate.
+\end{lemma}
+\begin{proof}
+Step and Replan are symmetric by definition. If $p\in\Pl(G)$ and $e\notin G$, then $p\in\Pl(G\cup\{e\})$ and $p$ does not use $e$; the traveller still stands on an endpoint of $e$, so the reverse Dismantle is permitted. If $p\in\Pl(G)$ does not use $e\in G$, then $p\in\Pl(G\setminus\{e\})$, and the reverse Build is permitted. Build and Dismantle connect to every reservoir arrangement at unit rate in both directions.
+\end{proof}
+
+\begin{lemma}[Connectivity]
+\label{lem:connectivity}
+For $\tau\ge1$ the complete-state graph is connected.
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:closure} it suffices to reach the empty configuration from any complete state. Step back to $t=0$ and replan to the stay plan $\sigma=(h,\dots,h)$, which is valid in every configuration and uses no bridge. For each bridge $\{u,w\}$ not incident to home: build $\{h,u\}$ if absent, replan to $(h,u,\dots,u)$, step to $t=1$, dismantle $\{u,w\}$ (the plan uses only $\{h,u\}$), step back, and replan to $\sigma$. Then dismantle every home bridge from home under $\sigma$. Reservoir arrangements at the empty configuration are connected through a build and dismantle of any home bridge.
+\end{proof}
+
+At $\tau=0$ the traveller never leaves home, bridges away from home are frozen, and the chain is reducible; $\tau\ge1$ is required throughout.
+
+\begin{theorem}[Equilibrium and configuration law]
+\label{thm:equilibrium}
+For all $N\ge2$, $\tau\ge1$, and $b\ge2$:
+\begin{enumerate}
+\item the unique stationary law is uniform over complete states;
+\item the system-state law is $\pi(z)\propto b^{-|G(z)|}=\e^{-U(z)/\alpha}$, and the reservoir projection is strongly lumpable with system-state rates $b^{K-|G'|}$ for Build/Dismantle into $G'$ and $1$ otherwise;
+\item the configuration law is
+\begin{equation}
+  \pi(G)=\frac{\N(G)\,\e^{-U(G)/\alpha}}{Z},\qquad Z=\sum_G \N(G)\,\e^{-U(G)/\alpha};
+  \label{eq:law}
+\end{equation}
+\item the model satisfies T1--T5 with constant system-state entropy. Configurations are not states of the dynamics (Proposition~\ref{prop:nonmarkov}); $\ln[(\tau+1)\N(G)]$ is the Boltzmann entropy of the configuration macrostate, and $F(G)=U(G)-\alpha\ln[(\tau+1)\N(G)]$ is its constrained free energy.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:closure} the complete-state generator is symmetric, so the uniform law satisfies detailed balance on every channel; by Lemma~\ref{lem:connectivity} it is the unique stationary law and the finite chain converges to it. A system state $z$ carries $b^{K-|G(z)|}$ complete states, which gives (ii) after normalisation; every complete state above $z$ has one Step or Replan move to each target system state and $b^{K-|G'|}$ Build or Dismantle moves into each target $z'$, so the projection is strongly lumpable~\cite{KemenySnell1960}. Summing over the $(\tau+1)\N(G)$ system states of $G$ gives (iii). For (iv): the complete state contains every coordinate read (T1); $U$, $S$, and $\alpha$ are declared from the configuration and the reservoir law (T2); the system-state rate ratio of every toggle is $b^{-(|G'|-|G|)}=\e^{-\Delta U/\alpha}$, which is local detailed balance with $\Delta S=0$ (T3); each toggle moves one packet between bridges and reservoir with no external work, and the plan register is part of the state, overwritten only by the symmetric Replan channel within $\Pl(G)$, never reset to a standard value, so no logically irreversible erasure occurs and no counter-reservoir is needed (T4); and (ii) is the Gibbs law (T5).
+\end{proof}
+
+\begin{remark}[What produces the law]
+\label{rem:construction}
+The proof uses three facts: the state space is the compatible set $\{(G,p,t,r):p\in\Pl(G)\}$, every channel is symmetric, and the chain is irreducible. Equation~\eqref{eq:law} therefore holds for any such dynamics, including one that toggles bridges anywhere, replans at any cursor, or replans at any symmetric rate. Locality and walking determine which configurations exchange (Lemma~\ref{lem:flux}), the kinetics, and the non-Markov projection (Proposition~\ref{prop:nonmarkov}); they do not determine the law. The single ingredient that produces $\ln\N$ is compatibility: the world may not invalidate the held walk. Control C07 in Sec.~\ref{sec:verification} removes it.
+\end{remark}
+
+\begin{remark}[Structural identification]
+\label{rem:structure}
+Equation~\eqref{eq:law} is the Bernoulli bond measure with bond probability $q=1/(1+b)$, size-biased by $\N$: $Z=(1+b^{-1})^K\,\mathbb E_q[\N]$, and for the primary example $\mathbb E_q[N_2]=29/9$. It is the bond marginal of a joint measure on bonds and compatible auxiliary configurations, in the manner of Fortuin--Kasteleyn and Edwards--Sokal~\cite{FortuinKasteleyn1972,EdwardsSokal1988}, with a rooted walk in place of spins; equivalently, it is the bond marginal of an annealed measure for a tethered walk on a random graph, in the sense of annealed polymer measures~\cite{Comets2017}. At $\tau=2$ it is an exponential random graph model whose statistic is the logarithm of a linear combination of rooted edge and two-path counts (Proposition~\ref{prop:homebridge})~\cite{FrankStrauss1986,ParkNewman2004}; for general $\tau$ the statistic is a binomially weighted, Katz-type walk count~\cite{Katz1953,EstradaHatano2008}. The same mechanism gives polymers, whose conformations are walks, their entropic elasticity~\cite{Flory1969}. The content of Theorem~\ref{thm:equilibrium} is therefore the identification, not the mechanism: the walks counted are futures an actor holds, and holding them is what makes them states.
+\end{remark}
+
+\begin{proposition}[Local replanning]
+\label{prop:local}
+Replace Replan by single-position edits: at $t=0$, $(G,p,0,r)\leftrightarrow(G,p',0,r)$ at unit rate whenever $p'\in\Pl(G)$ differs from $p$ in exactly one position. Then every other result of this section holds unchanged, and the total replanning rate of a state depends only on the bridges at the islands of its own plan.
+\end{proposition}
+\begin{proof}
+The edit relation is symmetric. It connects $\Pl(G)$: if positions $j,\dots,\tau$ of $p=(v_0,\dots,v_\tau)$ all equal $v_j$, overwrite positions $\tau,\tau-1,\dots,j$ with $v_{j-1}$ one at a time; every intermediate sequence either stays or crosses the original step $\{v_{j-1},v_j\}$, so it is a plan. Repeating for $j=\tau,\dots,1$ reaches $\sigma$. The proofs above and below use Replan only through its symmetry, through the set $\Pl(G)$, and through reaching $\sigma$ and $(h,u,\dots,u)$ within $\Pl(G)$, all of which hold for edits. Position $k$ of a plan can be overwritten only by islands joined to, or equal to, both $v_{k-1}$ and $v_{k+1}$ (only $v_{k-1}$ for $k=\tau$), a local quantity.
+\end{proof}
+
+Exact enumeration (not preregistered) confirms detailed balance with respect to $b^{-|G|}$ and connectivity under edit-replanning for $(N,\tau)\in\{(3,1),(3,2),(3,3),(4,2),(4,3)\}$ at $b=2$. With edits, no part of the dynamics enumerates, samples, or scores the set of futures whose size becomes the entropy.
+
+\begin{lemma}[Which configurations exchange]
+\label{lem:flux}
+Let $G'=G\cup\{e\}$ and
+\begin{equation*}
+  J(G\to G')=\sum_{z\in G,\ z'\in G'}\pi(z)\,k(z\to z').
+\end{equation*}
+Then $J(G\to G')>0$ if and only if some endpoint of $e$ lies within graph distance $\tau$ of home in $G$. In that case $J(G'\to G)=J(G\to G')$.
+\end{lemma}
+\begin{proof}
+The islands the traveller can occupy in $G$ are exactly those visited by plans in $\Pl(G)$; since stays are allowed, these are the islands within distance $\tau$ of $h$. A Build of $e$ is available from a system state of $G$ if and only if the traveller stands on an endpoint of $e$. Equality of the reverse flux follows from detailed balance.
+\end{proof}
+
+\begin{corollary}[Emergent causal entropic odds]
+\label{cor:odds}
+For neighbouring configurations $G$ and $G'$ with positive flux, define $\bar k(G\to G')=J(G\to G')/\pi(G)$. Then
+\begin{equation}
+  \frac{\bar k(G\to G')}{\bar k(G'\to G)}=\frac{\pi(G')}{\pi(G)}=\e^{\Xi(G\to G')/\alpha},\qquad
+  \Xi=\alpha\,\Delta\ln\N-\Delta U .
+  \label{eq:odds}
+\end{equation}
+\end{corollary}
+\begin{proof}
+Combine $J(G\to G')=J(G'\to G)$ with Eq.~\eqref{eq:law}.
+\end{proof}
+
+Equation~\eqref{eq:odds} is an identity once Eq.~\eqref{eq:law} holds; it adds no test independent of Theorem~\ref{thm:equilibrium}. Its content is that rules whose rates never depend on $\N$ produce, at the configuration level, the stationary odds of a causal entropic term against the energy cost, with the causal entropic temperature equal to the reservoir's. The odds have a direct mechanism:
+
+\begin{remark}[The bias is protection]
+\label{rem:protection}
+For $e\notin G$, the system states of $G'=G\cup\{e\}$ from which $e$ can be dismantled are exactly the pairs $(p,t)$ of $G$ from which $e$ can be built: the same plan, the same cursor, the traveller on an endpoint of $e$. The $(\tau+1)[\N(G')-\N(G)]$ states of $G'$ whose plan uses $e$ cannot dismantle it. Build and Dismantle of $e$ therefore carry equal flux, while $G'$ holds $\N(G')/\N(G)$ times as many plan states per reservoir arrangement. A new bridge persists in proportion to the number of futures available with it, relative to without it. No rule refers to $\N$, to degree, or to any count of futures; the only reference to the future is the held plan itself.
+\end{remark}
+
+The bias exists only as an average. It is not a rate rule on configurations:
+
+\begin{proposition}[The configuration process is not Markov]
+\label{prop:nonmarkov}
+For all $N\ge2$, $\tau\ge1$, and $b\ge2$, and for either replanning rule, the projection of system states onto configurations is not strongly lumpable, and the stationary configuration process is not Markov.
+\end{proposition}
+\begin{proof}
+In $G=\{\{h,u\}\}$, the system states $(G,\sigma,0)$ and $(G,(h,\dots,h,u),0)$ both have the traveller at home, but only the first may dismantle $\{h,u\}$, because the second plan uses it; their total rates into $\varnothing$ are $b^K$ and $0$. For the second claim, let $S(s)$ be the probability that a stationary trajectory in $G$ at time $0$ stays in $G$ throughout $[0,s]$, and let $\epsilon(z)$ be the total rate out of $G$ from system state $z$. Within $G$ the stationary law is uniform and the internal Step and Replan moves are symmetric, so $S'(0)=-\langle\epsilon\rangle$ and $S''(0)=\langle\epsilon^2\rangle$, averages over the system states of $G$. Hence $S''(0)-S'(0)^2=\operatorname{Var}(\epsilon)>0$, because the two states above have exit rates differing by $b^K$. The holding time is therefore not exponential, as it would be for a stationary Markov process. For the primary example and $G=\{\{0,1\}\}$, $S'(0)=-4$ and $S''(0)=28$.
+\end{proof}
+
+\begin{proposition}[Many actors]
+\label{prop:many}
+Let $m$ travellers with homes $h_1,\dots,h_m$ (not necessarily distinct) and horizons $\tau_1,\dots,\tau_m\ge1$ share one archipelago and one reservoir. Each holds its own plan and cursor with its own Step and Replan, and builds or dismantles bridges at its own island; a bridge may be dismantled only if no held plan uses it. Then
+\begin{equation}
+  \pi(G)\propto b^{-|G|}\prod_{i=1}^m N^{(h_i)}_{\tau_i}(G),
+\end{equation}
+where $N^{(h)}_\tau$ counts $\tau$-step plans from $h$. For $m$ travellers with a common home and horizon, $\pi(G)\propto\exp\{-[U(G)-\alpha\,m\ln\N(G)]/\alpha\}$: the joint committed-path entropy $m\ln\N$ enters at $T_c=\alpha$, or equivalently the single-actor entropy $\ln\N$ at $T_c=m\alpha$.
+\end{proposition}
+\begin{proof}
+A Build never invalidates a plan, and a Dismantle of a bridge that no plan uses keeps every plan valid, so Lemma~\ref{lem:closure} carries over. For connectivity, return every traveller to $t=0$ and to the stay plan at its home; these plans use no bridge, and traveller~1 then clears every bridge as in Lemma~\ref{lem:connectivity}. The generator is symmetric, the stationary law is uniform on complete states, and summing over the plans and cursors of all travellers gives the product.
+\end{proof}
+
+Exact enumeration (not preregistered) confirms the product law for two travellers at $(N,\tau,b)=(3,2,2)$, both with home $0$ (1926 system states, law $(8,64,64,98,4,50,50,81)/419$ in the order of Fig.~\ref{fig:primary}) and with homes $0$ and $1$ (1809 system states). Plans interact here only through protection, which is why the counts multiply.
+
+\begin{proposition}[Degree law at $\tau=2$]
+\label{prop:homebridge}
+For $\tau=2$, $N_2(G)=\sum_{v\in N[h]}(d_v+1)$, where $N[h]$ is the closed neighbourhood of home and $d_v$ the degree of $v$ in $G$. Adding a bridge $e\notin G$ changes the count by
+\begin{equation}
+  \Delta N_2=
+  \begin{cases}
+    d_u+3, & e=\{h,u\},\\
+    [u\sim h]+[w\sim h], & e=\{u,w\},\ h\notin e,
+  \end{cases}
+\end{equation}
+with degrees evaluated before the addition. Consequently the equilibrium odds of a home bridge are $(N_2+d_u+3)/(b\,N_2)$.
+\end{proposition}
+\begin{proof}
+$L_G\mathbf 1$ has entries $d_v+1$, and $\mathbf e_h^\top L_G$ is the indicator of $N[h]$. Adding $\{h,u\}$ raises the home term by one and brings $u$ into $N[h]$ with term $d_u+2$. Adding a bridge away from home leaves $N[h]$ unchanged and raises the term of each endpoint already in it by one. Home bridges always have positive flux (Lemma~\ref{lem:flux}), and Eq.~\eqref{eq:odds} gives the odds.
+\end{proof}
+
+A bridge from home to an island with three bridges opens six new two-step plans, twice the three opened by a bridge to an isolated island; by Remark~\ref{rem:protection}, more held plans then cross it and shield it. The corresponding ratio of equilibrium odds, $(N_2+d+3)/(N_2+3)$, is largest when home's neighbourhood is small and weakens as it grows, so the preference is affine and diluted, unlike the linear preferential attachment of growth models~\cite{BarabasiAlbert1999}. Local walker rules are known to generate preferential attachment in growing networks~\cite{Vazquez2003,SaramakiKaski2004}; here the degree preference is an equilibrium property of a reversible ensemble.
+
+\begin{theorem}[Same-temperature contact]
+\label{thm:contact}
+Let two archipelagos $A$ and $B$ (any $N_A,N_B\ge2$ and $\tau_A,\tau_B\ge1$) be prepared in their stationary laws against reservoirs of bases $b_A$ and $b_B$ with a common packet energy $\lambda$, so that $b_A=b_B$ if and only if $\alpha_A=\alpha_B$. Detach them and couple them by transfer channels that dismantle a permitted bridge at $A$'s traveller island while building a bridge at $B$'s traveller island, and the reverse, at unit rate per pair of bridges, while each archipelago's Step and Replan continue. The total $M=|G_A|+|G_B|$ is conserved. If $b_A=b_B$, the prepared law conditioned on $M$ is stationary, satisfies detailed balance on every channel, equals the unique stationary law of every connected component of every shell, and carries zero expected packet current. If $b_A\neq b_B$, detailed balance fails on any shell component containing states with different $|G_A|$.
+\end{theorem}
+\begin{proof}
+The prepared law is $\propto b_A^{-|G_A|}b_B^{-|G_B|}$. If $b_A=b_B=b$ this equals $b^{-M}$, uniform on each shell. The reverse of a transfer that dismantles $e_A$ and builds $e_B$ is the transfer that dismantles $e_B$ and builds $e_A$: both travellers stand where they stood, $e_A$ is incident to $x_A$ and absent, and $p_B$ was valid without $e_B$ and so cannot use it. It has the same unit rate, so the contact generator is symmetric and the uniform law satisfies detailed balance on every channel; detailed balance makes every channel's flux cancel, so the signed packet current vanishes. If $b_A\ne b_B$, a transfer between states with $|G_A|$ and $|G_A|\pm1$ connects states of unequal prepared weight at equal rates.
+\end{proof}
+
+Shells need not be connected. In the primary example, $(G_A,G_B)=(\varnothing,\{\{1,2\}\})$ is isolated: neither traveller can dismantle anything. The theorem is therefore stated per component.
+
+\begin{proposition}[A build-only dynamics has no finite temperature]
+\label{prop:oneway}
+Delete every Dismantle channel. Then for $\tau\ge1$ every stationary law is supported on the complete configuration, for every $b$.
+\end{proposition}
+\begin{proof}
+The number of bridges never decreases. From any state the traveller can build every home bridge at home and, by replanning to $(h,u,\dots,u)$, every bridge at every island $u$; the set of states with all $K$ bridges is closed and reachable from everywhere, so it contains every recurrent class. Build channels have no reverse, so T3 fails at every $\alpha$; the stationary law is the formal $\alpha\to0^-$ limit of Eq.~\eqref{eq:law}.
+\end{proof}
+
+A dynamics that only builds is an absorbing optimizer; a finite temperature requires the step back. Ref.~\cite{CALXTHERM} found the analogous failure for a hard gate on positive affinity, a different mutation.
+
+\begin{proposition}[Long-horizon limit]
+\label{prop:merw}
+For fixed $G$, let $C$ be the connected component of home in $G$ and $\Lambda(G)$ the largest eigenvalue of $L_C=I+A_C$. Then
+\begin{equation}
+  \lim_{\tau\to\infty}\frac1\tau\ln\N(G)=\ln\Lambda(G),
+\end{equation}
+the entropy rate of the maximal-entropy random walk~\cite{Parry1964,Burda2009} on the home component with a unit self-loop at every island (adjacency $I+A_C$).
+\end{proposition}
+\begin{proof}
+Walks from home stay in $C$, so $\N(G)=\mathbf e_h^\top L_C^\tau\mathbf 1_C$. $L_C$ is symmetric, nonnegative, irreducible, and has a positive diagonal, hence primitive. By the Perron--Frobenius theorem $\Lambda$ is simple with a positive unit eigenvector $\psi$, and every other eigenvalue has modulus less than $\Lambda$. Expanding in eigenvectors, $\N(G)=\psi_h(\psi\cdot\mathbf 1)\Lambda^\tau\,(1+o(1))$ with $\psi_h(\psi\cdot\mathbf 1)>0$.
+\end{proof}
+
+For long horizons the configuration free energy is therefore $U(G)-\alpha\tau\ln\Lambda(G)-\alpha\ln[\psi_h(\psi\cdot\mathbf 1)]+o(1)$ up to a $G$-independent constant: the committed-future entropy per step is a spectral property of the home component. The correction is bounded for fixed $N$ but not uniformly in $N$, so the limits $\tau\to\infty$ and $N\to\infty$ need not commute. Exploratory exact enumeration (not preregistered) for $N=5$, $b=2$ shows the equilibrium mean bridge count increasing monotonically from $26/7\approx3.71$ at $\tau=1$ to $6.12$ at $\tau=12$, and the mean number of home bridges from $12/7\approx1.71$ to $2.69$ of $4$.
+
+\section{Exact verification and methods}
+\label{sec:verification}
+
+The finite-case content of Theorem~\ref{thm:equilibrium}, Corollary~\ref{cor:odds}, Propositions~\ref{prop:nonmarkov} (first claim) and~\ref{prop:homebridge}, and Theorem~\ref{thm:contact} (on two contact pairs) was checked on the cases of Table~\ref{tab:family} by an exact verifier~\cite{CALCEF}. The zero-flux set predicted by Lemma~\ref{lem:flux} was checked on the primary example. Propositions~\ref{prop:local}, \ref{prop:many}, \ref{prop:oneway}, and~\ref{prop:merw} are proved here and were not part of the preregistration beyond control C01. Because the law follows from the proofs, these checks confirm theorem instances for an explicitly constructed generator; they are not independent physical predictions. The eight controls are mutation tests: they show that the verifier detects broken variants, each at a check named in advance.
+
+A boundary document fixed the construction, the predicted values (including Tables~\ref{tab:primary} and~\ref{tab:family}), twelve acceptance gates with an explicit order of checks, and the controls with their expected first failures before any evaluator ran. The preregistered scope was $N\ge3$; the case $N=2$ rests on the proofs alone. The verifier is dependency-free Rust using exact integer and rational arithmetic. Plan sets were constructed by depth-first search and by brute-force filtering of all vertex sequences, and their counts were checked against integer matrix powers; the stationary law was verified from the constructed generator, not assumed. A declaration of the construction in Futuruna, the author's domain-specific language that transpiles to Rust, accompanies the verifier but is not used to compute any reported number. Every check marked ``not preregistered'' in Sec.~\ref{sec:results} is reproduced, with further cases, by a dependency-free Python script that uses only integer and rational arithmetic and runs in a few seconds~\cite{CFPACKET}.
+
+The boundary (commit \texttt{3a6405c4}) and the approved verifier (commit \texttt{31307b61}) were frozen in a private repository before execution. This is self-attested; there is no third-party timestamp. The public packet~\cite{CALCEF} gives the approved source tree, Git tree
+\begin{center}\texttt{e170da4e0e240abe027dac85e577b88ee0fd44d5},\end{center}
+with SHA-256 digests, so readers can check that the published source has this tree hash and reproduces the 31-line report (SHA-256 \texttt{7d862968\ldots04b7}) byte for byte, in about a second; that this tree was the one approved before execution is self-attested.
+
+\emph{Use of AI tools.} The model, proofs, verifier code, Futuruna declaration, exact computations, and every review reported here were produced by large-language-model agents (Anthropic Claude models in the omp coding-agent harness; this manuscript and its internal referee reports with \texttt{claude-opus-5-5}) under the author's direction. Three separate AI review agents approved the exact verifier source without running the evaluator; only compilation and lint checks ran before approval. The frozen command pair (\texttt{cargo test}, \texttt{cargo run}) was then executed once. The author set the research question and the requirements of the construction: futures held as executable state, local and reversible rules, no rate reading any count of futures, and a temperature from a declared reservoir. As of this draft, the author has not checked the proofs by hand; all checks were made by exact computation and by AI review agents.
+
+\begin{table}[t]
+\caption{Primary example $(N,\tau,b)=(3,2,2)$, configurations in the order of Fig.~\ref{fig:primary}. System states $3N_2$; complete states $3N_2\,2^{3-|G|}$; $Z=87/8$; equilibrium mean bridge count $131/87$.}
+\label{tab:primary}
+\begin{ruledtabular}
+\begin{tabular}{lrrrrr}
+Configuration & $|G|$ & $N_2$ & System states & Complete states & $\pi(G)$\\
+\hline
+none & 0 & 1 & 3 & 24 & 8/87\\
+$\{0,1\}$ & 1 & 4 & 12 & 48 & 16/87\\
+$\{0,2\}$ & 1 & 4 & 12 & 48 & 16/87\\
+$\{0,1\},\{0,2\}$ & 2 & 7 & 21 & 42 & 14/87\\
+$\{1,2\}$ & 1 & 1 & 3 & 12 & 4/87\\
+$\{0,1\},\{1,2\}$ & 2 & 5 & 15 & 30 & 10/87\\
+$\{0,2\},\{1,2\}$ & 2 & 5 & 15 & 30 & 10/87\\
+all three & 3 & 9 & 27 & 27 & 9/87
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Verified family. Every applicable gate passed in every case; the reservoir lift was enumerated explicitly for $N=3$, and the degree-law gate applies only at $\tau=2$.}
+\label{tab:family}
+\begin{ruledtabular}
+\begin{tabular}{lrrrcrr}
+$(N,\tau,b)$ & Configurations & System states & Complete states & $\N$ range & $Z$ & Mean bridges\\
+\hline
+(3,1,2) & 8 & 32 & 90 & 1--3 & 45/8 & 19/15\\
+(3,2,2) & 8 & 108 & 261 & 1--9 & 87/8 & 131/87\\
+(3,3,2) & 8 & 344 & 740 & 1--27 & 185/8 & 313/185\\
+(3,2,3) & 8 & 108 & 504 & 1--9 & 56/9 & 5/4\\
+(4,1,2) & 64 & 320 & 2916 & 1--4 & 729/32 & 7/3\\
+(4,2,2) & 64 & 1344 & 10206 & 1--16 & 1701/32 & 55/21\\
+(4,2,3) & 64 & 1344 & 44544 & 1--16 & 14848/729 & 123/58\\
+(4,3,2) & 64 & 5248 & 34344 & 1--64 & 4293/32 & 151/53
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The primary example passed all twelve gates. Of its twelve neighbouring configuration pairs, eleven have positive flux and satisfy Eq.~\eqref{eq:odds}; the twelfth, $\varnothing\leftrightarrow\{\{1,2\}\}$, has zero flux, as Lemma~\ref{lem:flux} requires. Same-temperature contact was checked for an identical pair $(3,2,2)\times(3,2,2)$ and a heterogeneous pair $(3,2,2)\times(3,1,2)$ on every shell; the current was exactly zero on every shell. Table~\ref{tab:controls} lists the controls. Each failed first at the preregistered gate and check, and at the preregistered configuration where one was named.
+
+\begin{table}[t]
+\caption{Mutation controls on the primary example and their observed first failures.}
+\label{tab:controls}
+\begin{ruledtabular}
+\begin{tabular}{lp{0.40\linewidth}p{0.44\linewidth}}
+Control & Mutation & First failure observed\\
+\hline
+C01 & Delete every Dismantle (build-only) & reciprocal support, at the first Build\\
+C02 & Replan by the lazy random walk's endpoint law & non-uniform channel $(4/9,5/18,5/18)$ at $\{0,1\},\{0,2\}$\\
+C03 & Double one microscopic forward rate & equal reverse rates\\
+C04 & Keep only the positive part of $\alpha\Delta\ln\N$ in $\Xi$ & antisymmetry of $\Xi$, at $\varnothing\leftrightarrow\{0,1\}$\\
+C05 & Forbid staying in plans & $\N(\varnothing)=0$\\
+C06 & Replan over plans one step too short & plan alphabet, at $\varnothing$\\
+C07 & Dismantle bridges the plan uses & plan validity, at $\{0,1\}$\\
+C08 & Prepare one contact partner at $b=3$ & stationarity of the prepared law, shell $M=1$ (unnormalised inflow $8/3$, outflow $7/3$)
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The endpoint control deserves comment. The usual future-freedom readout, the Shannon entropy of a random walker's destination after $\tau$ steps, is generally not the logarithm of a count of equally weighted outcomes, and replanning by it is not an equiprobable channel over committable futures. This control shows that a destination readout is not the declared plan channel; it does not show that no construction could make a destination entropy a state count.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Prior work and what is new}
+
+The structural side is covered in Remark~\ref{rem:structure}: the law is a size-biased bond measure of Fortuin--Kasteleyn type with a walk as the auxiliary variable, and an exponential random graph model in the sense of Park and Newman~\cite{ParkNewman2004} with the statistic $\ln\N$ at natural parameter one relative to the bond fugacity $1/b$. That ratio is the statement $T_c=T_r$. Uniform path weighting on a fixed graph is the maximal-entropy random walk~\cite{Parry1964,Burda2009}, which defines no law over graphs; Proposition~\ref{prop:merw} connects the two. Path-entropy ensembles in general are treated by maximum caliber~\cite{Presse2013}.
+
+On the agent side, $n$-step empowerment in deterministic settings is the logarithm of the number of distinct reachable states~\cite{Klyubin2005,Klyubin2008,SalgeIntro2014}; $\ln\N$ counts routes, not destinations. The closest agent analogue of building and dismantling bridges is an empowerment-driven agent that places and removes blocks to raise its own options~\cite{Salge2014}. In path-integral and linearly solvable control, when admissible paths carry no cost and inadmissible ones are excluded, the optimal policy weights each move by the passive-dynamics weight of the admissible paths that follow it, a path free energy at a temperature fixed by the noise~\cite{Kappen2005} or by the weight of the control cost~\cite{Todorov2009}. Future-state maximization and maximum-occupancy principles drive collective and individual behaviour toward many future states~\cite{CharlesworthTurner2019,RamirezRuiz2024}; causal-entropic collective models~\cite{MannGarnett2015,Hornischer2019} and option-preserving accounts of power-seeking~\cite{Turner2019} are related. Thermodynamic accounts of adaptation~\cite{Perunov2016} address driven systems rather than equilibrium ensembles. In all of these the future-count bias is a policy or an objective of the agent. Here it is neither: the agent's rates are blind to the count, and the bias appears in the stationary law of the world the agent inhabits.
+
+We have not found an explicit reversible actor dynamics, with local toggles and local plan edits, whose stationary world law is the walk-count size-biased bond ensemble, nor the observation that the stationary causal entropic odds of such a bias occur at $T_c=T_r$, independent of the rate at which paths transition into one another. A literature search is not a proof of novelty, and we invite corrections.
+
+\subsection{Limitations}
+
+The result is equilibrium statistical mechanics of a declared finite model. The island set is fixed; nothing grows. The actor does not learn. The route of a held plan is fixed, but its execution is not: the cursor moves forward and back at equal rates, and the plan can be abandoned at home. We do not claim that the Shannon entropy of the traveller's realized trajectories, or of a random walker's destinations, equals $\ln\N$. The causal entropic odds exist only as equilibrium averages; there is no configuration-level force. The thermodynamics is operational within the digital model; no claim is made about the heat of the hardware that runs it.
+
+\subsection{Toward a thermodynamics of committed futures}
+\label{sec:frontier}
+
+The construction suggests a program in which the futures an actor holds are microstates of the world it acts in. We state the next questions precisely enough to be tested.
+
+\paragraph*{Q1. Control as information.} The held route fixes the destination. A register that records the destination and is used for feedback can extract at most $\alpha\ln2$ of work per bit of mutual information between record and destination under the plan law in force, and measurement plus erasure cost at least as much~\cite{Szilard1929,Landauer1961,TouchetteLloyd2000,SagawaUeda2009,SagawaUeda2012,Parrondo2015}. With $b=2$, $\alpha\ln2=\lambda$: one energy packet per bit. Under uniform replanning at $\{0,1\},\{0,2\}$ the destination law is $(3/7,2/7,2/7)$, with entropy $1.557$ bits against a capacity of $\log_23=1.585$ bits. Can a measurement--feedback--erasure cycle whose record is the actor's own committed plan be closed exactly inside this energy account, and does it saturate the bound?
+
+\paragraph*{Q2. Uncommitted futures.} Can the Shannon path entropy of a stochastic executor, rather than a count of committed plans, enter as thermodynamic entropy? By Parry's theorem only the maximal-entropy executor attains the rate $\ln\Lambda$ of Proposition~\ref{prop:merw}, and its transition probabilities $(L_C)_{ij}\psi_j/(\Lambda\psi_i)$ encode the Perron vector, a global property of the future count that Proposition~\ref{prop:local} removed from the dynamics. Is there a local executor whose realized path entropy and committed count agree asymptotically?
+
+\paragraph*{Q3. Driven growth.} With bridges supplied from a reservoir at a different temperature, and with islands that can be created, the world becomes a nonequilibrium steady state. Does the committed-future entropy still bias the structure that forms, and at what rate of entropy production?
+
+\paragraph*{Q4. Learning.} If replanning becomes non-uniform through memory, the configuration law changes unless the memory is part of the state and every learning channel has a reverse. Which learning rules preserve an exact thermodynamics, and what does learning cost~\cite{GoldtSeifert2017}?
+
+\paragraph*{Q5. Interacting actors.} Proposition~\ref{prop:many} gives a product law because plans interact only through protection. Which interactions, such as exclusion of two travellers from one island or shared plans, break the product, and do they favour collective structures the product law cannot?
+
+\paragraph*{Q6. Scaling.} What is the large-$N$ phase structure of $\pi(G)\propto\N(G)\,b^{-|G|}$ when $\tau$ or $b$ scales with $N$, where $\tau\ln\Lambda$ competes with $|G|\ln b$? For fixed $\tau$ and $b$, $\ln\N\le\tau\ln N$ is negligible against the bond term, so bulk statistics such as the bond density approach those of independent bonds with probability $1/(1+b)$, while the neighbourhood of home stays biased; non-trivial global structure requires $\tau$ or $b$ to scale with $N$. In the dense limit with fixed parameters, exponential random graph models with subgraph-density statistics reduce to Erd\H{o}s--R\'enyi mixtures~\cite{ChatterjeeDiaconis2013}; whether a rooted walk statistic behaves likewise under joint scaling is open, and the correction in Proposition~\ref{prop:merw} requires the limits to be taken jointly.
+
+\section{Conclusion}
+
+In this model, requiring the world to keep an actor's held walk valid turns the count of committable walks into the configurational entropy of the world. The stationary odds of a causal entropic bias then follow at the reservoir's temperature, with $T_c=T_r$ whatever the rate of replanning, from local reversible rules that never count futures. The bias acts through protection, not as a force on configurations. The model is small, the proofs are general, and every number can be reproduced in about a second. We offer it as a first exact step toward a thermodynamics of committed futures.
+
+\begin{acknowledgments}
+Drafting and revision of this manuscript were assisted by AI tools, as described in Sec.~\ref{sec:verification}. No human peer review has yet taken place.
+\end{acknowledgments}
+
+\section*{Competing interests}
+The author leads Xyphers Research and the Valhaim project, which build on the framework described here.
+
+\section*{Data availability}
+The boundary, result record, verifier source, and expected report are available at \url{https://github.com/Valhaim/xyphers/tree/main/research/evidence/causal-entropic} and \url{https://xyphers.com/evidence/causal-entropic/README.txt}~\cite{CALCEF}. This manuscript's source and the script that reproduces its additional exact checks are available at \url{https://github.com/Valhaim/xyphers/tree/main/research/evidence/committed-futures} and \url{https://xyphers.com/evidence/committed-futures/README.txt}~\cite{CFPACKET}.
+
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,26 @@
+RUN THE COMMITTED-FUTURES CHECKS
+
+checks.py needs only Python 3.8 or later. It has no dependencies and uses
+whole numbers and exact fractions only. From this folder:
+
+  python3 checks.py
+
+It prints one line per check, 52 lines in all, ending with
+
+  ALL CHECKS PASS
+
+and exits with status 0, in a few seconds. Any failed check prints FAIL
+with its name and makes the script exit with status 1.
+
+To compare with the recorded output:
+
+  python3 checks.py | diff expected-checks.txt -
+
+No output from diff means the replay is identical.
+
+To rebuild the manuscript from its source (REVTeX 4.2):
+
+  pdflatex manuscript && bibtex manuscript && pdflatex manuscript && pdflatex manuscript
+
+The preregistered CAL-CEF-1 verifier that this manuscript builds on runs
+separately; see ../causal-entropic/RUN.txt.

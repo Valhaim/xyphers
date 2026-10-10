@@ -3,6 +3,10 @@ XYPHERS CAUSAL ENTROPIC EVIDENCE MAP
 Article
   The Causal Entropic Force, Made Thermodynamic
 
+General proofs
+  ../committed-futures/ holds the manuscript that proves these laws for every
+  N >= 2 and tau >= 1, with an exact script for its additional checks.
+
 Read
   BOUNDARY.md is the preregistration: the construction, the derived
   predictions, twelve acceptance gates with their check order, eight
@@ -43,7 +47,7 @@ Scope
   for two contact pairs; its equilibrium law over bridge configurations is
   N_tau(G) exp(-U/alpha)/Z; the equilibrium-averaged build/dismantle odds
   equal exp(Xi/alpha) with Xi = alpha * Delta ln N_tau - Delta U, although no
-  rule reads N_tau.
+  rate depends on N_tau.
 
   Not established: that the Shannon entropy of realized trajectories or of
   random-walk endpoints equals ln N_tau; a configuration-level rate rule;

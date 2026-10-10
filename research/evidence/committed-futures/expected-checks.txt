@@ -1,0 +1,52 @@
+PASS configuration-law uniform (N,tau,b)=(2,1,2) -- system states=6 edges=12 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=2, mean bridges=1/2
+PASS configuration-law edit (N,tau,b)=(2,1,2) -- system states=6 edges=12 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=2, mean bridges=1/2
+PASS configuration-law uniform (N,tau,b)=(2,3,2) -- system states=36 edges=118 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=5, mean bridges=4/5
+PASS configuration-law edit (N,tau,b)=(2,3,2) -- system states=36 edges=86 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=5, mean bridges=4/5
+PASS configuration-law uniform (N,tau,b)=(3,1,2) -- system states=32 edges=100 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=45/8, mean bridges=19/15
+PASS configuration-law edit (N,tau,b)=(3,1,2) -- system states=32 edges=100 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=45/8, mean bridges=19/15
+PASS configuration-law uniform (N,tau,b)=(3,2,2) -- system states=108 edges=450 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=87/8, mean bridges=131/87
+PASS configuration-law edit (N,tau,b)=(3,2,2) -- system states=108 edges=368 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=87/8, mean bridges=131/87
+PASS configuration-law uniform (N,tau,b)=(3,3,2) -- system states=344 edges=2202 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=185/8, mean bridges=313/185
+PASS configuration-law edit (N,tau,b)=(3,3,2) -- system states=344 edges=1216 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=185/8, mean bridges=313/185
+PASS configuration-law uniform (N,tau,b)=(3,2,3) -- system states=108 edges=450 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=56/9, mean bridges=5/4
+PASS configuration-law edit (N,tau,b)=(3,2,3) -- system states=108 edges=368 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=56/9, mean bridges=5/4
+PASS configuration-law uniform (N,tau,b)=(4,1,2) -- system states=320 edges=1376 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=729/32, mean bridges=7/3
+PASS configuration-law edit (N,tau,b)=(4,1,2) -- system states=320 edges=1376 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=729/32, mean bridges=7/3
+PASS configuration-law uniform (N,tau,b)=(4,2,2) -- system states=1344 edges=8104 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=1701/32, mean bridges=55/21
+PASS configuration-law edit (N,tau,b)=(4,2,2) -- system states=1344 edges=6184 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=1701/32, mean bridges=55/21
+PASS configuration-law uniform (N,tau,b)=(4,2,3) -- system states=1344 edges=8104 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=14848/729, mean bridges=123/58
+PASS configuration-law edit (N,tau,b)=(4,2,3) -- system states=1344 edges=6184 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=14848/729, mean bridges=123/58
+PASS configuration-law uniform (N,tau,b)=(4,3,2) -- system states=5248 edges=55572 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=4293/32, mean bridges=151/53
+PASS configuration-law edit (N,tau,b)=(4,3,2) -- system states=5248 edges=24840 detailed balance with b^-|G|, connected, pi(G)=N_tau b^-|G|/Z with Z=4293/32, mean bridges=151/53
+PASS primary (3,2,2) -- N_2=1,4,4,7,1,5,5,9 pi=8/87,16/87,16/87,14/87,4/87,10/87,10/87,3/29
+PASS plan-count -- enumerated walks equal matrix-power counts for N=3..5, tau=1..4, every configuration
+PASS flux-and-protection (N,tau)=(3,1) -- 12 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 1)
+PASS flux-and-protection (N,tau)=(3,2) -- 12 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 1)
+PASS flux-and-protection (N,tau)=(3,3) -- 12 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 1)
+PASS flux-and-protection (N,tau)=(4,1) -- 192 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 24)
+PASS flux-and-protection (N,tau)=(4,2) -- 192 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 15)
+PASS flux-and-protection (N,tau)=(4,3) -- 192 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 15)
+PASS flux-and-protection (N,tau)=(5,2) -- 5120 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 300)
+PASS flux-and-protection (N,tau)=(5,3) -- 5120 (G, unbuilt e) pairs: dismantle-capable states of G+e = build-capable states of G; plans crossing e = N(G+e)-N(G); positive flux iff an endpoint within distance tau (zero-flux pairs: 264)
+PASS non-Markov uniform (N,tau,b)=(2,1,2) -- G={0,1}: S'(0)=-1=-<eps>, S''(0)=2=<eps^2>, Var(eps)=1>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 2, 0
+PASS non-Markov edit (N,tau,b)=(2,1,2) -- G={0,1}: S'(0)=-1=-<eps>, S''(0)=2=<eps^2>, Var(eps)=1>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 2, 0
+PASS non-Markov uniform (N,tau,b)=(3,2,2) -- G={0,1}: S'(0)=-4=-<eps>, S''(0)=28=<eps^2>, Var(eps)=12>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 8, 0
+PASS non-Markov edit (N,tau,b)=(3,2,2) -- G={0,1}: S'(0)=-4=-<eps>, S''(0)=28=<eps^2>, Var(eps)=12>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 8, 0
+PASS non-Markov uniform (N,tau,b)=(4,1,3) -- G={0,1}: S'(0)=-1053/2=-<eps>, S''(0)=820125/2=<eps^2>, Var(eps)=531441/4>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 729, 0
+PASS non-Markov edit (N,tau,b)=(4,1,3) -- G={0,1}: S'(0)=-1053/2=-<eps>, S''(0)=820125/2=<eps^2>, Var(eps)=531441/4>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 729, 0
+PASS non-Markov uniform (N,tau,b)=(4,3,2) -- G={0,1}: S'(0)=-40=-<eps>, S''(0)=2048=<eps^2>, Var(eps)=448>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 64, 0
+PASS non-Markov edit (N,tau,b)=(4,3,2) -- G={0,1}: S'(0)=-40=-<eps>, S''(0)=2048=<eps^2>, Var(eps)=448>0; rates into empty from (sigma,0) and ((0,..,0,1),0) = 64, 0
+PASS many-travellers homes=(0, 0) (N,tau,b)=(3,2,2) -- system states=1926, detailed balance, connected, pi(G) = b^-|G| prod_i N^(h_i)(G) / Z = 8/419,64/419,64/419,98/419,4/419,50/419,50/419,81/419
+PASS many-travellers homes=(0, 1) (N,tau,b)=(3,2,2) -- system states=1809, detailed balance, connected, pi(G) = b^-|G| prod_i N^(h_i)(G) / Z = 8/375,64/375,16/375,14/75,16/375,14/75,2/15,27/125
+PASS many-travellers homes=(0, 1, 2) (N,tau,b)=(3,1,2) -- system states=608, detailed balance, connected, pi(G) = b^-|G| prod_i N^(h_i)(G) / Z = 8/155,16/155,16/155,24/155,16/155,24/155,24/155,27/155
+PASS degree-law N=3 -- N_2 = sum over N[h] of (d_v+1) and Delta N_2 on all 12 (G, unbuilt e) pairs
+PASS degree-law N=4 -- N_2 = sum over N[h] of (d_v+1) and Delta N_2 on all 192 (G, unbuilt e) pairs
+PASS degree-law N=5 -- N_2 = sum over N[h] of (d_v+1) and Delta N_2 on all 5120 (G, unbuilt e) pairs
+PASS degree-law N=6 -- N_2 = sum over N[h] of (d_v+1) and Delta N_2 on all 245760 (G, unbuilt e) pairs
+PASS build-only (N,tau)=(3,1) -- complete configuration reachable from all 32 states, closed, one class of 6 states; some move has no reverse
+PASS build-only (N,tau)=(3,2) -- complete configuration reachable from all 108 states, closed, one class of 27 states; some move has no reverse
+PASS build-only (N,tau)=(4,2) -- complete configuration reachable from all 1344 states, closed, one class of 48 states; some move has no reverse
+PASS size-biased-identity -- Z = (1+1/b)^K E_q[N_tau] on the eight family cases; primary E_q[N_2] = 29/9
+PASS long-horizon N=5 b=2 -- mean bridges tau=1..12: 3.714 4.035 4.303 4.543 4.768 4.982 5.189 5.388 5.581 5.767 5.947 6.121; mean home bridges: 1.714 1.895 2.028 2.127 2.213 2.292 2.366 2.437 2.505 2.569 2.632 2.691; strictly increasing; tau=1 exact 26/7, 12/7
+PASS destination-law -- uniform plans at {0,1},{0,2} end on islands 0,1,2 with probabilities 3/7,2/7,2/7
+ALL CHECKS PASS
