@@ -177,13 +177,15 @@ If every command produces the same spread of futures, the graph has possibility 
 
 The test can fail. If the thermometers disagree once the Praxion is inside, or shuffling the pairs changes the average energy, the claim is wrong. We know what to build, what to measure, and what result would prove us wrong.
 
+The experiment has now run. [What Is a Bit of Foresight Worth?](what-is-a-bit-of-foresight-worth.md) builds the matched instrument in the archipelago where committed futures are microstates. The temperature reads the same with the instrument inside, the shuffled deck loses exactly **α ln 2** per bit at equal energy, and one bit of foresight trades evenly for one packet of timber.
+
 ## A physical coordinate of intelligence
 
 Said in ordinary language:
 
 A system has one bit of control when its action can reliably select between two distinguishable futures. Information theory measures that control even when the world is noisy. Statistical physics prices distinguishable states in energy. A matched Xypher gives both measurements one physical home.
 
-The digital thermometer is built and exactly reproducible. The matched action-to-future experiment is the frontier immediately in front of us.
+The digital thermometer is built and exactly reproducible, and the matched control instrument has passed. Driving that instrument to lift real loads is the frontier immediately in front of us.
 
 A mind can express many capacities. This places one of them, the power to make a difference to its own future, on a physical scale. That is where a physics of intelligence begins, and with it a new way of asking what it means to be alive.
 

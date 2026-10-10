@@ -1,0 +1,413 @@
+-- CAL-CEF-2: control information thermodynamics of a foresight notebook.
+--
+-- Prospective Futuruna construction for the boundary
+-- research/physics/derivable/xypher-control-information-thermodynamics-boundary.md
+-- (section 6), frozen at commit 79d344024eb0169d4b458213936fc5cec8c476cd.
+-- It declares the archipelago, plan validity, the notebook and stockpile
+-- registers, every channel's permission rule, the reservoir law, and the
+-- predicted exchange constants K(G, y) = N_tau(G) / [n_y(G) b]. It does not
+-- execute the witness, and it never consumes stationary weights, averaged
+-- rates, or rate ratios. No channel hazard below reads N_tau, n_y, I, I*, K,
+-- THAIM, or Xi.
+--
+-- All quantities are Int or ExactRatio; no logarithm is evaluated.
+
+# ExactRatio(numerator: Int, denominator: Int)
+
+-- ARCHIPELAGO AND CONFIGURATIONS (boundary 3.1, as CAL-CEF-1 3.1-3.2)
+
+-- islands = N, horizon = tau, reservoir_base = b, stockpile_capacity = W,
+-- home = h.
+# Archipelago(islands: Int, horizon: Int, reservoir_base: Int, stockpile_capacity: Int, home: Int)
+
+-- A configuration lists one flag per candidate bridge, in lexicographic
+-- candidate order: 1 = built, 0 = not built. Bit i of the configuration
+-- index is flag i.
+# Configuration(flags: List(Int))
+
+> primary_archipelago() -> Archipelago { Archipelago(3, 2, 2, 2, 0) }
+
+> candidate_count(arch: Archipelago) -> Int {
+    arch.islands * (arch.islands - 1) / 2
+}
+
+-- Lexicographic index of the candidate bridge {u, w} with u < w.
+> ordered_bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    u * (2 * arch.islands - u - 1) / 2 + (w - u - 1)
+}
+
+> bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    if u < w { ordered_bridge_index(arch, u, w) }
+    else { ordered_bridge_index(arch, w, u) }
+}
+
+> flag_at(flags: List(Int), index: Int) -> Int {
+    if length(flags) == 0 { 0 }
+    else {
+        if index == 0 { head(flags) }
+        else { flag_at(tail(flags), index - 1) }
+    }
+}
+
+> island_in_range(arch: Archipelago, v: Int) -> Bool {
+    v >= 0 && v < arch.islands
+}
+
+-- A candidate bridge joins two distinct islands of the archipelago.
+> is_candidate(arch: Archipelago, u: Int, w: Int) -> Bool {
+    u != w && island_in_range(arch, u) && island_in_range(arch, w)
+}
+
+> bridge_built(arch: Archipelago, config: Configuration, v: Int, w: Int) -> Bool {
+    if is_candidate(arch, v, w) { flag_at(config.flags, bridge_index(arch, v, w)) == 1 }
+    else { false }
+}
+
+> built_count(flags: List(Int)) -> Int {
+    if length(flags) == 0 { 0 }
+    else { head(flags) + built_count(tail(flags)) }
+}
+
+-- PLANS (boundary 3.1)
+
+-- A plan is (v_0, ..., v_tau) with v_0 = h; each step stays or crosses a
+-- built bridge. Plans are integer lists.
+> step_allowed(arch: Archipelago, config: Configuration, v: Int, w: Int) -> Bool {
+    v == w || bridge_built(arch, config, v, w)
+}
+
+> steps_valid(arch: Archipelago, config: Configuration, plan: List(Int)) -> Bool {
+    if length(plan) < 2 { true }
+    else {
+        = rest = tail(plan)
+        step_allowed(arch, config, head(plan), head(rest)) && steps_valid(arch, config, rest)
+    }
+}
+
+> islands_in_range(arch: Archipelago, plan: List(Int)) -> Bool {
+    if length(plan) == 0 { true }
+    else { island_in_range(arch, head(plan)) && islands_in_range(arch, tail(plan)) }
+}
+
+> plan_valid(arch: Archipelago, config: Configuration, plan: List(Int)) -> Bool {
+    if length(plan) == arch.horizon + 1 {
+        head(plan) == arch.home && islands_in_range(arch, plan) && steps_valid(arch, config, plan)
+    } else { false }
+}
+
+> plan_uses_bridge(plan: List(Int), u: Int, w: Int) -> Bool {
+    if length(plan) < 2 { false }
+    else {
+        = rest = tail(plan)
+        = a = head(plan)
+        = c = head(rest)
+        = here = (a == u && c == w) || (a == w && c == u)
+        here || plan_uses_bridge(rest, u, w)
+    }
+}
+
+> position_at(plan: List(Int), cursor: Int) -> Int {
+    if cursor == 0 { head(plan) }
+    else { position_at(tail(plan), cursor - 1) }
+}
+
+-- The outcome of the command: the island where the held plan ends,
+-- d(p) = v_tau.
+> plan_destination(plan: List(Int)) -> Int {
+    if length(plan) == 1 { head(plan) }
+    else { plan_destination(tail(plan)) }
+}
+
+-- ENERGY AND RESERVOIR LAW (boundary 3.2)
+
+-- Each bridge and each stockpile packet stores energy lambda. The reservoir
+-- holds the remaining packets of E_tot = K + W and has b^(E_R)
+-- arrangements. This is the declared equation of state
+-- 1/alpha = Delta S_R / Delta E_R = ln b.
+# ReservoirLaw(base: Int, total_packets: Int, lambda: Int)
+
+> reservoir_law(arch: Archipelago) -> ReservoirLaw {
+    ReservoirLaw(arch.reservoir_base, candidate_count(arch) + arch.stockpile_capacity, 1)
+}
+
+> pow_nonnegative(base: Int, exponent: Int) -> Int {
+    if exponent <= 0 { 1 }
+    else { base * pow_nonnegative(base, exponent - 1) }
+}
+
+> reservoir_multiplicity(law: ReservoirLaw, energy: Int) -> Int {
+    pow_nonnegative(law.base, energy)
+}
+
+-- SYSTEM STATE AND REGISTERS (boundary 3.2)
+
+-- The notebook holds blank or a written island; the written alphabet is V,
+-- of size A = N.
+# Notebook = Blank | Written(symbol: Int)
+
+-- z = (G, p, t, y, w): configuration, held plan, cursor, notebook, and
+-- stockpile level (a single-arrangement energy register holding w packets).
+# SystemState(config: Configuration, plan: List(Int), cursor: Int, notebook: Notebook, stockpile: Int)
+
+> alphabet_size(arch: Archipelago) -> Int { arch.islands }
+
+> notebook_is_blank(note: Notebook) -> Bool {
+    match note { | Blank -> true | Written(symbol: _) -> false }
+}
+
+> record_equals(note: Notebook, island: Int) -> Bool {
+    match note { | Blank -> false | Written(symbol: s) -> s == island }
+}
+
+> record_symbol(note: Notebook) -> Int {
+    match note { | Blank -> 0 - 1 | Written(symbol: s) -> s }
+}
+
+> traveller_island(state: SystemState) -> Int {
+    position_at(state.plan, state.cursor)
+}
+
+> held_destination(state: SystemState) -> Int {
+    plan_destination(state.plan)
+}
+
+-- U(z) = lambda (|G| + w); E_R = E_tot - |G| - w >= 0.
+> system_energy(state: SystemState, law: ReservoirLaw) -> Int {
+    law.lambda * (built_count(state.config.flags) + state.stockpile)
+}
+
+> reservoir_energy(state: SystemState, law: ReservoirLaw) -> Int {
+    law.total_packets - built_count(state.config.flags) - state.stockpile
+}
+
+> stockpile_in_range(arch: Archipelago, level: Int) -> Bool {
+    level >= 0 && level <= arch.stockpile_capacity
+}
+
+-- CHANNELS (boundary 3.3). Every channel is listed with its reverse.
+
+# ChannelKind = Step | Replan | Build | Dismantle | Measure | Unmeasure | Harvest | Commit | Erase | Scribble
+
+-- Thaw: the declared reverse of each channel.
+> reverse_kind(kind: ChannelKind) -> ChannelKind {
+    match kind {
+        | Step -> Step
+        | Replan -> Replan
+        | Build -> Dismantle
+        | Dismantle -> Build
+        | Measure -> Unmeasure
+        | Unmeasure -> Measure
+        | Harvest -> Commit
+        | Commit -> Harvest
+        | Erase -> Scribble
+        | Scribble -> Erase
+    }
+}
+
+-- Every micro channel has unit hazard kappa = 1.
+> unit_hazard() -> ExactRatio { ExactRatio(1, 1) }
+
+-- STEP walks the plan forward (t -> t+1) or back (t -> t-1). Notebook and
+-- stockpile are untouched.
+> may_step_forward(arch: Archipelago, state: SystemState) -> Bool {
+    state.cursor < arch.horizon
+}
+
+> may_step_back(state: SystemState) -> Bool {
+    state.cursor > 0
+}
+
+-- CRYSTAL: REPLAN at home, cursor 0, to every other valid plan at unit
+-- hazard. It may leave a previously correct record stale.
+> may_replan(arch: Archipelago, state: SystemState, written: List(Int)) -> Bool {
+    = at_home_start = state.cursor == 0
+    = valid = plan_valid(arch, state.config, written)
+    = changes = if written == state.plan { false } else { true }
+    at_home_start && valid && changes
+}
+
+-- ACTION: BUILD or DISMANTLE one bridge incident to the traveller's island.
+-- A bridge used by the held plan cannot be dismantled.
+> toggle_incident(state: SystemState, u: Int, w: Int) -> Bool {
+    = island = traveller_island(state)
+    island == u || island == w
+}
+
+> may_build(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    = absent = if bridge_built(arch, state.config, u, w) { false } else { true }
+    is_candidate(arch, u, w) && toggle_incident(state, u, w) && absent
+}
+
+> may_dismantle(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    = present = bridge_built(arch, state.config, u, w)
+    = free = if plan_uses_bridge(state.plan, u, w) { false } else { true }
+    is_candidate(arch, u, w) && toggle_incident(state, u, w) && present && free
+}
+
+-- RESOLUTION: MEASURE copies d(p) into a blank notebook at cursor 0;
+-- UNMEASURE clears a record only when it equals d(p). No energy changes.
+> may_measure(state: SystemState) -> Bool {
+    state.cursor == 0 && notebook_is_blank(state.notebook)
+}
+
+> measured_record(state: SystemState) -> Notebook {
+    Written(held_destination(state))
+}
+
+> may_unmeasure(state: SystemState) -> Bool {
+    state.cursor == 0 && record_equals(state.notebook, held_destination(state))
+}
+
+-- FEEDBACK: HARVEST at cursor 0 from a record equal to d(p) with w < W
+-- releases the held plan to every valid plan p' (including p) while one
+-- packet moves from the reservoir to the stockpile; the record stays.
+> may_harvest(arch: Archipelago, state: SystemState) -> Bool {
+    = correct = record_equals(state.notebook, held_destination(state))
+    state.cursor == 0 && correct && state.stockpile < arch.stockpile_capacity
+}
+
+> harvest_release_valid(arch: Archipelago, state: SystemState, released: List(Int)) -> Bool {
+    may_harvest(arch, state) && plan_valid(arch, state.config, released)
+}
+
+-- COMMIT, the reverse: from any plan with written record y and w >= 1, one
+-- stockpile packet returns to the reservoir and the plan becomes one ending
+-- at y. It reads only the record.
+> may_commit(arch: Archipelago, state: SystemState, committed: List(Int)) -> Bool {
+    = written = if notebook_is_blank(state.notebook) { false } else { true }
+    = lands = record_equals(state.notebook, plan_destination(committed))
+    = valid = plan_valid(arch, state.config, committed)
+    state.cursor == 0 && written && state.stockpile >= 1 && valid && lands
+}
+
+-- LANDAUER: ERASE at cursor 0 resets a written notebook while one
+-- stockpile packet is released as heat into the reservoir. SCRIBBLE, the
+-- reverse, writes any symbol of V into a blank notebook while one packet
+-- moves from the reservoir to the stockpile.
+> may_erase(state: SystemState) -> Bool {
+    = written = if notebook_is_blank(state.notebook) { false } else { true }
+    state.cursor == 0 && written && state.stockpile >= 1
+}
+
+> may_scribble(arch: Archipelago, state: SystemState, symbol: Int) -> Bool {
+    = blank = notebook_is_blank(state.notebook)
+    state.cursor == 0 && blank && state.stockpile < arch.stockpile_capacity && island_in_range(arch, symbol)
+}
+
+-- Declared packet exchange of each channel: change of the stockpile level
+-- and of the bridge count. The reservoir takes the opposite total.
+> stockpile_change(kind: ChannelKind) -> Int {
+    match kind {
+        | Harvest -> 1
+        | Scribble -> 1
+        | Commit -> 0 - 1
+        | Erase -> 0 - 1
+        | Step -> 0
+        | Replan -> 0
+        | Build -> 0
+        | Dismantle -> 0
+        | Measure -> 0
+        | Unmeasure -> 0
+    }
+}
+
+> bridge_change(kind: ChannelKind) -> Int {
+    match kind {
+        | Build -> 1
+        | Dismantle -> 0 - 1
+        | Step -> 0
+        | Replan -> 0
+        | Measure -> 0
+        | Unmeasure -> 0
+        | Harvest -> 0
+        | Commit -> 0
+        | Erase -> 0
+        | Scribble -> 0
+    }
+}
+
+> reservoir_change(kind: ChannelKind) -> Int {
+    0 - stockpile_change(kind) - bridge_change(kind)
+}
+
+-- Lumping reservoir labels: a channel into a state with a different
+-- reservoir energy E_R(z') has system-state hazard b^(E_R(z')); a channel
+-- that leaves E_R unchanged has 1. The inputs are the source and
+-- destination reservoir energies and b only.
+> lumped_hazard(source_reservoir_energy: Int, destination_reservoir_energy: Int, law: ReservoirLaw) -> ExactRatio {
+    if destination_reservoir_energy == source_reservoir_energy { unit_hazard() }
+    else { ExactRatio(reservoir_multiplicity(law, destination_reservoir_energy), 1) }
+}
+
+-- HARNESS PREDICTIONS (boundary 4.3-4.6). They read plan counts only; no
+-- hazard reads them, and none consumes a stationary weight or a rate.
+
+-- Walks of the given number of steps from v that end at target.
+> walks_ending_over(arch: Archipelago, config: Configuration, v: Int, steps: Int, target: Int, next: Int) -> Int {
+    if next >= arch.islands { 0 }
+    else {
+        = here = if step_allowed(arch, config, v, next) { count_walks_ending(arch, config, next, steps - 1, target) } else { 0 }
+        here + walks_ending_over(arch, config, v, steps, target, next + 1)
+    }
+}
+
+> count_walks_ending(arch: Archipelago, config: Configuration, v: Int, steps: Int, target: Int) -> Int {
+    if steps == 0 { if v == target { 1 } else { 0 } }
+    else { walks_ending_over(arch, config, v, steps, target, 0) }
+}
+
+-- n_y(G): valid plans ending at y.
+> destination_count(arch: Archipelago, config: Configuration, island: Int) -> Int {
+    count_walks_ending(arch, config, arch.home, arch.horizon, island)
+}
+
+> plan_count_over(arch: Archipelago, config: Configuration, island: Int) -> Int {
+    if island >= arch.islands { 0 }
+    else { destination_count(arch, config, island) + plan_count_over(arch, config, island + 1) }
+}
+
+-- N_tau(G) = sum_y n_y(G).
+> committable_plan_count(arch: Archipelago, config: Configuration) -> Int {
+    plan_count_over(arch, config, 0)
+}
+
+-- Predicted exchange constant of the feedback move at a reachable y:
+-- K(G, y) = N_tau(G) / [n_y(G) b]. Left unreduced; the verifier compares
+-- by cross-multiplication.
+# ExchangePrediction(config: Configuration, island: Int, reachable: Bool, constant: ExactRatio)
+
+> predicted_exchange_constant(arch: Archipelago, config: Configuration, island: Int) -> ExchangePrediction {
+    = ending = destination_count(arch, config, island)
+    = total = committable_plan_count(arch, config)
+    = reachable = ending > 0
+    = constant = if reachable { ExactRatio(total, ending * arch.reservoir_base) } else { ExactRatio(0, 1) }
+    ExchangePrediction(config, island, reachable, constant)
+}
+
+-- Predicted Landauer ratio pi(B(G, p, w - 1)) / pi(R(G, p, w)) = b / A.
+> predicted_erasure_ratio(arch: Archipelago) -> ExactRatio {
+    ExactRatio(arch.reservoir_base, alphabet_size(arch))
+}
+
+-- XYPHER SLOT READING (boundary 3.4)
+
+# GraphSubstrate = BridgesHeldPlanCursorNotebookStockpile
+# Crystal = UniformReplanOverValidPlans
+# Thermo = ReservoirLawEnergyThaimPairAndXiNotEvaluated
+# Praxion = BaseActorUnitSymmetricHazards
+# Action = BuildDismantleHarvestCommitEraseScribble
+# Resolution = StepReplanWritesPlanMeasureWritesNotebook
+# Thaw = DeclaredReverseOfEachChannel
+# Memory = HeldPlanCursorAndNotebookNoLearning
+# Ruby = EmptyRuby
+# OpalPhi = AbsentOpalPhi
+# XypherSlotReading(archipelago: Archipelago, reservoir_law: ReservoirLaw, substrate: GraphSubstrate, crystal: Crystal, thermo: Thermo, praxion: Praxion, action: Action, resolution: Resolution, thaw: Thaw, memory: Memory, ruby: Ruby, opal_phi: OpalPhi)
+
+-- A thermodynamic graph system (T1-T5) read through Xypher slots. Ruby is
+-- empty; Opal/Phi are absent; THAIM and Xi are neither computed nor
+-- evaluated here.
+> control_information_slot_reading() -> XypherSlotReading {
+    = arch = primary_archipelago()
+    = law = reservoir_law(arch)
+    XypherSlotReading(arch, law, BridgesHeldPlanCursorNotebookStockpile, UniformReplanOverValidPlans, ReservoirLawEnergyThaimPairAndXiNotEvaluated, BaseActorUnitSymmetricHazards, BuildDismantleHarvestCommitEraseScribble, StepReplanWritesPlanMeasureWritesNotebook, DeclaredReverseOfEachChannel, HeldPlanCursorAndNotebookNoLearning, EmptyRuby, AbsentOpalPhi)
+}

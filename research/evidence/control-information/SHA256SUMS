@@ -1,0 +1,16 @@
+90c6c7598cfa1d75a7113be98187c82c90b4c5676c91d51f272dd557a9e9e9db  ./BOUNDARY.md
+97518279b8140f0b655ddbd602f219e3a20ff73668a41a3dd070dee63e14fa69  ./README.txt
+d69cfc667dd345f0d7e52a14591816936046626da9a920a946c9f08bf565f859  ./RESULT.md
+7acc5843b6952b76c0804b2316c8d3be4ac745ea945595c6a502b099e52f4888  ./RUN.txt
+ca303e0db354dbd17d71381efc6fb0a4a814fabfba041a8ce5185263217be7e9  ./expected-report.txt
+bb9c7cc338eede417bb1ce8f12f528bfc7a578e96a44632e7643e1ca2bfa5152  ./source/xypher-control-information-proof/Cargo.lock
+81469a8e3488bfb6a1d0c6603c8126ccd7a4e70f884203049069d7efd1021562  ./source/xypher-control-information-proof/Cargo.toml
+99ee9737a1086f8091e55c3a41d6294626bdc996e09152e52988eb7bc041a65c  ./source/xypher-control-information-proof/README.md
+80d17506edfe0904431192928d6a97cc3f1d85c01f502fe590180941ba94ac0b  ./source/xypher-control-information-proof/src/gates.rs
+349a923165d457125ba521457ce11ceb5257accd24465fcdf9770592bca4c11f  ./source/xypher-control-information-proof/src/lib.rs
+edab2415f176a1411099e674ff1312deed722226861f12f077e348d2a9ebb4e9  ./source/xypher-control-information-proof/src/main.rs
+3cf069f22eb8a8c2ef6155df688f827449ea511d79e720455f676bfe3f1cf399  ./source/xypher-control-information-proof/src/model.rs
+f323d84c2785fa8b3d3d1f67ccfe697600904500c459f127f1bae88c2d6b6d90  ./source/xypher-control-information-proof/src/primes.rs
+069a7e890ff56e9d0e8f47feb998169c1799d1067e862b8c20e20d1e53c0b710  ./source/xypher-control-information-proof/src/ratio.rs
+71bf40effcf77fc36f81740cd267d1615319e671cf54edff62971424f0cebc61  ./source/xypher-control-information-proof/tests/source_contract.rs
+a176ef0dad76f0212d538576155831df0d0a701a8e23a57bedbac8bb43979cc9  ./source/xypher-control-information-proof/xypher.runa

@@ -1,0 +1,41 @@
+XYPHER_CONTROL_INFORMATION_PROOF CAL-CEF-2 primary=(3,2,2,2)
+G01 PASS Crystal and command grounding
+G02 PASS executable registers -- plan read at z36[G={0,1} p=000 t=0 y=blank w=0] vs z72[G={0,1} p=001 t=0 y=blank w=0]
+G03 PASS reciprocal generator -- each diagonal is -(exit rate) and each exit rate equals the rate counted independently from the section 3.3 rules
+G04 PASS pathwise accounting
+G05 PASS reservoir lumpability
+G06 PASS one temperature, three traffics
+G07 PASS connectivity and equilibrium -- propagated along a breadth-first spanning tree from z0
+G08 PASS undistorted world
+G09 PASS control channel
+G10 PASS feedback exchange
+G11 PASS shuffled deck
+G12 PASS Landauer erasure
+G13 PASS no free lunch
+G14 PASS Xypher slot reading -- hazards are computed from HazardInputs [SourceReservoirEnergy, DestinationReservoirEnergy, ReservoirBase], a type with no N_tau, n_y, I, I*, K, THAIM, or Xi field; every system hazard equals the independent b^(E_R(z'))/1 rule and every micro hazard is kappa
+C01 PASS one-way-harvest observed G03 check 1 G03_RECIPROCAL_SUPPORT at none expected G03 check 1 G03_RECIPROCAL_SUPPORT at none -- complete-state HARVEST 56 -> 88: no positive COMMIT reverse
+C02 PASS free-reset observed G02 check 5 G02_ERASURE_SEMANTICS at none expected G02 check 5 G02_ERASURE_SEMANTICS at none -- SCRIBBLE from z0[G=none p=000 t=0 y=blank w=0] arrives at y=0 w=0
+C03 PASS blind-measurement observed G02 check 3 G02_MEASURE_SEMANTICS at {0,1} expected G02 check 3 G02_MEASURE_SEMANTICS at {0,1} -- MEASURE from z72[G={0,1} p=001 t=0 y=blank w=0] writes y=0 with d(p)=1
+C04 PASS cheating-harvest observed G02 check 4 G02_FEEDBACK_SEMANTICS at none expected G02 check 4 G02_FEEDBACK_SEMANTICS at none -- HARVEST from z6[G=none p=000 t=0 y=1 w=0] (d(p)=0) to y=1 w=1
+C05 PASS telepathic-demon observed G02 check 4 G02_FEEDBACK_SEMANTICS at none expected G02 check 4 G02_FEEDBACK_SEMANTICS at none -- HARVEST from z0[G=none p=000 t=0 y=blank w=0] (d(p)=0) to y=blank w=1
+C06 PASS directed-kinetic-mutation observed G03 check 2 G03_HAZARD_VALUES at none expected G03 check 2 G03_HAZARD_VALUES at none -- complete-state HARVEST 56 <-> 88: hazards 2 / 1, expected 1 / 1
+C07 PASS hoarding-demon observed G02 check 4 G02_FEEDBACK_SEMANTICS at {0,1} expected G02 check 4 G02_FEEDBACK_SEMANTICS at {0,1} -- HARVEST from z39[G={0,1} p=000 t=0 y=0 w=0] reaches 1 of 4 plans
+C08 PASS unequal-shuffle observed G11 check 2 G11_SHUFFLED_MARGINALS at none expected G11 check 2 G11_SHUFFLED_MARGINALS at none -- w=0: B_G record marginal [1/3,1/3,1/3] != A_G record marginal [1,0,0]
+C09 PASS stockpile-slip observed G08 check 3 G08_STOCKPILE_MARGINAL at global expected G08 check 3 G08_STOCKPILE_MARGINAL at global value 11/15 -- mean stockpile 11/15; section 5: 4/7
+WITNESS none N_2=1 n=1,0,0 |D|=1 K=1/2,-,- exp[N I]=1 exp[|D| I*]=1
+WITNESS {0,1} N_2=4 n=2,2,0 |D|=2 K=1,1,- exp[N I]=16 exp[|D| I*]=4
+WITNESS {0,2} N_2=4 n=2,0,2 |D|=2 K=1,-,1 exp[N I]=16 exp[|D| I*]=4
+WITNESS {0,1},{0,2} N_2=7 n=3,2,2 |D|=3 K=7/6,7/4,7/4 exp[N I]=823543/432 exp[|D| I*]=27
+WITNESS {1,2} N_2=1 n=1,0,0 |D|=1 K=1/2,-,- exp[N I]=1 exp[|D| I*]=1
+WITNESS {0,1},{1,2} N_2=5 n=2,2,1 |D|=3 K=5/4,5/4,5/2 exp[N I]=3125/16 exp[|D| I*]=27
+WITNESS {0,2},{1,2} N_2=5 n=2,1,2 |D|=3 K=5/4,5/2,5/4 exp[N I]=3125/16 exp[|D| I*]=27
+WITNESS {0,1},{0,2},{1,2} N_2=9 n=3,3,3 |D|=3 K=3/2,3/2,3/2 exp[N I]=19683 exp[|D| I*]=27
+INSTRUMENT (3,2,2,2) erasure_ratio=2/3 mean_stockpile=4/7 blank=1/4 correct_fraction=1/3
+FAMILY (3,1,2,2) configurations=8 system=384 complete=2520 Z=45/8 mean_bridges=19/15 erasure=2/3 mean_stockpile=4/7 blank=1/4 K1=[{0,1};{0,2};{0,1},{1,2};{0,2},{1,2}] gates PASS=14 FAIL=0 N/A=0
+FAMILY (3,2,2,2) configurations=8 system=1296 complete=7308 Z=87/8 mean_bridges=131/87 erasure=2/3 mean_stockpile=4/7 blank=1/4 K1=[{0,1};{0,2}] gates PASS=14 FAIL=0 N/A=0
+FAMILY (3,3,2,2) configurations=8 system=4128 complete=20720 Z=185/8 mean_bridges=313/185 erasure=2/3 mean_stockpile=4/7 blank=1/4 K1=[{0,1};{0,2}] gates PASS=14 FAIL=0 N/A=0
+FAMILY (3,2,3,2) configurations=8 system=1296 complete=26208 Z=56/9 mean_bridges=5/4 erasure=1 mean_stockpile=5/13 blank=1/4 K1=[{0,1},{0,2},{1,2}] gates PASS=14 FAIL=0 N/A=0
+FAMILY (3,1,3,1) configurations=8 system=256 complete=3072 Z=32/9 mean_bridges=1 erasure=1 mean_stockpile=1/4 blank=1/4 K1=[{0,1},{0,2};{0,1},{0,2},{1,2}] gates PASS=14 FAIL=0 N/A=0
+FAMILY (4,1,2,1) configurations=64 system=3200 complete=43740 Z=729/32 mean_bridges=7/3 erasure=1/2 mean_stockpile=1/3 blank=1/5 K1=[{0,1};{0,2};{0,3};{0,1},{1,2};{0,2},{1,2};{0,3},{1,2};{0,1},{1,3};{0,2},{1,3};{0,3},{1,3};{0,1},{1,2},{1,3};{0,2},{1,2},{1,3};{0,3},{1,2},{1,3};{0,1},{2,3};{0,2},{2,3};{0,3},{2,3};{0,1},{1,2},{2,3};{0,2},{1,2},{2,3};{0,3},{1,2},{2,3};{0,1},{1,3},{2,3};{0,2},{1,3},{2,3};{0,3},{1,3},{2,3};{0,1},{1,2},{1,3},{2,3};{0,2},{1,2},{1,3},{2,3};{0,3},{1,2},{1,3},{2,3}] gates PASS=13 FAIL=0 N/A=1(G05)
+FAMILY (4,2,2,1) configurations=64 system=13440 complete=153090 Z=1701/32 mean_bridges=55/21 erasure=1/2 mean_stockpile=1/3 blank=1/5 K1=[{0,1};{0,2};{0,3};{0,3},{1,2};{0,2},{1,3};{0,1},{2,3}] gates PASS=13 FAIL=0 N/A=1(G05)
+OVERALL PASS

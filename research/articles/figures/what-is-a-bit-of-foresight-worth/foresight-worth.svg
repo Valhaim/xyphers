@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 370" width="600" height="370" role="img" aria-label="Bar chart of the average worth of a correct note, in timber packets, for the eight arrangements of three islands, two steps ahead, store doubling per packet: 0 with no bridge or only the far bridge, exactly 1 with one bridge from home, about 1.52 with a home bridge plus the far bridge, about 1.56 with both home bridges, and about 1.58 with all three. Red marks show the control capacity, which the note reaches whenever every destination is equally likely.">
+<rect width="600" height="370" fill="#0b0d13"/>
+<line x1="60" y1="290.0" x2="588" y2="290.0" stroke="#252936" stroke-width="1"/>
+<text x="50.0" y="295.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#878a96" text-anchor="end">0</text>
+<line x1="60" y1="232.5" x2="588" y2="232.5" stroke="#252936" stroke-width="1"/>
+<text x="50.0" y="237.5" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#878a96" text-anchor="end">0.5</text>
+<line x1="60" y1="117.5" x2="588" y2="117.5" stroke="#252936" stroke-width="1"/>
+<text x="50.0" y="122.5" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#878a96" text-anchor="end">1.5</text>
+<line x1="60" y1="60.0" x2="588" y2="60.0" stroke="#252936" stroke-width="1"/>
+<text x="50.0" y="65.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#878a96" text-anchor="end">2</text>
+<line x1="60" y1="175.0" x2="588" y2="175.0" stroke="#ffbd68" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="50.0" y="180.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="400" fill="#ffbd68" text-anchor="end">1</text>
+<rect x="76" y="290.0" width="30" height="0.0" fill="#ffbd68"/>
+<line x1="72" y1="290.0" x2="110" y2="290.0" stroke="#ff633d" stroke-width="3"/>
+<line x1="74.0" y1="332.0" x2="90.8" y2="306.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="74.0" y1="332.0" x2="107.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="90.8" y1="306.0" x2="107.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<circle cx="74.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="90.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="107.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="140" y="175.0" width="30" height="115.0" fill="#ffbd68"/>
+<line x1="136" y1="175.0" x2="174" y2="175.0" stroke="#ff633d" stroke-width="3"/>
+<line x1="138.0" y1="332.0" x2="154.8" y2="306.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="138.0" y1="332.0" x2="171.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="154.8" y1="306.0" x2="171.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<circle cx="138.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="154.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="171.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="204" y="175.0" width="30" height="115.0" fill="#ffbd68"/>
+<line x1="200" y1="175.0" x2="238" y2="175.0" stroke="#ff633d" stroke-width="3"/>
+<line x1="202.0" y1="332.0" x2="218.8" y2="306.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="202.0" y1="332.0" x2="235.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="218.8" y1="306.0" x2="235.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<circle cx="202.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="218.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="235.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="268" y="111.0" width="30" height="179.0" fill="#ffbd68"/>
+<line x1="264" y1="107.7" x2="302" y2="107.7" stroke="#ff633d" stroke-width="3"/>
+<line x1="266.0" y1="332.0" x2="282.8" y2="306.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="266.0" y1="332.0" x2="299.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="282.8" y1="306.0" x2="299.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<circle cx="266.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="282.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="299.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="332" y="290.0" width="30" height="0.0" fill="#ffbd68"/>
+<line x1="328" y1="290.0" x2="366" y2="290.0" stroke="#ff633d" stroke-width="3"/>
+<line x1="330.0" y1="332.0" x2="346.8" y2="306.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="330.0" y1="332.0" x2="363.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="346.8" y1="306.0" x2="363.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="330.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="346.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="363.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="396" y="115.0" width="30" height="175.0" fill="#ffbd68"/>
+<line x1="392" y1="107.7" x2="430" y2="107.7" stroke="#ff633d" stroke-width="3"/>
+<line x1="394.0" y1="332.0" x2="410.8" y2="306.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="394.0" y1="332.0" x2="427.6" y2="332.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="410.8" y1="306.0" x2="427.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="394.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="410.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="427.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="460" y="115.0" width="30" height="175.0" fill="#ffbd68"/>
+<line x1="456" y1="107.7" x2="494" y2="107.7" stroke="#ff633d" stroke-width="3"/>
+<line x1="458.0" y1="332.0" x2="474.8" y2="306.0" stroke="#343953" stroke-width="0.8" stroke-dasharray="5 6"/>
+<line x1="458.0" y1="332.0" x2="491.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="474.8" y1="306.0" x2="491.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="458.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="474.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="491.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="524" y="107.7" width="30" height="182.3" fill="#ffbd68"/>
+<line x1="520" y1="107.7" x2="558" y2="107.7" stroke="#ff633d" stroke-width="3"/>
+<line x1="522.0" y1="332.0" x2="538.8" y2="306.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="522.0" y1="332.0" x2="555.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<line x1="538.8" y1="306.0" x2="555.6" y2="332.0" stroke="#ffbd68" stroke-width="1.7" stroke-linecap="round"/>
+<circle cx="522.0" cy="332.0" r="3.8" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<circle cx="538.8" cy="306.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<circle cx="555.6" cy="332.0" r="3.8" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<rect x="300" y="22" width="16" height="16" fill="#ffbd68"/>
+<text x="324.0" y="36.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="start">worth of a correct note</text>
+<line x1="300" y1="54" x2="316" y2="54" stroke="#ff633d" stroke-width="3"/>
+<text x="324.0" y="59.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="start">control capacity</text>
+<line x1="300" y1="76" x2="316" y2="76" stroke="#ffbd68" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="324.0" y="81.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="start">one packet = one bit</text>
+<text x="20.0" y="36.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="16" font-weight="600" fill="#f7f4eb" text-anchor="start">Packets per correct note</text>
+</svg>

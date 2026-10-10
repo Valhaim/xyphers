@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 438" width="680" height="438" role="img" aria-label="The feedback exchange at the arrangement with one bridge from home to island 1, two steps ahead, store doubling per packet. Left: the note says the walk ends at island 1; two of the four plans match, two states at weight 1, total 2. Right: the plan is released and one packet is stored; all four plans with the note kept, weight one half each, total 2. Even odds: one bit of foresight trades for one packet.">
+<rect width="680" height="438" fill="#0b0d13"/>
+<text x="20.0" y="38.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#f7f4eb" text-anchor="start">Correct note: the walk ends at island 1</text>
+<text x="350.0" y="38.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="600" fill="#f7f4eb" text-anchor="start">Plan released, one packet stored</text>
+<text x="20.0" y="93.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#878a96" text-anchor="start">0→0→0</text>
+<rect x="112" y="70" width="34" height="34" rx="4" fill="none" stroke="#343953" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="160.0" y="93.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="20.0" y="139.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→0→1</text>
+<rect x="112" y="116" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="129.0" y="139.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="160.0" y="139.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="20.0" y="185.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#878a96" text-anchor="start">0→1→0</text>
+<rect x="112" y="162" width="34" height="34" rx="4" fill="none" stroke="#343953" stroke-width="2" stroke-dasharray="4 4"/>
+<text x="160.0" y="185.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="20.0" y="231.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→1→1</text>
+<rect x="112" y="208" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="129.0" y="231.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="160.0" y="231.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="350.0" y="93.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→0→0</text>
+<rect x="442" y="70" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="459.0" y="93.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="490.0" y="93.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="350.0" y="139.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→0→1</text>
+<rect x="442" y="116" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="459.0" y="139.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="490.0" y="139.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="350.0" y="185.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→1→0</text>
+<rect x="442" y="162" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="459.0" y="185.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="490.0" y="185.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<text x="350.0" y="231.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="400" fill="#a9aab3" text-anchor="start">0→1→1</text>
+<rect x="442" y="208" width="34" height="34" rx="4" fill="#ffbd68" fill-opacity="0.18" stroke="#ffbd68" stroke-width="2"/>
+<text x="459.0" y="231.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">1</text>
+<text x="490.0" y="231.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">note</text>
+<rect x="210" y="268" width="56" height="12" rx="2" fill="#252936" stroke="#343953" stroke-width="1"/>
+<text x="238.0" y="298.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">stockpile w</text>
+<rect x="540" y="268" width="56" height="12" rx="2" fill="#252936" stroke="#343953" stroke-width="1"/>
+<rect x="540" y="252" width="56" height="12" rx="2" fill="#ff633d" stroke="#ff633d" stroke-width="1"/>
+<text x="568.0" y="298.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">stockpile w + 1</text>
+<text x="20.0" y="336.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#f7f4eb" text-anchor="start">2 states with a correct note</text>
+<text x="20.0" y="362.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#a9aab3" text-anchor="start">weight 1 each · total 2</text>
+<text x="350.0" y="336.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#f7f4eb" text-anchor="start">4 states, note kept, plan free</text>
+<text x="350.0" y="362.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="400" fill="#a9aab3" text-anchor="start">weight ½ each · total 2</text>
+<line x1="20" y1="384" x2="660" y2="384" stroke="#252936" stroke-width="1"/>
+<text x="340.0" y="418.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="17" font-weight="400" fill="#fff6df" text-anchor="middle">2 : 2 — one bit of foresight trades evenly for one packet</text>
+</svg>

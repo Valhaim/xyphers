@@ -5,6 +5,7 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Catalyst choice](catalyst-choice/)
 - [Causal entropic](causal-entropic/)
 - [Committed futures](committed-futures/)
+- [Control information](control-information/)
 - [Growth](growth/)
 - [Information to state](information-state/)
 - [Local future test](local-future-test/)
