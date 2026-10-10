@@ -1,0 +1,33 @@
+XYPHERS CAUSAL ENTROPIC REPRODUCTION
+
+The verifier needs only a Rust toolchain. It has no external dependencies
+and runs in about a second.
+
+From source/xypher-causal-entropic-proof/:
+
+  cargo test --locked
+  cargo run --locked --quiet
+
+The test checks that the report has twelve gates and eight controls and that
+the run succeeds. The report is 31 lines. It lists the gates G01-G12, the
+controls C01-C08 with where each failed, one witness line, one line for each
+of the eight family cases, and ends:
+
+  OVERALL PASS
+
+To compare the whole report with the recorded run:
+
+  cargo run --locked --quiet | diff ../../expected-report.txt -
+
+No output from diff means the replay is identical. Its SHA-256 is
+
+  7d8629680960ceb785a969d9310b1661947cfcd1d98f161792d0cd46a54404b7
+
+The Futuruna construction can be checked with the Futuruna compiler:
+
+  runa check xypher.runa
+
+Reproduction boundary
+  This is an exact replay of a frozen finite construction, not a new
+  experiment. A passing replay does not widen the scope stated in
+  README.txt.

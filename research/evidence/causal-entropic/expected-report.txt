@@ -1,0 +1,31 @@
+XYPHER_CAUSAL_ENTROPIC_PROOF CAL-CEF-1 primary=(3,2,2)
+G01 PASS Crystal grounding
+G02 PASS executable plans -- plan read at z3[G={0,1} p=[0, 0, 0] t=0] vs z6[G={0,1} p=[0, 0, 1] t=0]
+G03 PASS reciprocal generator -- row closure: each diagonal is -(exit rate) and each exit rate equals the rate counted independently from the section 3.4 rules
+G04 PASS pathwise accounting
+G05 PASS reservoir lumpability
+G06 PASS system-state local detailed balance
+G07 PASS connectivity and equilibrium
+G08 PASS configuration law
+G09 PASS emergent causal entropic odds -- positive-flux pairs=22 zero-flux=[none<->{1,2}] non-lumpable at z3[G={0,1} p=[0, 0, 0] t=0] vs z6[G={0,1} p=[0, 0, 1] t=0]; section 4.3 witness z3[G={0,1} p=[0, 0, 0] t=0] vs z8[G={0,1} p=[0, 0, 1] t=2]
+G10 PASS Xypher slot reading -- hazards are computed from HazardInputs [ChannelKind, DestinationReservoirEnergy, ReservoirBase], a type with no N_tau, THAIM, or Xi field; every system hazard equals the independent b^(E_R(z'))/1 rule and every micro hazard is kappa
+G11 PASS same-temperature contact -- identical components M0:9[9] M1:162[144+9+9] M2:1035[1026+9] M3:2916[2916] M4:4059[4059] M5:2754[2754] M6:729[729]; heterogeneous components M0:6[6] M1:84[72+6+6] M2:414[408+6] M3:960[960] M4:1146[1146] M5:684[684] M6:162[162]
+G12 PASS home-bridge law -- home-bridge pairs=8
+C01 PASS one-way-builder -> G03 check 1 G03_RECIPROCAL_SUPPORT at none (expected G03 check 1 G03_RECIPROCAL_SUPPORT) -- complete-state BUILD channel 0 -> 24 has no positive reverse
+C02 PASS destination-readout -> G01 check 3 G01_REPLAN_UNIFORM at {0,1},{0,2} (expected G01 check 3 G01_REPLAN_UNIFORM at {0,1},{0,2}) -- REPLAN at z27[G={0,1},{0,2} p=[0, 0, 0] t=0] has outcome law [4/9,5/18,5/18] with reported multiplicity 3
+C03 PASS directed-kinetic-mutation -> G03 check 2 G03_EQUAL_REVERSE_HAZARDS at none (expected G03 check 2 G03_EQUAL_REVERSE_HAZARDS) -- complete-state STEP channel 0 <-> 8: hazards 2 / 1, expected 1 / 1
+C04 PASS unpaired-receipt -> G09 check 1 G09_XI_ANTISYMMETRY at none (expected G09 check 1 G09_XI_ANTISYMMETRY) -- exp(Xi/alpha) forward*reverse = 4 for none <-> {0,1}
+C05 PASS no-staying -> G01 check 1 G01_COUNT_POSITIVE at none (expected G01 check 1 G01_COUNT_POSITIVE at none) -- N_tau(G)=0 < 1
+C06 PASS horizon-slip -> G01 check 4 G01_REPLAN_ALPHABET at none (expected G01 check 4 G01_REPLAN_ALPHABET at none) -- REPLAN alphabet {[0, 0]} != Pi_tau(G) {[0, 0, 0]}
+C07 PASS plan-breaker -> G02 check 1 G02_PLAN_VALIDITY at {0,1} (expected G02 check 1 G02_PLAN_VALIDITY) -- DISMANTLE from z6[G={0,1} p=[0, 0, 1] t=0] writes plan [0, 0, 1] invalid in destination none
+C08 PASS unequal-reservoirs -> G11 check 1 G11_PREPARED_STATIONARY (expected G11 check 1 G11_PREPARED_STATIONARY) -- identical pair (3,2,2)x(3,2,2)[B prepared at b=3]: shell M=1 state (A z0[G=none p=[0, 0, 0] t=0], B z3[G={0,1} p=[0, 0, 0] t=0]): inflow 8/3 != outflow 7/3
+WITNESS (3,2,2) N_2=1,4,4,7,1,5,5,9 system=3,12,12,21,3,15,15,27 complete=24,48,48,42,12,30,30,27 weights=1,2,2,7/4,1/2,5/4,5/4,9/8 contact_current=identical=[M0:0 M1:0 M2:0 M3:0 M4:0 M5:0 M6:0],heterogeneous=[M0:0 M1:0 M2:0 M3:0 M4:0 M5:0 M6:0]
+FAMILY (3,1,2) configurations=8 system=32 complete=90 Z=45/8 mean_bridges=19/15 gates PASS=11 FAIL=0 N/A=1(G12)
+FAMILY (3,2,2) configurations=8 system=108 complete=261 Z=87/8 mean_bridges=131/87 gates PASS=12 FAIL=0 N/A=0
+FAMILY (3,3,2) configurations=8 system=344 complete=740 Z=185/8 mean_bridges=313/185 gates PASS=11 FAIL=0 N/A=1(G12)
+FAMILY (3,2,3) configurations=8 system=108 complete=504 Z=56/9 mean_bridges=5/4 gates PASS=12 FAIL=0 N/A=0
+FAMILY (4,1,2) configurations=64 system=320 complete=2916 Z=729/32 mean_bridges=7/3 gates PASS=10 FAIL=0 N/A=2(G05,G12)
+FAMILY (4,2,2) configurations=64 system=1344 complete=10206 Z=1701/32 mean_bridges=55/21 gates PASS=11 FAIL=0 N/A=1(G05)
+FAMILY (4,2,3) configurations=64 system=1344 complete=44544 Z=14848/729 mean_bridges=123/58 gates PASS=11 FAIL=0 N/A=1(G05)
+FAMILY (4,3,2) configurations=64 system=5248 complete=34344 Z=4293/32 mean_bridges=151/53 gates PASS=10 FAIL=0 N/A=2(G05,G12)
+OVERALL PASS

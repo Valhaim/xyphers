@@ -1,0 +1,309 @@
+-- CAL-CEF-1: causal entropic thermodynamics of committed futures.
+--
+-- Prospective Futuruna construction for the boundary
+-- research/physics/derivable/xypher-causal-entropic-thermodynamics-boundary.md
+-- (section 6). It declares the archipelago, plan validity, the REPLAN
+-- channel, the local BUILD/DISMANTLE permission rule, the reservoir law, the
+-- THAIM pair, and Xi as the predicted configuration odds. It does not execute
+-- the witness, and it never consumes stationary weights, averaged rates, or
+-- rate ratios. No channel hazard below reads N_tau, THAIM, or Xi.
+--
+-- All quantities are Int or ExactRatio. exp(Xi / alpha) is represented
+-- multiplicatively, so no logarithm or exponential is evaluated.
+
+# ExactRatio(numerator: Int, denominator: Int)
+
+-- ARCHIPELAGO AND CONFIGURATIONS (boundary 3.1)
+
+-- islands = N, horizon = tau, reservoir_base = b, home = h.
+# Archipelago(islands: Int, horizon: Int, reservoir_base: Int, home: Int)
+# Bridge(u: Int, w: Int)
+
+-- A configuration lists one flag per candidate bridge, in lexicographic
+-- candidate order: 1 = built, 0 = not built. Bit i of the configuration
+-- index is flag i.
+# Configuration(flags: List(Int))
+
+> primary_archipelago() -> Archipelago { Archipelago(3, 2, 2, 0) }
+
+> candidate_count(arch: Archipelago) -> Int {
+    arch.islands * (arch.islands - 1) / 2
+}
+
+-- Lexicographic index of the candidate bridge {u, w} with u < w.
+> ordered_bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    u * (2 * arch.islands - u - 1) / 2 + (w - u - 1)
+}
+
+> bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    if u < w { ordered_bridge_index(arch, u, w) }
+    else { ordered_bridge_index(arch, w, u) }
+}
+
+> flag_at(flags: List(Int), index: Int) -> Int {
+    if length(flags) == 0 { 0 }
+    else {
+        if index == 0 { head(flags) }
+        else { flag_at(tail(flags), index - 1) }
+    }
+}
+
+> island_in_range(arch: Archipelago, v: Int) -> Bool {
+    v >= 0 && v < arch.islands
+}
+
+-- A candidate bridge joins two distinct islands of the archipelago.
+> is_candidate(arch: Archipelago, u: Int, w: Int) -> Bool {
+    u != w && island_in_range(arch, u) && island_in_range(arch, w)
+}
+
+> bridge_built(arch: Archipelago, config: Configuration, v: Int, w: Int) -> Bool {
+    if is_candidate(arch, v, w) { flag_at(config.flags, bridge_index(arch, v, w)) == 1 }
+    else { false }
+}
+
+> built_count(flags: List(Int)) -> Int {
+    if length(flags) == 0 { 0 }
+    else { head(flags) + built_count(tail(flags)) }
+}
+
+-- ENERGY AND RESERVOIR LAW (boundary 3.3)
+
+-- Each bridge stores one timber packet of energy lambda. The reservoir holds
+-- the remaining packets of E_tot = K and has b^(E_R) arrangements. This is
+-- the declared equation of state 1/alpha = Delta S_R / Delta E_R = ln b.
+# ReservoirLaw(base: Int, total_packets: Int, lambda: Int)
+
+> reservoir_law(arch: Archipelago) -> ReservoirLaw {
+    ReservoirLaw(arch.reservoir_base, candidate_count(arch), 1)
+}
+
+> pow_nonnegative(base: Int, exponent: Int) -> Int {
+    if exponent <= 0 { 1 }
+    else { base * pow_nonnegative(base, exponent - 1) }
+}
+
+> system_energy(config: Configuration, law: ReservoirLaw) -> Int {
+    law.lambda * built_count(config.flags)
+}
+
+> reservoir_energy(config: Configuration, law: ReservoirLaw) -> Int {
+    law.total_packets - built_count(config.flags)
+}
+
+> reservoir_multiplicity(law: ReservoirLaw, energy: Int) -> Int {
+    pow_nonnegative(law.base, energy)
+}
+
+-- b^(exponent) for a signed exponent, exactly.
+> base_power_ratio(base: Int, exponent: Int) -> ExactRatio {
+    if exponent >= 0 { ExactRatio(pow_nonnegative(base, exponent), 1) }
+    else { ExactRatio(1, pow_nonnegative(base, 0 - exponent)) }
+}
+
+-- PLANS (boundary 3.2)
+
+-- A plan is (v_0, ..., v_tau) with v_0 = h; each step stays or crosses a
+-- built bridge. Plans are integer lists.
+> step_allowed(arch: Archipelago, config: Configuration, v: Int, w: Int) -> Bool {
+    v == w || bridge_built(arch, config, v, w)
+}
+
+> steps_valid(arch: Archipelago, config: Configuration, plan: List(Int)) -> Bool {
+    if length(plan) < 2 { true }
+    else {
+        = rest = tail(plan)
+        step_allowed(arch, config, head(plan), head(rest)) && steps_valid(arch, config, rest)
+    }
+}
+
+> islands_in_range(arch: Archipelago, plan: List(Int)) -> Bool {
+    if length(plan) == 0 { true }
+    else { island_in_range(arch, head(plan)) && islands_in_range(arch, tail(plan)) }
+}
+
+> plan_valid(arch: Archipelago, config: Configuration, plan: List(Int)) -> Bool {
+    if length(plan) == arch.horizon + 1 {
+        head(plan) == arch.home && islands_in_range(arch, plan) && steps_valid(arch, config, plan)
+    } else { false }
+}
+
+> plan_uses_bridge(plan: List(Int), u: Int, w: Int) -> Bool {
+    if length(plan) < 2 { false }
+    else {
+        = rest = tail(plan)
+        = a = head(plan)
+        = c = head(rest)
+        = here = (a == u && c == w) || (a == w && c == u)
+        here || plan_uses_bridge(rest, u, w)
+    }
+}
+
+> position_at(plan: List(Int), cursor: Int) -> Int {
+    if cursor == 0 { head(plan) }
+    else { position_at(tail(plan), cursor - 1) }
+}
+
+-- Number of walks of the given number of steps from v (stay allowed).
+> walks_from_over(arch: Archipelago, config: Configuration, v: Int, steps: Int, next: Int) -> Int {
+    if next >= arch.islands { 0 }
+    else {
+        = here = if step_allowed(arch, config, v, next) { count_walks(arch, config, next, steps - 1) } else { 0 }
+        here + walks_from_over(arch, config, v, steps, next + 1)
+    }
+}
+
+> count_walks(arch: Archipelago, config: Configuration, v: Int, steps: Int) -> Int {
+    if steps == 0 { 1 }
+    else { walks_from_over(arch, config, v, steps, 0) }
+}
+
+-- N_tau(G) = |Pi_tau(G)|: the count of committable tau-step plans. Only the
+-- Crystal readback and the Harness prediction read it; no hazard does.
+> committable_plan_count(arch: Archipelago, config: Configuration) -> Int {
+    count_walks(arch, config, arch.home, arch.horizon)
+}
+
+-- SYSTEM STATE (boundary 3.3)
+
+-- z = (G, p, t): configuration, held plan, cursor. The traveller stands on
+-- x(z) = v_t.
+# SystemState(config: Configuration, plan: List(Int), cursor: Int)
+
+> traveller_island(state: SystemState) -> Int {
+    position_at(state.plan, state.cursor)
+}
+
+-- CHANNELS (boundary 3.4)
+
+# ChannelKind = Step | Replan | Build | Dismantle
+
+-- Every micro channel has unit hazard kappa = 1.
+> unit_hazard() -> ExactRatio { ExactRatio(1, 1) }
+
+-- STEP walks the plan forward (t -> t+1) or back (t -> t-1).
+> may_step_forward(arch: Archipelago, state: SystemState) -> Bool {
+    state.cursor < arch.horizon
+}
+
+> may_step_back(state: SystemState) -> Bool {
+    state.cursor > 0
+}
+
+-- CRYSTAL: REPLAN at home, cursor 0. Equivalently a uniform resolution over
+-- Pi_tau(G) at marked rate N_tau(G) with the no-change outcome cancelled, so
+-- each p' != p has unit hazard. The record keeps the Crystal readback (outcome
+-- count and probability); the hazard itself is the unit hazard.
+# ReplanChannel(config: Configuration, outcome_count: Int, outcome_probability: ExactRatio, marked_rate: ExactRatio, each_hazard: ExactRatio)
+
+> replan_channel(arch: Archipelago, config: Configuration) -> ReplanChannel {
+    = count = committable_plan_count(arch, config)
+    = probability = ExactRatio(1, count)
+    = marked_rate = ExactRatio(count, 1)
+    ReplanChannel(config, count, probability, marked_rate, unit_hazard())
+}
+
+> may_replan(state: SystemState, written: List(Int), arch: Archipelago) -> Bool {
+    = at_home_start = state.cursor == 0
+    = valid = plan_valid(arch, state.config, written)
+    = changes = if written == state.plan { false } else { true }
+    at_home_start && valid && changes
+}
+
+-- ACTION: BUILD or DISMANTLE one bridge incident to the traveller's island.
+-- BUILD: the bridge is not built. DISMANTLE: it is built and the held plan
+-- does not use it. No rule reads N_tau.
+> toggle_incident(state: SystemState, u: Int, w: Int) -> Bool {
+    = island = traveller_island(state)
+    island == u || island == w
+}
+
+> may_build(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    = absent = if bridge_built(arch, state.config, u, w) { false } else { true }
+    is_candidate(arch, u, w) && toggle_incident(state, u, w) && absent
+}
+
+> may_dismantle(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    = present = bridge_built(arch, state.config, u, w)
+    = free = if plan_uses_bridge(state.plan, u, w) { false } else { true }
+    is_candidate(arch, u, w) && toggle_incident(state, u, w) && present && free
+}
+
+-- Lumping reservoir labels: a toggle into a configuration with reservoir
+-- energy E_R has system-state hazard b^(E_R); STEP and REPLAN have 1. The
+-- inputs are the channel kind, the destination reservoir energy, and b.
+> lumped_hazard(kind: ChannelKind, destination_reservoir_energy: Int, law: ReservoirLaw) -> ExactRatio {
+    match kind {
+        | Build -> ExactRatio(reservoir_multiplicity(law, destination_reservoir_energy), 1)
+        | Dismantle -> ExactRatio(reservoir_multiplicity(law, destination_reservoir_energy), 1)
+        | Step -> unit_hazard()
+        | Replan -> unit_hazard()
+    }
+}
+
+-- THERMO: THAIM PAIR AND Xi BETWEEN CONFIGURATIONS (boundary 3.5)
+
+# ConfigurationCandidate(from_config: Configuration, to_config: Configuration)
+# ThaimPair(forward: ExactRatio, reverse: ExactRatio)
+# XiPrediction(candidate: ConfigurationCandidate, thaim: ThaimPair, energy_factor: ExactRatio, odds: ExactRatio)
+
+> reverse_candidate(candidate: ConfigurationCandidate) -> ConfigurationCandidate {
+    ConfigurationCandidate(candidate.to_config, candidate.from_config)
+}
+
+-- exp(THAIM_+(G -> G') / alpha) = max(1, N_tau(G') / N_tau(G)).
+-- THAIM is a one-sided receipt; it is never a hazard factor.
+> exp_thaim_plus(arch: Archipelago, candidate: ConfigurationCandidate) -> ExactRatio {
+    = from_count = committable_plan_count(arch, candidate.from_config)
+    = to_count = committable_plan_count(arch, candidate.to_config)
+    if to_count > from_count { ExactRatio(to_count, from_count) }
+    else { ExactRatio(1, 1) }
+}
+
+> thaim_pair(arch: Archipelago, candidate: ConfigurationCandidate) -> ThaimPair {
+    = forward = exp_thaim_plus(arch, candidate)
+    = reverse = exp_thaim_plus(arch, reverse_candidate(candidate))
+    ThaimPair(forward, reverse)
+}
+
+-- exp(-[U(G') - U(G)] / alpha) = b^(-(|G'| - |G|)) with alpha = lambda / ln b.
+> energy_factor(arch: Archipelago, candidate: ConfigurationCandidate) -> ExactRatio {
+    = law = reservoir_law(arch)
+    = delta_u = system_energy(candidate.to_config, law) - system_energy(candidate.from_config, law)
+    base_power_ratio(law.base, 0 - delta_u / law.lambda)
+}
+
+-- Harness prediction of the emergent configuration odds:
+-- exp(Xi(G -> G') / alpha) = exp(THAIM_+ fwd / alpha) / exp(THAIM_+ rev / alpha) * b^(-dU)
+--                          = [N_tau(G') / N_tau(G)] * b^(-(|G'| - |G|)).
+-- The ExactRatio is left unreduced; the verifier compares by cross-multiplication.
+> predicted_configuration_odds(arch: Archipelago, candidate: ConfigurationCandidate) -> XiPrediction {
+    = pair = thaim_pair(arch, candidate)
+    = energy = energy_factor(arch, candidate)
+    = numerator = pair.forward.numerator * pair.reverse.denominator * energy.numerator
+    = denominator = pair.forward.denominator * pair.reverse.numerator * energy.denominator
+    = odds = ExactRatio(numerator, denominator)
+    XiPrediction(candidate, pair, energy, odds)
+}
+
+-- XYPHER SLOT READING (boundary 3.5)
+
+# GraphSubstrate = BridgeConfigurationsWithHeldPlanAndCursor
+# Crystal = UniformReplanOverValidPlans
+# Thermo = ReservoirLawEnergyThaimPairAndXi
+# Praxion = BaseActorUnitSymmetricHazards
+# Action = BuildOrDismantleAtTravellerIsland
+# Resolution = StepArrivalAndReplanWrite
+# Thaw = DeclaredReverseOfEachChannel
+# Memory = HeldPlanAndCursorNoLearning
+# Ruby = EmptyRuby
+# OpalPhi = AbsentOpalPhi
+# XypherSlotReading(archipelago: Archipelago, reservoir_law: ReservoirLaw, substrate: GraphSubstrate, crystal: Crystal, thermo: Thermo, praxion: Praxion, action: Action, resolution: Resolution, thaw: Thaw, memory: Memory, ruby: Ruby, opal_phi: OpalPhi)
+
+-- The object is a thermodynamic graph system read through Xypher slots, not
+-- a CAL-XTHERM X1--X3 kernel. Ruby is empty; Opal/Phi are absent.
+> causal_entropic_slot_reading() -> XypherSlotReading {
+    = arch = primary_archipelago()
+    = law = reservoir_law(arch)
+    XypherSlotReading(arch, law, BridgeConfigurationsWithHeldPlanAndCursor, UniformReplanOverValidPlans, ReservoirLawEnergyThaimPairAndXi, BaseActorUnitSymmetricHazards, BuildOrDismantleAtTravellerIsland, StepArrivalAndReplanWrite, DeclaredReverseOfEachChannel, HeldPlanAndCursorNoLearning, EmptyRuby, AbsentOpalPhi)
+}
