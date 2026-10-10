@@ -334,7 +334,7 @@ That gives intelligence its first physical unit: how much difference an action c
 
 Intelligence stops being only a metaphor. It becomes something a system has an amount of, at a cost we can calculate. That, to me, is the leap: intelligence and life described in the same physical units as everything else.
 
-The [intelligence article](intelligence-as-physical-units.md) sets out the derivation and the experiment that will put a controlling builder and the digital thermometer inside one account. That experiment has now run in the archipelago world: [one bit of foresight trades evenly for one packet of timber](what-is-a-bit-of-foresight-worth.md).
+The [intelligence article](intelligence-as-physical-units.md) sets out the derivation and the experiment that will put a controlling builder and the digital thermometer inside one account. That experiment has now run in the archipelago world: [one bit of foresight trades evenly for one packet of timber](what-is-a-bit-of-foresight-worth.md). A first driven world then measured what a steady flow of energy buys: [fuel spent where a traveller stands keeps up to 79% more futures open per packet than fuel spread everywhere](how-much-open-future-can-a-unit-of-energy-buy.md).
 
 Imagine measuring how much agency a system has gained, what that gain costs, and how it changes when systems cooperate.
 

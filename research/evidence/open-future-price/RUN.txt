@@ -1,0 +1,46 @@
+XYPHERS OPEN FUTURE PRICE REPRODUCTION
+
+The verifier needs only a Rust toolchain. It has no external dependencies.
+In a release build the test and the run take about fifteen seconds each.
+
+From source/xypher-open-future-price-proof/:
+
+  cargo test --release --locked
+  cargo run --release --locked --quiet
+
+The test checks that the report has ten gates and six controls in order and
+that the run succeeds. The report is 46 lines. It lists the gates G01-G10,
+the controls C01-C06 with where each failed, one line per world and
+traveller with the exact open future held (H), fuel flow (J), yield (Y), and
+the certified efficiency and yield bound, then the four hypothesis verdicts,
+and ends:
+
+  OVERALL PASS
+
+To compare the whole report with the recorded run:
+
+  cargo run --release --locked --quiet | diff ../../expected-report.txt -
+
+No output from diff means your run reproduced the recorded report exactly.
+Its SHA-256 is
+
+  82c0b86b5b921df60ee0fc6ecd67895184aab69336f99fac888bd281fad33bb5
+
+The independent check needs only Python 3 and takes about ninety seconds.
+From this directory:
+
+  python3 independent_check.py expected-report.txt
+
+It prints one line per world and traveller, then
+
+  H and J agree with the frozen report in 24 of 24 steady states
+
+and the four verdicts, as in expected-independent-check.txt.
+
+The Futuruna declaration can be checked with the Futuruna compiler:
+
+  runa check xypher.runa
+
+Reproduction boundary
+  This is an exact replay of a frozen finite construction. A passing replay
+  reproduces the recorded result; the scope is the one stated in README.txt.

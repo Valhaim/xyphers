@@ -115,7 +115,7 @@ Each demon left the world reversible and still at a temperature. They failed bec
 
 Control now has a measured price. A note about where your future goes is a physical correlation, and in a world with its own temperature it is worth **α ln 2** per bit: as free energy, as an exchange rate for timber, and against the cost of forgetting. I believe this is the first exact place where a Xypher's control over its own future and its thermodynamics meet as one quantity, and it is small enough to hold in your mind: four plans, one note, two against two.
 
-The world here sits at equilibrium, so the trade runs both ways equally often and no engine turns. The next experiment drives it. Feed the stockpile a load to lift and the notebook a stream of blank pages, and measure how fast committed futures turn a flow of free energy into stored work. Its efficiency is bounded by the second law. That bound, how much future a unit of power can buy, is the frontier set out in [Committed Futures as Microstates](committed-futures-as-microstates.md).
+The world here sits at equilibrium, so the trade runs both ways equally often and no engine turns. A first driven world has since run: [How Much Open Future Can a Unit of Energy Buy?](how-much-open-future-can-a-unit-of-energy-buy.md) feeds the archipelago from a hotter store and measures how many open futures a unit of fuel flow holds, against the least price physics allows. Driving this notebook itself, with a load on the stockpile and a stream of blank pages, would turn foresight into an engine, with its efficiency bounded by the second law.
 
 ## Read, inspect, reproduce
 

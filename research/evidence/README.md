@@ -9,6 +9,7 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Growth](growth/)
 - [Information to state](information-state/)
 - [Local future test](local-future-test/)
+- [Open future price](open-future-price/)
 - [Quantum complementarity](quantum-complementarity/)
 - [Scaling](scaling/)
 

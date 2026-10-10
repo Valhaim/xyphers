@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 432" width="680" height="432" role="img" aria-label="Schematic of the driven archipelago. Three islands; the traveller stands at home and holds the plan 0 to 1 to 1. The bridge from home to island 1 is built and crossed by the plan, so the weather leaves it alone. The bridge from island 1 to island 2 is built and the weather may wear it, sending a packet to the cold store. The bridge from home to island 2 is absent; the weather may build it, and so may fuel, because it touches the traveller's island. Below, packets flow from the hot store, which multiplies by 2 per packet, through the bridges, into the cold store, which multiplies by 8: the fuel flow J.">
+<rect width="680" height="432" fill="#0b0d13"/>
+<text x="20.0" y="34.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">Three islands, traveller at home, holding the plan 0→1→1</text>
+<line x1="190" y1="250" x2="300" y2="104" stroke="#983b40" stroke-width="14" stroke-linecap="round"/>
+<line x1="190" y1="250" x2="300" y2="104" stroke="#ffbd68" stroke-width="6" stroke-linecap="round"/>
+<line x1="300" y1="104" x2="410" y2="250" stroke="#ffbd68" stroke-width="6" stroke-linecap="round"/>
+<line x1="190" y1="250" x2="410" y2="250" stroke="#343953" stroke-width="3" stroke-dasharray="7 7"/>
+<circle cx="190" cy="250" r="24" fill="none" stroke="#ff633d" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="190" cy="250" r="13" fill="#ff633d" stroke="#ff633d" stroke-width="2"/>
+<text x="190.0" y="255.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#0b0d13" text-anchor="middle">0</text>
+<circle cx="300" cy="104" r="13" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<text x="300.0" y="109.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#f7f4eb" text-anchor="middle">1</text>
+<circle cx="410" cy="250" r="13" fill="#0b0d13" stroke="#f7f4eb" stroke-width="2"/>
+<text x="410.0" y="255.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="600" fill="#f7f4eb" text-anchor="middle">2</text>
+<text x="158.0" y="255.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#ff633d" text-anchor="end">traveller</text>
+<text x="228.0" y="160.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#ffbd68" text-anchor="end">the plan crosses it:</text>
+<text x="228.0" y="180.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="end">weather leaves it alone</text>
+<text x="372.0" y="160.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="start">weather may wear it</text>
+<text x="372.0" y="180.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#878a96" text-anchor="start">one packet to the cold store</text>
+<text x="300.0" y="284.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="middle">weather may build it anywhere;</text>
+<text x="300.0" y="304.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#ff633d" text-anchor="middle">fuel may build it, because it touches the traveller's island</text>
+<rect x="24" y="334" width="172" height="52" rx="6" fill="none" stroke="#ff633d" stroke-width="2"/>
+<text x="110.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#ff633d" text-anchor="middle">hot store</text>
+<text x="110.0" y="376.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">×2 per packet</text>
+<rect x="254" y="334" width="172" height="52" rx="6" fill="none" stroke="#ffbd68" stroke-width="2"/>
+<text x="340.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#ffbd68" text-anchor="middle">bridges</text>
+<text x="340.0" y="376.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">1 packet each</text>
+<rect x="484" y="334" width="172" height="52" rx="6" fill="none" stroke="#a9aab3" stroke-width="2"/>
+<text x="570.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#a9aab3" text-anchor="middle">cold store</text>
+<text x="570.0" y="376.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">×8 per packet</text>
+<line x1="200" y1="360" x2="246" y2="360" stroke="#f7f4eb" stroke-width="2"/>
+<path d="M 246 354 L 254 360 L 246 366 Z" fill="#f7f4eb"/>
+<line x1="430" y1="360" x2="476" y2="360" stroke="#f7f4eb" stroke-width="2"/>
+<path d="M 476 354 L 484 360 L 476 366 Z" fill="#f7f4eb"/>
+<text x="340.0" y="414.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="400" fill="#fff6df" text-anchor="middle">net flow of packets, hot to cold: the fuel flow J</text>
+</svg>

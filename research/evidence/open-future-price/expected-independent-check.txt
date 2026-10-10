@@ -1,0 +1,29 @@
+(3,1,2,3,2) LOCAL  states= 32 H~0.2529 J~0.2379 Y~1.0631 agrees
+(3,1,2,3,2) GLOBAL states= 32 H~0.2935 J~0.3766 Y~0.7792 agrees
+(3,2,2,3,2) LOCAL  states=108 H~0.2182 J~0.1964 Y~1.1111 agrees
+(3,2,2,3,2) GLOBAL states=108 H~0.2824 J~0.3273 Y~0.8630 agrees
+(3,3,2,3,2) LOCAL  states=344 H~0.1804 J~0.1661 Y~1.0857 agrees
+(3,3,2,3,2) GLOBAL states=344 H~0.2582 J~0.2879 Y~0.8969 agrees
+(3,1,2,8,2) LOCAL  states= 32 H~0.4777 J~0.8780 Y~0.5441 agrees
+(3,1,2,8,2) GLOBAL states= 32 H~0.5211 J~1.3750 Y~0.3790 agrees
+(3,2,2,8,2) LOCAL  states=108 H~0.5155 J~0.7474 Y~0.6897 agrees
+(3,2,2,8,2) GLOBAL states=108 H~0.6008 J~1.2297 Y~0.4885 agrees
+(3,3,2,8,2) LOCAL  states=344 H~0.4654 J~0.6351 Y~0.7329 agrees
+(3,3,2,8,2) GLOBAL states=344 H~0.5847 J~1.0972 Y~0.5329 agrees
+(3,1,2,6,3) LOCAL  states= 32 H~0.3224 J~0.4758 Y~0.6776 agrees
+(3,1,2,6,3) GLOBAL states= 32 H~0.3546 J~0.7455 Y~0.4757 agrees
+(3,2,2,6,3) LOCAL  states=108 H~0.3283 J~0.4030 Y~0.8147 agrees
+(3,2,2,6,3) GLOBAL states=108 H~0.3895 J~0.6635 Y~0.5870 agrees
+(3,3,2,6,3) LOCAL  states=344 H~0.2858 J~0.3420 Y~0.8356 agrees
+(3,3,2,6,3) GLOBAL states=344 H~0.3692 J~0.5907 Y~0.6250 agrees
+(4,1,2,3,2) LOCAL  states=320 H~0.3723 J~0.3731 Y~0.9980 agrees
+(4,1,2,3,2) GLOBAL states=320 H~0.4886 J~0.7912 Y~0.6176 agrees
+(4,1,2,8,2) LOCAL  states=320 H~0.6786 J~1.3412 Y~0.5059 agrees
+(4,1,2,8,2) GLOBAL states=320 H~0.8025 J~2.8333 Y~0.2832 agrees
+(4,1,2,6,3) LOCAL  states=320 H~0.4608 J~0.7301 Y~0.6311 agrees
+(4,1,2,6,3) GLOBAL states=320 H~0.5530 J~1.5401 Y~0.3590 agrees
+H and J agree with the frozen report in 24 of 24 steady states
+H0 SUPPORTED
+H1 SUPPORTED
+H2 REFUTED failing=[(3, 2)]
+H3 REFUTED failing=[(3, 2), (8, 2), (6, 3)]
