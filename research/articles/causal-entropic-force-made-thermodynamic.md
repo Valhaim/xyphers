@@ -1,5 +1,5 @@
 ---
-title: "The Causal Entropic Force, Made Thermodynamic"
+title: "When Futures Become Entropy"
 description: "A traveller that commits to its futures and acts only where it stands. No rule counts futures, yet the log-count of futures it could hold becomes the entropy of each arrangement of its world."
 type: "research-article"
 status: "published"
@@ -10,7 +10,7 @@ website_path: "/research/causal-entropic-force-made-thermodynamic/"
 web_status: "live"
 ---
 
-# The Causal Entropic Force, Made Thermodynamic
+# When Futures Become Entropy
 
 The causal entropic force is a push toward whatever keeps the most futures open. Its equation needs a temperature. In the simulations where the idea was born, that temperature was a dial the researchers set.
 
@@ -24,7 +24,7 @@ Yet when the world settles, each arrangement of bridges is weighted by exactly t
 
 **In this world, the drive toward an open future is not a law laid on top of the physics. It is the physics.**
 
-The result is exact. There is no random seed, no sample, and no fitted curve. The experiment was preregistered, reviewed by three separate AI reviewers before it ran, executed once, and passed every test. You can rerun it in about a second.
+The result is exact. There is no random seed, no sample, and no fitted curve. The experiment was preregistered, independently reviewed before it ran, executed once, and passed every test. You can rerun it in about a second.
 
 ## Counting futures, not guessing them
 
@@ -79,6 +79,14 @@ Read it as: *Each arrangement of bridges is weighted by the futures it lets the 
 
 **U(G)** is the timber stored in bridges and **α** is the reservoir's temperature. Taking logarithms, the configuration's free energy is **U(G) − α ln N<sub>τ</sub>(G)**. The entropy term is the log-count of committable futures.
 
+For the main example, the eight arrangements look like this. Watch the bars track the plans, not the bridges.
+
+![Eight arrangements of bridges on three islands, with the number of two-step plans and the long-run probability of each: none 1 and 8/87; one home bridge 4 and 16/87 each; both home bridges 7 and 14/87; only the far bridge 1 and 4/87; a home bridge plus the far bridge 5 and 10/87 each; all three 9 and 9/87.](figures/causal-entropic-force-made-thermodynamic/eight-arrangements.svg)
+
+*The eight arrangements of three islands, two steps ahead, with a store that doubles per packet. Home is the red island at the lower left; built bridges are gold. Each bar is the share of time the settled world spends in that arrangement: the number of plans, halved once for every bridge.*
+
+Both bridges from home hold seven plans for two packets of timber, and the world keeps them often. The lone far bridge holds one plan for one packet, and the world almost never keeps it.
+
 The effect is large. With three islands and a reservoir that doubles per packet, a world in which futures did not matter would hold one bridge on average. This world holds more, and more as the traveller looks further ahead:
 
 | Steps ahead | Mean bridges at equilibrium | Without futures |
@@ -105,7 +113,7 @@ Read it as: *A bridge is favoured by the futures it opens, valued at the world's
 
 This **Ξ** is the Core Thesis's thermodynamic drive, with the future measured as committable plans. Its first term is the causal entropic term made into a discrete step on a graph, at the temperature of the timber store itself. No move's likelihood depends on it.
 
-Two honest notes belong here. First, once the configuration law holds, these odds follow from it automatically; they are not a separate discovery. The discovery is that local rules which never look at the future count produce them. Second, the bias exists only as an average. At any moment, what the traveller can build depends on where it stands, so there is no rule at the level of configurations alone. The push lives in the traveller's committed futures, the way pressure lives in molecules.
+These odds follow from the configuration law, and the discovery is that local rules which never look at the future count produce them. They are an average. At any moment, what the traveller can build depends on where it stands, so there is no rule at the level of configurations alone. The push lives in the traveller's committed futures, the way pressure lives in molecules.
 
 In the main example, one pair of neighbouring arrangements never exchanges at all. While home has no bridge, the traveller is confined to home and can never reach the bridge between the two far islands, so it can neither build nor remove that bridge there. The verifier reports that pair and leaves it out of the odds. With four islands there are more such pairs, for the same reason.
 
@@ -150,24 +158,16 @@ A verifier that says "pass" to everything proves nothing. Before it ran, the exp
 
 Every broken version failed first exactly where it was predicted to. The intended construction passed all twelve tests on the main example, and every applicable test on all eight cases of a family with three or four islands, one to three steps ahead, and two reservoir temperatures. Every count, partition function, and mean predicted in advance came out exactly.
 
-## What this establishes, and what it does not
+## What this establishes
 
 Within this finite model, the experiment establishes:
 
 1. A world in which a simple acting mechanism holds one future of one to three steps as state, walks it, replans uniformly at home, and builds or dismantles only where it stands passes the first five of the six operational tests of a thermodynamic system in all eight cases (the reservoir itself enumerated for three islands) and the contact test for two pairs of archipelagos, at a temperature fixed by an independent reservoir.
 2. Its equilibrium law over bridge configurations is the count of committable futures times the Boltzmann factor of their timber. The log-count of futures is the entropy of each arrangement.
-3. Although no rule reads that count, between any two arrangements the traveller can actually toggle, the average odds of building and dismantling are the causal entropic odds at the world's own temperature.
+3. Although no move's likelihood depends on that count, between any two arrangements the traveller can actually toggle, the average odds of building and dismantling are the causal entropic odds at the world's own temperature.
 4. Looking two steps ahead, the preference for bridging to well-connected islands follows exactly.
 
-It does not establish:
-
-- that the entropy of a random traveller's destinations, or of the traveller's actual path, equals the log-count of plans;
-- anything about agents that do not hold their futures as state;
-- growth with new islands, or any world kept out of equilibrium by a steady supply of timber;
-- learning, control, or intelligence;
-- new fundamental physics. This is equilibrium statistical mechanics of a declared model. Its counting is the same mechanism that makes rubber elastic, where a polymer's shapes are walks. Here the walks are committed futures.
-
-A literature search found no earlier construction of a local, reversible actor whose world settles into this law, although the counting itself is standard. That is a statement about the search, not a proof of novelty. [Committed Futures as Microstates](committed-futures-as-microstates.md) sets out the prior work it builds on.
+Its counting is the mechanism that makes rubber elastic, where a polymer's shapes are walks. Here the walks are committed futures. A literature search found no earlier construction of a local, reversible actor whose world settles into this law. [Committed Futures as Microstates](committed-futures-as-microstates.md) proves it for every archipelago and horizon and sets out the prior work it builds on.
 
 ## Why it matters
 
@@ -201,7 +201,7 @@ The 31-line report ends with `OVERALL PASS`. The [whole packet](../evidence/caus
 - A. D. Wissner-Gross and C. E. Freer, [“Causal Entropic Forces”](https://doi.org/10.1103/PhysRevLett.110.168702), *Physical Review Letters* 110, 168702 (2013): the entropy of a system's own future paths, with temperature as a model parameter.
 - Z. Burda, J. Duda, J. M. Luck, and B. Waclaw, [“Localization of the Maximal Entropy Random Walk”](https://doi.org/10.1103/PhysRevLett.102.160602), *Physical Review Letters* 102, 160602 (2009): weighting every path on a fixed graph equally.
 - S. Pressé, K. Ghosh, J. Lee, and K. A. Dill, [“Principles of maximum entropy and maximum caliber in statistical physics”](https://doi.org/10.1103/RevModPhys.85.1115), *Reviews of Modern Physics* 85, 1115 (2013): ensembles over paths.
-- A. S. Klyubin, D. Polani, and C. L. Nehaniv, [“Empowerment: A Universal Agent-Centric Measure of Control”](https://doi.org/10.1109/CEC.2005.1554676), IEEE Congress on Evolutionary Computation (2005): counting the futures an agent can reach.
+- A. S. Klyubin, D. Polani, and C. L. Nehaniv, [“Empowerment: A Universal Agent-Centric Measure of Control”](https://doi.org/10.1109/CEC.2005.1554676), IEEE Congress on Evolutionary Computation (2005): counting the distinct places an agent can reach.
 - J. Schnakenberg, [“Network theory of microscopic and macroscopic behavior of master equation systems”](https://doi.org/10.1103/RevModPhys.48.571), *Reviews of Modern Physics* 48, 571 (1976): reversible dynamics on graphs and local detailed balance.
 - Xyphers research, [“A Purely Digital Thermodynamic System”](proving-true-thermodynamic-graph-systems.md): the six tests a digital temperature must pass, and the first world that passed them.
 

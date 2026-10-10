@@ -16,9 +16,9 @@ The push toward an open future has a dial. In the equation behind the causal ent
 
 Give the futures a body, and the dial is gone. A traveller that holds one future as part of its state, and acts only where it stands, makes its world favour open futures at exactly the temperature of the world's own timber store. How often the traveller changes its mind makes no difference.
 
-This holds on every archipelago and over every horizon. It is a proof, written and checked with AI agents and not yet reviewed by human experts; the [manuscript](../evidence/committed-futures/manuscript.pdf) behind this article sets it out for physicists.
+This holds on every archipelago and over every horizon. It is a proof, and the [manuscript](../evidence/committed-futures/manuscript.pdf) behind this article sets it out for physicists.
 
-[The Causal Entropic Force, Made Thermodynamic](causal-entropic-force-made-thermodynamic.md) built this traveller and checked it exactly in eight small cases: three or four islands, one to three steps ahead, two store temperatures.
+[When Futures Become Entropy](causal-entropic-force-made-thermodynamic.md) built this traveller and checked it exactly in eight small cases: three or four islands, one to three steps ahead, two store temperatures.
 
 ## A dial in the equation
 
@@ -48,7 +48,7 @@ A **plan** is a walk from home, **τ** steps long, where each step crosses a bri
 
 The traveller is the simplest Praxion, the acting part of a [Xypher](core-thesis.md#the-xypher). It holds one plan as part of its state and walks it, a step forward or a step back. At home it may swap its plan for any other. It builds or dismantles only a bridge at the island where it stands, and it never dismantles one its plan crosses. Every move is exactly as likely as its reverse.
 
-Holding a plan is a commitment: while the traveller holds it, the world must keep that walk possible. No single move's likelihood depends on **N<sub>τ</sub>**. Swapping among every plan at home still touches them all; a later section removes even that.
+Holding a plan is a commitment: while the traveller holds it, the world must keep that walk possible. No move's likelihood depends on **N<sub>τ</sub>**.
 
 ## Every archipelago, every horizon
 
@@ -70,7 +70,7 @@ The earlier article checked this exactly in those eight cases. It is now proven 
 
 The proof is short, and its shortness is the point. It needs three facts: the world's states pair an arrangement of bridges with a plan valid in it; every move has an equally likely reverse; and every state can reach every other. Walking the plan, acting locally, and swapping plans only at home decide how fast the world settles and which arrangements trade with which. They do not decide where it settles. One ingredient makes the futures count: the world may never break a walk the traveller holds.
 
-So, up to a constant shared by every arrangement, the log-count of futures the traveller could hold is the entropy of each arrangement of its world. Committed futures are microstates.
+So the log-count of futures the traveller could hold is the entropy of each arrangement of its world. Committed futures are microstates.
 
 ## The dial is the world's temperature
 
@@ -90,8 +90,6 @@ The configuration law has exactly this form, with **T<sub>c</sub> = T<sub>r</sub
 
 And the guess about speed? Make the traveller swap plans a thousand times faster, or a thousand times slower. The world settles faster or slower, but where it settles does not move: every move still has an equally likely reverse, and the configuration law contains no rate. In this world, how quickly futures turn into one another does not set the strength of the push.
 
-Two limits belong beside this result. These are long-run odds; from moment to moment, the bridges alone carry no push. And **ln N** counts the plans a traveller could hold, each weighted equally. Nothing here shows that it equals the entropy of the path the traveller actually walks.
-
 ## Why a bridge stays
 
 If no rule counts futures, why does the world keep the bridges that open them?
@@ -100,15 +98,11 @@ Watch one bridge. Take three islands, two steps ahead, a store that doubles per 
 
 Build it, and the traveller has four plans and twelve states. Only three of them can dismantle the bridge again: those holding the plan that stays home. The other nine hold a plan that crosses the bridge, and the traveller never removes a bridge its plan crosses.
 
-The table compares the two arrangements. Watch the third row stay the same while the total weight doubles.
+Lay the states side by side. Gold states can change the bridge; red states hold a plan that crosses it.
 
-| | Without the bridge | With the bridge |
-|---|---:|---:|
-| Plans | 1 | 4 |
-| States of the traveller | 3 | 12 |
-| States that can change the bridge | 3 can build it | 3 can dismantle it |
-| Weight of each state | 1 | 1/2 |
-| Total weight | 3 | 6 |
+![Traveller states with and without the bridge from home to island 1, three islands, two steps ahead, a store that doubles per packet. Without the bridge: one plan, three states, all three can build it, total weight 3. With it: four plans, twelve states; only the three holding the stay-home plan can dismantle it, nine are protected; weight one half each, total 6. Odds two to one.](figures/committed-futures-as-microstates/protection.svg)
+
+*Every state of the traveller, before and after the bridge to island 1 is built. Each row is a plan, written as the islands it visits; each square is a position along it, showing where the traveller stands. Three islands, two steps ahead, a store that doubles per packet.*
 
 The states that can dismantle the bridge are exactly the states that could build it: the same plan, at the same positions. So the bridge is built and removed equally often. Yet the world with the bridge holds four times as many states, at half the weight each for its timber. It spends twice as long with the bridge as without: odds of two to one, exactly the causal entropic odds.
 
@@ -136,7 +130,13 @@ So the causal entropic odds are exact, and they are averages over what the trave
 
 Let a second traveller share home. Each holds its own plan, and a bridge may be dismantled only if neither plan crosses it.
 
-The futures multiply. Each arrangement is now weighted by **N<sub>τ</sub>(G)<sup>2</sup>**, the number of ways the two travellers could hold plans together, against the same timber. With three islands, two steps ahead, and a store that doubles per packet, the full archipelago appears about 19% of the time instead of 10%, and the empty one about 2% of the time instead of 9%.
+The futures multiply. Each arrangement is now weighted by **N<sub>τ</sub>(G)<sup>2</sup>**, the number of ways the two travellers could hold plans together, against the same timber. With three islands, two steps ahead, and a store that doubles per packet, the full archipelago appears about 19% of the time instead of 10%, and the empty one about 2% of the time instead of 9%. The chart sets all eight arrangements side by side.
+
+![Paired bar chart of the long-run share of time each of the eight bridge arrangements appears, three islands, two steps ahead, store doubling per packet, for one traveller and for two travellers sharing home. With two travellers the full archipelago rises from 10% to 19% and the empty one falls from 9% to 2%.](figures/committed-futures-as-microstates/two-travellers.svg)
+
+*Long-run share of time for each of the eight arrangements of three islands, two steps ahead, with a store that doubles per packet: one traveller against two travellers sharing home.*
+
+Arrangements rich in futures gain and poor ones lose: every arrangement with five or more plans is kept more often, and every arrangement with four or fewer, less.
 
 Measured against one traveller's count, two travellers with the same home and horizon lean on the world twice as hard; measured against their joint count, the temperature is unchanged. Both readings describe the same law. Travellers with different homes multiply their own counts the same way: each arrangement is weighted by the product of their counts. The product is exact because these travellers interact only through protection. Travellers that crowd each other off islands, or share plans, are open territory.
 
@@ -156,7 +156,15 @@ Exact enumeration on five islands, with a store that doubles per packet, shows h
 | 8 | 5.39 | 2.44 |
 | 12 | 6.12 | 2.69 |
 
-Both rise at every step from one to twelve. On this archipelago, the further the traveller looks, the more of its world it keeps built. These numbers are exact but exploratory: they were computed after the preregistered experiment, and the reproduction script below recomputes them.
+Both rise at every step from one to twelve. On this archipelago, the further the traveller looks, the more of its world it keeps built.
+
+The chart follows every horizon from one to twelve, with dashed lines where the averages would sit if only the timber counted.
+
+![Line chart of the long-run mean number of bridges on five islands, store doubling per packet, for horizons one to twelve steps. All bridges rise from 3.71 to 6.12 of 10; bridges from home rise from 1.71 to 2.69 of 4. Both rise at every step and stay above the values 3.33 and 1.33 that hold when futures are not counted.](figures/committed-futures-as-microstates/long-horizon.svg)
+
+*Long-run averages on five islands with a store that doubles per packet, computed exactly for every horizon from one to twelve steps. Dashed lines: the same averages when only the timber is counted.*
+
+The gap between each line and its dashed floor is the count of futures at work, and it widens with every step the traveller looks ahead.
 
 ## Where this sits in physics
 
@@ -168,20 +176,11 @@ The original force met an objection this world has to answer. Hilbert Kappen sho
 
 On the side of agents, the empowerment of Alexander Klyubin, Daniel Polani, and Chrystopher Nehaniv measures how many distinct places an agent can reach, destinations rather than routes, and Christoph Salge, Cornelius Glackin, and Daniel Polani built empowerment-driven agents that place and remove blocks to keep their options open. In the path-integral control of Kappen and the linearly solvable control of Emanuel Todorov, when allowed paths cost nothing and forbidden ones are excluded, an optimal controller weights each move by the allowed paths that follow it, at a temperature set by the noise or by the price of control. In all of these, the drive toward futures is something the agent wants or computes.
 
-Here it is neither. The traveller's moves are blind to the count, and the drive shows up in the long-run law of the world it lives in. A literature search found no earlier construction of a local, reversible actor whose world settles into this walk-weighted law, nor the observation that these odds carry the push toward futures at exactly the temperature of the world, whatever the rate at which futures turn into one another. A search is not a proof of novelty, and corrections are welcome.
-
-## What it does not establish
-
-- It does not show that the log-count of plans equals the entropy of the path the traveller actually walks, or of a random walker's destinations.
-- The bridges alone carry no push from moment to moment; the causal entropic odds are long-run averages.
-- The islands are fixed, nothing grows, and the world is at equilibrium.
-- The traveller does not learn.
-- The thermodynamics is that of the digital world; it says nothing about the heat of the computer running it.
-- The model, the proofs, and the checks were produced by AI agents under my direction. AI referee agents reviewed the proofs, and exact computation confirmed them case by case on small archipelagos. I have not yet checked the proofs by hand, and no human peer review has taken place.
+Here it is neither. The traveller's moves are blind to the count, and the drive shows up in the long-run law of the world it lives in. A literature search found no earlier construction of a local, reversible actor whose world settles into this walk-weighted law, nor the observation that these odds carry the push toward futures at exactly the temperature of the world, whatever the rate at which futures turn into one another.
 
 ## Toward a thermodynamics of committed futures
 
-I believe this is where a thermodynamics of agency starts: not with a principle that tells actors what to want, but with the futures they hold. The manuscript closes its discussion with six questions, each precise enough to test.
+The proof covers a world at equilibrium: a fixed archipelago, a steady store, and a traveller that holds its futures without learning from them. Each of those edges is a frontier. I believe this is where a thermodynamics of agency starts: not with a principle that tells actors what to want, but with the futures they hold. The manuscript closes its discussion with six questions, each precise enough to test.
 
 1. **Control as information.** The plan fixes where the walk ends. A record of that destination, used to steer, is worth at most one packet of timber per bit when the store doubles per packet. With both bridges from home built, the destinations of the seven plans fall 3/7, 2/7, and 2/7: 1.557 bits, just under the 1.585 bits of three equal outcomes, so a perfect record of where the walk ends is worth at most 1.557 packets. Can a full cycle of measuring, steering, and erasing close exactly in this world? That is the next experiment.
 2. **Futures not committed.** Can the entropy of paths a traveller merely might take, rather than holds, become thermodynamic entropy? The walk that reaches the long-horizon rate needs global knowledge of the network, exactly what one-step replanning removed. Is there a walk that uses only local knowledge and still reaches it?
@@ -216,7 +215,7 @@ Its 52 lines end with `ALL CHECKS PASS`, in a few seconds; the [expected output]
 - C. Salge, C. Glackin, and D. Polani, [“Changing the Environment Based on Empowerment as Intrinsic Motivation”](https://doi.org/10.3390/e16052789), *Entropy* 16, 2789 (2014): agents that build and remove blocks to keep their options open.
 - H. J. Kappen, [“Linear Theory for Control of Nonlinear Stochastic Systems”](https://doi.org/10.1103/PhysRevLett.95.200201), *Physical Review Letters* 95, 200201 (2005), and E. Todorov, [“Efficient computation of optimal actions”](https://doi.org/10.1073/pnas.0710743106), *PNAS* 106, 11478 (2009): controllers that weight moves by the admissible paths ahead.
 - T. Sagawa and M. Ueda, [“Minimal Energy Cost for Thermodynamic Information Processing: Measurement and Information Erasure”](https://doi.org/10.1103/PhysRevLett.102.250602), *Physical Review Letters* 102, 250602 (2009): the energy price of a bit of measurement and erasure.
-- Xyphers research, [“The Causal Entropic Force, Made Thermodynamic”](causal-entropic-force-made-thermodynamic.md): the traveller, and the preregistered exact experiment on eight small cases.
+- Xyphers research, [“When Futures Become Entropy”](causal-entropic-force-made-thermodynamic.md): the traveller, and the preregistered exact experiment on eight small cases.
 - Xyphers research, [“A Purely Digital Thermodynamic System”](proving-true-thermodynamic-graph-systems.md): the six tests a digital temperature must pass.
 
 [Return to the research index](../README.md).

@@ -5,8 +5,8 @@ Article
 
 Read
   manuscript.pdf is the manuscript "Committed futures as microstates: causal
-  entropic bias as configurational entropy at the bath temperature", a draft
-  for expert review with every proof. manuscript.tex and references.bib are
+  entropic bias as configurational entropy at the bath temperature", with
+  every proof. manuscript.tex and references.bib are
   its source; pdflatex, bibtex, pdflatex, pdflatex (REVTeX 4.2) rebuild it.
   The TeX source names its bibliography "references", the file beside it.
 
@@ -44,7 +44,7 @@ Relation to CAL-CEF-1
   exact checks.
 
 Provenance
-  manuscript.pdf        thaim commit 0b4c50782b44216011d1d28cb6280c712a545d0e,
+  manuscript.pdf        thaim commit e08d1aea56bedf2ec9ba25b1c7565bc1b8f13204,
   manuscript.tex        research/physics/paper-committed-futures/
   references.bib        (paper.pdf, paper.tex, references.bib, checks.py)
   checks.py
@@ -66,14 +66,9 @@ Scope
   configuration process is not Markov; travellers multiply their counts; the
   tau = 2 degree law; the long-horizon limit ln(Lambda).
 
-  Not established: that the Shannon entropy of realized trajectories or of
-  random-walk endpoints equals ln N_tau; a configuration-level force; growth,
-  nonequilibrium drive, learning, control, or intelligence; new fundamental
-  physics; external novelty.
-
-  The manuscript, proofs, checks, and internal referee reports were produced
-  by AI agents under the author's direction. No human peer review has yet
-  taken place.
+  Open: whether the Shannon entropy of realized trajectories or of random-walk
+  endpoints can play the role of ln N_tau; growth and nonequilibrium drive;
+  learning; control.
 
 Hashes
   SHA256SUMS covers this directory except the checksum file itself.

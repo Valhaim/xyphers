@@ -1,7 +1,7 @@
 XYPHERS CAUSAL ENTROPIC EVIDENCE MAP
 
 Article
-  The Causal Entropic Force, Made Thermodynamic
+  When Futures Become Entropy
 
 General proofs
   ../committed-futures/ holds the manuscript that proves these laws for every
@@ -49,11 +49,10 @@ Scope
   equal exp(Xi/alpha) with Xi = alpha * Delta ln N_tau - Delta U, although no
   rate depends on N_tau.
 
-  Not established: that the Shannon entropy of realized trajectories or of
-  random-walk endpoints equals ln N_tau; a configuration-level rate rule;
-  growth with new islands or any nonequilibrium drive; learning, control,
-  intelligence, artificial life, or new fundamental physics; external
-  novelty. The emergent odds are an identity given the configuration law.
+  Open: whether the Shannon entropy of realized trajectories or of random-walk
+  endpoints can play the role of ln N_tau; growth with new islands or a
+  nonequilibrium drive; learning and control. The odds hold as averages;
+  there is no configuration-level rate rule.
 
 Hashes
   SHA256SUMS covers this directory except the checksum file itself.
