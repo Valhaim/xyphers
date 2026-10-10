@@ -2,6 +2,7 @@
 
 Each directory is the inspectable source packet for one public article. Read its `README.txt` first, then use `RUN.txt` for the supported reproduction path. `SHA256SUMS` records the packet contents.
 
+- [Aimed foresight](aimed-foresight/)
 - [Catalyst choice](catalyst-choice/)
 - [Causal entropic](causal-entropic/)
 - [Committed futures](committed-futures/)

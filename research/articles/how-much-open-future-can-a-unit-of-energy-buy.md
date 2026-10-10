@@ -89,7 +89,7 @@ The targeted traveller's yield did rise with its horizon at the two colder pairs
 
 The fourth failed everywhere. At every pair the edge of aim over warmth shrank as the horizon grew: from 1.36 to 1.29 to 1.21 at the warmest pair, from 1.44 to 1.41 to 1.38 at the coldest. Planning further ahead helped the spreading traveller more than it helped the targeted one.
 
-The design points to why. In this world, the plan does one thing besides choosing the walk: it decides which bridges the weather leaves alone, and that protection is free, whoever paid for the bridge. A longer plan covers more of the world with free protection, for the spreading traveller as much as for the targeted one. And the targeted traveller spends fuel on every bridge around its island, whether or not its plan crosses that bridge next. Its aim comes from where it stands, not from where it is going. Foresight that aims the fuel, and protection that has to be paid for, are the next experiment.
+The design points to why. In this world, the plan does one thing besides choosing the walk: it decides which bridges the weather leaves alone, and that protection is free, whoever paid for the bridge. A longer plan covers more of the world with free protection, for the spreading traveller as much as for the targeted one. And the targeted traveller spends fuel on every bridge around its island, whether or not its plan crosses that bridge next. Its aim comes from where it stands, not from where it is going. Foresight that aims the fuel, and protection that has to be paid for, are [the next experiment](does-seeing-further-ahead-buy-more-open-future.md).
 
 ## The price floor
 
@@ -132,7 +132,7 @@ Energy buys open future, and where it is spent matters more than how much is spe
 
 I believe this ratio, open future held per unit of energy flow, is the right yardstick for agency. It applies to anything with a declared energy account and a declared set of futures: a cell, a firm, an economy, a learning machine. It says how much of the future an agent keeps open with what it spends, and the floor says how much more it could keep.
 
-The failed predictions are the most useful part. They show that a longer horizon is not foresight unless something reads it: here the plan protected bridges for free, and the fuel never looked at it. The next experiment gives the traveller fuel that it aims along its own plan, and makes protection something it has to pay for. Then the question becomes sharp: does seeing further ahead let an agent buy more open future per unit of energy?
+The failed predictions are the most useful part. They show that a longer horizon is not foresight unless something reads it: here the plan protected bridges for free, and the fuel never looked at it. The next experiment gives the traveller fuel that it aims along its own plan, and makes protection something it has to pay for. Then the question becomes sharp: does seeing further ahead let an agent buy more open future per unit of energy? [That experiment has run](does-seeing-further-ahead-buy-more-open-future.md): at equal power, aim pays more the larger the world, and preparing the road beyond the next crossing costs more than it opens.
 
 ## Read, inspect, reproduce
 

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" role="img" aria-label="Two line charts for three islands, three steps ahead, at three pairs of stores, as fuel is aimed one, two, or three steps along the route. Left: the open future held rises with the depth of aim. Right: the edge at equal power over warming falls at every step, and the nearest aim beats LOCAL. Values: cold 3 hot 2: H 0.110, 0.137, 0.150, E 1.37, 1.18, 1.14, LOCAL E 1.35; cold 8 hot 2: H 0.156, 0.193, 0.213, E 1.44, 1.21, 1.17, LOCAL E 1.42; cold 6 hot 3: H 0.113, 0.140, 0.154, E 1.42, 1.20, 1.16, LOCAL E 1.41.">
+<rect width="680" height="400" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">Aiming further along the route, three islands, three steps ahead</text>
+<text x="200.0" y="66.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#a9aab3" text-anchor="middle">open future held, H</text>
+<line x1="70" y1="300.0" x2="330" y2="300.0" stroke="#252936" stroke-width="1"/>
+<text x="62.0" y="305.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.0</text>
+<line x1="70" y1="212.0" x2="330" y2="212.0" stroke="#252936" stroke-width="1"/>
+<text x="62.0" y="217.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.1</text>
+<line x1="70" y1="124.0" x2="330" y2="124.0" stroke="#252936" stroke-width="1"/>
+<text x="62.0" y="129.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.2</text>
+<text x="100.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-1</text>
+<text x="200.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-2</text>
+<text x="300.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-3</text>
+<polyline points="100.0,203.2 200.0,179.9 300.0,167.6" fill="none" stroke="#ffbd68" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="100.0" cy="203.2" r="4.5" fill="#ffbd68"/>
+<circle cx="200.0" cy="179.9" r="4.5" fill="#ffbd68"/>
+<circle cx="300.0" cy="167.6" r="4.5" fill="#ffbd68"/>
+<polyline points="100.0,162.6 200.0,130.5 300.0,112.4" fill="none" stroke="#ff633d" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="100.0" cy="162.6" r="4.5" fill="#ff633d"/>
+<circle cx="200.0" cy="130.5" r="4.5" fill="#ff633d"/>
+<circle cx="300.0" cy="112.4" r="4.5" fill="#ff633d"/>
+<polyline points="100.0,200.1 200.0,177.2 300.0,164.5" fill="none" stroke="#a9aab3" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="100.0" cy="200.1" r="4.5" fill="#a9aab3"/>
+<circle cx="200.0" cy="177.2" r="4.5" fill="#a9aab3"/>
+<circle cx="300.0" cy="164.5" r="4.5" fill="#a9aab3"/>
+<text x="520.0" y="66.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#a9aab3" text-anchor="middle">edge at equal power, E</text>
+<line x1="390" y1="300.0" x2="650" y2="300.0" stroke="#252936" stroke-width="1"/>
+<text x="382.0" y="305.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.00</text>
+<line x1="390" y1="190.0" x2="650" y2="190.0" stroke="#252936" stroke-width="1"/>
+<text x="382.0" y="195.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.25</text>
+<line x1="390" y1="80.0" x2="650" y2="80.0" stroke="#252936" stroke-width="1"/>
+<text x="382.0" y="85.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.50</text>
+<text x="420.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-1</text>
+<text x="520.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-2</text>
+<text x="620.0" y="324.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">AIM-3</text>
+<polyline points="420.0,136.8 520.0,222.1 620.0,236.8" fill="none" stroke="#ffbd68" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="420.0" cy="136.8" r="4.5" fill="#ffbd68"/>
+<circle cx="520.0" cy="222.1" r="4.5" fill="#ffbd68"/>
+<circle cx="620.0" cy="236.8" r="4.5" fill="#ffbd68"/>
+<line x1="394" y1="143.8" x2="414" y2="143.8" stroke="#ffbd68" stroke-width="2" stroke-dasharray="3 3"/>
+<polyline points="420.0,108.4 520.0,207.9 620.0,225.0" fill="none" stroke="#ff633d" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="420.0" cy="108.4" r="4.5" fill="#ff633d"/>
+<circle cx="520.0" cy="207.9" r="4.5" fill="#ff633d"/>
+<circle cx="620.0" cy="225.0" r="4.5" fill="#ff633d"/>
+<line x1="394" y1="114.0" x2="414" y2="114.0" stroke="#ff633d" stroke-width="2" stroke-dasharray="3 3"/>
+<polyline points="420.0,114.2 520.0,211.6 620.0,228.1" fill="none" stroke="#a9aab3" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="420.0" cy="114.2" r="4.5" fill="#a9aab3"/>
+<circle cx="520.0" cy="211.6" r="4.5" fill="#a9aab3"/>
+<circle cx="620.0" cy="228.1" r="4.5" fill="#a9aab3"/>
+<line x1="394" y1="119.2" x2="414" y2="119.2" stroke="#a9aab3" stroke-width="2" stroke-dasharray="3 3"/>
+<text x="404.0" y="292.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="400" fill="#878a96" text-anchor="start">warming = 1</text>
+<line x1="70" y1="352" x2="90" y2="352" stroke="#ffbd68" stroke-width="3"/>
+<text x="98.0" y="357.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">cold ×3 · hot ×2</text>
+<line x1="260" y1="352" x2="280" y2="352" stroke="#ff633d" stroke-width="3"/>
+<text x="288.0" y="357.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">cold ×8 · hot ×2</text>
+<line x1="450" y1="352" x2="470" y2="352" stroke="#a9aab3" stroke-width="3"/>
+<text x="478.0" y="357.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">cold ×6 · hot ×3</text>
+<text x="390.0" y="384.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="start">dashes at the left of the right panel: LOCAL</text>
+</svg>

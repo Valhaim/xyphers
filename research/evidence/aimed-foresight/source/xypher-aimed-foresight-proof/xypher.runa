@@ -1,0 +1,424 @@
+-- CAL-CEF-4: does seeing further ahead let an agent buy more open future
+-- per unit of energy?
+--
+-- Prospective Futuruna construction for the boundary
+-- research/physics/derivable/xypher-aimed-foresight-boundary.md
+-- (sections 1, 2, and 11), frozen at commit
+-- cec8eb84034144a6adae018fd4df8cefbce64b20. It declares the archipelago,
+-- routes as intentions (V^tau, needing no bridge), the step rule, the two
+-- stores with their ratios, the four channel classes with their rules and
+-- rates (WEATHER unconditional on every bridge), the LOCAL, two-sided AIM-k,
+-- and GLOBAL agents by their permission sets A(r, t), the undriven
+-- partition, and the observables H, J, Y, rho, and E. It does not execute
+-- any world and never consumes a steady state: H, J, Y, rho, and E are
+-- declared as functions of expectations supplied from outside. No rate
+-- below reads N_2, H, J, Y, E, or eta.
+--
+-- All quantities are Int or ExactRatio; no logarithm is evaluated.
+
+# ExactRatio(numerator: Int, denominator: Int)
+
+-- ARCHIPELAGO AND CONFIGURATIONS (boundary 1.1)
+
+-- islands = N, horizon = tau, home = 0.
+# Archipelago(islands: Int, horizon: Int, home: Int)
+
+-- A configuration lists one flag per candidate bridge, in lexicographic
+-- candidate order: 1 = built, 0 = not built. Bit i of the configuration
+-- index is flag i.
+# Configuration(flags: List(Int))
+
+> primary_archipelago() -> Archipelago { Archipelago(3, 2, 0) }
+
+> candidate_count(arch: Archipelago) -> Int {
+    arch.islands * (arch.islands - 1) / 2
+}
+
+-- Lexicographic index of the candidate bridge {u, w} with u < w.
+> ordered_bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    u * (2 * arch.islands - u - 1) / 2 + (w - u - 1)
+}
+
+> bridge_index(arch: Archipelago, u: Int, w: Int) -> Int {
+    if u < w { ordered_bridge_index(arch, u, w) }
+    else { ordered_bridge_index(arch, w, u) }
+}
+
+> flag_at(flags: List(Int), index: Int) -> Int {
+    if length(flags) == 0 { 0 }
+    else {
+        if index == 0 { head(flags) }
+        else { flag_at(tail(flags), index - 1) }
+    }
+}
+
+> island_in_range(arch: Archipelago, v: Int) -> Bool {
+    v >= 0 && v < arch.islands
+}
+
+-- A candidate bridge joins two distinct islands of the archipelago.
+> is_candidate(arch: Archipelago, u: Int, w: Int) -> Bool {
+    u != w && island_in_range(arch, u) && island_in_range(arch, w)
+}
+
+> bridge_built(arch: Archipelago, config: Configuration, v: Int, w: Int) -> Bool {
+    if is_candidate(arch, v, w) { flag_at(config.flags, bridge_index(arch, v, w)) == 1 }
+    else { false }
+}
+
+> built_count(flags: List(Int)) -> Int {
+    if length(flags) == 0 { 0 }
+    else { head(flags) + built_count(tail(flags)) }
+}
+
+-- ROUTES AS INTENTIONS (boundary 1.1)
+
+-- A route is (v_1, ..., v_tau) in V^tau, held as the walk
+-- (v_0 = home, v_1, ..., v_tau). Every route is a state of the world,
+-- whatever bridges exist: a route is an intention, not a shield.
+> islands_in_range(arch: Archipelago, walk: List(Int)) -> Bool {
+    if length(walk) == 0 { true }
+    else { island_in_range(arch, head(walk)) && islands_in_range(arch, tail(walk)) }
+}
+
+> route_declared(arch: Archipelago, walk: List(Int)) -> Bool {
+    if length(walk) == arch.horizon + 1 {
+        head(walk) == arch.home && islands_in_range(arch, walk)
+    } else { false }
+}
+
+> island_at(walk: List(Int), index: Int) -> Int {
+    if index == 0 { head(walk) }
+    else { island_at(tail(walk), index - 1) }
+}
+
+-- Step s of a route goes from v_s to v_(s+1); it stays or it moves.
+> step_moves(walk: List(Int), step: Int) -> Bool {
+    island_at(walk, step) != island_at(walk, step + 1)
+}
+
+-- Whether step s moves on the bridge {u, w}.
+> step_uses_bridge(walk: List(Int), step: Int, u: Int, w: Int) -> Bool {
+    = a = island_at(walk, step)
+    = c = island_at(walk, step + 1)
+    (a == u && c == w) || (a == w && c == u)
+}
+
+-- A step is open when it stays or its bridge is built; a worn bridge
+-- blocks the traveller's step until WEATHER or FUEL rebuilds it.
+> step_open(arch: Archipelago, config: Configuration, walk: List(Int), step: Int) -> Bool {
+    = a = island_at(walk, step)
+    = c = island_at(walk, step + 1)
+    a == c || bridge_built(arch, config, a, c)
+}
+
+-- SYSTEM STATE AND ENERGY (boundary 1.1)
+
+-- z = (G, r, t): configuration, held route, cursor 0 <= t <= tau.
+# SystemState(config: Configuration, walk: List(Int), cursor: Int)
+
+-- x(z) = v_t.
+> traveller_island(state: SystemState) -> Int {
+    island_at(state.walk, state.cursor)
+}
+
+-- U(z) = lambda |G|, lambda = 1.
+> lambda_energy() -> Int { 1 }
+
+> system_energy(state: SystemState) -> Int {
+    lambda_energy() * built_count(state.config.flags)
+}
+
+-- THE OPEN FUTURE (boundary 2): N_2(G, x) = e_x^T (I + A_G)^2 1, two-step
+-- walks from the traveller's island, each step a stay or a crossing. It is
+-- an observable only; no rate reads it.
+> walks_over(arch: Archipelago, config: Configuration, v: Int, steps: Int, next: Int) -> Int {
+    if next >= arch.islands { 0 }
+    else {
+        = open = v == next || bridge_built(arch, config, v, next)
+        = here = if open { count_walks(arch, config, next, steps - 1) } else { 0 }
+        here + walks_over(arch, config, v, steps, next + 1)
+    }
+}
+
+> count_walks(arch: Archipelago, config: Configuration, v: Int, steps: Int) -> Int {
+    if steps == 0 { 1 }
+    else { walks_over(arch, config, v, steps, 0) }
+}
+
+> open_future(arch: Archipelago, state: SystemState) -> Int {
+    count_walks(arch, state.config, traveller_island(state), 2)
+}
+
+-- TWO STORES (boundary 1.2)
+
+-- Each store is declared by its equation of state: its arrangements
+-- multiply by its ratio per packet it holds, so
+-- alpha_i = lambda / ln(ratio_i). b_c > b_h >= 2 is declared, not
+-- validated here; the verifier tests it through J > 0 (G08 check 1).
+# Store = Cold | Hot
+
+# StoreLaw(store: Store, ratio: Int)
+
+# Stores(cold: StoreLaw, hot: StoreLaw)
+
+> declared_stores(cold_ratio: Int, hot_ratio: Int) -> Stores {
+    = cold = StoreLaw(Cold, cold_ratio)
+    = hot = StoreLaw(Hot, hot_ratio)
+    Stores(cold, hot)
+}
+
+> primary_stores() -> Stores { declared_stores(8, 2) }
+
+> store_ratio(stores: Stores, store: Store) -> Int {
+    match store { | Cold -> stores.cold.ratio | Hot -> stores.hot.ratio }
+}
+
+-- AGENTS (boundary 1.4). Agents differ only in the permission set A(r, t).
+-- LOCAL: the bridges incident to x(z). AIM-k (1 <= k <= tau): the bridges
+-- of the moving steps max(0, t - k), ..., min(tau, t + k) - 1 of the route,
+-- ahead or behind. GLOBAL: every candidate bridge.
+# Agent = LocalAgent | AimAgent(depth: Int) | GlobalAgent
+
+> max_of(a: Int, b: Int) -> Int { if a > b { a } else { b } }
+
+> min_of(a: Int, b: Int) -> Int { if a < b { a } else { b } }
+
+-- Whether some moving step among first, ..., last - 1 uses {u, w}.
+> window_uses_bridge(walk: List(Int), first: Int, last: Int, u: Int, w: Int) -> Bool {
+    if first >= last { false }
+    else {
+        = here = step_moves(walk, first) && step_uses_bridge(walk, first, u, w)
+        here || window_uses_bridge(walk, first + 1, last, u, w)
+    }
+}
+
+> aim_permits(arch: Archipelago, state: SystemState, depth: Int, u: Int, w: Int) -> Bool {
+    = first = max_of(0, state.cursor - depth)
+    = last = min_of(arch.horizon, state.cursor + depth)
+    window_uses_bridge(state.walk, first, last, u, w)
+}
+
+-- u in A(r, t) as the bridge {u, w}; reads the route and the cursor only,
+-- which no bridge change alters, so every FUEL build has its return.
+> fuel_permitted(arch: Archipelago, agent: Agent, state: SystemState, u: Int, w: Int) -> Bool {
+    = island = traveller_island(state)
+    = candidate = is_candidate(arch, u, w)
+    match agent {
+        | LocalAgent -> candidate && (island == u || island == w)
+        | AimAgent(depth: k) -> candidate && aim_permits(arch, state, k, u, w)
+        | GlobalAgent -> candidate
+    }
+}
+
+-- CHANNELS (boundary 1.3). Every channel is listed with its reverse in the
+-- same class, on the same bridge, with the same store.
+
+# ChannelClass = Step | Replan | Weather | Fuel
+
+# PacketDirection = Neutral | FromStore | IntoStore
+
+-- The undriven world is STEP, REPLAN, and WEATHER; FUEL drives it.
+> undriven(class: ChannelClass) -> Bool {
+    match class { | Step -> true | Replan -> true | Weather -> true | Fuel -> false }
+}
+
+-- WEATHER is the environment and draws on the cold store; FUEL is the
+-- Praxion and draws on the hot store. STEP and REPLAN touch no store.
+> class_store_ratio(stores: Stores, class: ChannelClass) -> Int {
+    match class {
+        | Step -> 1
+        | Replan -> 1
+        | Weather -> store_ratio(stores, Cold)
+        | Fuel -> store_ratio(stores, Hot)
+    }
+}
+
+> class_moves_packets(class: ChannelClass) -> Bool {
+    match class { | Step -> false | Replan -> false | Weather -> true | Fuel -> true }
+}
+
+-- STEP: (G, r, t) <-> (G, r, t + 1), rate 1 each way, present exactly when
+-- step t stays or its bridge is in G.
+> may_step_forward(arch: Archipelago, state: SystemState) -> Bool {
+    if state.cursor < arch.horizon { step_open(arch, state.config, state.walk, state.cursor) }
+    else { false }
+}
+
+> may_step_back(arch: Archipelago, state: SystemState) -> Bool {
+    if state.cursor > 0 { step_open(arch, state.config, state.walk, state.cursor - 1) }
+    else { false }
+}
+
+-- CRYSTAL: REPLAN at t = 0 to every other route of V^tau, rate 1.
+> may_replan(arch: Archipelago, state: SystemState, written: List(Int)) -> Bool {
+    = at_start = state.cursor == 0
+    = declared = route_declared(arch, written)
+    = changes = if written == state.walk { false } else { true }
+    at_start && declared && changes
+}
+
+-- WEATHER (environment), unconditionally, at every state and for every
+-- candidate bridge: build when absent, wear when present. No bridge is
+-- protected for free.
+> may_weather_build(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    = absent = if bridge_built(arch, state.config, u, w) { false } else { true }
+    is_candidate(arch, u, w) && absent
+}
+
+> may_weather_wear(arch: Archipelago, state: SystemState, u: Int, w: Int) -> Bool {
+    is_candidate(arch, u, w) && bridge_built(arch, state.config, u, w)
+}
+
+-- FUEL (Praxion): for every bridge of A(r, t), build when absent, return
+-- when present.
+> may_fuel_build(arch: Archipelago, agent: Agent, state: SystemState, u: Int, w: Int) -> Bool {
+    fuel_permitted(arch, agent, state, u, w) && may_weather_build(arch, state, u, w)
+}
+
+> may_fuel_return(arch: Archipelago, agent: Agent, state: SystemState, u: Int, w: Int) -> Bool {
+    fuel_permitted(arch, agent, state, u, w) && may_weather_wear(arch, state, u, w)
+}
+
+-- Packet direction of a channel: a build moves one packet from the class's
+-- store into the bridge, a removal one packet back into that store.
+> packet_direction(arch: Archipelago, state: SystemState, u: Int, w: Int, class: ChannelClass) -> PacketDirection {
+    if class_moves_packets(class) {
+        if bridge_built(arch, state.config, u, w) { IntoStore } else { FromStore }
+    } else { Neutral }
+}
+
+-- RATE RULE. The inputs are the state, the bridge {u, w}, the class, the
+-- store's ratio, and whether the bridge is in the agent's A(r, t): unit
+-- rate for STEP, REPLAN, and every build; the store's ratio for a removal,
+-- which is local detailed balance 1 : b_i with that store; no FUEL channel
+-- outside A(r, t). No rate reads N_2, H, J, Y, E, or eta.
+> channel_rate(arch: Archipelago, state: SystemState, u: Int, w: Int, class: ChannelClass, ratio: Int, permitted: Bool) -> Int {
+    if class_moves_packets(class) {
+        = granted = match class { | Fuel -> permitted | Step -> true | Replan -> true | Weather -> true }
+        if granted {
+            if bridge_built(arch, state.config, u, w) { ratio } else { 1 }
+        } else { 0 }
+    } else { 1 }
+}
+
+-- OBSERVABLES (boundary 2). They are declared, not evaluated: the
+-- expectations come from the exact steady state of the verifier.
+
+# Observable = OpenFutureHeld | FuelFlow | YieldPerFuel | BridgeDensity | EdgeAtEqualPower
+
+-- Net packets per unit time from the hot store at one state, summed over
+-- the agent's FUEL channels on candidates {u, w} with u < w: +1 per build,
+-- -b_h per return. J is the expectation of this integrand under p.
+> fuel_integrand_pair(arch: Archipelago, stores: Stores, agent: Agent, state: SystemState, u: Int, w: Int) -> Int {
+    if may_fuel_build(arch, agent, state, u, w) { 1 }
+    else {
+        if may_fuel_return(arch, agent, state, u, w) { 0 - store_ratio(stores, Hot) } else { 0 }
+    }
+}
+
+> fuel_integrand_from(arch: Archipelago, stores: Stores, agent: Agent, state: SystemState, u: Int, w: Int) -> Int {
+    if u >= arch.islands { 0 }
+    else {
+        if w >= arch.islands { fuel_integrand_from(arch, stores, agent, state, u + 1, u + 2) }
+        else { fuel_integrand_pair(arch, stores, agent, state, u, w) + fuel_integrand_from(arch, stores, agent, state, u, w + 1) }
+    }
+}
+
+> fuel_integrand(arch: Archipelago, stores: Stores, agent: Agent, state: SystemState) -> Int {
+    fuel_integrand_from(arch, stores, agent, state, 0, 1)
+}
+
+> ratio_sum(a: ExactRatio, b: ExactRatio) -> ExactRatio {
+    ExactRatio(a.numerator * b.denominator + b.numerator * a.denominator, a.denominator * b.denominator)
+}
+
+> ratio_difference(a: ExactRatio, b: ExactRatio) -> ExactRatio {
+    ExactRatio(a.numerator * b.denominator - b.numerator * a.denominator, a.denominator * b.denominator)
+}
+
+> ratio_product(a: ExactRatio, b: ExactRatio) -> ExactRatio {
+    ExactRatio(a.numerator * b.numerator, a.denominator * b.denominator)
+}
+
+-- Left unreduced; the verifier compares by cross-multiplication.
+> ratio_quotient(a: ExactRatio, b: ExactRatio) -> ExactRatio {
+    ExactRatio(a.numerator * b.denominator, a.denominator * b.numerator)
+}
+
+> integer_ratio(value: Int) -> ExactRatio { ExactRatio(value, 1) }
+
+-- H = <N_2(G, x)>_p - <N_2(G, x)>_(pi_c): open future held above the
+-- undriven world.
+> open_future_held(expected_driven: ExactRatio, expected_undriven: ExactRatio) -> ExactRatio {
+    ratio_difference(expected_driven, expected_undriven)
+}
+
+-- Y = H / J: open future per unit of fuel flow, defined for J != 0.
+> yield_per_fuel(held: ExactRatio, fuel_flow: ExactRatio) -> ExactRatio {
+    ratio_quotient(held, fuel_flow)
+}
+
+-- rho = <|G|>_p / K, the agent's mean bridge density.
+> bridge_density(arch: Archipelago, expected_bridges: ExactRatio) -> ExactRatio {
+    ratio_quotient(expected_bridges, integer_ratio(candidate_count(arch)))
+}
+
+-- Phi_N(r) = 1 + (N - 1) r + (N - 1) r (2 + (N - 2) r): <N_2(G, x)> under
+-- independent bridges each present with probability r.
+> phi(arch: Archipelago, r: ExactRatio) -> ExactRatio {
+    = others = ratio_product(integer_ratio(arch.islands - 1), r)
+    = inner = ratio_sum(integer_ratio(2), ratio_product(integer_ratio(arch.islands - 2), r))
+    ratio_sum(ratio_sum(integer_ratio(1), others), ratio_product(others, inner))
+}
+
+-- r_0 = 1/(1 + b_c), the undriven bridge probability.
+> cold_density(stores: Stores) -> ExactRatio {
+    ExactRatio(1, 1 + store_ratio(stores, Cold))
+}
+
+-- The warming rival at equal power: H_warm = Phi_N(rho) - Phi_N(r_0), and
+-- the edge E = H / H_warm, defined for H_warm != 0.
+> warm_held(arch: Archipelago, stores: Stores, density: ExactRatio) -> ExactRatio {
+    ratio_difference(phi(arch, density), phi(arch, cold_density(stores)))
+}
+
+> edge_at_equal_power(arch: Archipelago, stores: Stores, held: ExactRatio, density: ExactRatio) -> ExactRatio {
+    ratio_quotient(held, warm_held(arch, stores, density))
+}
+
+-- The undriven law pi_c ~ b_c^(-|G|) as an integer weight b_c^(K - |G|).
+> pow_nonnegative(base: Int, exponent: Int) -> Int {
+    if exponent <= 0 { 1 }
+    else { base * pow_nonnegative(base, exponent - 1) }
+}
+
+> undriven_weight(arch: Archipelago, stores: Stores, config: Configuration) -> Int {
+    pow_nonnegative(store_ratio(stores, Cold), candidate_count(arch) - built_count(config.flags))
+}
+
+-- XYPHER SLOT READING (boundary 5, G10, and 11)
+
+# GraphSubstrate = ConfigurationRouteCursor
+# Crystal = ReplanOverAllRoutes
+# Thermo = TwoDeclaredStoresEnergyLambdaBridges
+# Praxion = BaseActorWithFuelMoves
+# Environment = WeatherOnColdStore
+# Ruby = EmptyRuby
+# Opal = AbsentOpal
+# XypherSlotReading(archipelago: Archipelago, stores: Stores, substrate: GraphSubstrate, crystal: Crystal, thermo: Thermo, praxion: Praxion, environment: Environment, ruby: Ruby, opal: Opal)
+
+-- A driven Markov graph system with two declared stores read through
+-- Xypher slots. Ruby is empty and Opal is absent; nothing here learns.
+> aimed_foresight_slot_reading() -> XypherSlotReading {
+    = arch = primary_archipelago()
+    = stores = primary_stores()
+    XypherSlotReading(arch, stores, ConfigurationRouteCursor, ReplanOverAllRoutes, TwoDeclaredStoresEnergyLambdaBridges, BaseActorWithFuelMoves, WeatherOnColdStore, EmptyRuby, AbsentOpal)
+}
+
+-- The agents of the primary witness (3, 2, 8, 2) in section 3 order.
+> primary_agents() -> List(Agent) {
+    = aim_one = AimAgent(1)
+    = aim_two = AimAgent(2)
+    [LocalAgent, aim_one, aim_two, GlobalAgent]
+}
