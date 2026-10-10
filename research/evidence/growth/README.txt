@@ -25,8 +25,8 @@ Inspect and run
   the expected results.
 
 Provenance
-  Every file except README.txt, RUN.txt and SHA256SUMS is a byte-for-byte
-  copy from thaim commit 93f14e7d:
+  Every file except README.txt, RUN.txt and SHA256SUMS is an exact copy of
+  the original at thaim commit 93f14e7d:
     research/physics/derivable/xypher-alpha-tau-constitutive-boundary.md
     research/physics/derivable/xypher-alpha-tau-constitutive-result.md
     research/physics/derivable/xypher-endogenous-thermodynamics-boundary.md

@@ -11,7 +11,8 @@ Read
   stated claims. It was frozen before any evaluator ran.
   RESULT.md records the single frozen execution: verdict, review chronology,
   file digests, toolchain, and the complete report.
-  expected-report.txt is that report, byte for byte.
+  expected-report.txt is the report that run printed; compare your own run
+  with it.
 
 Inspect and run
   source/xypher-control-information-proof/ is the dependency-free Rust
@@ -28,7 +29,8 @@ Provenance
   source/           thaim commit 6b517442cc35d4721cdee72ad2998b31a825934a,
                     research/physics/xypher-control-information-proof/
                     (Git tree 11b396bbccdffedc539860ea5bfc6616fe790bcf)
-  These files are byte-for-byte copies. README.txt, RUN.txt, and SHA256SUMS
+  These files are exact copies of the originals at those commits.
+  README.txt, RUN.txt, and SHA256SUMS
   were written for this packet; expected-report.txt is copied from the
   report in RESULT.md section 3.1.
 

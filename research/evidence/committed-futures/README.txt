@@ -44,11 +44,12 @@ Relation to CAL-CEF-1
   exact checks.
 
 Provenance
-  manuscript.pdf        thaim commit e08d1aea56bedf2ec9ba25b1c7565bc1b8f13204,
+  manuscript.pdf        thaim commit 14805f54b25f7859ea3c807937c251d56569c2e6,
   manuscript.tex        research/physics/paper-committed-futures/
   references.bib        (paper.pdf, paper.tex, references.bib, checks.py)
   checks.py
-  These four files are byte-for-byte copies; the manuscript files were
+  These four files are exact copies of the originals at that commit; the
+  manuscript files were
   renamed from paper.*. expected-checks.txt is the output of checks.py at
   that commit under Python 3.9.6. README.txt, RUN.txt, and SHA256SUMS
   were written for this packet.

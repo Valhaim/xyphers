@@ -20,7 +20,7 @@ To compare the whole report with the recorded run:
 
   cargo run --locked --quiet | diff ../../expected-report.txt -
 
-No output from diff means the replay is identical. Its SHA-256 is
+No output from diff means your run reproduced the recorded report exactly. Its SHA-256 is
 
   ca303e0db354dbd17d71381efc6fb0a4a814fabfba041a8ce5185263217be7e9
 

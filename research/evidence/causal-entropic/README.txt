@@ -14,7 +14,8 @@ Read
   stated claims and non-claims. It was frozen before any evaluator ran.
   RESULT.md records the single frozen execution: verdict, review chronology,
   file digests, toolchain, and the complete report.
-  expected-report.txt is that report, byte for byte.
+  expected-report.txt is the report that run printed; compare your own run
+  with it.
 
 Inspect and run
   source/xypher-causal-entropic-proof/ is the dependency-free Rust verifier
@@ -31,7 +32,8 @@ Provenance
   source/           thaim commit 31307b6171bead8c502fb767b8dca2a398f1d178,
                     research/physics/xypher-causal-entropic-proof/
                     (Git tree e170da4e0e240abe027dac85e577b88ee0fd44d5)
-  These files are byte-for-byte copies. README.txt, RUN.txt, and SHA256SUMS
+  These files are exact copies of the originals at those commits.
+  README.txt, RUN.txt, and SHA256SUMS
   were written for this packet; expected-report.txt is copied from the
   report in RESULT.md section 3.1.
 

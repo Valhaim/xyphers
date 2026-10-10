@@ -16,7 +16,7 @@ To compare with the recorded output:
 
   python3 checks.py | diff expected-checks.txt -
 
-No output from diff means the replay is identical.
+No output from diff means your run reproduced the recorded report exactly.
 
 To rebuild the manuscript from its source (REVTeX 4.2):
 
