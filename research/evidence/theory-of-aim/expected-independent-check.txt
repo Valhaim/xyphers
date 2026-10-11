@@ -1,0 +1,82 @@
+(3,2,5,2,v=1,R=2) LOCAL  orbits=114 H~0.3497 J~0.6698 E~1.3943 agrees
+(3,2,5,2,v=1,R=2) AIM-1  orbits=114 H~0.1487 J~0.2833 E~1.4106 agrees
+(3,2,5,2,v=1,R=2) AIM-2  orbits=114 H~0.1785 J~0.3860 E~1.2407 agrees
+(3,2,5,2,v=1,R=2) GLOBAL orbits=114 H~0.3765 J~1.0000 E~1.0000 agrees
+(3,2,5,2,v=4,R=2) LOCAL  orbits=114 H~0.3459 J~0.6753 E~1.3676 agrees
+(3,2,5,2,v=4,R=2) AIM-1  orbits=114 H~0.1518 J~0.2924 E~1.3945 agrees
+(3,2,5,2,v=4,R=2) AIM-2  orbits=114 H~0.1819 J~0.3967 E~1.2298 agrees
+(3,2,5,2,v=4,R=2) GLOBAL orbits=114 H~0.3765 J~1.0000 E~1.0000 agrees
+(3,2,5,2,v=16,R=2) LOCAL  orbits=114 H~0.3404 J~0.6833 E~1.3298 agrees
+(3,2,5,2,v=16,R=2) AIM-1  orbits=114 H~0.1533 J~0.3003 E~1.3714 agrees
+(3,2,5,2,v=16,R=2) AIM-2  orbits=114 H~0.1841 J~0.4057 E~1.2171 agrees
+(3,2,5,2,v=16,R=2) GLOBAL orbits=114 H~0.3765 J~1.0000 E~1.0000 agrees
+(4,2,5,2,v=1,R=2) LOCAL  orbits=612 H~0.5503 J~1.0070 E~1.7617 agrees
+(4,2,5,2,v=1,R=2) AIM-1  orbits=612 H~0.1822 J~0.3308 E~1.7938 agrees
+(4,2,5,2,v=1,R=2) AIM-2  orbits=612 H~0.2129 J~0.4687 E~1.4764 agrees
+(4,2,5,2,v=1,R=2) GLOBAL orbits=612 H~0.6296 J~2.0000 E~1.0000 agrees
+(4,2,5,2,v=4,R=2) LOCAL  orbits=612 H~0.5407 J~1.0200 E~1.7084 agrees
+(4,2,5,2,v=4,R=2) AIM-1  orbits=612 H~0.1845 J~0.3408 E~1.7624 agrees
+(4,2,5,2,v=4,R=2) AIM-2  orbits=612 H~0.2164 J~0.4828 E~1.4561 agrees
+(4,2,5,2,v=4,R=2) GLOBAL orbits=612 H~0.6296 J~2.0000 E~1.0000 agrees
+(4,2,5,2,v=16,R=2) LOCAL  orbits=612 H~0.5263 J~1.0391 E~1.6317 agrees
+(4,2,5,2,v=16,R=2) AIM-1  orbits=612 H~0.1843 J~0.3493 E~1.7172 agrees
+(4,2,5,2,v=16,R=2) AIM-2  orbits=612 H~0.2174 J~0.4931 E~1.4319 agrees
+(4,2,5,2,v=16,R=2) GLOBAL orbits=612 H~0.6296 J~2.0000 E~1.0000 agrees
+(3,1,5,2,v=1,R=2) LOCAL  orbits= 28 H~0.3502 J~0.6691 E~1.3977 agrees
+(3,1,5,2,v=1,R=2) AIM-1  orbits= 28 H~0.1211 J~0.2298 E~1.4177 agrees
+(3,1,5,2,v=1,R=2) GLOBAL orbits= 28 H~0.3765 J~1.0000 E~1.0000 agrees
+(4,1,5,2,v=1,R=2) LOCAL  orbits=120 H~0.5515 J~1.0054 E~1.7684 agrees
+(4,1,5,2,v=1,R=2) AIM-1  orbits=120 H~0.1455 J~0.2625 E~1.8067 agrees
+(4,1,5,2,v=1,R=2) GLOBAL orbits=120 H~0.6296 J~2.0000 E~1.0000 agrees
+(5,1,5,2,v=1,R=2) LOCAL  orbits=660 H~0.7709 J~1.3420 E~2.1185 agrees
+(5,1,5,2,v=1,R=2) AIM-1  orbits=660 H~0.1650 J~0.2838 E~2.1725 agrees
+(5,1,5,2,v=1,R=2) GLOBAL orbits=660 H~0.9259 J~3.3333 E~1.0000 agrees
+(3,3,5,2,v=1,R=3) LOCAL  orbits=440 H~0.8972 J~0.6701 E~1.3455 agrees
+(3,3,5,2,v=1,R=3) AIM-1  orbits=440 H~0.4137 J~0.3093 E~1.3609 agrees
+(3,3,5,2,v=1,R=3) AIM-2  orbits=440 H~0.5207 J~0.4499 E~1.1720 agrees
+(3,3,5,2,v=1,R=3) AIM-3  orbits=440 H~0.5779 J~0.5123 E~1.1396 agrees
+(3,3,5,2,v=1,R=3) GLOBAL orbits=440 H~1.0065 J~1.0000 E~1.0000 agrees
+(3,2,12,3,v=1,R=2) LOCAL  orbits=114 H~0.2501 J~1.0597 E~1.4466 agrees
+(3,2,12,3,v=1,R=2) AIM-1  orbits=114 H~0.1033 J~0.4371 E~1.4562 agrees
+(3,2,12,3,v=1,R=2) AIM-2  orbits=114 H~0.1233 J~0.5973 E~1.2700 agrees
+(3,2,12,3,v=1,R=2) GLOBAL orbits=114 H~0.2602 J~1.5882 E~1.0000 agrees
+(3,2,12,3,v=4,R=2) LOCAL  orbits=114 H~0.2489 J~1.0618 E~1.4368 agrees
+(3,2,12,3,v=4,R=2) AIM-1  orbits=114 H~0.1044 J~0.4434 E~1.4509 agrees
+(3,2,12,3,v=4,R=2) AIM-2  orbits=114 H~0.1246 J~0.6067 E~1.2641 agrees
+(3,2,12,3,v=4,R=2) GLOBAL orbits=114 H~0.2602 J~1.5882 E~1.0000 agrees
+(3,2,12,3,v=16,R=2) LOCAL  orbits=114 H~0.2464 J~1.0661 E~1.4170 agrees
+(3,2,12,3,v=16,R=2) AIM-1  orbits=114 H~0.1051 J~0.4498 E~1.4396 agrees
+(3,2,12,3,v=16,R=2) AIM-2  orbits=114 H~0.1257 J~0.6153 E~1.2565 agrees
+(3,2,12,3,v=16,R=2) GLOBAL orbits=114 H~0.2602 J~1.5882 E~1.0000 agrees
+(4,2,12,3,v=1,R=2) LOCAL  orbits=612 H~0.3841 J~1.5903 E~1.8753 agrees
+(4,2,12,3,v=1,R=2) AIM-1  orbits=612 H~0.1225 J~0.5059 E~1.8955 agrees
+(4,2,12,3,v=1,R=2) AIM-2  orbits=612 H~0.1413 J~0.7154 E~1.5435 agrees
+(4,2,12,3,v=1,R=2) GLOBAL orbits=612 H~0.4141 J~3.1765 E~1.0000 agrees
+(4,2,12,3,v=4,R=2) LOCAL  orbits=612 H~0.3812 J~1.5951 E~1.8556 agrees
+(4,2,12,3,v=4,R=2) AIM-1  orbits=612 H~0.1236 J~0.5135 E~1.8849 agrees
+(4,2,12,3,v=4,R=2) AIM-2  orbits=612 H~0.1430 J~0.7301 E~1.5308 agrees
+(4,2,12,3,v=4,R=2) GLOBAL orbits=612 H~0.4141 J~3.1765 E~1.0000 agrees
+(4,2,12,3,v=16,R=2) LOCAL  orbits=612 H~0.3752 J~1.6052 E~1.8149 agrees
+(4,2,12,3,v=16,R=2) AIM-1  orbits=612 H~0.1238 J~0.5202 E~1.8628 agrees
+(4,2,12,3,v=16,R=2) AIM-2  orbits=612 H~0.1438 J~0.7409 E~1.5166 agrees
+(4,2,12,3,v=16,R=2) GLOBAL orbits=612 H~0.4141 J~3.1765 E~1.0000 agrees
+(3,1,12,3,v=1,R=2) LOCAL  orbits= 28 H~0.2502 J~1.0595 E~1.4476 agrees
+(3,1,12,3,v=1,R=2) AIM-1  orbits= 28 H~0.0843 J~0.3563 E~1.4589 agrees
+(3,1,12,3,v=1,R=2) GLOBAL orbits= 28 H~0.2602 J~1.5882 E~1.0000 agrees
+(4,1,12,3,v=1,R=2) LOCAL  orbits=120 H~0.3844 J~1.5898 E~1.8773 agrees
+(4,1,12,3,v=1,R=2) AIM-1  orbits=120 H~0.0978 J~0.4034 E~1.9004 agrees
+(4,1,12,3,v=1,R=2) GLOBAL orbits=120 H~0.4141 J~3.1765 E~1.0000 agrees
+(5,1,12,3,v=1,R=2) LOCAL  orbits=660 H~0.5247 J~2.1202 E~2.2913 agrees
+(5,1,12,3,v=1,R=2) AIM-1  orbits=660 H~0.1075 J~0.4328 E~2.3254 agrees
+(5,1,12,3,v=1,R=2) GLOBAL orbits=660 H~0.5838 J~5.2941 E~1.0000 agrees
+(3,3,12,3,v=1,R=3) LOCAL  orbits=440 H~0.6109 J~1.0599 E~1.4174 agrees
+(3,3,12,3,v=1,R=3) AIM-1  orbits=440 H~0.2743 J~0.4772 E~1.4277 agrees
+(3,3,12,3,v=1,R=3) AIM-2  orbits=440 H~0.3397 J~0.6978 E~1.2048 agrees
+(3,3,12,3,v=1,R=3) AIM-3  orbits=440 H~0.3768 J~0.7976 E~1.1670 agrees
+(3,3,12,3,v=1,R=3) GLOBAL orbits=440 H~0.6517 J~1.5882 E~1.0000 agrees
+H and J agree with the frozen report in 76 of 76 steady states
+H1 REFUTED failing=[('(3,2,5,2,v=4,R=2)', 'LOCAL'), ('(3,2,5,2,v=16,R=2)', 'LOCAL'), ('(3,2,5,2,v=16,R=2)', 'AIM-1'), ('(3,2,5,2,v=16,R=2)', 'AIM-2'), ('(4,2,5,2,v=4,R=2)', 'LOCAL'), ('(4,2,5,2,v=4,R=2)', 'AIM-1'), ('(4,2,5,2,v=16,R=2)', 'LOCAL'), ('(4,2,5,2,v=16,R=2)', 'AIM-1'), ('(4,2,5,2,v=16,R=2)', 'AIM-2'), ('(3,2,12,3,v=16,R=2)', 'LOCAL'), ('(3,2,12,3,v=16,R=2)', 'AIM-1'), ('(4,2,12,3,v=16,R=2)', 'LOCAL'), ('(4,2,12,3,v=16,R=2)', 'AIM-1'), ('(4,2,12,3,v=16,R=2)', 'AIM-2')]
+H2 SUPPORTED failing=none
+H3 SUPPORTED failing=none
+H4 SUPPORTED failing=none
+H5 SUPPORTED failing=none

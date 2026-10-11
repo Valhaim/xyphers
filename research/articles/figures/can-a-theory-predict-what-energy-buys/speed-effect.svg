@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 404" width="680" height="404" role="img" aria-label="Line chart of the equal-power edge against traveller speed 1, 4, and 16, four islands, two steps ahead, stores 5 and 2, exact and as frozen by the theory. Both fall with speed; the exact edges fall less. Values: LOCAL: exact 1.76, 1.71, 1.63, theory 1.76, 1.67, 1.50; AIM-1: exact 1.79, 1.76, 1.72, theory 1.79, 1.74, 1.61; AIM-2: exact 1.48, 1.46, 1.43, theory 1.47, 1.45, 1.39.">
+<rect width="680" height="404" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">Faster travellers gain less from aim, but less so than predicted</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">four islands, two steps ahead, cold store ×5, hot store ×2</text>
+<line x1="80" y1="286.7" x2="560" y2="286.7" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="291.7" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.4</text>
+<line x1="80" y1="200.0" x2="560" y2="200.0" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="205.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.6</text>
+<line x1="80" y1="113.3" x2="560" y2="113.3" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="118.3" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">1.8</text>
+<text x="130.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="middle">speed 1</text>
+<text x="330.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="middle">speed 4</text>
+<text x="530.0" y="356.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="middle">speed 16</text>
+<polyline points="130.0,132.7 330.0,168.5 530.0,243.3" fill="none" stroke="#f7f4eb" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="130.0,129.9 330.0,153.0 530.0,186.3" fill="none" stroke="#f7f4eb" stroke-width="3"/>
+<circle cx="130.0" cy="129.9" r="4.5" fill="#f7f4eb"/>
+<circle cx="330.0" cy="153.0" r="4.5" fill="#f7f4eb"/>
+<circle cx="530.0" cy="186.3" r="4.5" fill="#f7f4eb"/>
+<text x="544.0" y="191.3" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#f7f4eb" text-anchor="start">LOCAL 1.63</text>
+<polyline points="130.0,117.8 330.0,140.4 530.0,193.7" fill="none" stroke="#ffbd68" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="130.0,116.0 330.0,129.6 530.0,149.2" fill="none" stroke="#ffbd68" stroke-width="3"/>
+<circle cx="130.0" cy="116.0" r="4.5" fill="#ffbd68"/>
+<circle cx="330.0" cy="129.6" r="4.5" fill="#ffbd68"/>
+<circle cx="530.0" cy="149.2" r="4.5" fill="#ffbd68"/>
+<text x="544.0" y="154.2" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#ffbd68" text-anchor="start">AIM-1 1.72</text>
+<polyline points="130.0,254.2 330.0,266.2 530.0,290.5" fill="none" stroke="#ff633d" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="130.0,253.6 330.0,262.4 530.0,272.9" fill="none" stroke="#ff633d" stroke-width="3"/>
+<circle cx="130.0" cy="253.6" r="4.5" fill="#ff633d"/>
+<circle cx="330.0" cy="262.4" r="4.5" fill="#ff633d"/>
+<circle cx="530.0" cy="272.9" r="4.5" fill="#ff633d"/>
+<text x="544.0" y="277.9" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#ff633d" text-anchor="start">AIM-2 1.43</text>
+<line x1="80" y1="384" x2="100" y2="384" stroke="#f7f4eb" stroke-width="3"/>
+<text x="108.0" y="389.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">exact</text>
+<line x1="180" y1="384" x2="200" y2="384" stroke="#f7f4eb" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="208.0" y="389.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">theory, frozen</text>
+</svg>

@@ -1,0 +1,16 @@
+(8,2) N= 3 E_LOCAL 1.424  E/N 0.4747  weak-drive law 1.448
+(8,2) N= 4 E_LOCAL 1.826  E/N 0.4566  weak-drive law 1.871
+(8,2) N= 5 E_LOCAL 2.210  E/N 0.4421  weak-drive law 2.273
+(8,2) N= 6 E_LOCAL 2.579  E/N 0.4299  weak-drive law 2.657
+(8,2) N= 8 E_LOCAL 3.280  E/N 0.4100  weak-drive law 3.385
+(8,2) N=10 E_LOCAL 3.943  E/N 0.3943  weak-drive law 4.070
+(8,2) N=14 E_LOCAL 5.189  E/N 0.3707  weak-drive law 5.353
+(8,2) N=20 E_LOCAL 6.936  E/N 0.3468  weak-drive law 7.143
+(3,2) N= 3 E_LOCAL 1.359  E/N 0.4530  weak-drive law 1.393
+(3,2) N= 4 E_LOCAL 1.688  E/N 0.4220  weak-drive law 1.750
+(3,2) N= 5 E_LOCAL 1.996  E/N 0.3992  weak-drive law 2.083
+(3,2) N= 6 E_LOCAL 2.290  E/N 0.3817  weak-drive law 2.400
+(3,2) N= 8 E_LOCAL 2.848  E/N 0.3560  weak-drive law 3.000
+(3,2) N=10 E_LOCAL 3.381  E/N 0.3381  weak-drive law 3.571
+(3,2) N=14 E_LOCAL 4.404  E/N 0.3146  weak-drive law 4.667
+(3,2) N=20 E_LOCAL 5.884  E/N 0.2942  weak-drive law 6.250

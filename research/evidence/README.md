@@ -13,5 +13,6 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Open future price](open-future-price/)
 - [Quantum complementarity](quantum-complementarity/)
 - [Scaling](scaling/)
+- [Theory of aim](theory-of-aim/)
 
 Each article and its packet README state the result's status. That status governs over historical comments retained in copied sources.

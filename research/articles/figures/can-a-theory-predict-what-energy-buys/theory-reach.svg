@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" width="680" height="420" role="img" aria-label="Line chart of the theory's equal-power edge of local fuel, one step ahead, stores 8 and 2, for 3 to 20 islands: 3 islands 1.42, 4 islands 1.83, 5 islands 2.21, 6 islands 2.58, 8 islands 3.28, 10 islands 3.94, 14 islands 5.19, 20 islands 6.94. The exact edges at 3, 4, and 5 islands (1.43, 1.83, 2.21) lie on the curve. The edge keeps growing, roughly linearly, toward a slope of one quarter per island.">
+<rect width="680" height="420" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">The edge of local aim, out to twenty islands</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">one step ahead, cold store ×8, hot store ×2</text>
+<line x1="70" y1="360.0" x2="600" y2="360.0" stroke="#252936" stroke-width="1"/>
+<text x="60.0" y="365.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0</text>
+<line x1="70" y1="295.0" x2="600" y2="295.0" stroke="#252936" stroke-width="1"/>
+<text x="60.0" y="300.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">2</text>
+<line x1="70" y1="230.0" x2="600" y2="230.0" stroke="#252936" stroke-width="1"/>
+<text x="60.0" y="235.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">4</text>
+<line x1="70" y1="165.0" x2="600" y2="165.0" stroke="#252936" stroke-width="1"/>
+<text x="60.0" y="170.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">6</text>
+<line x1="70" y1="100.0" x2="600" y2="100.0" stroke="#252936" stroke-width="1"/>
+<text x="60.0" y="105.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">8</text>
+<text x="80.0" y="384.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">3</text>
+<text x="140.0" y="384.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">5</text>
+<text x="290.0" y="384.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">10</text>
+<text x="440.0" y="384.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">15</text>
+<text x="590.0" y="384.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">20</text>
+<text x="340.0" y="408.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="middle">islands</text>
+<line x1="80.0" y1="335.6" x2="590.0" y2="197.5" stroke="#878a96" stroke-width="1.5" stroke-dasharray="3 5"/>
+<text x="586.0" y="217.5" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">N/4</text>
+<polyline points="80.0,313.7 110.0,300.7 140.0,288.2 170.0,276.2 230.0,253.4 290.0,231.9 410.0,191.4 590.0,134.6" fill="none" stroke="#ffbd68" stroke-width="3"/>
+<circle cx="80.0" cy="313.7" r="3.5" fill="#ffbd68"/>
+<circle cx="110.0" cy="300.7" r="3.5" fill="#ffbd68"/>
+<circle cx="140.0" cy="288.2" r="3.5" fill="#ffbd68"/>
+<circle cx="170.0" cy="276.2" r="3.5" fill="#ffbd68"/>
+<circle cx="230.0" cy="253.4" r="3.5" fill="#ffbd68"/>
+<circle cx="290.0" cy="231.9" r="3.5" fill="#ffbd68"/>
+<circle cx="410.0" cy="191.4" r="3.5" fill="#ffbd68"/>
+<circle cx="590.0" cy="134.6" r="3.5" fill="#ffbd68"/>
+<circle cx="80.0" cy="313.7" r="7" fill="none" stroke="#ff633d" stroke-width="2.5"/>
+<circle cx="110.0" cy="300.6" r="7" fill="none" stroke="#ff633d" stroke-width="2.5"/>
+<circle cx="140.0" cy="288.0" r="7" fill="none" stroke="#ff633d" stroke-width="2.5"/>
+<text x="598.0" y="139.6" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#ffbd68" text-anchor="start">6.94</text>
+<line x1="90" y1="120" x2="110" y2="120" stroke="#ffbd68" stroke-width="3"/>
+<text x="118.0" y="125.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">theory</text>
+<circle cx="200" cy="120" r="6" fill="none" stroke="#ff633d" stroke-width="2.5"/>
+<text x="212.0" y="125.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">exact (CAL-CEF-4)</text>
+</svg>

@@ -1,0 +1,48 @@
+XYPHERS THEORY OF AIM REPRODUCTION
+
+The verifier needs only a Rust toolchain. It has no external dependencies.
+In a release build the test takes a few seconds and the run about fifteen
+minutes.
+
+From source/xypher-theory-of-aim-proof/:
+
+  cargo test --release --locked
+  cargo run --release --locked --quiet
+
+The report is 104 lines: the gates G01-G12, the controls C01-C09 with where
+each failed, one line per world and agent with the exact edge E, the frozen
+prediction E_th and their ratio, then the five hypothesis verdicts, and it
+ends:
+
+  OVERALL PASS
+
+To compare the whole report with the recorded run:
+
+  cargo run --release --locked --quiet | diff ../../expected-report.txt -
+
+No output from diff means your run reproduced the recorded report exactly.
+Its SHA-256 is
+
+  76685af36d4a0dbde32ef41d1734ca7249a429bbe2556e6fe8e9de00bb5816dc
+
+The independent check needs only Python 3 (with python-flint it takes about
+fifteen seconds; with the standard library alone, a few hours). From this
+directory:
+
+  python3 independent_check.py expected-report.txt theory/predictions_cef5.txt
+
+It prints one line per world and agent, then
+
+  H and J agree with the frozen report in 76 of 76 steady states
+
+and the five verdicts, as in expected-independent-check.txt.
+
+The theory itself needs Python 3 with numpy. From theory/:
+
+  python3 predictions_cef5.py
+
+reproduces predictions_cef5.txt.
+
+Reproduction boundary
+  This is an exact replay of a frozen finite construction. A passing replay
+  reproduces the recorded result; the scope is the one stated in README.txt.
