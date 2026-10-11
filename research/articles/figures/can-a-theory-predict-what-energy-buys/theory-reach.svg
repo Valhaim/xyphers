@@ -36,5 +36,5 @@
 <line x1="90" y1="120" x2="110" y2="120" stroke="#ffbd68" stroke-width="3"/>
 <text x="118.0" y="125.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">theory</text>
 <circle cx="200" cy="120" r="6" fill="none" stroke="#ff633d" stroke-width="2.5"/>
-<text x="212.0" y="125.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">exact (CAL-CEF-4)</text>
+<text x="212.0" y="125.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">exact, previous experiment</text>
 </svg>

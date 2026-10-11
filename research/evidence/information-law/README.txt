@@ -42,9 +42,9 @@ Scope
   information the agent's actions use; the memory pays at least the
   information it learns, which exceeds that by what the world's noise erases;
   counted in entropy the total never falls below the floor. The coefficient
-  one is sharp. The CAL-CEF-1 to 5 worlds lie outside the class: their
-  weather reads the plan. They are its empty-memory case (THEOREM.md
-  section 8).
+  one is sharp. The island worlds of the five earlier experiments lie
+  outside the class: their weather reads the plan. They are its
+  empty-memory case (THEOREM.md section 8).
 
   Next: sensing agents with fuel of fixed strength against blind ones, with
   the exact condition of THEOREM.md section 6 written down in advance.

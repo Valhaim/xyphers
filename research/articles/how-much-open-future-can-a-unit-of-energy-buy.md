@@ -107,7 +107,7 @@ The floor also shows the room left. Held at the floor, the targeted traveller's 
 
 ## How we know
 
-The experiment, CAL-CEF-3, followed the protocol of the two before it.
+The experiment followed the protocol of the two before it.
 
 1. **Preregistration.** The worlds, the four predictions, ten acceptance tests, and six deliberately broken worlds with the exact place each must fail were fixed in a boundary document before anything ran. An independent referee rebuilt every world separately, confirmed every value fixed in advance, and was forbidden from computing the targeted traveller's results before the freeze.
 2. **Embargoed build.** A dependency-free Rust verifier with its own exact arithmetic, and a Futuruna declaration of the world, was written and only compiled until approval. Its generic arithmetic was also checked against Python on 119,224 cases before approval; the result record lists exactly what ran.
@@ -138,7 +138,7 @@ The failed predictions are the most useful part. They show that a longer horizon
 
 **Read:** [the evidence guide](../evidence/open-future-price/README.txt) explains every file.
 
-**Inspect:** [the preregistered boundary](../evidence/open-future-price/BOUNDARY.md) states the worlds, the predictions, the ten tests, the six broken worlds, and the pilot that came before. [The result record](../evidence/open-future-price/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/open-future-price/expected-report.txt). The research archive calls this experiment CAL-CEF-3.
+**Inspect:** [the preregistered boundary](../evidence/open-future-price/BOUNDARY.md) states the worlds, the predictions, the ten tests, the six broken worlds, and the pilot that came before. [The result record](../evidence/open-future-price/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/open-future-price/expected-report.txt).
 
 **Run:** the [verifier source](../evidence/open-future-price/source/xypher-open-future-price-proof/README.md) is a dependency-free Rust crate with a prospective [Futuruna declaration](../evidence/open-future-price/source/xypher-open-future-price-proof/xypher.runa). Following the [run guide](../evidence/open-future-price/RUN.txt), from the crate's folder:
 

@@ -193,7 +193,7 @@ The proof covers a world at equilibrium: a fixed archipelago, a steady store, an
 
 **Read:** [the manuscript](../evidence/committed-futures/manuscript.pdf), "Committed futures as microstates: causal entropic bias as configurational entropy at the bath temperature", with every proof. [The evidence guide](../evidence/committed-futures/README.txt) explains every file.
 
-**Inspect:** [the LaTeX source](../evidence/committed-futures/manuscript.tex) and [its references](../evidence/committed-futures/references.bib). The preregistered experiment the manuscript builds on, CAL-CEF-1, has [its own packet](../evidence/causal-entropic/README.txt).
+**Inspect:** [the LaTeX source](../evidence/committed-futures/manuscript.tex) and [its references](../evidence/committed-futures/references.bib). The preregistered experiment the manuscript builds on has [its own packet](../evidence/causal-entropic/README.txt).
 
 **Run:** [checks.py](../evidence/committed-futures/checks.py) is a dependency-free Python script that recomputes every check the preregistration did not cover, using whole numbers and exact fractions only. From the packet's folder:
 

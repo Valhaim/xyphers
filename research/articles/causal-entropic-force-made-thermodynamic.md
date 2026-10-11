@@ -185,7 +185,7 @@ Beyond that lie the harder frontiers: futures that are not committed, worlds tha
 
 **Read:** [the evidence guide](../evidence/causal-entropic/README.txt) explains every file.
 
-**Inspect:** [the preregistered boundary](../evidence/causal-entropic/BOUNDARY.md) states the construction, the predictions, the twelve tests (called gates), the eight broken versions, and the claims. It was frozen, before any evaluator ran, at the commit named in the result record; its header still reads "draft", the wording it was frozen with. [The result record](../evidence/causal-entropic/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/causal-entropic/expected-report.txt). The research archive calls this experiment CAL-CEF-1.
+**Inspect:** [the preregistered boundary](../evidence/causal-entropic/BOUNDARY.md) states the construction, the predictions, the twelve tests (called gates), the eight broken versions, and the claims. It was frozen, before any evaluator ran, at the commit named in the result record; its header still reads "draft", the wording it was frozen with. [The result record](../evidence/causal-entropic/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/causal-entropic/expected-report.txt).
 
 **Run:** the [verifier source](../evidence/causal-entropic/source/xypher-causal-entropic-proof/README.md) is a dependency-free Rust crate with a prospective [Futuruna construction](../evidence/causal-entropic/source/xypher-causal-entropic-proof/xypher.runa). Following the [run guide](../evidence/causal-entropic/RUN.txt), from the crate's folder:
 

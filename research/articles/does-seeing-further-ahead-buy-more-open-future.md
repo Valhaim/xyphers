@@ -90,7 +90,7 @@ After the run, a mean-field theory with no fitted parameter reproduced every edg
 
 ## How we know
 
-The experiment, CAL-CEF-4, followed the protocol of the three before it.
+The experiment followed the protocol of the three before it.
 
 1. **Preregistration.** The worlds, the five predictions, eleven acceptance tests, and seven deliberately broken worlds with the exact place each must fail were frozen before anything ran, after two rounds of independent review.
 2. **Embargoed build.** A dependency-free Rust verifier was written and only compiled until approval. It reuses, unchanged, the exact arithmetic of the previous experiment and solves each world on the orbits of its symmetry, then checks the answer on every state.
@@ -120,7 +120,7 @@ Foresight is not free. Twice now, preparing the road further ahead has bought mo
 
 **Read:** [the evidence guide](../evidence/aimed-foresight/README.txt) explains every file.
 
-**Inspect:** [the preregistered boundary](../evidence/aimed-foresight/BOUNDARY.md) states the worlds, the predictions, the eleven tests, the seven broken worlds, the blinding, and the related work. [The result record](../evidence/aimed-foresight/RESULT.md) gives the verdict, the review chronology, every file digest, the [complete report](../evidence/aimed-foresight/expected-report.txt), and the independent check. The research archive calls this experiment CAL-CEF-4.
+**Inspect:** [the preregistered boundary](../evidence/aimed-foresight/BOUNDARY.md) states the worlds, the predictions, the eleven tests, the seven broken worlds, the blinding, and the related work. [The result record](../evidence/aimed-foresight/RESULT.md) gives the verdict, the review chronology, every file digest, the [complete report](../evidence/aimed-foresight/expected-report.txt), and the independent check.
 
 **Run:** the [verifier source](../evidence/aimed-foresight/source/xypher-aimed-foresight-proof/README.md) is a dependency-free Rust crate with a prospective [Futuruna declaration](../evidence/aimed-foresight/source/xypher-aimed-foresight-proof/xypher.runa). Following the [run guide](../evidence/aimed-foresight/RUN.txt), from the crate's folder:
 

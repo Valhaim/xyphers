@@ -78,7 +78,7 @@ The likely missing ingredient is these joint correlations, which a theory built 
 
 ## How we know
 
-The experiment, CAL-CEF-5, followed the protocol of the four before it, with the theory itself frozen first.
+The experiment followed the protocol of the four before it, with the theory itself frozen first.
 
 1. **The theory, frozen.** The theory's code and its 56 predictions were committed with digital fingerprints before the experiment was drafted.
 2. **Preregistration.** The worlds, the five claims, twelve acceptance tests, and nine deliberately broken worlds were frozen after two rounds of independent review. No exact result for any of these agents was computed by the designer or the referee before the run.
@@ -105,7 +105,7 @@ I believe this is how a physics of agency has to grow. Exact experiments small e
 
 **Read:** [the evidence guide](../evidence/theory-of-aim/README.txt) explains every file.
 
-**Inspect:** [the theory](../evidence/theory-of-aim/theory/THEORY.md) with its [code](../evidence/theory-of-aim/theory/cavity.py) and [frozen predictions](../evidence/theory-of-aim/theory/predictions_cef5.txt); [the preregistered boundary](../evidence/theory-of-aim/BOUNDARY.md); and [the result record](../evidence/theory-of-aim/RESULT.md), with every prediction set against its exact value and the [complete report](../evidence/theory-of-aim/expected-report.txt). The research archive calls this experiment CAL-CEF-5.
+**Inspect:** [the theory](../evidence/theory-of-aim/theory/THEORY.md) with its [code](../evidence/theory-of-aim/theory/cavity.py) and [frozen predictions](../evidence/theory-of-aim/theory/predictions_cef5.txt); [the preregistered boundary](../evidence/theory-of-aim/BOUNDARY.md); and [the result record](../evidence/theory-of-aim/RESULT.md), with every prediction set against its exact value and the [complete report](../evidence/theory-of-aim/expected-report.txt).
 
 **Run:** the [verifier source](../evidence/theory-of-aim/source/xypher-theory-of-aim-proof/README.md) is a dependency-free Rust crate. Following the [run guide](../evidence/theory-of-aim/RUN.txt), from the crate's folder:
 

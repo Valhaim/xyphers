@@ -94,7 +94,7 @@ The instrument does not bend what it measures. The same store sets the odds of e
 
 ## How we know
 
-The experiment, CAL-CEF-2, followed the same protocol as its predecessor.
+The experiment followed the same protocol as its predecessor.
 
 1. **Preregistration.** Every number above, fourteen acceptance tests, and nine deliberately broken worlds with the exact place each must fail were fixed in a boundary document before anything ran. An independent referee rebuilt the whole model separately and reproduced every prediction before it was frozen.
 2. **Embargoed build.** A dependency-free Rust verifier, with a Futuruna declaration of the construction, was written and only compiled until approval.
@@ -121,7 +121,7 @@ The world here sits at equilibrium, so the trade runs both ways equally often an
 
 **Read:** [the evidence guide](../evidence/control-information/README.txt) explains every file.
 
-**Inspect:** [the preregistered boundary](../evidence/control-information/BOUNDARY.md) states the construction, the predictions, the fourteen tests, the nine broken worlds, and the claims. [The result record](../evidence/control-information/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/control-information/expected-report.txt). The research archive calls this experiment CAL-CEF-2.
+**Inspect:** [the preregistered boundary](../evidence/control-information/BOUNDARY.md) states the construction, the predictions, the fourteen tests, the nine broken worlds, and the claims. [The result record](../evidence/control-information/RESULT.md) gives the verdict, the review chronology, every file digest, and the [complete report](../evidence/control-information/expected-report.txt).
 
 **Run:** the [verifier source](../evidence/control-information/source/xypher-control-information-proof/README.md) is a dependency-free Rust crate with a prospective [Futuruna construction](../evidence/control-information/source/xypher-control-information-proof/xypher.runa). Following the [run guide](../evidence/control-information/RUN.txt), from the crate's folder:
 

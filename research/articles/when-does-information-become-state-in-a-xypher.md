@@ -123,7 +123,7 @@ Architecture still does not confer thermodynamics. A Xypher earns that status on
 
 ## One exact Xypher boundary
 
-A small Xypher with only sixteen complete graph-and-reservoir arrangements makes the distinction exact. The research archive calls it **CAL-XTHERM**.
+A small Xypher with only sixteen complete graph-and-reservoir arrangements makes the distinction exact.
 
 Its visible substrate has three positions, **0 ↔ 1 ↔ 2**, with model energies **0, 1, and 2**. Each position admits a declared number of internal graph arrangements. A finite reservoir supplies the remaining energy-compatible arrangements.
 
@@ -143,7 +143,7 @@ At equilibrium, the three visible positions carry probabilities **1/4, 1/2, and 
 
 Every complete state hidden under one visible position also sends the same total rate into each neighboring position. The three-position view is therefore an exact Markov projection, even though it hides sixteen complete arrangements.
 
-The construction's readout label participates in its executable dynamics: an internal refresh operation can change that label while preserving energy. The same proof also covers a different system that exposes a temporary report while changing no persistent coordinate and no later transition rate. Such a report can represent a counted internal distinction without becoming persistent state merely because it was observed. The CAL-XTHERM boundary record names this reverse construction the **representation theorem**, or Theorem 2.
+The construction's readout label participates in its executable dynamics: an internal refresh operation can change that label while preserving energy. The same proof also covers a different system that exposes a temporary report while changing no persistent coordinate and no later transition rate. Such a report can represent a counted internal distinction without becoming persistent state merely because it was observed. The boundary record names this reverse construction the **representation theorem**, or Theorem 2.
 
 The sixteen-state construction has an empty **Ruby**—no directed-flow scoring layer—and its non-adaptive memory has only one condition, so that memory never changes. It proves one exact minimal thermodynamic Xypher and an exact three-position projection. An adaptive learning law is the next step.
 
@@ -153,7 +153,7 @@ The [exact result](../evidence/information-state/CAL-XTHERM-Result.md) records e
 
 Replace the inert colour in the toy with a notebook. Two actors have the same public balance and position, but one notebook says “take the left road” while the other says “take the right.” If the actor reads that page, the notebook is part of complete state. Hiding it behind the public balance fails the block-sum test.
 
-A later exact-control study, **CAL-ADAPT**, tested that boundary. Behavior-changing hidden memory produced two complete states with the same visible balance and different next-balance laws; the visible projection failed. An inert hidden label passed.
+A later exact-control study tested that boundary. Behavior-changing hidden memory produced two complete states with the same visible balance and different next-balance laws; the visible projection failed. An inert hidden label passed.
 
 The study then paired every memory-writing move with a memory-erasing reverse. Its primary two-gap information reservoir contained seven complete states across three energy levels. A separately generated thirteen-state version passed the same exact reversibility, equilibrium, and contact checks. The second construction carries the result beyond one hand-written seven-state table.
 
@@ -163,7 +163,7 @@ These controls establish that hidden behavior-changing memory breaks the chosen 
 
 Private and shared memory add an authority question that lumpability does not answer. Before two participants act on the same learned memory, both must be able to reconstruct it from the same shared record, know who may change it, and know what happens when later evidence contradicts it. The Xypher architecture proposes those as design requirements. They are design choices, not consequences of the Markov theorem.
 
-The [CAL-ADAPT result](../evidence/information-state/CAL-ADAPT-Result.md) and [reproduction guide](../evidence/information-state/RUN.txt) expose the exact controls and their open boundary. The [checksummed evidence packet](../downloads/xypher-information-state-evidence-v1.zip) includes the source and tests ([SHA-256](../downloads/xypher-information-state-evidence-v1.zip.sha256)).
+The [hidden-memory result](../evidence/information-state/CAL-ADAPT-Result.md) and [reproduction guide](../evidence/information-state/RUN.txt) expose the exact controls and their open boundary. The [checksummed evidence packet](../downloads/xypher-information-state-evidence-v1.zip) includes the source and tests ([SHA-256](../downloads/xypher-information-state-evidence-v1.zip.sha256)).
 
 ## The physical bill arrives at reset
 
@@ -211,7 +211,7 @@ Information enters a Xypher's complete state when its declared dynamics use or a
 - Salem Derisavi, Holger Hermanns, and William H. Sanders, [“Optimal State-Space Lumping in Markov Chains”](https://doi.org/10.1016/S0020-0190(03)00343-0), gives a finite optimal partition-refinement construction.
 - Cosma Shalizi and James Crutchfield, [“Computational Mechanics: Pattern and Prediction, Structure and Simplicity”](https://doi.org/10.1023/A:1010388907793), develops minimal predictive causal states. Its objective is adjacent to, but not identical with, authoritative Xypher replay.
 - Rolf Landauer, [“Irreversibility and Heat Generation in the Computing Process”](https://doi.org/10.1147/rd.53.0183), and Charles Bennett, [“Logical Reversibility of Computation”](https://doi.org/10.1147/rd.176.0525), establish the logical-irreversibility and reversible-computation boundary.
-- Xyphers research, [the CAL-XTHERM boundary](../evidence/information-state/CAL-XTHERM-Boundary.md) and [exact result](../evidence/information-state/CAL-XTHERM-Result.md), contains the complete 16-state construction and its operational thermodynamic boundary.
-- Xyphers research, [the CAL-ADAPT boundary](../evidence/information-state/CAL-ADAPT-Boundary.md) and [exact bounded result](../evidence/information-state/CAL-ADAPT-Result.md), contains the hidden-memory controls and engineered reversible information reservoir.
+- Xyphers research, [the sixteen-state boundary](../evidence/information-state/CAL-XTHERM-Boundary.md) and [exact result](../evidence/information-state/CAL-XTHERM-Result.md), contains the complete 16-state construction and its operational thermodynamic boundary.
+- Xyphers research, [the hidden-memory boundary](../evidence/information-state/CAL-ADAPT-Boundary.md) and [exact bounded result](../evidence/information-state/CAL-ADAPT-Result.md), contains the hidden-memory controls and engineered reversible information reservoir.
 
 [Return to the research index](../README.md).

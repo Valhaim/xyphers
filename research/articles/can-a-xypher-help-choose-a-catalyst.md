@@ -116,11 +116,11 @@ Reaction outcomes remained sealed while the ligand structures and analysis plan 
 
 The plan separated examples used to establish the comparison from examples used to judge it. Every ligand position eligible for judgment therefore needed corresponding coverage in the training side. One coded position on the experimental plate appeared once in an anomalous loaded row but in none of the primary reaction panels that could enter the result. The frozen check nevertheless treated it as eligible and demanded training coverage that could not exist.
 
-The program stopped before calculating any hypothesis statistic. This stopped run is recorded as **CHEM-V9**. It provides neither positive nor negative evidence about the molecular score.
+The program stopped before calculating any hypothesis statistic. The stopped run provides neither positive nor negative evidence about the molecular score.
 
-The repair restricted the coverage check to positions that could actually enter the result. By then V9 had extracted and processed the outcome table, and two reaction-ID-sorted rows—both with zero yield—had been displayed. The mechanical repair was frozen and pushed before any hypothesis statistic was calculated. It came from target-free membership and plate-layout records; no yield value selected a model, threshold, or descriptor. The repaired analysis, **CHEM-V10**, then ran once.
+The repair restricted the coverage check to positions that could actually enter the result. By then the stopped run had extracted and processed the outcome table, and two reaction-ID-sorted rows—both with zero yield—had been displayed. The mechanical repair was frozen and pushed before any hypothesis statistic was calculated. It came from target-free membership and plate-layout records; no yield value selected a model, threshold, or descriptor. The repaired analysis then ran once.
 
-CHEM-V10 is therefore a repaired one-shot negative validation.
+The yield test is therefore a repaired one-shot negative validation.
 
 ## Yield changes the question
 
@@ -158,7 +158,7 @@ The score saw an unweighted molecular graph on a standardized rhodium complex. T
 
 Those are not small corrections around one complete state. Most of the reaction was absent.
 
-A separate post hoc comparison raises one applicability warning. In eight bidentate hydroformylation ligands, the average phosphorus-rooted score associated with the logarithm of linear-to-branched selectivity at **ρ = 0.452**, while the chemically direct bite angle gave **ρ = 1.000**. PBn₃, P(neoPent)₃, and BISBI also placed bulky groups behind a methylene bridge. The hypothesis: a five-step walker spends part of its reach crossing that bridge and underrepresents the remote group. It comes from a small separate set and is not an identified cause of the V8 or V10 failures; those three examples were outside V10's eligible cohort.
+A separate post hoc comparison raises one applicability warning. In eight bidentate hydroformylation ligands, the average phosphorus-rooted score associated with the logarithm of linear-to-branched selectivity at **ρ = 0.452**, while the chemically direct bite angle gave **ρ = 1.000**. PBn₃, P(neoPent)₃, and BISBI also placed bulky groups behind a methylene bridge. The hypothesis: a five-step walker spends part of its reach crossing that bridge and underrepresents the remote group. It comes from a small separate set and is not an identified cause of the failures of the shape or yield tests; those three examples were outside the yield test's eligible cohort.
 
 Bond-energy weighting did not solve the blinded steric test. That makes sense once the target is clear: changing the strength assigned to a connection need not improve a measure of three-dimensional extent. Electronics, orbital orientation, metal identity, and competing mechanisms demand representations that actually contain them.
 
@@ -196,4 +196,4 @@ The external chemical records are the [Tolman steric review](https://doi.org/10.
 
 **Download:** [the checksummed Xyphers validation packet](../downloads/xypher-catalyst-validation-v1.zip) ([SHA-256](../downloads/xypher-catalyst-validation-v1.zip.sha256)). The archive does not redistribute the Kraken supplement, its derived 934-row SMILES table, or the raw ORD parquet. Its retained ORD-derived artifacts carry attribution and a CC BY-SA 4.0 notice.
 
-**Inspect and reproduce:** [follow the evidence paths](../evidence/catalyst-choice/RUN.txt). CHEM-V8 requires rebuilding licensed source tables and matching the frozen hashes; CHEM-V10 has a numerical replay from the attributed ORD-derived freeze.
+**Inspect and reproduce:** [follow the evidence paths](../evidence/catalyst-choice/RUN.txt). The shape test requires rebuilding licensed source tables and matching the frozen hashes; the yield test has a numerical replay from the attributed ORD-derived freeze.
