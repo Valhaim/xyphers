@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" role="img" aria-label="Line chart of the fuel saved below the floor per nat of information the actions use, against the speed κ of reversible actions, for the demon world and a three-island archipelago with a sensing agent. Both rise toward exactly one. Values: demon world: κ = 1: 0.81546488, κ = 10: 0.97779464, κ = 100: 0.99773007, κ = 1000: 0.99977250, κ = 10000: 0.99997724, κ = 1000000: 0.99999977; three islands: κ = 1: 0.91537849, κ = 10: 0.99072683, κ = 100: 0.99906331, κ = 1000: 0.99990624, κ = 10000: 0.99999062, κ = 1000000: 0.99999991.">
+<rect width="680" height="400" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">The exchange rate reaches one</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">fuel saved below the floor, per nat of information the actions use</text>
+<line x1="80" y1="330.0" x2="580" y2="330.0" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="335.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.80</text>
+<line x1="80" y1="267.5" x2="580" y2="267.5" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="272.5" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.85</text>
+<line x1="80" y1="205.0" x2="580" y2="205.0" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="210.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.90</text>
+<line x1="80" y1="142.5" x2="580" y2="142.5" stroke="#252936" stroke-width="1"/>
+<text x="70.0" y="147.5" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="end">0.95</text>
+<line x1="80" y1="80.0" x2="580" y2="80.0" stroke="#fff6df" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text x="70.0" y="85.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#fff6df" text-anchor="end">1</text>
+<text x="584.0" y="72.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#fff6df" text-anchor="end">one nat for one nat</text>
+<text x="90.0" y="356.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">1</text>
+<text x="250.0" y="356.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">100</text>
+<text x="410.0" y="356.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">10⁴</text>
+<text x="570.0" y="356.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">10⁶</text>
+<text x="330.0" y="382.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="middle">speed of the actions, κ (reversible as κ grows)</text>
+<polyline points="90.0,310.7 170.0,107.8 250.0,82.8 330.0,80.3 410.0,80.0 570.0,80.0" fill="none" stroke="#ffbd68" stroke-width="3"/>
+<circle cx="90.0" cy="310.7" r="4.5" fill="#ffbd68"/>
+<circle cx="170.0" cy="107.8" r="4.5" fill="#ffbd68"/>
+<circle cx="250.0" cy="82.8" r="4.5" fill="#ffbd68"/>
+<circle cx="330.0" cy="80.3" r="4.5" fill="#ffbd68"/>
+<circle cx="410.0" cy="80.0" r="4.5" fill="#ffbd68"/>
+<circle cx="570.0" cy="80.0" r="4.5" fill="#ffbd68"/>
+<polyline points="90.0,185.8 170.0,91.6 250.0,81.2 330.0,80.1 410.0,80.0 570.0,80.0" fill="none" stroke="#ff633d" stroke-width="3"/>
+<circle cx="90.0" cy="185.8" r="4.5" fill="#ff633d"/>
+<circle cx="170.0" cy="91.6" r="4.5" fill="#ff633d"/>
+<circle cx="250.0" cy="81.2" r="4.5" fill="#ff633d"/>
+<circle cx="330.0" cy="80.1" r="4.5" fill="#ff633d"/>
+<circle cx="410.0" cy="80.0" r="4.5" fill="#ff633d"/>
+<circle cx="570.0" cy="80.0" r="4.5" fill="#ff633d"/>
+<line x1="300" y1="250" x2="320" y2="250" stroke="#ffbd68" stroke-width="3"/>
+<text x="328.0" y="255.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">demon world</text>
+<line x1="300" y1="274" x2="320" y2="274" stroke="#ff633d" stroke-width="3"/>
+<text x="328.0" y="279.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">three islands, sensing agent</text>
+</svg>

@@ -1,0 +1,36 @@
+XYPHERS INFORMATION LAW REPRODUCTION
+
+The verification needs Python 3 with python-flint (tested with 0.6.0):
+
+  python3 -m pip install python-flint==0.6.0
+
+From this directory:
+
+  python3 verify.py > my-verification.txt
+  diff verification.txt my-verification.txt
+
+No output from diff means your run reproduced the recorded output exactly.
+The run takes about nine seconds and ends with
+
+  checks failed: 0
+  OVERALL PASS
+
+The SHA-256 of verification.txt is
+
+  e9eab00f19c90229536977b4e8bed4235384e6b5cf57f2d2776ac44896831bed
+
+The independent check, written from THEOREM.md alone, needs the same
+Python. From independent/:
+
+  python3 check.py > my-output.txt
+  diff output.txt my-output.txt
+
+It takes about thirty-five seconds and ends with
+
+  checks: 18496 agree, 0 disagree, 102 claims
+  OVERALL PASS
+
+independent/output-run1.txt is its first run, on the first version of the
+theorem. It ends with OVERALL FAIL because that version printed one formula,
+the demon world's limit, with the argument of a logarithm inverted
+(THEOREM.md section 11). Every other check agreed.

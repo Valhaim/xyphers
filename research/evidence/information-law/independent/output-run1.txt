@@ -1,0 +1,172 @@
+Independent exact check of the information law (sections 1, 2, 3, 5)
+seed = 271828 ; identities: full prime factorisation ; inequalities: exact signs / arb
+
+== Random worlds in the class ==
+W001 kind=general |X|=3 |M|=2 U=2 A=6 R=8  P=['59249/429446', '371707/1288338', '209857/1288338', '42527/429446', '59290/644169', '141433/644169']
+   (1) lhs sigma_world              [2.63933484612081 +/- 4.00e-15]
+   (1) rhs floor-Idot_act+Sigma_A   [2.63933484612081 +/- 4.00e-15]
+   (2) lhs sigma_reg                [1.49782262753622 +/- 3.23e-15]
+   (2) rhs Idot_learn+Sigma_R       [1.49782262753622 +/- 3.23e-15]
+   (3) lhs Idot_learn               [0.253297061759579 +/- 2.85e-16]
+   (3) rhs Idot_act+Idot_noise      [0.253297061759579 +/- 2.85e-16]
+   (3') lhs sum_U S_c               [0.459319583447138 +/- 2.31e-16]
+   (3') rhs floor+Idot_noise        [0.459319583447138 +/- 2.31e-16]
+   (1): 15 primes carry nonzero coefficients in its four terms; all coefficients of lhs - rhs vanish: True
+W002 kind=general |X|=3 |M|=4 U=1 A=3 R=9  P=['10275400/79667711', '9482325/79667711', '9621510/79667711', '17804775/79667711', '5336121/79667711', '4625175/159335422', '7708625/159335422', '11267505/79667711', '1951575/79667711', '1850070/79667711', '2350575/79667711', '3560955/79667711']
+   (1) lhs sigma_world              [0.0210988128533989 +/- 4.04e-17]
+   (1) rhs floor-Idot_act+Sigma_A   [0.0210988128533989 +/- 4.04e-17]
+   (2) lhs sigma_reg                [0.118795495086019 +/- 1.13e-16]
+   (2) rhs Idot_learn+Sigma_R       [0.118795495086019 +/- 1.13e-16]
+   (3) lhs Idot_learn               [0.0275711863556435 +/- 3.37e-17]
+   (3) rhs Idot_act+Idot_noise      [0.0275711863556435 +/- 3.37e-17]
+   (3') lhs sum_U S_c               [0.0172831368364388 +/- 1.89e-17]
+   (3') rhs floor+Idot_noise        [0.0172831368364388 +/- 1.89e-17]
+   (1): 16 primes carry nonzero coefficients in its four terms; all coefficients of lhs - rhs vanish: True
+W003 kind=general |X|=2 |M|=3 U=1 A=5 R=10  P=['372835/4087291', '833915/4087291', '646185/4087291', '523093/4087291', '779208/4087291', '932055/4087291']
+   (1) lhs sigma_world              [2.36518341891770 +/- 2.57e-15]
+   (1) rhs floor-Idot_act+Sigma_A   [2.36518341891770 +/- 2.57e-15]
+   (2) lhs sigma_reg                [1.71685214145939 +/- 6.98e-16]
+   (2) rhs Idot_learn+Sigma_R       [1.71685214145939 +/- 6.98e-16]
+   (3) lhs Idot_learn               [0.0199899573995299 +/- 2.32e-17]
+   (3) rhs Idot_act+Idot_noise      [0.0199899573995299 +/- 2.32e-17]
+   (3') lhs sum_U S_c               [0.574328990984849 +/- 3.11e-16]
+   (3') rhs floor+Idot_noise        [0.574328990984849 +/- 3.11e-16]
+   (1): 12 primes carry nonzero coefficients in its four terms; all coefficients of lhs - rhs vanish: True
+W004 kind=general |X|=4 |M|=2 U=5 A=8 R=14  P=['1781450/22760657', '92678564/842144309', '96634296/842144309', '75258458/842144309', '79926913/842144309', '116649638/842144309', '153790494/842144309', '161292296/842144309']
+   (1) lhs sigma_world              [0.653806441009184 +/- 1.07e-16]
+   (1) rhs floor-Idot_act+Sigma_A   [0.653806441009184 +/- 1.07e-16]
+   (2) lhs sigma_reg                [3.08522275822247 +/- 4.70e-15]
+   (2) rhs Idot_learn+Sigma_R       [3.08522275822247 +/- 4.70e-15]
+   (3) lhs Idot_learn               [0.225982057955160 +/- 4.59e-17]
+   (3) rhs Idot_act+Idot_noise      [0.225982057955160 +/- 4.59e-17]
+   (3') lhs sum_U S_c               [0.219043170268156 +/- 2.64e-16]
+   (3') rhs floor+Idot_noise        [0.219043170268156 +/- 2.64e-16]
+   (1): 26 primes carry nonzero coefficients in its four terms; all coefficients of lhs - rhs vanish: True
+worlds in the class checked: 480
+probe worlds outside the class (diagnostics only): 40
+
+== Section 5: demon world  p = (3/4, 1/4),  a = 9/10 ==
+P* = ['27/40', '3/40', '1/40', '9/40']  (z = (x,m) in order (0,0),(0,1),(1,0),(1,1))
+kappa=1        rates: A [('20/3', '40/3')] ; R [('40/27', '22'), ('66', '40/9')]
+   currents j: ['1/2', '-13/20', '13/20']   sum j^2/kappa = 219/200
+   sigma_world          = [-0.346573590279973 +/- 3.46e-16]
+   Sigma_A + Sigma_R    = [0.853740428340318 +/- 2.06e-16]
+   (floor - sigma_world)/Idot_act = [0.815464876785729 +/- 2.82e-16]
+kappa=10       rates: A [('140/3', '400/3')] ; R [('400/27', '142'), ('426', '400/9')]
+   currents j: ['1/2', '-13/20', '13/20']   sum j^2/kappa = 219/2000
+   sigma_world          = [-0.524911062249339 +/- 1.56e-16]
+   Sigma_A + Sigma_R    = [0.106262320994521 +/- 3.27e-17]
+   (floor - sigma_world)/Idot_act = [0.977794639349710 +/- 1.10e-16]
+kappa=100      rates: A [('1340/3', '4000/3')] ; R [('4000/27', '1342'), ('4026', '4000/9')]
+   currents j: ['1/2', '-13/20', '13/20']   sum j^2/kappa = 219/20000
+   sigma_world          = [-0.546812373578535 +/- 3.09e-16]
+   Sigma_A + Sigma_R    = [0.0109164266825414 +/- 3.64e-18]
+   (floor - sigma_world)/Idot_act = [0.997730072036111 +/- 2.73e-16]
+kappa=1000     rates: A [('13340/3', '40000/3')] ; R [('40000/27', '13342'), ('40026', '40000/9')]
+   currents j: ['1/2', '-13/20', '13/20']   sum j^2/kappa = 219/200000
+   sigma_world          = [-0.549056206813229 +/- 3.22e-16]
+   Sigma_A + Sigma_R    = [0.00109466301477171 +/- 3.76e-18]
+   (floor - sigma_world)/Idot_act = [0.999772497064339 +/- 2.55e-16]
+kappa=1000000  rates: A [('13333340/3', '40000000/3')] ; R [('40000000/27', '13333342'), ('40000026', '40000000/9')]
+   currents j: ['1/2', '-13/20', '13/20']   sum j^2/kappa = 219/200000000
+   sigma_world          = [-0.549305894334117 +/- 3.46e-16]
+   Sigma_A + Sigma_R    = [1.09499966287514e-6 +/- 1.63e-22]
+   (floor - sigma_world)/Idot_act = [0.999999772440250 +/- 2.34e-16]
+closed forms (exact, in ln 3 units via prime vector):
+   floor      = [0.549306144334055 +/- 1.55e-16]   prime vector {3: '1/2'}
+   Idot_act   = [1.09861228866811 +/- 3.09e-16]   prime vector {3: '1'}
+   Idot_noise = [1.75777966186898 +/- 4.50e-15]   prime vector {3: '8/5'}
+   Idot_learn = [2.85639195053709 +/- 4.81e-15]   prime vector {3: '13/5'}
+   limit sigma_world (floor - Idot_act) = [-0.549306144334055 +/- 1.55e-16]  prime vector {3: '-1/2'}
+   note's sec.5 formula (p0-p1) ln[p1 a/(p0(1-a))] = [0.549306144334055 +/- 1.55e-16]
+
+== Section 5: theorem T on random P*, U channels and A currents ==
+randomT#0 |X|=3 |M|=3 kappa=1000: (floor-sigma_world)/Idot_act = [0.944297650066 +/- 4.45e-13]
+randomT#1 |X|=4 |M|=3 kappa=1000: (floor-sigma_world)/Idot_act = [0.994603794870 +/- 2.39e-13]
+randomT#4 |X|=4 |M|=3 kappa=1000: (floor-sigma_world)/Idot_act = [0.990636149782 +/- 2.05e-13]
+randomT#6 |X|=3 |M|=3 kappa=1000: (floor-sigma_world)/Idot_act = [0.986945398492 +/- 4.55e-13]
+
+factorisation: 18189 integers factored, largest 31 digits, 7643 distinct primes
+
+== Claims: agree / disagree ==
+PASS    480 / 0    exact stationarity of P
+PASS    480 / 0    (1) sigma_world = floor - Idot_act + Sigma_A
+PASS    480 / 0    (2) sigma_reg = Idot_learn + Sigma_R
+PASS    480 / 0    (3) Idot_learn = Idot_act + Idot_noise
+PASS    480 / 0    (3') sum_U S_c = floor + Idot_noise
+PASS    480 / 0    Lemma 1: sum_UA J[ln p(x')-ln p(x)] = 0
+PASS    480 / 0    Lemma 1: sum_R J[ln q(m')-ln q(m)] = 0
+PASS    480 / 0    Lemma 1: sum_all Idot_c = 0
+PASS    480 / 0    Lemma 2(a): sum_UA S = sigma_world - sum_UA Idot
+PASS    480 / 0    sec.2 floor = -d/dt D(p||pi_c) under U alone
+PASS    480 / 0    floor per U channel = floor per merged world pair (single pi_c)
+PASS    480 / 0    (4) Sigma_A >= 0 (every term, exact sign)
+PASS    480 / 0    (4) Sigma_R >= 0 (every term, exact sign)
+PASS    480 / 0    (4) floor >= 0 (every term, exact sign)
+PASS    480 / 0    (4) Idot_noise >= 0 (exact zero or certified)
+PASS    480 / 0    proof of (4): every per-U-channel noise term >= 0
+PASS    480 / 0    Idot_noise = 0 iff P(m|x) = P(m|x') on U pairs
+PASS    480 / 0    V1 sigma_world >= floor - Idot_act
+PASS    480 / 0    V1 Idot_act <= Idot_learn
+PASS    480 / 0    V1 sigma_world >= floor - Idot_learn
+PASS    480 / 0    V2 sigma_reg >= Idot_learn
+PASS    480 / 0    V3 sigma_world + sigma_reg = floor + Idot_noise + Sigma_A + Sigma_R
+PASS    480 / 0    V3 sigma_world + sigma_reg >= floor + Idot_noise
+PASS    100 / 0    V4 Idot_learn <= 0
+PASS    100 / 0    V4 proof: Sigma_R = Phi_R - Idot_learn (Phi_R per channel)
+PASS    100 / 0    V4 proof: Sigma_R >= Phi_R
+PASS    100 / 0    V4 proof: sigma_world = floor + Idot_noise - Idot_learn + Sigma_A
+PASS    100 / 0    V4 sigma_world >= floor + Idot_noise - Idot_learn
+PASS    100 / 0    V4 floor + Idot_noise - Idot_learn >= floor
+PASS    100 / 0    V4 sigma_world >= floor
+PASS    100 / 0    V5 sigma_world = floor + Phi_A (Phi_A per channel)
+PASS    100 / 0    V5 Phi_A >= 0 (every term, exact sign)
+PASS    100 / 0    V5 proof: Sigma_A = Phi_A + Idot_act
+PASS    100 / 0    V5 sigma_world >= floor
+PASS     30 / 0    V4+V5 worlds: Idot_noise = 0 (product law)
+PASS     50 / 0    V7 steady energy: cold build current = - hot build current
+PASS     50 / 0    V7 sigma_world = J ln(b_c/b_h)
+PASS     50 / 0    V7 J >= [floor - Idot_act] / ln(b_c/b_h)
+PASS     85 / 0    T: construction hypotheses hold (world marginal conserved, tree roots balance)
+PASS     85 / 0    T: P* is the unique stationary law (solver = P*, balance exact)
+PASS     85 / 0    T: constructed channel currents equal the prescribed currents
+PASS     85 / 0    T: each A/R channel dissipates |j| ln[(kappa+|j|)/kappa] exactly
+PASS     85 / 0    T: Sigma_A + Sigma_R <= sum j^2 / kappa (certified)
+PASS     85 / 0    T: each channel |j| ln[(kappa+|j|)/kappa] <= j^2/kappa (certified)
+PASS     85 / 0    T worlds: identities (1),(2),(3),(3') exact
+PASS     85 / 0    T: |sigma_world - (floor - Idot_act)| <= sum j^2/kappa (certified)
+PASS     85 / 0    T: |sigma_reg - Idot_learn| <= sum j^2/kappa (certified)
+PASS      5 / 0    demon closed form: floor
+PASS      5 / 0    demon closed form: Idot_act
+PASS      5 / 0    demon closed form: Idot_noise
+PASS      5 / 0    demon closed form: Idot_learn
+PASS      5 / 0    V3 in demon world: sigma_world + sigma_reg >= floor + Idot_noise
+PASS      1 / 0    sec.10 quoted ratio 0.815 at kappa=1 (certified |r-0.815|<5e-4)
+PASS     44 / 0    T: information sums and floor do not depend on kappa
+PASS      1 / 0    sec.10 quoted ratio 0.99999977 at kappa=1e6 (certified |r-q|<5e-9)
+PASS      1 / 0    sec.10: sigma_world converges to -(1/2) ln 3
+FAIL      0 / 1    sec.5 text: limit sigma_world = (p0-p1) ln[p1 a / (p0 (1-a))]
+              first failure: note formula gives [0.54930614 +/- 4.34e-9], true limit [-0.54930614 +/- 4.34e-9]
+FAIL      0 / 1    sec.5 text: that expression is negative when a/(1-a) > p0/p1
+              first failure: expression is certified positive: [0.54930614 +/- 4.34e-9]
+PASS      1 / 0    [corrected reading] limit = (p0-p1) ln[p0 (1-a) / (p1 a)] and it is negative
+PASS      1 / 0    [corrected reading] limit = sigma_floor - Idot_act < 0 (demon beats the floor)
+
+== Diagnostics (do not enter OVERALL): true / false ==
+         41 / 439  worlds with Idot_noise exactly 0
+          4 / 256  general worlds below the floor (sigma_world < floor)
+          0 / 70   V4 worlds below the floor (sigma_world < floor)
+          0 / 76   V4 parallel-R worlds where Phi_R per merged register pair also fits
+          0 / 70   V5 worlds below the floor (sigma_world < floor)
+          0 / 71   V5 parallel-A worlds where Phi_A per merged world pair also fits
+          0 / 30   V45 worlds below the floor (sigma_world < floor)
+          0 / 50   V7 worlds below the floor (sigma_world < floor)
+         20 / 0    multi-law probe: (1) holds with floor per U channel
+         20 / 0    multi-law probe: (3') holds with floor per U channel
+          1 / 19   multi-law probe: (1) holds with floor per merged world pair
+         19 / 1    negative control (U reads register): checker detects (3') failure
+         19 / 1    negative control (U reads register): checker detects (1) failure
+         24 / 16   random T worlds with Idot_act > 0
+
+checks: 13159 agree, 2 disagree, 60 claims
+OVERALL FAIL

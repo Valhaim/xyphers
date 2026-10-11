@@ -26,8 +26,8 @@ Its SHA-256 is
   76685af36d4a0dbde32ef41d1734ca7249a429bbe2556e6fe8e9de00bb5816dc
 
 The independent check needs only Python 3 (with python-flint it takes about
-fifteen seconds; with the standard library alone, a few hours). From this
-directory:
+fifteen seconds; with the standard library alone, about ninety minutes). From
+this directory:
 
   python3 independent_check.py expected-report.txt theory/predictions_cef5.txt
 

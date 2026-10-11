@@ -1,0 +1,114 @@
+Information law verification
+python-flint 0.6.0, arb precision 256 bits
+
+== 1. Random worlds ==
+Each world: 2-5 world states, 2-4 register states, random detailed-balance
+undriven channels (some parallel), random act and register channels.
+
+-- general: 300 worlds, 3183 system states, seed 20261011
+   stationary                                   300/300  PASS
+   (1) sigma_world = floor - I_act + S_A        300/300  PASS
+   (2) sigma_reg = I_learn + S_R                300/300  PASS
+   (3) I_learn = I_act + I_noise                300/300  PASS
+   (3') S_U = floor + I_noise                   300/300  PASS
+   (4) term signs exact                         300/300  PASS
+   (4) I_noise >= 0 certified                   300/300  PASS
+   world fuel certified below its floor:         1/300
+   largest saving floor - sigma_world = 0.00078866348 with I_act = 0.011831090
+
+-- blind memory (register rates do not read x): 100 worlds, 1058 system states, seed 20261012
+   stationary                                   100/100  PASS
+   (1) sigma_world = floor - I_act + S_A        100/100  PASS
+   (2) sigma_reg = I_learn + S_R                100/100  PASS
+   (3) I_learn = I_act + I_noise                100/100  PASS
+   (3') S_U = floor + I_noise                   100/100  PASS
+   (4) term signs exact                         100/100  PASS
+   (4) I_noise >= 0 certified                   100/100  PASS
+   (V4) I_learn <= 0 certified                  100/100  PASS
+   world fuel certified below its floor:         0/100
+   corollary: never below the floor            PASS
+
+-- unused memory (act rates do not read m): 100 worlds, 1060 system states, seed 20261013
+   stationary                                   100/100  PASS
+   (1) sigma_world = floor - I_act + S_A        100/100  PASS
+   (2) sigma_reg = I_learn + S_R                100/100  PASS
+   (3) I_learn = I_act + I_noise                100/100  PASS
+   (3') S_U = floor + I_noise                   100/100  PASS
+   (4) term signs exact                         100/100  PASS
+   (4) I_noise >= 0 certified                   100/100  PASS
+   (V5) sigma_world = floor + Phi_A             100/100  PASS
+   world fuel certified below its floor:         0/100
+   corollary: never below the floor            PASS
+
+== 2. The demon world: closed form and the exchange rate ==
+World {0,1}, undriven flips at rate 1 (pi_c uniform); register copies x with
+accuracy a = 9/10; held law p = (3/4, 1/4); one act channel, in register state 1,
+moves x from 1 to 0 and carries the whole holding current 1/2.
+   kappa   sigma_world                floor - sigma_world        (floor - sigma_world)/I_act   S_A <= sum j_A^2/kappa
+   1       -0.3465735903              0.8958797346               0.8154648768                  PASS
+   10      -0.5249110622              1.074217207                0.9777946393                  PASS
+   100     -0.5468123736              1.096118518                0.9977300720                  PASS
+   1000    -0.5490562068              1.098362351                0.9997724971                  PASS
+   10000   -0.5492811450              1.098587289                0.9999772446                  PASS
+   1000000 -0.5493058943              1.098612039                0.9999997724                  PASS
+   closed forms, decided exactly (kappa-independent):
+     floor   = (p0 - p1) ln(p0/p1)              0.5493061443  PASS
+     I_act   = (p0 - p1) ln(a/(1-a))            1.098612289  PASS
+     I_noise = (2a - 1) ln(a/(1-a))              1.757779662  PASS
+     I_learn = (p0 - p1 + 2a - 1) ln(a/(1-a))    2.856391951  PASS
+   limits as kappa grows: sigma_world -> floor - I_act = -0.5493061443 (the act channel returns fuel)
+                          sigma_reg   -> I_learn       = 2.856391951
+                          total       -> floor + I_noise = 2.307085806
+
+== 3. Archipelago, three islands: the exchange rate reached in a Xypher world ==
+Weather builds every bridge at rate 1 and wears it at rate b_c = 3 (cold store).
+Held world law p(G) ~ 2^h(G) b_c^-|G|, h = home bridges standing (islands 0-1, 0-2).
+Register: a sensor reading h(G) with accuracy 4/5. Act channels toggle home bridges.
+
+-- blind agent (no register), act currents matched to cancel the weather (Horowitz-Zhou-England):
+   at kappa = 10^6: sigma_world = 0.8317768507, floor = 0.8317766167, I_act = 0
+   with no register there is no information (I_act = 0): the floor is its limit.
+
+-- informed agent: each home build is carried in the register state that reads the
+   pre-build count, so every build consumes ln(2a/(1-a)) = ln 8 of information.
+   kappa   sigma_world                floor - sigma_world        (floor - sigma_world)/I_act   S_A <= sum j_A^2/kappa
+   1       -1.452394655               2.284171272                0.9153784906                  PASS
+   10      -1.640413618               2.472190235                0.9907268310                  PASS
+   100     -1.661215875               2.492992492                0.9990633069                  PASS
+   1000    -1.663319260               2.495095876                0.9999062354                  PASS
+   10000   -1.663529834               2.495306450                0.9999906226                  PASS
+   1000000 -1.663552999               2.495329616                0.9999999062                  PASS
+   held p is the same in both agents; floor(p) = 0.8317766167
+   I_act = 2.495329850, I_noise = 5.240192685, I_learn = 7.735522535
+   as kappa grows: sigma_world -> floor - I_act = -1.663553233;  total -> floor + I_noise = 6.071969302
+
+== 4. Archipelago, three islands: a sensing agent with fixed-force fuel ==
+Same weather (b_c = 3). Fuel from a hot store (b_h = 2): build a home bridge at rate 1,
+return it at rate b_h. Register: sensor of h(G), steps toward h at rate 4, away at rate 1.
+Identity check only: these agents are not compared; that is the next experiment.
+-- LOCAL fuel, no register
+   theorem identities (1)-(4): PASS
+   fuel flow J = 2/7 (exact);  act-channel entropy flow = -J ln b_h: PASS
+   sigma_world = J ln(b_c/b_h): PASS
+   sigma_world  0.1158471737
+   floor        0.05209187337
+   I_act        0
+   I_noise      0
+   I_learn      0
+   S_A          0.06375530038
+   S_R          0
+-- informed fuel, only while the sensor reads a home bridge down
+   theorem identities (1)-(4): PASS
+   fuel flow J = 30822/96473 (exact);  act-channel entropy flow = -J ln b_h: PASS
+   sigma_world = J ln(b_c/b_h): PASS
+   sigma_world  0.1295413801
+   floor        0.06606685360
+   I_act        0.1814705608
+   I_noise      0.2765558674
+   I_learn      0.4580264282
+   S_A          0.2449450873
+   S_R          0.9822384649
+
+== Summary ==
+checks failed: 0
+OVERALL PASS

@@ -14,5 +14,6 @@ Each directory is the inspectable source packet for one public article. Read its
 - [Quantum complementarity](quantum-complementarity/)
 - [Scaling](scaling/)
 - [Theory of aim](theory-of-aim/)
+- [Information law](information-law/)
 
 Each article and its packet README state the result's status. That status governs over historical comments retained in copied sources.

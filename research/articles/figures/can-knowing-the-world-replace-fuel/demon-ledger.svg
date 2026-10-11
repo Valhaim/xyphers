@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" width="680" height="420" role="img" aria-label="Horizontal bar chart of the demon world's ledger, in nats per unit time, at the limit of reversible actions. The floor, the least fuel any agent without knowledge needs: 0.55. The world's fuel with knowledge: −0.55, negative, so the actions return fuel. Information the actions use: 1.10. What the memory pays: 2.86. The total, 2.31, is the floor plus the 1.76 that the world's noise erases from the memory.">
+<rect width="680" height="420" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">Who pays, and how much</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">the demon world at the limit of reversible actions, in nats per unit time</text>
+<text x="20.0" y="88.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">the floor: least fuel without knowledge</text>
+<rect x="250.0" y="98" width="64.8" height="26" rx="3" fill="none" stroke="#878a96" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="250" y1="92" x2="250" y2="130" stroke="#f7f4eb" stroke-width="1"/>
+<text x="322.8" y="117.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" fill="#a9aab3" text-anchor="start">0.55</text>
+<text x="20.0" y="150.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">the world's fuel, with knowledge</text>
+<rect x="185.2" y="160" width="64.8" height="26" rx="3" fill="#ffbd68"/>
+<line x1="250" y1="154" x2="250" y2="192" stroke="#f7f4eb" stroke-width="1"/>
+<text x="177.2" y="179.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" fill="#ffbd68" text-anchor="end">−0.55</text>
+<text x="20.0" y="212.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">information the actions use</text>
+<rect x="250.0" y="222" width="129.6" height="26" rx="3" fill="#a28cb9"/>
+<line x1="250" y1="216" x2="250" y2="254" stroke="#f7f4eb" stroke-width="1"/>
+<text x="387.6" y="241.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" fill="#a28cb9" text-anchor="start">1.10</text>
+<text x="20.0" y="274.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">what the memory pays</text>
+<rect x="250.0" y="284" width="337.1" height="26" rx="3" fill="#ff633d"/>
+<line x1="250" y1="278" x2="250" y2="316" stroke="#f7f4eb" stroke-width="1"/>
+<text x="595.1" y="303.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" fill="#ff633d" text-anchor="start">2.86</text>
+<text x="20.0" y="336.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="start">the total: floor plus what the noise erases</text>
+<rect x="250.0" y="346" width="64.8" height="26" rx="3" fill="#878a96"/>
+<rect x="314.8" y="346" width="207.4" height="26" rx="3" fill="#983b40"/>
+<text x="530.2" y="365.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" fill="#f7f4eb" text-anchor="start">2.31</text>
+<line x1="250" y1="340" x2="250" y2="378" stroke="#f7f4eb" stroke-width="1"/>
+<text x="250.0" y="398.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">0</text>
+<text x="260.0" y="179.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#ffbd68" text-anchor="start">← fuel returned to its store</text>
+<text x="274.0" y="398.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">0.55 the floor  +  1.76 erased by the noise</text>
+</svg>

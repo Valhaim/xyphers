@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" width="680" height="400" role="img" aria-label="Diagram of the demon world. Four states: the world in state 0 or 1, each with the memory reading 0 or 1. Noise flips the world in both memory states. The memory copies the world, correctly 9 times in 10. One action, taken only when the memory reads 1, pushes the world from 1 back to 0, holding it in state 0 three times in four.">
+<rect width="680" height="400" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">A demon holding a world</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">two world states, a one-bit memory, one action</text>
+<text x="210.0" y="92.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="middle">world in state 0</text>
+<text x="210.0" y="110.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">held 3 times in 4</text>
+<text x="470.0" y="92.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#a9aab3" text-anchor="middle">world in state 1</text>
+<text x="470.0" y="110.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">held 1 time in 4</text>
+<rect x="148" y="124" width="124" height="52" rx="10" fill="#101219" stroke="#a28cb9" stroke-width="2"/>
+<text x="210.0" y="156.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff6df" text-anchor="middle">memory 0</text>
+<rect x="408" y="124" width="124" height="52" rx="10" fill="#101219" stroke="#343953" stroke-width="2"/>
+<text x="470.0" y="156.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="middle">memory 0</text>
+<line x1="282.0" y1="142.0" x2="398.0" y2="142.0" stroke="#878a96" stroke-width="1.6" stroke-dasharray="5 5"/>
+<path d="M398.0 142.0 L388.0 146.5 L388.0 137.5 Z" fill="#878a96"/>
+<path d="M282.0 142.0 L292.0 137.5 L292.0 146.5 Z" fill="#878a96"/>
+<rect x="148" y="264" width="124" height="52" rx="10" fill="#101219" stroke="#343953" stroke-width="2"/>
+<text x="210.0" y="296.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="400" fill="#a9aab3" text-anchor="middle">memory 1</text>
+<rect x="408" y="264" width="124" height="52" rx="10" fill="#101219" stroke="#a28cb9" stroke-width="2"/>
+<text x="470.0" y="296.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff6df" text-anchor="middle">memory 1</text>
+<line x1="282.0" y1="282.0" x2="398.0" y2="282.0" stroke="#878a96" stroke-width="1.6" stroke-dasharray="5 5"/>
+<path d="M398.0 282.0 L388.0 286.5 L388.0 277.5 Z" fill="#878a96"/>
+<path d="M282.0 282.0 L292.0 277.5 L292.0 286.5 Z" fill="#878a96"/>
+<text x="340.0" y="134.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#878a96" text-anchor="middle">noise flips the world</text>
+<line x1="210.0" y1="184.0" x2="210.0" y2="256.0" stroke="#a28cb9" stroke-width="2.2"/>
+<path d="M210.0 256.0 L205.5 246.0 L214.5 246.0 Z" fill="#a28cb9"/>
+<path d="M210.0 184.0 L214.5 194.0 L205.5 194.0 Z" fill="#a28cb9"/>
+<line x1="470.0" y1="184.0" x2="470.0" y2="256.0" stroke="#a28cb9" stroke-width="2.2"/>
+<path d="M470.0 256.0 L465.5 246.0 L474.5 246.0 Z" fill="#a28cb9"/>
+<path d="M470.0 184.0 L474.5 194.0 L465.5 194.0 Z" fill="#a28cb9"/>
+<text x="552.0" y="214.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a28cb9" text-anchor="start">the memory copies</text>
+<text x="552.0" y="232.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a28cb9" text-anchor="start">the world, 9 times</text>
+<text x="552.0" y="250.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a28cb9" text-anchor="start">in 10</text>
+<path d="M430 320 C 400 370, 280 370, 256 324" fill="none" stroke="#ff633d" stroke-width="3"/>
+<path d="M254 320 l 3 15 l 9 -10 Z" fill="#ff633d"/>
+<text x="340.0" y="374.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="600" fill="#ff633d" text-anchor="middle">act: when the memory reads 1, push the world back to 0</text>
+</svg>
