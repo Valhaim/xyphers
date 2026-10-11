@@ -74,7 +74,7 @@ The shape survived intact. Faster travellers did gain less from aim, in all twel
 
 The theory treats each bridge exactly and sees all the others only on average. A slow traveller sees one bridge at a time, and that is enough. A fast traveller ends up wherever the standing bridges let it go. Where it is then says something about several bridges at once, and fuel spent there lands where those bridges stand together.
 
-The likely missing ingredient is these joint correlations, which a theory built from single bridges cannot hold. The error always has the same sign, grows with speed, and is larger in the warmer world, where more bridges stand at once. All of that fits. The next version of the theory keeps pairs of bridges exactly, and it will be tested the same way: after the fact on these numbers, then in advance on new ones.
+The likely missing ingredient is these joint correlations, which a theory built from single bridges cannot hold. The error always has the same sign, grows with speed, and is larger in the warmer world, where more bridges stand at once. All of that fits. A first check after the run supports this reading. Keeping pairs of bridges exact, instead of one, halves the error at sixteen times the pace in the three-island worlds, and narrows it by a quarter with four islands, where more than two bridges move together. The theory now has a direction to grow in, and each step will be tested the same way: in advance, on numbers nobody has computed.
 
 ## How we know
 
