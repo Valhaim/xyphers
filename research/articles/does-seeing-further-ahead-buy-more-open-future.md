@@ -5,7 +5,7 @@ type: "research-article"
 status: "published"
 maturity: "bounded-exact-result"
 published: "2026-10-10"
-revised: "2026-10-10"
+revised: "2026-10-11"
 website_path: "/research/does-seeing-further-ahead-buy-more-open-future/"
 web_status: "live"
 ---
@@ -70,7 +70,7 @@ The foresight ladder told a clear story. Climbing it, from preparing the next cr
 
 With three islands, a three-step route, and stores ×8 and ×2, preparing the next crossing gives an edge of 1.44; preparing two steps, 1.21; the whole route, 1.17. Fuel on every bridge at the traveller's island gives 1.42. In no world with a route of two or three steps did the whole route beat that: the fourth prediction failed too.
 
-The winner was a surprise, though not a hypothesis: AIM-1, which fuels only the route's bridges at the traveller's island, the step just taken and the step about to be taken. It is a strict subset of what LOCAL fuels, and it beats LOCAL in all eighteen worlds. Knowing which way you are about to step pays. Knowing the rest of the road, in these worlds, does not.
+The winner was a surprise, though not a hypothesis: AIM-1, which fuels only the route's bridges at the traveller's island, the step just taken and the step about to be taken. It is a strict subset of what LOCAL fuels, and it beats LOCAL in all eighteen worlds, by 1% to 3%. A look at the exact numbers after the run shows where that small lead comes from. Each extra bridge AIM-1 holds is worth more to the traveller, and that accounts for 29% to 73% of the lead, depending on the stores. The rest arises because AIM-1 burns less fuel, and random placement does slightly worse with fewer bridges, since random bridges help one another. The fall along the foresight ladder, 15% to 25%, is far larger than this small bias.
 
 ## The value of aim grows with the world
 
@@ -86,7 +86,7 @@ Random placement spreads bridges over the whole world, and only some of them tou
 
 Both experiments count the open future only two steps out, while the prepared route reaches up to three. A bridge further along the route pays only once the traveller arrives, and in these worlds the fuel that kept it standing would have kept more open nearby. The design said so before the run, so the refutations are precise: fuel aimed further along a route does not pay under a near-sighted measure of the future.
 
-That points straight at the next experiment. Count the open future as far ahead as the plan looks, and slow the weather so that a prepared bridge is still standing when the traveller arrives. Then ask again whether seeing further ahead buys more.
+After the run, a mean-field theory with no fitted parameter reproduced every edge of this experiment to within 0.62%, and it locates the deeper cause. The route is chosen at random. Fuel aimed further along it is fuel on bridges the traveller may never use while they still stand. A bridge away from the traveller's island is worth only 7% to 15% of one at its island, and it forgets four to nine times faster than the traveller steps. The theory predicts that a longer measure, a faster traveller, slower replanning, or a traveller pushed forward along its route still leaves the ladder falling. Foresight can pay only if the plan itself carries information about where value lies. The next experiments test the theory's numbers before they are computed, and then give the traveller plans that are informed.
 
 ## How we know
 
@@ -114,7 +114,7 @@ The broken worlds failed exactly where they were predicted to:
 
 Aim is real, measurable, and grows with the world. In a world where nothing is protected for free, putting energy where the agent is buys a third to more than double the future that the same energy buys at random, and every added island raises that edge by about the same amount. I believe this is the physical content of agency in its simplest form: not how much energy flows through a system, but where it goes.
 
-Foresight is not free. Twice now, preparing the road further ahead has bought more future in total and less per unit of energy. In these worlds, foresight paid only one step deep: the agent that knew which way it was about to step beat every other. Whether longer foresight pays when the future is counted as far ahead as it looks is the sharpest open question this programme has, and it is the next experiment.
+Foresight is not free. Twice now, preparing the road further ahead has bought more future in total and less per unit of energy. In these worlds, the best aim was the nearest one. Foresight about a plan chosen blind is foresight about nothing in particular. Whether foresight pays once the plan is informed, by a traveller that pays to sense where value lies and then chooses its route, is the sharpest open question this programme has, and it is where the next experiments go.
 
 ## Read, inspect, reproduce
 
