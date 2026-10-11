@@ -13,6 +13,7 @@ The labels describe the maturity of the scientific claim, not the polish of the 
 ## Foundations
 
 - [What is a Xypher?](https://xyphers.com/core-thesis/) — the Core Thesis and the map of the research program. A [portable edition](articles/core-thesis.md) is included here.
+- [A Thermodynamics of Agency](https://xyphers.com/formulas/) — the formula sheet: five formulas for what an agent's energy buys, each labelled proved, known physics, approximate, or conjecture, with links to the evidence.
 
 ## Research articles
 

@@ -99,7 +99,7 @@ The broken worlds failed exactly where they were predicted to, including two new
 
 A theory of what an agent's energy buys now exists that predicts, rather than fits, inside a clearly marked regime. When the agent moves at the pace of the world it shapes, the theory's numbers can be trusted to a third of a percent. That makes it a tool for worlds far larger than exact methods can reach, and in those worlds aim keeps gaining with every island.
 
-I believe this is how a physics of agency has to grow. Exact experiments small enough to be certain are paired with a theory precise enough to be wrong, and each failure is turned into the next ingredient. The theory's two clearest statements both point the same way. A fast agent's position carries information about its world, and blind plans buy nothing. The next experiments give the traveller plans that carry information, and they count the price of that information in the same store as everything else.
+I believe this is how a physics of agency has to grow. Exact experiments small enough to be certain are paired with a theory precise enough to be wrong, and each failure is turned into the next ingredient. The theory's two clearest statements both point the same way. A fast agent's position carries information about its world, and blind plans buy nothing. The next experiments give the traveller plans that carry information, and they count the price of that information in the same store as everything else. The five formulas of this programme, and how sure we are of each, are collected on [one sheet](https://xyphers.com/formulas/).
 
 ## Read, inspect, reproduce
 
