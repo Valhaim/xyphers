@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 444" width="680" height="444" role="img" aria-label="Grouped bar chart of thermodynamic efficiency, the Horowitz-Zhou-England floor divided by the entropy the agent produces, for three agents in four worlds. Values: ×5 store: own net THAIM 0.71, hand-written aim 0.37, fuel everywhere 0.39; ×5, hotter fuel: own net THAIM 0.75, hand-written aim 0.40, fuel everywhere 0.44; ×9 store: own net THAIM 0.52, hand-written aim 0.32, fuel everywhere 0.33; ×20, four steps: own net THAIM 0.46, hand-written aim 0.29, fuel everywhere 0.29. The agent trained on its own net THAIM flow comes 1.6 to 1.9 times closer to the floor than hand-written aim.">
+<rect width="680" height="444" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">How close each agent comes to the thermodynamic floor</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">efficiency = the floor's entropy over the agent's entropy (1 means at the floor)</text>
+<line x1="60" y1="370.0" x2="660" y2="370.0" stroke="#252936" stroke-width="1"/>
+<text x="54.0" y="374.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0.00</text>
+<line x1="60" y1="305.0" x2="660" y2="305.0" stroke="#252936" stroke-width="1"/>
+<text x="54.0" y="309.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0.25</text>
+<line x1="60" y1="240.0" x2="660" y2="240.0" stroke="#252936" stroke-width="1"/>
+<text x="54.0" y="244.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0.50</text>
+<line x1="60" y1="175.0" x2="660" y2="175.0" stroke="#252936" stroke-width="1"/>
+<text x="54.0" y="179.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0.75</text>
+<line x1="60" y1="110.0" x2="660" y2="110.0" stroke="#252936" stroke-width="1"/>
+<text x="54.0" y="114.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">1.00</text>
+<rect x="90" y="184.4" width="26" height="185.6" fill="#ffbd68"/>
+<rect x="124" y="272.6" width="26" height="97.4" fill="#a9aab3"/>
+<rect x="158" y="268.8" width="26" height="101.2" fill="#878a96"/>
+<text x="137.0" y="390.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="400" fill="#a9aab3" text-anchor="middle">×5 store</text>
+<rect x="235" y="173.7" width="26" height="196.3" fill="#ffbd68"/>
+<rect x="269" y="266.6" width="26" height="103.4" fill="#a9aab3"/>
+<rect x="303" y="256.4" width="26" height="113.6" fill="#878a96"/>
+<text x="282.0" y="390.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="400" fill="#a9aab3" text-anchor="middle">×5, hotter fuel</text>
+<rect x="380" y="235.5" width="26" height="134.5" fill="#ffbd68"/>
+<rect x="414" y="286.4" width="26" height="83.6" fill="#a9aab3"/>
+<rect x="448" y="284.9" width="26" height="85.1" fill="#878a96"/>
+<text x="427.0" y="390.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="400" fill="#a9aab3" text-anchor="middle">×9 store</text>
+<rect x="525" y="251.6" width="26" height="118.4" fill="#ffbd68"/>
+<rect x="559" y="294.5" width="26" height="75.5" fill="#a9aab3"/>
+<rect x="593" y="294.2" width="26" height="75.8" fill="#878a96"/>
+<text x="572.0" y="390.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="12" font-weight="400" fill="#a9aab3" text-anchor="middle">×20, four steps</text>
+<rect x="70" y="412" width="14" height="14" fill="#ffbd68"/><text x="90.0" y="424.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">own net THAIM</text>
+<rect x="270" y="412" width="14" height="14" fill="#a9aab3"/><text x="290.0" y="424.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">hand-written aim</text>
+<rect x="470" y="412" width="14" height="14" fill="#878a96"/><text x="490.0" y="424.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">fuel everywhere</text>
+</svg>

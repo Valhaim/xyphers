@@ -1,0 +1,36 @@
+world N=4 R=2 b_c=8 b_h=2 v=1; ln b_c=2.0794; max dS=1.7918; share of builds with dS>ln b_c=0.000
+  LOCAL u=1              J=1.5118 H=+0.5279 E=1.7954 eta=0.332 aim=1.000 u_inc=1.00 u_non=0.00 | netTHAIM=-0.66783 receipts=1.4032 S_A+S_U=-1.8e-15
+  GLOBAL u=1             J=3.0000 H=+0.5926 E=1.0000 eta=0.339 aim=0.500 u_inc=1.00 u_non=1.00 | netTHAIM=-2.10229 receipts=1.4962 S_A+S_U=+1.8e-15
+  receipt/blind          J=0.0005 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00035 receipts=0.0002 S_A+S_U=-1.7e-15
+  net/blind              J=0.0005 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00038 receipts=0.0002 S_A+S_U=+6.4e-16
+  world/blind            J=0.0005 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00037 receipts=0.0002 S_A+S_U=-6.8e-16
+  receipt/local          J=0.0005 H=+0.0001 E=0.9931 eta=0.000 aim=0.487 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00033 receipts=0.0002 S_A+S_U=-2.7e-16
+  net/local              J=0.0006 H=+0.0001 E=0.9910 eta=0.000 aim=0.483 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00039 receipts=0.0002 S_A+S_U=+6.5e-17
+  world/local            J=0.0006 H=+0.0001 E=0.9898 eta=0.000 aim=0.481 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00042 receipts=0.0002 S_A+S_U=+2.9e-16
+  receipt/full           J=0.0006 H=+0.0001 E=1.0233 eta=0.004 aim=0.499 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00040 receipts=0.0002 S_A+S_U=+1.0e-16
+  net/full               J=0.0006 H=+0.0001 E=1.0270 eta=0.005 aim=0.499 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00043 receipts=0.0002 S_A+S_U=-5.5e-16
+  world/full             J=0.0006 H=+0.0001 E=1.0385 eta=0.011 aim=0.499 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00044 receipts=0.0002 S_A+S_U=-2.4e-16
+world N=4 R=2 b_c=3 b_h=2 v=1; ln b_c=1.0986; max dS=1.7918; share of builds with dS>ln b_c=0.125
+  LOCAL u=1              J=0.4474 H=+0.3619 E=1.6030 eta=0.422 aim=1.000 u_inc=1.00 u_non=0.00 | netTHAIM=-0.03750 receipts=2.0131 S_A+S_U=+0.0e+00
+  GLOBAL u=1             J=0.8571 H=+0.4362 E=1.0000 eta=0.450 aim=0.500 u_inc=1.00 u_non=1.00 | netTHAIM=-0.41647 receipts=2.2034 S_A+S_U=-6.1e-16
+  receipt/blind          J=1.4999 H=+0.7734 E=1.0000 eta=0.765 aim=0.500 u_inc=4.00 u_non=4.00 | netTHAIM=-0.74704 receipts=8.2794 S_A+S_U=+1.2e-15
+  net/blind              J=0.0002 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+2.2e-16
+  world/blind            J=0.0002 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+4.6e-16
+  receipt/local          J=1.4996 H=+0.7733 E=1.0001 eta=0.765 aim=0.500 u_inc=4.00 u_non=3.99 | netTHAIM=-0.74681 receipts=8.2780 S_A+S_U=+5.6e-16
+  net/local              J=0.0003 H=+0.0002 E=1.2118 eta=0.000 aim=0.645 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0005 S_A+S_U=+3.0e-16
+  world/local            J=0.0002 H=+0.0001 E=0.9885 eta=0.000 aim=0.472 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+3.5e-17
+  receipt/full           J=1.4999 H=+0.7734 E=1.0000 eta=0.765 aim=0.500 u_inc=4.00 u_non=4.00 | netTHAIM=-0.74703 receipts=8.2792 S_A+S_U=+0.0e+00
+  net/full               J=0.0002 H=+0.0001 E=1.0172 eta=0.000 aim=0.502 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=-5.1e-16
+  world/full             J=0.0002 H=+0.0001 E=1.0222 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=-4.5e-16
+world N=4 R=2 b_c=3 b_h=2 v=4; ln b_c=1.0986; max dS=1.7918; share of builds with dS>ln b_c=0.125
+  LOCAL u=1              J=0.4698 H=+0.3461 E=1.4592 eta=0.386 aim=1.000 u_inc=1.00 u_non=0.00 | netTHAIM=-0.04886 receipts=2.0238 S_A+S_U=-1.7e-16
+  GLOBAL u=1             J=0.8571 H=+0.4362 E=1.0000 eta=0.450 aim=0.500 u_inc=1.00 u_non=1.00 | netTHAIM=-0.41647 receipts=2.2034 S_A+S_U=-1.7e-15
+  receipt/blind          J=1.4999 H=+0.7734 E=1.0000 eta=0.765 aim=0.500 u_inc=4.00 u_non=4.00 | netTHAIM=-0.74704 receipts=8.2794 S_A+S_U=+0.0e+00
+  net/blind              J=0.0002 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+5.0e-16
+  world/blind            J=0.0002 H=+0.0001 E=1.0000 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+3.0e-16
+  receipt/local          J=1.4996 H=+0.7733 E=1.0001 eta=0.765 aim=0.500 u_inc=4.00 u_non=3.99 | netTHAIM=-0.74679 receipts=8.2780 S_A+S_U=+2.2e-16
+  net/local              J=0.0003 H=+0.0002 E=1.1925 eta=0.000 aim=0.645 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0005 S_A+S_U=-4.9e-16
+  world/local            J=0.0002 H=+0.0001 E=0.9966 eta=0.000 aim=0.472 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+1.0e-16
+  receipt/full           J=1.4999 H=+0.7734 E=1.0000 eta=0.765 aim=0.500 u_inc=4.00 u_non=4.00 | netTHAIM=-0.74703 receipts=8.2792 S_A+S_U=-7.8e-16
+  net/full               J=0.0002 H=+0.0001 E=1.0163 eta=0.000 aim=0.502 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+2.2e-16
+  world/full             J=0.0002 H=+0.0001 E=1.0220 eta=0.000 aim=0.500 u_inc=0.00 u_non=0.00 | netTHAIM=-0.00008 receipts=0.0003 S_A+S_U=+5.3e-18

@@ -1,0 +1,18 @@
+W1: N=4 tau=3 b_c=5 b_h=2 v=1
+   <N_tau>_pi_c = 97/18 = 5.388889;  r0 = 1/6
+   build ratios: 36 distinct, max 18; builds (G,pos,e) with ratio > b_c: 96 of 768; tie with b_c: False
+W2: N=4 tau=3 b_c=5 b_h=3 v=4
+   <N_tau>_pi_c = 97/18 = 5.388889;  r0 = 1/6
+   build ratios: 36 distinct, max 18; builds (G,pos,e) with ratio > b_c: 96 of 768; tie with b_c: False
+W3: N=4 tau=3 b_c=9 b_h=2 v=1
+   <N_tau>_pi_c = 853/250 = 3.412000;  r0 = 1/10
+   build ratios: 36 distinct, max 18; builds (G,pos,e) with ratio > b_c: 72 of 768; tie with b_c: False
+W4: N=4 tau=3 b_c=20 b_h=2 v=1
+   <N_tau>_pi_c = 6388/3087 = 2.069323;  r0 = 1/21
+   build ratios: 36 distinct, max 18; builds (G,pos,e) with ratio > b_c: 0 of 768; tie with b_c: False
+W5: N=4 tau=4 b_c=20 b_h=3 v=1
+   <N_tau>_pi_c = 8156/2401 = 3.396918;  r0 = 1/21
+   build ratios: 36 distinct, max 56; builds (G,pos,e) with ratio > b_c: 72 of 768; tie with b_c: False
+W6: N=4 tau=4 b_c=60 b_h=2 v=2
+   <N_tau>_pi_c = 24466996/13845841 = 1.767101;  r0 = 1/61
+   build ratios: 36 distinct, max 56; builds (G,pos,e) with ratio > b_c: 0 of 768; tie with b_c: False

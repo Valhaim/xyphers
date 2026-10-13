@@ -1,0 +1,252 @@
+CAL-THAIM-1 independent check (from the frozen boundary and recorded outputs only)
+boundary sha256 bfac95e0ecefb98e57bc6bc82ce088b38ef79c6a339dca5347979c0a8642744c frozen value
+report   sha256 a419d1cf735e10daea9b77d083ae08535fb3d9c028eaaeeb9e8486a3c7a8f0a4 recorded value
+arithmetic: exact rationals; logs expanded over primes (flint fmpz.factor), signs from certified arb
+steady states: own multi-modular solver + exact verification
+
+WORLD W1 N=4 tau=3 b_c=5 b_h=2 v=1 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=1.019508 resid=1.019508 <|G|>=1.169918 H=1.514807 rho*=0.194986 H_warm=0.935374 E=1.6195 aim=1.0000 agreement=0.6962 sign(R_net)=+1 R_net=0.00313646995013 R_receipt=1.35269235485 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=2.000000 resid=2.000000 <|G|>=1.333333 H=1.890947 rho*=0.222222 H_warm=1.890947 E=1.0000 aim=0.5000 agreement=0.6975 sign(R_net)=-1 R_net=-0.878594004831 R_receipt=0.616613988728 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=1.153846 resid=0.000000 <|G|>=1.192308 H=1.688034 rho*=0.198718 H_warm=1.063018 E=1.5880 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.434555358893 R_receipt=5.72922706803 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000023 resid=0.000023 <|G|>=1.000004 H=0.000020 rho*=0.166667 H_warm=0.000020 E=1.0000 aim=0.5000 agreement=0.6528 sign(R_net)=-1 R_net=-9.51059001643e-6 R_receipt=-5.92184464144e-7 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=1.153855 resid=0.000015 <|G|>=1.192309 H=1.688036 rho*=0.198718 H_warm=1.063027 E=1.5880 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.434541316973 R_receipt=5.72911591202 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=1.153855 resid=0.000015 <|G|>=1.192309 H=1.688036 rho*=0.198718 H_warm=1.063027 E=1.5880 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.434541307747 R_receipt=5.72911119150 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=2.137823 resid=0.000010 <|G|>=1.356304 H=3.056243 rho*=0.226051 H_warm=2.029752 E=1.5057 aim=0.9231 agreement=0.7656 sign(R_net)=-1 R_net=-0.221568817747 R_receipt=6.03460141315 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000021 resid=0.000021 <|G|>=1.000004 H=0.000020 rho*=0.166667 H_warm=0.000019 E=1.0417 aim=0.5000 agreement=0.6528 sign(R_net)=-1 R_net=-9.20706270843e-6 R_receipt=-1.10621579425e-6 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.499904 resid=0.000020 <|G|>=1.083317 H=0.887588 rho*=0.180553 H_warm=0.451333 E=1.9666 aim=1.0000 agreement=0.7727 sign(R_net)=+1 R_net=0.281985749001 R_receipt=2.10862516755 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=1.153855 resid=0.000015 <|G|>=1.192309 H=1.688036 rho*=0.198718 H_warm=1.063027 E=1.5880 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.434541336793 R_receipt=5.72911239939 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=1.153843 resid=0.000006 <|G|>=1.192307 H=1.688026 rho*=0.198718 H_warm=1.063015 E=1.5880 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.434547690639 R_receipt=5.72906571705 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.000012 resid=0.000012 <|G|>=1.000002 H=0.000011 rho*=0.166667 H_warm=0.000011 E=1.0110 aim=0.5005 agreement=0.6528 sign(R_net)=-1 R_net=-4.98856757663e-6 R_receipt=-3.70256977682e-7 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.229048 resid=0.000020 <|G|>=1.038175 H=0.320884 rho*=0.173029 H_warm=0.205059 E=1.5648 aim=1.0000 agreement=0.7130 sign(R_net)=+1 R_net=0.0777958626930 R_receipt=0.917008861887 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=1.4498: 0.8492
+
+WORLD W2 N=4 tau=3 b_c=5 b_h=3 v=4 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=0.632942 resid=0.632942 <|G|>=1.105490 H=0.882477 rho*=0.184248 H_warm=0.573809 E=1.5379 aim=1.0000 agreement=0.6783 sign(R_net)=+1 R_net=0.00871682719145 R_receipt=1.88988512725 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=1.200000 resid=1.200000 <|G|>=1.200000 H=1.107111 rho*=0.200000 H_warm=1.107111 E=1.0000 aim=0.5000 agreement=0.6800 sign(R_net)=-1 R_net=-0.515543329026 R_receipt=1.53782668390 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=0.681818 resid=0.000000 <|G|>=1.113636 H=0.997475 rho*=0.185606 H_warm=0.619055 E=1.6113 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.256782712073 R_receipt=7.29628941626 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000013 resid=0.000013 <|G|>=1.000002 H=0.000011 rho*=0.166667 H_warm=0.000011 E=1.0000 aim=0.5000 agreement=0.6528 sign(R_net)=-1 R_net=-5.34970284772e-6 R_receipt=5.93763757013e-6 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=0.681823 resid=0.000008 <|G|>=1.113637 H=0.997476 rho*=0.185606 H_warm=0.619060 E=1.6113 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.256774657618 R_receipt=7.29614450880 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=0.681823 resid=0.000008 <|G|>=1.113637 H=0.997475 rho*=0.185606 H_warm=0.619060 E=1.6113 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.256774664715 R_receipt=7.29613481752 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=1.706229 resid=0.000006 <|G|>=1.284372 H=1.951737 rho*=0.214062 H_warm=1.598793 E=1.2208 aim=0.6663 agreement=0.6297 sign(R_net)=-1 R_net=-0.494499310378 R_receipt=8.47580142498 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000012 resid=0.000012 <|G|>=1.000002 H=0.000011 rho*=0.166667 H_warm=0.000011 E=1.0246 aim=0.5000 agreement=0.6528 sign(R_net)=-1 R_net=-5.24173724978e-6 R_receipt=5.41052679856e-6 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.299428 resid=0.000011 <|G|>=1.049905 H=0.552142 rho*=0.174984 H_warm=0.268656 E=2.0552 aim=1.0000 agreement=0.7671 sign(R_net)=+1 R_net=0.168870688148 R_receipt=2.58148461123 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=0.681823 resid=0.000008 <|G|>=1.113637 H=0.997475 rho*=0.185606 H_warm=0.619060 E=1.6113 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.256774742437 R_receipt=7.29614043531 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=0.681817 resid=0.000004 <|G|>=1.113636 H=0.997470 rho*=0.185606 H_warm=0.619054 E=1.6113 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.256777993113 R_receipt=7.29606384214 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.145631 resid=0.000013 <|G|>=1.024272 H=0.213045 rho*=0.170712 H_warm=0.130040 E=1.6383 aim=1.0000 agreement=0.7269 sign(R_net)=+1 R_net=0.0548356166699 R_receipt=1.55779666237 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.000007 resid=0.000007 <|G|>=1.000001 H=0.000006 rho*=0.166667 H_warm=0.000006 E=1.0093 aim=0.5000 agreement=0.6528 sign(R_net)=-1 R_net=-2.72426070802e-6 R_receipt=2.94365960741e-6 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=1.2085: 0.9754
+
+WORLD W3 N=4 tau=3 b_c=9 b_h=2 v=1 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=1.625276 resid=1.625276 <|G|>=0.762528 H=1.334575 rho*=0.127088 H_warm=0.766018 E=1.7422 aim=1.0000 agreement=0.9311 sign(R_net)=-1 R_net=-0.328913008278 R_receipt=0.408696548637 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=3.230769 resid=3.230769 <|G|>=0.923077 H=1.572524 rho*=0.153846 H_warm=1.572524 E=1.0000 aim=0.5000 agreement=0.8983 sign(R_net)=-1 R_net=-1.83512292610 R_receipt=-1.03761075200 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=0.679445 resid=0.000000 <|G|>=0.667944 H=0.680656 rho*=0.111324 H_warm=0.314153 E=2.1666 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0949492262323 R_receipt=0.824224005578 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000037 resid=0.000037 <|G|>=0.600004 H=0.000017 rho*=0.100001 H_warm=0.000017 E=1.0000 aim=0.5000 agreement=0.9230 sign(R_net)=-1 R_net=-2.06071333300e-5 R_receipt=-1.58375612601e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=0.000052 resid=0.000052 <|G|>=0.600005 H=0.000030 rho*=0.100001 H_warm=0.000024 E=1.2564 aim=0.6566 agreement=0.9230 sign(R_net)=-1 R_net=-2.06899496777e-5 R_receipt=-1.17423725615e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=0.679479 resid=0.000036 <|G|>=0.667948 H=0.680671 rho*=0.111325 H_warm=0.314169 E=2.1666 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0949276074552 R_receipt=0.824202700253 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=2.490499 resid=0.000022 <|G|>=0.849050 H=2.002350 rho*=0.141508 H_warm=1.194417 E=1.6764 aim=1.0000 agreement=0.7358 sign(R_net)=-1 R_net=-0.0411746988550 R_receipt=3.45784108465 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000036 resid=0.000036 <|G|>=0.600004 H=0.000017 rho*=0.100001 H_warm=0.000016 E=1.0454 aim=0.5000 agreement=0.9230 sign(R_net)=-1 R_net=-2.03251896998e-5 R_receipt=-1.58158687825e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.000038 resid=0.000038 <|G|>=0.600004 H=0.000019 rho*=0.100001 H_warm=0.000017 E=1.0948 aim=0.5253 agreement=0.9230 sign(R_net)=-1 R_net=-2.01726353455e-5 R_receipt=-1.51364900588e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=2.490493 resid=0.000024 <|G|>=0.849049 H=2.002345 rho*=0.141508 H_warm=1.194414 E=1.6764 aim=1.0000 agreement=0.7358 sign(R_net)=-1 R_net=-0.0411757500907 R_receipt=3.45780508445 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=0.679453 resid=0.000012 <|G|>=0.667945 H=0.680657 rho*=0.111324 H_warm=0.314157 E=2.1666 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0949413232201 R_receipt=0.824207326187 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.000022 resid=0.000022 <|G|>=0.600002 H=0.000010 rho*=0.100000 H_warm=0.000010 E=1.0125 aim=0.5001 agreement=0.9230 sign(R_net)=-1 R_net=-1.21075203231e-5 R_receipt=-9.33482939349e-6 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.000024 resid=0.000024 <|G|>=0.600002 H=0.000011 rho*=0.100000 H_warm=0.000011 E=1.0104 aim=0.4997 agreement=0.9230 sign(R_net)=-1 R_net=-1.32143513964e-5 R_receipt=-1.01857872114e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=2.4713: 0.9867
+
+WORLD W4 N=4 tau=3 b_c=20 b_h=2 v=1 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=2.252077 resid=2.252077 <|G|>=0.392956 H=0.816598 rho*=0.065493 H_warm=0.438073 E=1.8641 aim=1.0000 agreement=1.0000 sign(R_net)=-1 R_net=-0.824974475341 R_receipt=-0.508185958553 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=4.500000 resid=4.500000 <|G|>=0.500000 H=0.895955 rho*=0.083333 H_warm=0.895955 E=1.0000 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-3.00778074119 R_receipt=-2.67617646146 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=0.000000 resid=0.000000 <|G|>=0.285714 H=0.000000 rho*=0.047619 H_warm=0.000000 E=none aim=none agreement=1.0000 sign(R_net)=+0 R_net=0 R_receipt=0 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000053 resid=0.000053 <|G|>=0.285717 H=0.000010 rho*=0.047619 H_warm=0.000010 E=1.0000 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-3.52824214555e-5 R_receipt=-3.32762738002e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=0.000053 resid=0.000053 <|G|>=0.285717 H=0.000010 rho*=0.047619 H_warm=0.000010 E=1.0360 aim=0.5098 agreement=1.0000 sign(R_net)=-1 R_net=-3.52079551837e-5 R_receipt=-3.32163471007e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=0.000054 resid=0.000054 <|G|>=0.285717 H=0.000011 rho*=0.047619 H_warm=0.000010 E=1.0609 aim=0.5143 agreement=1.0000 sign(R_net)=-1 R_net=-3.53244029067e-5 R_receipt=-3.32617117962e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=0.615334 resid=0.000043 <|G|>=0.315016 H=0.278314 rho*=0.052503 H_warm=0.117665 E=2.3653 aim=1.0000 agreement=0.9610 sign(R_net)=-1 R_net=-0.102975812282 R_receipt=0.0755474491402 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000053 resid=0.000053 <|G|>=0.285717 H=0.000010 rho*=0.047619 H_warm=0.000010 E=1.0330 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-3.50990815504e-5 R_receipt=-3.31453587318e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.000053 resid=0.000053 <|G|>=0.285717 H=0.000011 rho*=0.047619 H_warm=0.000010 E=1.0459 aim=0.5068 agreement=1.0000 sign(R_net)=-1 R_net=-3.51248165530e-5 R_receipt=-3.31276944906e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=4.792834 resid=0.000036 <|G|>=0.513944 H=1.712928 rho*=0.085657 H_warm=0.957140 E=1.7896 aim=1.0000 agreement=0.6370 sign(R_net)=-1 R_net=-1.39784566982 R_receipt=0.452289724381 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=0.000017 resid=0.000017 <|G|>=0.285715 H=0.000003 rho*=0.047619 H_warm=0.000003 E=1.0120 aim=0.5010 agreement=1.0000 sign(R_net)=-1 R_net=-1.09668585979e-5 R_receipt=-1.03442932207e-5 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.000037 resid=0.000036 <|G|>=0.285716 H=0.000008 rho*=0.047619 H_warm=0.000007 E=1.0994 aim=0.4987 agreement=1.0000 sign(R_net)=-1 R_net=-2.52838690882e-5 R_receipt=-2.38705660819e-5 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.000040 resid=0.000038 <|G|>=0.285716 H=0.000008 rho*=0.047619 H_warm=0.000008 E=1.1006 aim=0.4993 agreement=1.0000 sign(R_net)=-1 R_net=-2.67224983585e-5 R_receipt=-2.52168014587e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=6.8608: 0.5952
+
+WORLD W5 N=4 tau=4 b_c=20 b_h=3 v=1 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=2.042320 resid=2.042320 <|G|>=0.382968 H=1.705964 rho*=0.063828 H_warm=0.937473 E=1.8197 aim=1.0000 agreement=0.9605 sign(R_net)=-1 R_net=-0.313094413642 R_receipt=0.296662837357 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=4.080000 resid=4.080000 <|G|>=0.480000 H=1.938027 rho*=0.080000 H_warm=1.938027 E=1.0000 aim=0.5000 agreement=0.9350 sign(R_net)=-1 R_net=-2.26802014811 R_receipt=-1.62849784744 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=0.544151 resid=0.000000 <|G|>=0.311626 H=0.604489 rho*=0.051938 H_warm=0.243511 E=2.4824 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0703503877764 R_receipt=0.410424267414 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000048 resid=0.000048 <|G|>=0.285717 H=0.000021 rho*=0.047619 H_warm=0.000021 E=1.0000 aim=0.5000 agreement=0.9578 sign(R_net)=-1 R_net=-2.61764478595e-5 R_receipt=-2.23659995669e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=0.000051 resid=0.000051 <|G|>=0.285717 H=0.000024 rho*=0.047619 H_warm=0.000022 E=1.0912 aim=0.5392 agreement=0.9578 sign(R_net)=-1 R_net=-2.62603691718e-5 R_receipt=-2.19693179102e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=0.544198 resid=0.000048 <|G|>=0.311628 H=0.604510 rho*=0.051938 H_warm=0.243532 E=2.4823 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0703233794169 R_receipt=0.410399838508 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=4.271149 resid=0.000027 <|G|>=0.489102 H=3.412516 rho*=0.081517 H_warm=2.035309 E=1.6767 aim=1.0000 agreement=0.6487 sign(R_net)=-1 R_net=-0.236974923436 R_receipt=3.32257359371 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000047 resid=0.000047 <|G|>=0.285717 H=0.000022 rho*=0.047619 H_warm=0.000021 E=1.0491 aim=0.5000 agreement=0.9578 sign(R_net)=-1 R_net=-2.59448871222e-5 R_receipt=-2.22501373139e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.000786 resid=0.000048 <|G|>=0.285752 H=0.001252 rho*=0.047625 H_warm=0.000348 E=3.5939 aim=0.9703 agreement=0.9579 sign(R_net)=+1 R_net=0.000227649627950 R_receipt=0.000598146517901 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=4.271136 resid=0.000028 <|G|>=0.489102 H=3.412506 rho*=0.081517 H_warm=2.035302 E=1.6767 aim=1.0000 agreement=0.6487 sign(R_net)=-1 R_net=-0.236974612396 R_receipt=3.32254384620 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=0.544163 resid=0.000015 <|G|>=0.311627 H=0.604493 rho*=0.051938 H_warm=0.243516 E=2.4823 aim=1.0000 agreement=1.0000 sign(R_net)=+1 R_net=0.0703413694783 R_receipt=0.410412579318 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.000033 resid=0.000032 <|G|>=0.285716 H=0.000016 rho*=0.047619 H_warm=0.000014 E=1.1407 aim=0.4991 agreement=0.9578 sign(R_net)=-1 R_net=-1.82156925409e-5 R_receipt=-1.56415323223e-5 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.000035 resid=0.000034 <|G|>=0.285716 H=0.000019 rho*=0.047619 H_warm=0.000015 E=1.2018 aim=0.4993 agreement=0.9578 sign(R_net)=-1 R_net=-1.96055903631e-5 R_receipt=-1.68186742342e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=4.9110: 1.0000
+
+WORLD W6 N=4 tau=4 b_c=60 b_h=2 v=2 keys blind/local/full=6/144/768 fuel pairs=768 walk pairs=192
+  LOCAL             key=local J=2.718999 resid=2.718999 <|G|>=0.142934 H=0.708358 rho*=0.023822 H_warm=0.367339 E=1.9283 aim=1.0000 agreement=1.0000 sign(R_net)=-1 R_net=-0.940633112914 R_receipt=-0.818016219462 R_world=-J:True
+      vs report: 11/11 agree
+  GLOBAL            key=blind J=5.437500 resid=5.437500 <|G|>=0.187500 H=0.747199 rho*=0.031250 H_warm=0.747199 E=1.0000 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-3.62399157425 R_receipt=-3.49892202765 R_world=-J:True
+      vs report: 11/11 agree
+  ORACLE            key=full  J=0.000000 resid=0.000000 <|G|>=0.098361 H=0.000000 rho*=0.016393 H_warm=0.000000 E=none aim=none agreement=1.0000 sign(R_net)=+0 R_net=0 R_receipt=0 R_world=-J:True
+      vs report: 11/11 agree
+  NET-blind         key=blind J=0.000066 resid=0.000066 <|G|>=0.098362 H=0.000009 rho*=0.016394 H_warm=0.000009 E=1.0000 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-4.35786839440e-5 R_receipt=-4.28183674666e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-local         key=local J=0.000066 resid=0.000066 <|G|>=0.098362 H=0.000009 rho*=0.016394 H_warm=0.000009 E=1.0223 aim=0.5039 agreement=1.0000 sign(R_net)=-1 R_net=-4.37437244480e-5 R_receipt=-4.29825164930e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full          key=full  J=0.000066 resid=0.000066 <|G|>=0.098362 H=0.000009 rho*=0.016394 H_warm=0.000009 E=1.0357 aim=0.5057 agreement=1.0000 sign(R_net)=-1 R_net=-4.36956446674e-5 R_receipt=-4.29256625230e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full      key=full  J=0.002843 resid=0.000062 <|G|>=0.098407 H=0.001362 rho*=0.016401 H_warm=0.000378 E=3.6063 aim=0.9885 agreement=0.9999 sign(R_net)=-1 R_net=-0.000250670775976 R_receipt=-4.31848461734e-5 R_world=-J:True
+      vs report: 11/11 agree
+  WORLD-full        key=full  J=0.000066 resid=0.000066 <|G|>=0.098362 H=0.000009 rho*=0.016394 H_warm=0.000009 E=1.0242 aim=0.5000 agreement=1.0000 sign(R_net)=-1 R_net=-4.36761005746e-5 R_receipt=-4.29199189694e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/4    key=full  J=0.000066 resid=0.000066 <|G|>=0.098362 H=0.000009 rho*=0.016394 H_warm=0.000009 E=1.0298 aim=0.5028 agreement=1.0000 sign(R_net)=-1 R_net=-4.35867622945e-5 R_receipt=-4.28258070243e-5 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full c=3/2    key=full  J=8.250154 resid=0.000059 <|G|>=0.233609 H=2.110788 rho*=0.038935 H_warm=1.153686 E=1.8296 aim=1.0000 agreement=0.5679 sign(R_net)=-1 R_net=-2.62231576422 R_receipt=-1.65840433536 R_world=-J:True
+      vs report: 11/11 agree
+  NET-full init 1/4 key=full  J=0.000019 resid=0.000019 <|G|>=0.098361 H=0.000003 rho*=0.016393 H_warm=0.000003 E=1.0068 aim=0.5002 agreement=1.0000 sign(R_net)=-1 R_net=-1.25972069813e-5 R_receipt=-1.23776696916e-5 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s0       key=full  J=0.000049 resid=0.000049 <|G|>=0.098361 H=0.000007 rho*=0.016394 H_warm=0.000006 E=1.0320 aim=0.4997 agreement=1.0000 sign(R_net)=-1 R_net=-3.25193038013e-5 R_receipt=-3.19564884690e-5 R_world=-J:True
+      vs report: 11/11 agree
+  MLP-full s1       key=full  J=0.000050 resid=0.000050 <|G|>=0.098361 H=0.000007 rho*=0.016394 H_warm=0.000007 E=1.0155 aim=0.4999 agreement=1.0000 sign(R_net)=-1 R_net=-3.34593481968e-5 R_receipt=-3.28777773472e-5 R_world=-J:True
+      vs report: 11/11 agree
+  RECEIPT-full agreement with theta_R=32.8593: 0.9997
+
+  G06 W1: 13/13 section 6 checks hold
+  G06 W2: 12/12 section 6 checks hold
+  G06 W3: 16/16 section 6 checks hold
+  G06 W4: 12/12 section 6 checks hold
+  G06 W5: 16/16 section 6 checks hold
+  G06 W6: 12/12 section 6 checks hold
+
+GATES (mine vs report)
+  G01 PASS (78/78)  report PASS (78/78)  agree
+  G02 PASS (78/78)  report PASS (78/78)  agree
+  G03 PASS (78/78)  report PASS (78/78)  agree
+  G04 PASS (78/78)  report PASS (78/78)  agree
+  G05 PASS (78/78)  report PASS (78/78)  agree
+  G06 PASS (6/6)  report PASS (6/6)  agree
+  G07 PASS (6/6)  report PASS (6/6)  agree
+  G08 PASS (6/6)  report PASS (6/6)  agree
+  G09 not reproducible from boundary and tables (needs training / float rates); report ('PASS', 48, 48)
+  G10 not reproducible from boundary and tables (needs training / float rates); report ('PASS', 60, 60)
+  G11 PASS (6/6)  report PASS (6/6)  agree
+  G12 PASS (78/78)  report PASS (78/78)  agree
+  G13 PASS (6/6)  report PASS (6/6)  agree
+  FIRST FAILURE: none  report none  agree
+  slot reading line printed in report: agree
+
+CONTROLS (witness W1 GLOBAL; G08 on reference world with W1 tau, stores, v)
+  C01: failed first at G02 (expected G02) PASS  report ('G02', 'G02', 'PASS')  agree
+  C02: failed first at G01 (expected G01) PASS  report ('G01', 'G01', 'PASS')  agree
+  C03: failed first at G04 (expected G04) PASS  report ('G04', 'G04', 'PASS')  agree
+  C04: failed first at G08 (expected G08) PASS  report ('G08', 'G08', 'PASS')  agree
+  C05: failed first at G05 (expected G05) PASS  report ('G05', 'G05', 'PASS')  agree
+  C06: failed first at G06 (expected G06) PASS  report ('G06', 'G06', 'PASS')  agree
+
+HYPOTHESES
+  H3 W1: fuelled non-paying weight=0.2344  report 0.2344  agree
+  H3 W2: fuelled non-paying weight=0.3703  report 0.3703  agree
+  H3 W3: fuelled non-paying weight=0.2642  report 0.2642  agree
+  H3 W5: fuelled non-paying weight=0.3513  report 0.3513  agree
+  H1 SUPPORTED failing=none  report ('SUPPORTED', 'none')  agree
+  H2 SUPPORTED failing=none  report ('SUPPORTED', 'none')  agree
+  H3 SUPPORTED failing=none  report ('SUPPORTED', 'none')  agree
+  H4 REFUTED failing=['W1']  report ('REFUTED', "['W1']")  agree
+  H5 SUPPORTED failing=none  report ('SUPPORTED', 'none')  agree
+  H4 W1: E(NET-full)-E(LOCAL) = -0.031514
+  H4 W2: E(NET-full)-E(LOCAL) = 0.073345
+  H4 W3: E(NET-full)-E(LOCAL) = 0.424353
+  H4 W5: E(NET-full)-E(LOCAL) = 0.662512
+  report OVERALL PASS  (requires all gates PASS and all controls as stated)
+
+SOLVER: primes used per steady state (min/max) 16/256; common denominator bits (min/max) 4/7810
+NOT CHECKED: G09, G10 (training and float rates); tail (training); sigma_floor and eta individually (defined in the information-law note, not in the boundary) - only sigma = floor/eta is checked
+
+COUNTS (agree/disagree)
+  E                                           78 / 0
+  H                                           78 / 0
+  H3 weights                                   4 / 0
+  J                                           78 / 0
+  R_net                                       78 / 0
+  R_receipt                                   78 / 0
+  agreement                                   78 / 0
+  aim                                         78 / 0
+  controls                                     6 / 0
+  gates                                       14 / 0
+  hypotheses                                   5 / 0
+  input hashes                                 2 / 0
+  key class                                   78 / 0
+  residual_J                                  78 / 0
+  sigma = floor/eta (recorded enclosures)     78 / 0
+  table sha256                                78 / 0
+  theta_R and receipt agreement               12 / 0
+  world parameters                             6 / 0
+  TOTAL                                      907 / 0
+OVERALL AGREE

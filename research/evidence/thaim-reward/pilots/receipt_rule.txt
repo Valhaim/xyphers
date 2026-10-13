@@ -1,0 +1,7 @@
+N=4 tau=2 (3,2) v=1: theta_R=1.105 receipt-rule agreement=0.986 R_net(REC)=-0.5315 R_net(NET)=+0.1373 J(REC)/J(NET)=3.4 J(REC)/J_LOCAL=2.869 tail=+1.3e-06
+N=4 tau=2 (8,2) v=1: theta_R=2.181 receipt-rule agreement=1.000 R_net(REC)=-0.6768 R_net(NET)=-0.0000 J(REC)/J(NET)=63828.6 J(REC)/J_LOCAL=1.445 tail=+8.8e-07
+N=3 tau=3 (9,2) v=1: theta_R=2.471 receipt-rule agreement=1.000 R_net(REC)=-0.0714 R_net(NET)=+0.0361 J(REC)/J(NET)=7.4 J(REC)/J_LOCAL=1.881 tail=+7.0e-07
+N=3 tau=4 (20,3) v=1: theta_R=4.911 receipt-rule agreement=1.000 R_net(REC)=-0.2093 R_net(NET)=+0.0246 J(REC)/J(NET)=16.3 J(REC)/J_LOCAL=2.366 tail=+7.1e-07
+N=3 tau=3 (20,2) v=1: theta_R=6.861 receipt-rule agreement=0.397 R_net(REC)=-0.0382 R_net(NET)=-0.0000 J(REC)/J(NET)=8394.8 J(REC)/J_LOCAL=0.149 tail=+3.1e-07
+N=3 tau=4 (60,2) v=2: theta_R=32.859 receipt-rule agreement=1.000 R_net(REC)=-0.0000 R_net(NET)=-0.0000 J(REC)/J(NET)=0.9 J(REC)/J_LOCAL=0.000 tail=+4.6e-07
+N=3 tau=3 (5,2) v=1: theta_R=1.450 receipt-rule agreement=0.841 R_net(REC)=+0.1087 R_net(NET)=+0.3340 J(REC)/J(NET)=1.4 J(REC)/J_LOCAL=2.032 tail=+9.9e-07

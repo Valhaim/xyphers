@@ -1,0 +1,42 @@
+world N=4 tau=2 (3,2) v=1: share of builds with ratio > b_c = 0.125
+  ORACLE u_max=1.0: net THAIM=+0.08193 J=0.2269 E=1.7418
+  ORACLE u_max=4.0: net THAIM=+0.13732 J=0.3803 E=1.7362
+  ORACLE u_max=16.0: net THAIM=+0.16525 J=0.4576 E=1.7335
+  tabular net/local: net THAIM=+0.1352 J=0.382 E=1.730 rule agreement=1.000
+  tabular receipt/local: net THAIM=-0.5560 J=1.309 E=1.124 rule agreement=0.250
+  tabular net/full: net THAIM=+0.1352 J=0.382 E=1.730 rule agreement=1.000
+  tabular receipt/full: net THAIM=-0.5318 J=1.284 E=1.140 rule agreement=0.312
+  price c=0.6: E=1.0562 J=0.003 KL(p||pi_I)=0.3272
+  price c=0.75: E=1.9448 J=0.225 KL(p||pi_I)=0.2560
+  price c=0.9: E=1.7613 J=0.358 KL(p||pi_I)=0.2225
+  price c=1.0: E=1.7300 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.1: E=1.7299 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.25: E=1.7299 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.5: E=1.7299 J=0.382 KL(p||pi_I)=0.2173
+  price c=2.0: E=1.7192 J=0.493 KL(p||pi_I)=0.1995
+  price c=3.0: E=1.6203 J=0.709 KL(p||pi_I)=0.1725
+world N=4 tau=2 (3,2) v=4: share of builds with ratio > b_c = 0.125
+  ORACLE u_max=1.0: net THAIM=+0.08193 J=0.2269 E=1.7418
+  ORACLE u_max=4.0: net THAIM=+0.13732 J=0.3803 E=1.7362
+  ORACLE u_max=16.0: net THAIM=+0.16525 J=0.4576 E=1.7335
+  tabular net/local: net THAIM=+0.1352 J=0.382 E=1.730 rule agreement=1.000
+  tabular receipt/local: net THAIM=-0.5528 J=1.313 E=1.115 rule agreement=0.250
+  tabular net/full: net THAIM=+0.1352 J=0.382 E=1.730 rule agreement=1.000
+  tabular receipt/full: net THAIM=-0.5279 J=1.289 E=1.126 rule agreement=0.328
+  price c=0.6: E=1.0666 J=0.003 KL(p||pi_I)=0.3272
+  price c=0.75: E=2.0090 J=0.227 KL(p||pi_I)=0.2538
+  price c=0.9: E=1.7717 J=0.358 KL(p||pi_I)=0.2221
+  price c=1.0: E=1.7301 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.1: E=1.7300 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.25: E=1.7299 J=0.382 KL(p||pi_I)=0.2173
+  price c=1.5: E=1.7300 J=0.382 KL(p||pi_I)=0.2173
+  price c=2.0: E=1.6594 J=0.505 KL(p||pi_I)=0.2006
+  price c=3.0: E=1.4493 J=0.807 KL(p||pi_I)=0.1718
+world N=4 tau=2 (8,2) v=1: share of builds with ratio > b_c = 0.000
+  ORACLE u_max=1.0: net THAIM=+0.00000 J=0.0000 E=1.5000
+  ORACLE u_max=4.0: net THAIM=+0.00000 J=0.0000 E=1.5000
+  ORACLE u_max=16.0: net THAIM=+0.00000 J=0.0000 E=1.5000
+  tabular net/local: net THAIM=-0.0087 J=0.013 E=1.025 rule agreement=1.000
+  tabular receipt/local: net THAIM=-0.6833 J=2.191 E=1.823 rule agreement=0.875
+  tabular net/full: net THAIM=-0.0087 J=0.013 E=1.049 rule agreement=1.000
+  tabular receipt/full: net THAIM=-0.6833 J=2.191 E=1.823 rule agreement=0.875

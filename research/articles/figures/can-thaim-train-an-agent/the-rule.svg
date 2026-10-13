@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 476" width="680" height="476" role="img" aria-label="Two strip charts of the share of possible builds each agent fuels, against how much the build multiplies the traveller's futures, on a logarithmic axis. Upper panel: cold store ×5, hot store ×2, three steps ahead. Lower panel: cold store ×9, hot store ×2. The agent trained on its own net THAIM flow fuels every build above the THAIM price (the cold store's factor) and none below it: cold store ×5: 96 of 768 builds, cold store ×9: 72 of 768 builds. The agent trained on THAIM receipts fuels builds down to its much lower receipt price: cold store ×5: 348 of 768, cold store ×9: 96 of 768.">
+<rect width="680" height="476" fill="#0b0d13"/>
+<text x="20.0" y="32.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="17" font-weight="600" fill="#f7f4eb" text-anchor="start">What the agent learned to fuel</text>
+<text x="20.0" y="54.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="14" font-weight="400" fill="#878a96" text-anchor="start">share of possible builds fuelled, by how much each build multiplies the traveller's futures</text>
+<text x="20.0" y="88.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">Islands, three steps ahead: cold store ×5, hot store ×2</text>
+<line x1="70" y1="210" x2="630" y2="210" stroke="#252936"/>
+<text x="62.0" y="214.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0%</text>
+<text x="62.0" y="104.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">100%</text>
+<line x1="370.9" y1="96" x2="370.9" y2="210" stroke="#ffbd68" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="364.9" y="152.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="400" fill="#ffbd68" text-anchor="end">THAIM price ×5</text>
+<line x1="139.4" y1="114" x2="139.4" y2="210" stroke="#ff633d" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="145.4" y="174.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="400" fill="#ff633d" text-anchor="start">receipt price ×1.45</text>
+<circle cx="70.0" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="70.0" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="85.0" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="85.0" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="92.0" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="92.0" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="101.8" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="101.8" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="107.0" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="107.0" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="109.5" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="109.5" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="116.1" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="116.1" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="117.0" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="117.0" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="121.3" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="121.3" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="123.8" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="123.8" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="127.1" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="127.1" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="130.8" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="130.8" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="133.9" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="133.9" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="138.7" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="138.7" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="145.8" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="145.8" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="148.7" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="148.7" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="153.4" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="153.4" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="156.5" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="156.5" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="160.8" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="160.8" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="162.6" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="162.6" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="163.3" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="163.3" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="174.6" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="174.6" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="180.9" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="180.9" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="185.2" cy="210.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="185.2" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="199.6" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="199.6" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="206.6" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="206.6" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="210.9" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="210.9" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="214.5" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="214.5" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="221.6" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="221.6" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="238.4" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="238.4" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="250.4" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="250.4" cy="210.0" r="3.5" fill="#ffbd68"/>
+<circle cx="458.7" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="458.7" cy="100.0" r="3.5" fill="#ffbd68"/>
+<circle cx="534.5" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="534.5" cy="100.0" r="3.5" fill="#ffbd68"/>
+<circle cx="549.5" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="549.5" cy="100.0" r="3.5" fill="#ffbd68"/>
+<circle cx="588.3" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="588.3" cy="100.0" r="3.5" fill="#ffbd68"/>
+<circle cx="610.3" cy="100.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="610.3" cy="100.0" r="3.5" fill="#ffbd68"/>
+<text x="70.0" y="226.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×1</text>
+<text x="199.6" y="226.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×2</text>
+<text x="370.9" y="226.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×5</text>
+<text x="500.4" y="226.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×10</text>
+<text x="630.0" y="226.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×20</text>
+<text x="20.0" y="263.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">A colder store: cold store ×9, hot store ×2</text>
+<line x1="70" y1="385" x2="630" y2="385" stroke="#252936"/>
+<text x="62.0" y="389.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">0%</text>
+<text x="62.0" y="279.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="end">100%</text>
+<line x1="480.7" y1="271" x2="480.7" y2="385" stroke="#ffbd68" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="474.7" y="327.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="400" fill="#ffbd68" text-anchor="end">THAIM price ×9</text>
+<line x1="239.1" y1="289" x2="239.1" y2="385" stroke="#ff633d" stroke-width="1.5" stroke-dasharray="2 4"/>
+<text x="245.1" y="349.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="400" fill="#ff633d" text-anchor="start">receipt price ×2.47</text>
+<circle cx="70.0" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="70.0" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="85.0" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="85.0" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="92.0" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="92.0" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="101.8" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="101.8" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="107.0" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="107.0" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="109.5" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="109.5" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="116.1" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="116.1" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="117.0" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="117.0" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="121.3" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="121.3" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="123.8" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="123.8" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="127.1" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="127.1" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="130.8" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="130.8" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="133.9" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="133.9" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="138.7" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="138.7" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="145.8" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="145.8" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="148.7" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="148.7" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="153.4" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="153.4" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="156.5" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="156.5" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="160.8" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="160.8" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="162.6" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="162.6" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="163.3" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="163.3" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="174.6" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="174.6" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="180.9" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="180.9" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="185.2" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="185.2" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="199.6" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="199.6" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="206.6" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="206.6" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="210.9" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="210.9" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="214.5" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="214.5" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="221.6" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="221.6" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="238.4" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="238.4" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="250.4" cy="385.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="250.4" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="458.7" cy="275.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="458.7" cy="385.0" r="3.5" fill="#ffbd68"/>
+<circle cx="534.5" cy="275.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="534.5" cy="275.0" r="3.5" fill="#ffbd68"/>
+<circle cx="549.5" cy="275.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="549.5" cy="275.0" r="3.5" fill="#ffbd68"/>
+<circle cx="588.3" cy="275.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="588.3" cy="275.0" r="3.5" fill="#ffbd68"/>
+<circle cx="610.3" cy="275.0" r="5" fill="none" stroke="#ff633d" stroke-width="2"/>
+<circle cx="610.3" cy="275.0" r="3.5" fill="#ffbd68"/>
+<text x="70.0" y="401.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×1</text>
+<text x="199.6" y="401.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×2</text>
+<text x="370.9" y="401.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×5</text>
+<text x="500.4" y="401.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×10</text>
+<text x="630.0" y="401.0" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="400" fill="#878a96" text-anchor="middle">×20</text>
+<circle cx="86" cy="452" r="3.5" fill="#ffbd68"/><text x="96.0" y="456.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">trained on its own net THAIM flow</text>
+<circle cx="352" cy="452" r="5" fill="none" stroke="#ff633d" stroke-width="2"/><text x="364.0" y="456.0" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="400" fill="#a9aab3" text-anchor="start">trained on THAIM receipts</text>
+</svg>

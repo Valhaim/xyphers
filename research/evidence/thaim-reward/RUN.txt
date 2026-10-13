@@ -1,0 +1,47 @@
+XYPHERS THAIM REWARD REPRODUCTION
+
+The apparatus needs Python 3 with numpy 2.0.2, scipy 1.13.1 and python-flint
+0.6.0 (source/requirements.txt). From source/:
+
+  python3 -m venv venv && venv/bin/pip install -r requirements.txt
+  venv/bin/python tests.py
+  venv/bin/python run.py > my-report.txt
+
+tests.py runs only on worlds outside the experiment, in about a minute. The
+run trains every agent twice, freezes and evaluates every table exactly, and
+takes about twenty-five minutes. Its report is 138 lines and ends with
+
+  H1 SUPPORTED failing=none
+  H2 SUPPORTED failing=none
+  H3 SUPPORTED failing=none
+  H4 REFUTED failing=['W1']
+  H5 SUPPORTED failing=none
+
+  OVERALL PASS
+
+To compare with the recorded run:
+
+  diff ../report.txt my-report.txt
+
+Training is in floating point; on the same platform (Darwin arm64, the
+versions above) the recorded run is reproduced exactly. The recorded report's
+SHA-256 is
+
+  a419d1cf735e10daea9b77d083ae08535fb3d9c028eaaeeb9e8486a3c7a8f0a4
+
+The run also writes the frozen tables to source/tables/; compare them with
+../tables/.
+
+The independent check needs python-flint. It expects the repository's
+layout, which the packet recreates in three commands. From this directory:
+
+  mkdir -p layout/derivable layout/xypher-thaim-reward-proof layout/xypher-thaim-reward-check
+  cp BOUNDARY.md layout/derivable/xypher-thaim-reward-boundary.md
+  cp report.txt layout/xypher-thaim-reward-proof/ && cp -R tables layout/xypher-thaim-reward-proof/
+  cp independent/check.py layout/xypher-thaim-reward-check/
+  python3 layout/xypher-thaim-reward-check/check.py > my-check.txt
+  diff independent/output.txt my-check.txt
+
+It recomputes every result from the frozen tables in about forty seconds,
+ends with OVERALL AGREE, and no output from diff means it reproduced the
+recorded check exactly.
